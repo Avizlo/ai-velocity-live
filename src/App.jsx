@@ -7,6 +7,7 @@ import { Payments } from './pages/Payments';
 import { AEO } from './pages/AEO';
 import { Strategy } from './pages/Strategy';
 import { AgenticPhotoshoots } from './pages/AgenticPhotoshoots';
+import Sandbox from './pages/Sandbox';
 
 export default function App() {
   return (
@@ -22,6 +23,9 @@ export default function App() {
         <Route path="/agentic-payments" element={<Payments />} />
         <Route path="/agentic-aeo" element={<AEO />} />
         <Route path="/agentic-strategy" element={<Strategy />} />
+
+        {/* Hidden Development Routes */}
+        <Route path="/sandbox" element={<Sandbox />} />
       </Routes>
     </div>
   );
