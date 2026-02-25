@@ -24,13 +24,13 @@ export default function Sandbox() {
             <Navbar />
 
             {/* Sandbox Container - Padding to account for Navbar */}
-            <div className="pt-32 pb-32">
+            <div className="pt-32 pb-32" data-nav-theme="light">
                 <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
 
                     {/* Top Section: Carousel Header */}
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
-                        <h2 className="text-4xl md:text-[3.5rem] leading-[1.1] font-serif text-charcoal max-w-2xl tracking-tight">
-                            AI Generated Sales Force.
+                        <h2 className="text-5xl md:text-6xl leading-[1.1] font-serif italic text-charcoal max-w-2xl tracking-tight">
+                            Agentic influencers working to grow your brand 24/7.
                         </h2>
                         <div className="flex gap-4 shrink-0">
                             <button
@@ -51,55 +51,54 @@ export default function Sandbox() {
                     </div>
                 </div>
 
-                {/* Full-Width Image Carousel */}
-                <div className="w-full relative">
-                    <div
-                        ref={scrollContainerRef}
-                        className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-12 mb-20 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pl-6 md:pl-12 xl:pl-[max(3rem,calc((100vw-1536px)/2+3rem))]"
-                    >
-                        {/* Image 1 */}
-                        <div className="relative aspect-[4/3] w-[85vw] md:w-[45vw] lg:w-[28vw] shrink-0 snap-start rounded-xl overflow-hidden bg-charcoal/5">
-                            <img
-                                src="/images/ai-model-1.webp"
-                                alt="Laboratory equipment interface"
-                                className="absolute inset-0 w-full h-full object-cover"
-                            />
-                        </div>
-                        {/* Image 2 */}
-                        <div className="relative aspect-[4/3] w-[85vw] md:w-[45vw] lg:w-[28vw] shrink-0 snap-start rounded-xl overflow-hidden bg-charcoal/5">
-                            <img
-                                src="/images/ai-model-2.webp"
-                                alt="Automated testing environment"
-                                className="absolute inset-0 w-full h-full object-cover"
-                            />
-                        </div>
-                        {/* Image 3 */}
-                        <div className="relative aspect-[4/3] w-[85vw] md:w-[45vw] lg:w-[28vw] shrink-0 snap-start rounded-xl overflow-hidden bg-charcoal/5">
-                            <img
-                                src="/images/ai-model-3.webp"
-                                alt="Scientist analyzing data"
-                                className="absolute inset-0 w-full h-full object-cover"
-                            />
-                        </div>
-                        {/* Image 4 */}
-                        <div className="relative aspect-[4/3] w-[85vw] md:w-[45vw] lg:w-[28vw] shrink-0 snap-start rounded-xl overflow-hidden bg-charcoal/5">
-                            <img
-                                src="/images/ai-model-4.webp"
-                                alt="Microscopic analysis"
-                                className="absolute inset-0 w-full h-full object-cover rounded-xl"
-                            />
-                        </div>
-                        {/* Image 5 */}
-                        <div className="relative aspect-[4/3] w-[85vw] md:w-[45vw] lg:w-[28vw] shrink-0 snap-start rounded-xl overflow-hidden bg-charcoal/5 pr-6 md:pr-12">
-                            <img
-                                src="/images/ai-model-5.webp"
-                                alt="Studio photography"
-                                className="absolute inset-0 w-full h-full object-cover rounded-xl"
-                            />
-                            {/* Empty spacing block to ensure final image can scroll into full view with padding */}
-                            <div className="absolute top-0 -right-6 md:-right-12 w-6 md:w-12 h-full bg-transparent"></div>
-                        </div>
+                {/* Full-Width Image Carousel — left-pad matches constrained container, bleeds off right edge */}
+                <div
+                    ref={scrollContainerRef}
+                    className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-12 mb-20 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+                    style={{ paddingLeft: 'max(1.5rem, calc((100vw - 1536px) / 2 + 3rem))' }}
+                >
+                    {/* Image 1 */}
+                    <div className="relative aspect-[4/3] w-[85vw] md:w-[45vw] lg:w-[28vw] shrink-0 snap-start rounded-card overflow-hidden bg-charcoal/5">
+                        <img
+                            src="/images/ai-model-1.webp"
+                            alt="Laboratory equipment interface"
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105 cursor-pointer"
+                        />
                     </div>
+                    {/* Image 2 */}
+                    <div className="relative aspect-[4/3] w-[85vw] md:w-[45vw] lg:w-[28vw] shrink-0 snap-start rounded-card overflow-hidden bg-charcoal/5">
+                        <img
+                            src="/images/ai-model-2.webp"
+                            alt="Automated testing environment"
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105 cursor-pointer"
+                        />
+                    </div>
+                    {/* Image 3 */}
+                    <div className="relative aspect-[4/3] w-[85vw] md:w-[45vw] lg:w-[28vw] shrink-0 snap-start rounded-card overflow-hidden bg-charcoal/5">
+                        <img
+                            src="/images/ai-model-3.webp"
+                            alt="Scientist analyzing data"
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105 cursor-pointer"
+                        />
+                    </div>
+                    {/* Image 4 */}
+                    <div className="relative aspect-[4/3] w-[85vw] md:w-[45vw] lg:w-[28vw] shrink-0 snap-start rounded-card overflow-hidden bg-charcoal/5">
+                        <img
+                            src="/images/ai-model-4.webp"
+                            alt="Microscopic analysis"
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105 cursor-pointer"
+                        />
+                    </div>
+                    {/* Image 5 */}
+                    <div className="relative aspect-[4/3] w-[85vw] md:w-[45vw] lg:w-[28vw] shrink-0 snap-start rounded-card overflow-hidden bg-charcoal/5">
+                        <img
+                            src="/images/ai-model-5.webp"
+                            alt="Studio photography"
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105 cursor-pointer"
+                        />
+                    </div>
+                    {/* trailing spacer so last card has breathing room */}
+                    <div className="shrink-0 w-6 md:w-12"></div>
                 </div>
 
                 <div className="max-w-screen-2xl mx-auto px-6 md:px-12">

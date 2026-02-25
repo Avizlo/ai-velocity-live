@@ -24,9 +24,21 @@ export const AgenticPhotoshoots = () => {
 
                 {/* Image Gallery Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <img src="/images/m2.jpg" alt="Synthetic Agent" className="w-full aspect-[4/5] object-cover rounded-2xl shadow-xl grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer" />
-                    <img src="/images/avz-3.jpg" alt="Synthetic Agent" className="w-full aspect-[4/5] object-cover rounded-2xl shadow-xl grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer" />
-                    <img src="/images/pro.jpg" alt="Synthetic Agent" className="w-full aspect-[4/5] object-cover rounded-2xl shadow-xl grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer" />
+                    <div className="rounded-card shadow-xl overflow-hidden aspect-[4/5] cursor-pointer bg-charcoal/5">
+                        <img src="/images/ai-model-1.webp" alt="Agentic AI Model 1" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                    </div>
+                    <div className="rounded-card shadow-xl overflow-hidden aspect-[4/5] cursor-pointer bg-charcoal/5">
+                        <img src="/images/ai-model-2.webp" alt="Agentic AI Model 2" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                    </div>
+                    <div className="rounded-card shadow-xl overflow-hidden aspect-[4/5] cursor-pointer bg-charcoal/5">
+                        <img src="/images/ai-model-3.webp" alt="Agentic AI Model 3" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                    </div>
+                    <div className="rounded-card shadow-xl overflow-hidden aspect-[4/5] cursor-pointer lg:col-start-1 lg:col-end-2 bg-charcoal/5">
+                        <img src="/images/ai-model-4.webp" alt="Agentic AI Model 4" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                    </div>
+                    <div className="rounded-card shadow-xl overflow-hidden aspect-[4/5] cursor-pointer lg:col-start-2 lg:col-end-3 bg-charcoal/5">
+                        <img src="/images/ai-model-5.webp" alt="Agentic AI Model 5" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                    </div>
                 </div>
             </div>
         </main>

@@ -1,0 +1,22 @@
+# AI Velocity V2 - Design System & UI Instructions
+
+When modifying or creating new UI components in this project, strictly adhere to the following stylistic guidelines to maintain the premium editorial aesthetic:
+
+## 1. Corner Radius Geometry
+- **Strict 10px Enforcement:** Never use default Tailwind border-radius classes like `rounded-lg`, `rounded-xl`, or `rounded-2xl` for standard layout blocks, cards, or imagery.
+- **Implementation:** Always use the project's bespoke variable `rounded-card`. This ensures a precise, mathematical `10px` curve across the entire application interface.
+
+## 2. Interactive Image Hover Effects (Inner Zoom)
+- **Scale Interaction:** When implementing interactive or clickable imagery (like galleries, grids, or feature cards), apply a slight inner-zoom effect on hover.
+- **Grayscale Elimination:** Do not use grayscale to color transitions. Images should render in full-fidelity color organically. 
+- **Implementation Structure:** To prevent the zoom effect from blowing out the 10px geometry lock, apply the following wrapper technique:
+  ```html
+  <div className="rounded-card overflow-hidden">
+      <img src="..." className="transition-transform duration-700 hover:scale-105" />
+  </div>
+  ```
+- **Scale Value:** Use `hover:scale-105` for a subtle, premium pull-in. Avoid extreme scaling (like `scale-110` or higher) which can feel abrupt.
+
+## 3. Typography Hierarchy
+- **Primary Headings (H1/H2):** Use the bespoke `font-serif italic` variables mapped to the `AgenticTimes` / Source Serif 4 stack.
+- **Scale Markers:** Standardize primary typography at large scales (e.g., `text-5xl md:text-6xl` or `text-6xl md:text-8xl`). Avoid arbitrary custom sizing buckets like `text-[3.5rem]` when modifying core layout strings.

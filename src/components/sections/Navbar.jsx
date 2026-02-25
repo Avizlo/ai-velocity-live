@@ -14,6 +14,7 @@ export const Navbar = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
+    const [navTheme, setNavTheme] = useState('dark'); // 'dark' = light text on dark bg, 'light' = dark text on light bg
     const lastScrollY = useRef(0);
 
     useLayoutEffect(() => {
@@ -73,6 +74,34 @@ export const Navbar = () => {
         };
     }, [isMobileMenuOpen]);
 
+    // IntersectionObserver — detect which section is at the top and switch nav theme
+    useLayoutEffect(() => {
+        const themedSections = document.querySelectorAll('[data-nav-theme]');
+        if (!themedSections.length) return;
+
+        // Set initial theme from first tagged element immediately
+        const firstThemed = themedSections[0];
+        if (firstThemed) setNavTheme(firstThemed.dataset.navTheme);
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setNavTheme(entry.target.dataset.navTheme);
+                    }
+                });
+            },
+            {
+                // Fire when section crosses the navbar (top ~80px)
+                rootMargin: '-80px 0px -80% 0px',
+                threshold: 0,
+            }
+        );
+
+        themedSections.forEach((el) => observer.observe(el));
+        return () => observer.disconnect();
+    }, []);
+
     const categories = [
         { name: 'Agentic Commerce', path: '/agentic-commerce' },
         { name: 'Marketing', path: '/agentic-marketing' },
@@ -86,10 +115,12 @@ export const Navbar = () => {
             <nav
                 ref={navRef}
                 onMouseLeave={() => setActiveDropdown(null)}
-                className={`fixed top-0 left-0 right-0 z-50 px-6 py-6 flex flex-col items-center transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] font-sans ${isVisible ? 'translate-y-0' : '-translate-y-full'
+                className={`fixed top-0 left-0 right-0 z-50 px-6 py-6 flex flex-col items-center transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] font-sans ${isVisible ? 'translate-y-0' : '-translate-y-full'
                     } ${isScrolled || isMobileMenuOpen || activeDropdown
-                        ? 'bg-cloud-dancer/95 backdrop-blur-md border-b border-charcoal/10 text-charcoal/75'
-                        : 'bg-transparent border-b border-transparent text-white'
+                        ? 'bg-white backdrop-blur-md border-b border-charcoal/10 text-charcoal/75'
+                        : navTheme === 'light'
+                            ? 'bg-transparent border-b border-transparent text-charcoal/80'
+                            : 'bg-transparent border-b border-transparent text-white'
                     }`}
             >
                 <div className="flex items-center justify-between w-full max-w-screen-2xl px-6 md:px-12 relative">
@@ -98,7 +129,9 @@ export const Navbar = () => {
                     <div className="flex items-center justify-start gap-16">
                         {/* Logo / Brand - Using Serif for emotion/branding */}
                         <Link to="/" className="flex items-center gap-3 group relative z-50">
-                            <span className="font-serif italic text-2xl tracking-wide opacity-90 transition-transform duration-300 group-hover:-translate-y-[2px]">AI VELOCITY</span>
+                            <span className="font-serif italic text-2xl tracking-wide opacity-90">
+                                AI VELOCITY
+                            </span>
                         </Link>
 
                         {/* Desktop Links - Using Sans for structure */}
@@ -132,7 +165,9 @@ export const Navbar = () => {
                         <button
                             className={`lg:hidden transition-colors ${isScrolled || isMobileMenuOpen || activeDropdown
                                 ? 'text-charcoal/80 hover:text-charcoal'
-                                : 'text-white/80 hover:text-white'
+                                : navTheme === 'light'
+                                    ? 'text-charcoal/80 hover:text-charcoal'
+                                    : 'text-white/80 hover:text-white'
                                 }`}
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         >
@@ -146,8 +181,8 @@ export const Navbar = () => {
                 <div
                     ref={dropdownRef}
                     className={`absolute top-full left-0 w-full backdrop-blur-md border-b overflow-hidden hidden shadow-2xl transition-colors duration-300 ${activeDropdown === 'Marketing'
-                        ? 'bg-cloud-dancer border-black/10'
-                        : 'bg-cloud-dancer/95 border-charcoal/10'
+                        ? 'bg-white border-black/10'
+                        : 'bg-white border-charcoal/10'
                         }`}
                 >
                     <div className="max-w-screen-2xl mx-auto px-6 md:px-12 py-16">
