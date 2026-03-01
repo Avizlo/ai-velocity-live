@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/sections/Navbar';
+import { Footer } from './components/sections/Footer';
 import { Home } from './pages/Home';
 import { AgenticCommerce } from './pages/AgenticCommerce';
 import { Marketing } from './pages/Marketing';
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/sandbox-2" element={<Sandbox2 />} />
         <Route path="/sandbox-4" element={<Sandbox4 />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

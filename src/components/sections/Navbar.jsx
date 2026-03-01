@@ -119,7 +119,7 @@ export const Navbar = () => {
                     } ${isScrolled || isMobileMenuOpen || activeDropdown
                         ? 'bg-white backdrop-blur-md border-b border-charcoal/10 text-charcoal/75'
                         : navTheme === 'light'
-                            ? 'bg-transparent border-b border-transparent text-charcoal/80'
+                            ? 'bg-white border-b border-charcoal/10 text-charcoal/80'
                             : 'bg-transparent border-b border-transparent text-white'
                     }`}
             >

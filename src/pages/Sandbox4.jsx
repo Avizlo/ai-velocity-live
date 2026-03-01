@@ -1,4 +1,9 @@
+import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
 import { Navbar } from '../components/sections/Navbar';
 import { FAQ } from '../components/sections/FAQ';
 import { CTABanner } from '../components/sections/CTABanner';
@@ -13,9 +18,38 @@ import { FeatureShowcase2 } from '../components/sections/FeatureShowcase2';
 import { BentoGrid2 } from '../components/sections/BentoGrid2';
 import { FoundryManifesto } from '../components/sections/FoundryManifesto';
 
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
 const agenticStatement = `The world of commerce is shifting from "Human-to-Human" to "Agent-to-Agent," and the old playbooks are being vaporized. Agentic commerce is a transformative form of online shopping where autonomous AI agents act on behalf of customers to find, compare, and execute purchases independently.`;
 
 export default function Sandbox4() {
+    const container = useRef(null);
+
+    useGSAP(() => {
+        const sections = gsap.utils.toArray(container.current.children);
+
+        sections.forEach((sec) => {
+            // Animate IN (when entering from the bottom)
+            gsap.fromTo(sec,
+                {
+                    y: 60,
+                    opacity: 0
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1.2,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: sec,
+                        start: "top 85%", // Trigger animation when the top of the section hits 85% down the viewport
+                        toggleActions: "play none none reverse" // Play on scroll down, reverse on scroll up
+                    }
+                }
+            );
+        });
+    }, { scope: container });
+
     return (
         <main className="min-h-screen bg-cloud-dancer font-sans text-charcoal selection:bg-dew-mint selection:text-charcoal relative">
             <Helmet>
@@ -25,7 +59,7 @@ export default function Sandbox4() {
 
             <Navbar />
 
-            <div className="pt-32" data-nav-theme="light">
+            <div className="pt-32" data-nav-theme="light" ref={container}>
                 <FAQ />
                 <CTABanner />
                 <StatementText statement={agenticStatement} />

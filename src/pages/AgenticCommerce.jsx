@@ -1,6 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Plus, X } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+import { CTABanner } from '../components/sections/CTABanner';
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 // ============================================================================
 // PAGE CONTENT VARIABLES
@@ -9,12 +15,14 @@ import { Plus, X } from 'lucide-react';
 
 const heroFeature = {
     image: "/images/agentic-agent-hero.webp",
-    title: "Agentic Commerce",
-    text1: "Agentic commerce represents the fundamental shift from consumers manually scrolling through storefronts to autonomous software delegates executing complex procurement tasks with zero human friction. This is a total replacement of the traditional retail front end with specialized machine-to-machine negotiation rails that bypass the Document Object Model entirely. These digital agents do not care about sleek marketing copy or the psychological tricks used by legacy retail giants to manipulate human desire.",
+    title: "The Future of Commerce",
+    text1: "Agentic commerce represents the fundamental shift to autonomous software delegates executing complex procurement tasks with zero human friction. This is a total replacement of the traditional retail front end with specialized machine-to-machine negotiation rails that bypass the Document Object Model entirely. These digital agents do not care about sleek marketing copy or the psychological tricks used by legacy retail giants to manipulate human desire.",
     text2: "They parse raw data schemas and real-time inventory levels to identify the most efficient purchase route based on a user's pre-defined budget. Every critical product attribute must be instantly readable and verifiable to ensure the autonomous buyer can execute trade with surgical precision."
 };
 
 const statementSection = {
+    title: "Agentic Commerce",
+    subtitle: "Agentic commerce is where autonomous software agents execute, and settle commercial transactions across digital platforms.",
     statement: `The world of commerce is shifting from "Human-to-Human" to "Agent-to-Agent," and the old playbooks are being vaporized. Agentic commerce is a transformative form of online shopping where autonomous AI agents act on behalf of customers to find, compare, and execute purchases independently.`,
     actionText: "Are you ready?"
 };
@@ -41,32 +49,52 @@ const commerceBentoData = {
 };
 
 const secondaryFeature = {
-    image: "/images/ai-model-1.webp",
+    image: "/images/ai-model-9.webp",
     title: "Agentic Agents",
-    text1: "Agentic commerce represents the fundamental shift from consumers manually scrolling through storefronts to autonomous software delegates executing complex procurement tasks with zero human friction. This is a total replacement of the traditional retail front end with specialized machine-to-machine negotiation rails that bypass the Document Object Model entirely. These digital agents do not care about sleek marketing copy or the psychological tricks used by legacy retail giants to manipulate human desire.",
-    text2: "They parse raw data schemas and real-time inventory levels to identify the most efficient purchase route based on a user's pre-defined budget. Every critical product attribute must be instantly readable and verifiable to ensure the autonomous buyer can execute trade with surgical precision."
+    text1: "The 2026 signal for autonomous settlement is already appearing in the way global payments are being restructured for machine-to-machine commerce. At the heart of this transition is the v402 handshake, a protocol designed to facilitate secure and instant value transfers between agentic agents without human oversight. This system utilizes JSON-LD to provide semantic clarity to every transaction, ensuring that the intent of the buyer is perfectly aligned with the offer of the seller. When an agent initiates a purchase, it validates the cryptographic signatures of the merchant to prevent fraud in a way that legacy credit card processors simply cannot match. The speed of these settlements allows for a level of logistical agility that was previously impossible in international trade.",
+    text2: "Ultimately, the move toward agentic commerce is a return to the fundamental principles of trade, stripped of the bloat and inefficiency of the early internet era. By focusing on technical density and high-fidelity data, brands can position themselves at the center of the new autonomous economy. Those who understand the physics of the handshake and the protocol will be the ones who define the next thirty years of global commerce. The transition is accelerating, and the era of the passive consumer is coming to a definitive end."
 };
 
 const commerceFaqs = [
     {
-        question: "What makes your agentic marketing services unique?",
-        answer: "Our studio combines sovereign AI intelligence with full-stack creative execution to deliver marketing systems that never sleep. We believe in a holistic approach, ensuring every aspect of your brand's digital presence — from visual identity to autonomous growth engines — is cohesive, compelling, and algorithmically optimised for maximum conversion velocity."
+        question: "What is agentic commerce?",
+        answer: "Agentic commerce is the transition from human-centric online shopping to autonomous procurement executed by specialized artificial intelligence delegates. Instead of users manually browsing storefronts, these digital agents negotiate, compare, and settle transactions directly with merchant databases. This shift eliminates the friction of traditional web checkout processes entirely by operating at the speed of computation."
     },
     {
-        question: "How do you ensure the brand's voice stays consistent?",
-        answer: "Every agentic persona we deploy is trained on your exact brand guidelines, tone of voice, and audience data. The system continuously self-calibrates against real-time engagement signals, maintaining perfect brand coherence across every channel and market — 24 hours a day, without human error."
+        question: "How do AI agents make purchases online?",
+        answer: "Artificial intelligence agents execute purchases through secure machine-to-machine API handshakes rather than interacting with graphical user interfaces. They read raw inventory and pricing data directly from the merchant backend system to determine the optimal purchase route based on user parameters. Once conditions are met, the agent constructs a transaction payload for instant cryptographic or tokenized settlement."
     },
     {
-        question: "Can you help with both AI photoshoots and content strategy?",
-        answer: "Yes. Our foundry handles end-to-end production — from AI-generated model photography and digital lookbooks to full content calendar strategy and autonomous publishing. Everything is built within one sovereign ecosystem so there is zero friction between visual creation and distribution."
+        question: "What is the difference between an AI assistant and an AI agent?",
+        answer: "An artificial intelligence assistant provides recommendations or answers questions but still requires a human to execute the final physical task. An AI agent possesses the autonomy and transactional capability to complete the entire procurement cycle from discovery to final payment. This transition turns passive chatbots into active, goal-driven economic participants."
     },
     {
-        question: "How do you measure the success of agentic campaigns?",
-        answer: "We operate on live data dashboards that track conversion velocity, engagement depth, and revenue attribution in real time. Unlike legacy agencies that report monthly, our agentic systems surface performance insights instantly and auto-optimise campaigns mid-flight based on sub-second behavioural signals."
+        question: "How does agentic commerce reduce operational overhead for businesses?",
+        answer: "By replacing the need for bloated account management and manual sales pipelines, autonomous commerce systems allow businesses to scale transaction volume without increasing headcount. Agents handle inbound inquiries, negotiate terms, and execute settlements twenty-four hours a day. This automated logistics layer turns high-friction sales cycles into instantaneous programmatic revenue."
     },
     {
-        question: "What is the process for starting a project with Ai Velocity?",
-        answer: "It begins with a discovery session to map your brand's current architecture and growth objectives. From there, we design a bespoke agentic infrastructure, deploy your virtual team, and run a controlled launch sequence. Most clients see measurable output within the first 48 hours of activation."
+        question: "Will traditional e-commerce websites become obsolete?",
+        answer: "Traditional human-centric websites are rapidly becoming secondary interfaces as the volume of machine-to-machine trade eclipses manual browsing. Future commerce infrastructure must prioritize headless data-rich backend systems that feed raw JSON data directly to autonomous buyers. Brands that fail to optimize their architecture for algorithmic negotiation will become invisible to the primary digital consumer."
+    },
+    {
+        question: "How are agentic payments securely authorized?",
+        answer: "Secure agentic payments rely on non-custodial wallet infrastructure and strict cryptographic signing protocols that keep the human in control. The user retains the master authority by setting specific spending limits and daily operational budgets for their digital delegates. When a transaction is negotiated the agent prepares the exact payload but the final settlement is governed by these pre-defined financial firewalls."
+    },
+    {
+        question: "What is Answer Engine Optimization (AEO) in this context?",
+        answer: "Answer Engine Optimization is the structural evolution of traditional search engine optimization designed to ensure a brand is cited as the absolute source of truth by generative models. Instead of chasing traditional keyword volume, AEO embeds verifiable provenance and high-trust signals directly into the technical architecture of the website. This guarantees that when an autonomous agent queries the market your inventory is prioritized."
+    },
+    {
+        question: "How does agentic commerce handle cross-border logistics?",
+        answer: "Autonomous systems execute global trade by instantly verifying compliance, calculating dynamic cross-border fees, and routing fulfillment without manual intervention. Digital delegates analyze real-time shipping data to determine the most efficient delivery paths across multiple international borders. This eliminates the bureaucratic delays that typically choke legacy retail operations."
+    },
+    {
+        question: "What infrastructure is required to accept agentic payments?",
+        answer: "Businesses must upgrade from legacy banking gateways to decentralized settlement layers and headless commerce APIs capable of reading machine intent. This involves integrating protocols that allow digital delegates to securely connect, verify inventory, and process stablecoin or fiat transactions instantly. The foundation of this new economy is the ability to support frictionless machine-to-machine settlement."
+    },
+    {
+        question: "Why is agentic commerce considered a structural fracture in retail?",
+        answer: "It represents the first fundamental shift in the mechanics of digital trade in over twenty-five years by moving the market from a human-to-business model to agent-to-agent negotiation. This entirely vaporizes the psychological manipulation tactics of legacy advertising because machines execute purchases based on raw data and absolute utility. Survival in this era requires programmatic truth rather than traditional marketing fluff."
     }
 ];
 
@@ -85,29 +113,38 @@ const commercePosts = [
     },
 ];
 
-const manifestoTitle = "The x402 Sovereign Settlement Architecture";
+const manifestoTitle = "Agentic Commerce";
 
 const manifestoLeadIn = [
-    "The global trade landscape is currently undergoing a structural fracture that renders traditional retail models completely obsolete in the face of autonomous shifts. For three decades, our operations have survived the horizontal rain of the North Sea and the relentless grit of the Team Ramen era at Mt. Hood[cite: 66, 1092]. We have successfully scaled logistics to ship physical artifacts to sixty different countries every month by intentionally ignoring the bloated bureaucracy of the managerial class[cite: 1092].",
-    "Agentic commerce represents the fundamental shift from consumers manually scrolling through storefronts to autonomous software delegates executing complex procurement tasks with zero human friction[cite: 338]. This is a total replacement of the traditional retail front end with specialized machine-to-machine negotiation rails that bypass the Document Object Model entirely[cite: 1097]."
+    "The 25-year stagnation of e-commerce has finally reached a breaking point where traditional click-to-buy interfaces no longer satisfy the velocity of modern global trade. We are witnessing a structural fracture in legacy retail systems that relied on manual human intervention for every decision from product discovery to checkout. This transition is not a distant possibility but a rapid and inevitable shift toward a world where software acts with genuine autonomy. Digital storefronts are evolving into fluid environments where intent is captured and executed without the friction of a standard shopping cart. The current architecture of the internet is being rebuilt to support these autonomous entities that can negotiate, purchase, and settle transactions on behalf of the user.",
+    "Marketing as we knew it is being replaced by a sophisticated model of vibe trading where brand resonance is measured by machine-readable trust scores. A practical example of this shift is a consumer asking a digital assistant to find and purchase a sustainable winter coat that matches their existing wardrobe and budget constraints without ever visiting a website. This requires a level of intelligence that moves beyond simple automation and into the realm of true agency. The legacy agency retainer model is failing because it cannot keep pace with the sub-second decision making required in an agentic economy. Brands must now prepare their data for discovery by non-human actors that prioritize technical precision and verifiable logic over traditional visual storytelling."
 ];
 
 const manifestoSections = [
     {
-        title: "The Physics of the v402 Autonomous Handshake",
-        content: "True agentic commerce functions by completely bypassing the human-centric browser interface to feed raw JSON data directly to the agent's internal reasoning engine[cite: 1097]. We utilize the v402 autonomous handshake to establish a standardized, high-trust settlement protocol between the merchant's underlying database and the autonomous buyer's logic[cite: 271, 1104]. When an agent encounters a payment-gated resource, it reads the 402 Payment Required status and signs a USDC transaction to unlock access in approximately half a second[cite: 271]."
+        title: "The Structural Fracture and the Rise of Agentic Commerce",
+        content: "The technical physics of this new era rely heavily on the Model Context Protocol to allow disparate systems to share state and intent in real time. By utilizing a deBridge MCP integration, businesses can ensure that their product catalogs are accessible across multiple blockchain environments and traditional databases simultaneously. This creates a high-fidelity data layer that functions as the primary source of truth for any agent seeking to execute a transaction. Traditional headless architecture is no longer sufficient on its own as it lacks the native intelligence to handle complex multi-step negotiations. We are moving toward a unified commerce model where every touchpoint is an entry point for an autonomous buyer."
     },
     {
-        title: "Vibe Trading and Cross-Chain Intent Execution",
-        content: "Vibe Trading utilizes the deBridge Model Context Protocol to translate natural language user intent into verifiable cross-chain settlement paths without requiring manual technical input[cite: 1095, 504]. This allows a digital delegate to negotiate value and execute trade based on the perceived intent of the user while maintaining a secure, non-custodial posture[cite: 505]. The agent calculates the necessary fees and builds the transaction payload while the master wallet retains the final cryptographic signature[cite: 505]."
+        content: "The 2026 signal for autonomous settlement is already appearing in the way global payments are being restructured for machine-to-machine commerce. At the heart of this transition is the v402 handshake, a protocol designed to facilitate secure and instant value transfers between agents without human oversight. This system utilizes JSON-LD to provide semantic clarity to every transaction, ensuring that the intent of the buyer is perfectly aligned with the offer of the seller. When an agent initiates a purchase, it validates the cryptographic signatures of the merchant to prevent fraud in a way that legacy credit card processors simply cannot match. The speed of these settlements allows for a level of logistical agility that was previously impossible in international trade."
     },
     {
-        title: "The Empty Wallet Solution via MoonPay Agents",
-        content: "We utilize MoonPay Agents to solve the Empty Wallet Solution by allowing digital delegates to accept card payments and instantly convert them to sovereign stablecoins[cite: 366, 1096]. This specific non-custodial infrastructure layer enables an agent to generate a payment link that bridges fiat directly into USDC held locally by the agent[cite: 366]. By integrating these fiat-to-crypto bridges, we eliminate the primary friction point for traditional customers entering the autonomous economy[cite: 366]."
+        title: "Implementing Agentic Commerce via MoonPay Agents",
+        content: "To maintain a competitive edge, developers are now integrating MoonPay Agents into their stack to provide the necessary tools to navigate complex web environments and execute financial tasks. This technology allows for the seamless conversion of fiat and digital assets, ensuring that agents can settle debts across any jurisdictional boundary instantly. By combining this with a robust implementation of the Model Context Protocol, a brand can ensure its offerings are always at the top of an agent's consideration set. The shift is moving away from search engine optimization and toward agentic engine optimization where technical metadata is the most valuable asset a company owns."
     },
     {
-        title: "The 2026 Shift Toward Sovereign Marketplaces",
-        content: "The recent February 2026 integration of the Tether Wallet Development Kit into the Whop marketplace confirms that the new internet economy is already standardizing[cite: 370, 1094]. This move toward a sovereign marketplace utilized a $200M investment to integrate the WDK directly into the platform for frictionless USDT settlement[cite: 370]. We are moving past the AI-assisted era and into a reality where machines manage the entire creative, optimization, and settlement layers[cite: 337]."
+        content: "The logistical volatility of shipping and global supply chains demands a system that can pivot in real time based on fluctuating costs and delivery windows. Agentic agents are uniquely equipped to handle this complexity by constantly monitoring API feeds and adjusting procurement strategies without waiting for human approval. This represents a fundamental departure from the static inventory management of the past two decades. As we approach the 2026 milestone, the gap between those using autonomous settlement and those stuck in legacy workflows will become an unbridgeable chasm. The future of commerce is not about better websites but about more capable agents operating within a high-trust digital ecosystem."
+    },
+    {
+
+        content: "The core of this evolution is the ability of software to handle the entire lifecycle of a commercial interaction from discovery to final settlement. This requires a deep understanding of the underlying technical physics, including how various protocols interact to create a seamless user experience. The integration of advanced payment standards and communication protocols ensures that every interaction is recorded on a transparent ledger. This transparency builds the necessary trust for consumers to delegate significant purchasing power to their digital representatives. We are no longer designing for eyes but for algorithms that demand efficiency and verifiable data."
+    },
+    {
+        content: "Ultimately, the move toward agentic commerce is a return to the fundamental principles of trade, stripped of the bloat and inefficiency of the early internet era. By focusing on technical density and high-fidelity data, brands can position themselves at the center of the new autonomous economy. The fractured systems of today are the foundations upon which the agentic world is being built. Those who understand the physics of the handshake and the protocol will be the ones who define the next thirty years of global commerce. The transition is accelerating, and the era of the passive consumer is coming to a definitive end."
+    },
+    {
+        title: "The Era of Algorithmic Negotiation",
+        content: "Scaling a global brand today requires the absolute elimination of managerial bureaucracy and the integration of goal-driven digital labor. A company can scale its volume tenfold without hiring a single new manager by utilizing the backend orchestrators of the AI Velocity engine. Routing the order securing the fulfillment and managing the customer email sequences happen invisibly through our autonomous nervous system. This infrastructure provides the grit and intelligence required to survive in an unmanaged arena where only the sovereign individual thrives."
     }
 ];
 
@@ -123,10 +160,11 @@ const SplitFeature = ({
     text2,
     ctaText = "Discover",
     ctaLink = "#contact",
-    reverse = false
+    reverse = false,
+    bgClass = "bg-cloud-dancer"
 }) => {
     return (
-        <section className="py-20 bg-cloud-dancer">
+        <section className={`py-20 ${bgClass}`}>
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
                     {/* Left/Right: Image */}
@@ -141,7 +179,7 @@ const SplitFeature = ({
                     <div className={`flex flex-col justify-between h-full gap-16 ${reverse ? 'md:order-first' : ''}`}>
                         <div>
                             {title && (
-                                <h1 className="text-4xl md:text-5xl font-sans font-bold text-charcoal tracking-tight mb-8">
+                                <h1 className="text-4xl md:text-5xl font-serif text-charcoal tracking-tight mb-8">
                                     {title}
                                 </h1>
                             )}
@@ -156,15 +194,7 @@ const SplitFeature = ({
                                 </p>
                             )}
                         </div>
-                        <div>
-                            <a
-                                href={ctaLink}
-                                className="inline-flex items-center gap-2 px-6 py-3 rounded-card border border-charcoal/30 text-charcoal text-sm font-sans font-medium hover:bg-charcoal hover:text-white transition-all duration-300 group"
-                            >
-                                {ctaText}
-                                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                            </a>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -172,17 +202,33 @@ const SplitFeature = ({
     );
 };
 
-const StatementAction = ({ statement, actionText }) => {
+const StatementAction = ({ title, subtitle, statement, actionText }) => {
     return (
         <section className="py-20 bg-cloud-dancer">
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
-                <div className="grid grid-cols-1 lg:grid-cols-[1fr_minmax(auto,280px)] gap-10 lg:gap-20 items-center">
-                    <p className="font-sans text-[1.5rem] md:text-[2rem] lg:text-[2.2rem] text-charcoal leading-[1.3] tracking-tight">
+                {(title || subtitle) && (
+                    <div className="mb-10 text-left">
+                        {title && (
+                            <h2 className="text-4xl md:text-5xl font-serif text-charcoal tracking-tight mb-4">
+                                {title}
+                            </h2>
+                        )}
+                        {subtitle && (
+                            <p className="font-sans text-xs font-bold text-charcoal tracking-wide">
+                                {subtitle}
+                            </p>
+                        )}
+                    </div>
+                )}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_28rem] gap-12 lg:gap-20 items-center">
+                    <p className="font-serif text-[1.5rem] md:text-[2rem] lg:text-[2.2rem] text-charcoal leading-[1.3] tracking-tight lg:-mr-[125px] relative z-10">
                         {statement}
                     </p>
-                    <p className="font-sans text-base md:text-lg text-charcoal font-bold tracking-tight flex items-center lg:justify-end">
-                        {actionText}
-                    </p>
+                    <div className="w-full flex items-center justify-center">
+                        <p className="font-sans text-base md:text-lg text-charcoal font-bold tracking-tight text-center whitespace-nowrap">
+                            {actionText}
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -254,7 +300,7 @@ const BentoGrid2 = ({ data }) => {
                     </div>
                     <div className="md:col-start-3 md:row-start-2 rounded-2xl bg-charcoal p-8 flex flex-col justify-between min-h-[180px]">
                         <div className="space-y-3">
-                            <h3 className="font-sans font-bold text-white text-2xl leading-tight tracking-tight">
+                            <h3 className="font-serif text-white text-3xl leading-tight tracking-tight">
                                 {data.cta.heading}
                             </h3>
                             <p className="font-sans text-white/50 text-xs leading-relaxed">
@@ -276,15 +322,6 @@ const BentoGrid2 = ({ data }) => {
 };
 
 const FAQItem = ({ faq, isOpen, onToggle, index }) => {
-    const bodyRef = useRef(null);
-    const [height, setHeight] = useState(0);
-
-    useEffect(() => {
-        if (bodyRef.current) {
-            setHeight(isOpen ? bodyRef.current.scrollHeight : 0);
-        }
-    }, [isOpen]);
-
     return (
         <div className="border-t border-charcoal/10 last:border-b">
             <button
@@ -295,14 +332,12 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
                 className="w-full flex items-center justify-between gap-8 py-7 text-left group cursor-pointer"
             >
                 <span
-                    className="font-sans text-lg font-medium tracking-tight transition-colors duration-300"
-                    style={{ color: isOpen ? '#1A1A1A' : '#6B6B6B' }}
+                    className="font-sans text-2xl font-medium tracking-tight transition-colors duration-300 text-black"
                 >
                     {faq.question}
                 </span>
                 <span
-                    className="shrink-0 flex items-center justify-center transition-all duration-300"
-                    style={{ color: isOpen ? '#1A1A1A' : '#6B6B6B' }}
+                    className="shrink-0 flex items-center justify-center transition-all duration-300 text-black"
                 >
                     <span
                         className="inline-block transition-transform duration-400 ease-[cubic-bezier(0.25,1,0.5,1)]"
@@ -317,15 +352,10 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
                 role="region"
                 aria-labelledby={`faq-question-${index}`}
                 aria-hidden={!isOpen}
-                style={{
-                    height: `${height}px`,
-                    overflow: 'hidden',
-                    transition: 'height 0.55s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease',
-                    opacity: isOpen ? 1 : 0,
-                }}
+                className={`grid transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
             >
-                <div ref={bodyRef}>
-                    <p className="pb-8 text-[#1A1A1A] font-sans text-sm leading-relaxed max-w-2xl">
+                <div className="overflow-hidden">
+                    <p className="pb-8 text-black font-sans text-lg leading-relaxed max-w-2xl">
                         {faq.answer}
                     </p>
                 </div>
@@ -334,7 +364,7 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
     );
 };
 
-const FAQ = ({ title, faqs }) => {
+const FAQ = ({ title, faqs, bgClass = "bg-cloud-dancer" }) => {
     const [openIndex, setOpenIndex] = useState(0);
 
     const toggle = (index) => {
@@ -342,11 +372,11 @@ const FAQ = ({ title, faqs }) => {
     };
 
     return (
-        <section className="py-24 bg-cloud-dancer">
+        <section className={`py-24 ${bgClass}`}>
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16 lg:gap-24">
                     <div className="lg:pt-2 flex items-start">
-                        <h2 className="text-5xl md:text-6xl font-sans font-bold text-charcoal tracking-tight">
+                        <h2 className="text-5xl md:text-6xl font-serif text-black tracking-tight">
                             {title}
                         </h2>
                     </div>
@@ -374,7 +404,7 @@ const NewsInsight = ({ title, description, posts }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
                     <div className="flex flex-col justify-between h-full gap-16">
                         <div className="space-y-4">
-                            <h2 className="font-sans font-bold text-charcoal text-4xl md:text-5xl tracking-tight">
+                            <h2 className="font-serif text-charcoal text-4xl md:text-5xl tracking-tight">
                                 {title}
                             </h2>
                             <p className="font-sans text-charcoal/50 text-sm leading-relaxed max-w-xs">
@@ -422,7 +452,7 @@ const FoundryManifesto = ({ title, leadIn, sections }) => {
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
                 <div className="max-w-4xl mx-auto">
                     <header className="mb-10 text-left">
-                        <h2 id="manifesto-title" className="text-3xl md:text-5xl font-sans font-bold tracking-tight text-charcoal">
+                        <h2 id="manifesto-title" className="text-3xl md:text-5xl font-serif tracking-tight text-charcoal">
                             {title}
                         </h2>
                     </header>
@@ -437,10 +467,10 @@ const FoundryManifesto = ({ title, leadIn, sections }) => {
                         aria-hidden={!isOpen}
                         className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 mb-10' : 'grid-rows-[0fr] opacity-0'}`}
                     >
-                        <div className="overflow-hidden space-y-10 font-sans text-charcoal/80 text-left">
+                        <div className="overflow-hidden space-y-10 font-sans text-lg text-charcoal/80 text-left">
                             {sections.map((section, idx) => (
                                 <div key={idx} className={idx === 0 ? "pt-4" : ""}>
-                                    <h3 className="text-xl font-bold text-charcoal mb-3">{section.title}</h3>
+                                    <h3 className="text-3xl font-serif text-charcoal mb-3">{section.title}</h3>
                                     <p className="leading-relaxed">{section.content}</p>
                                 </div>
                             ))}
@@ -452,7 +482,7 @@ const FoundryManifesto = ({ title, leadIn, sections }) => {
                             aria-expanded={isOpen}
                             className="group flex items-center gap-3 px-6 py-3 rounded-full border border-charcoal text-charcoal font-sans text-sm font-medium tracking-wide hover:bg-charcoal hover:text-white transition-all duration-300"
                         >
-                            {isOpen ? 'Close Transmission' : 'Read Full Architectures'}
+                            {isOpen ? 'Close' : 'Read More'}
                             <span
                                 className="inline-block transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]"
                                 style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
@@ -472,6 +502,29 @@ const FoundryManifesto = ({ title, leadIn, sections }) => {
 // ============================================================================
 
 export const AgenticCommerce = () => {
+    const container = useRef(null);
+
+    useGSAP(() => {
+        const sections = gsap.utils.toArray(container.current.children);
+
+        sections.forEach((sec) => {
+            gsap.fromTo(sec,
+                { y: 60, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1.2,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: sec,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+    }, { scope: container });
+
     const schema = {
         "@context": "https://schema.org",
         "@type": "Service",
@@ -483,25 +536,28 @@ export const AgenticCommerce = () => {
     };
 
     return (
-        <main className="pt-32 pb-24 w-full min-h-screen bg-cloud-dancer">
+        <main data-nav-theme="light" className="pt-32 pb-24 w-full min-h-screen bg-cloud-dancer">
             <Helmet>
                 <title>Agentic Commerce | AI Velocity</title>
                 <meta name="description" content="Agentic Commerce fundamentally shifts traditional manual storefront operations into autonomous predictive intelligence ecosystems via Sovereign AI visual streams." />
                 <script type="application/ld+json">{JSON.stringify(schema)}</script>
             </Helmet>
 
-            <div className="flex flex-col gap-16 lg:gap-24">
+            <div ref={container} className="flex flex-col gap-16 lg:gap-24 overflow-hidden">
+                <StatementAction
+                    title={statementSection.title}
+                    subtitle={statementSection.subtitle}
+                    statement={statementSection.statement}
+                    actionText={statementSection.actionText}
+                />
+
                 <SplitFeature
                     reverse
+                    bgClass="bg-electric-mint"
                     image={heroFeature.image}
                     title={heroFeature.title}
                     text1={heroFeature.text1}
                     text2={heroFeature.text2}
-                />
-
-                <StatementAction
-                    statement={statementSection.statement}
-                    actionText={statementSection.actionText}
                 />
 
                 <BentoGrid2
@@ -518,12 +574,7 @@ export const AgenticCommerce = () => {
                 <FAQ
                     title="FAQ's"
                     faqs={commerceFaqs}
-                />
-
-                <NewsInsight
-                    title="News & Insight"
-                    description="We share the latest breakthroughs, innovations, and updates from the world of agentic commerce."
-                    posts={commercePosts}
+                    bgClass="bg-electric-mint"
                 />
 
                 <FoundryManifesto
@@ -531,6 +582,8 @@ export const AgenticCommerce = () => {
                     leadIn={manifestoLeadIn}
                     sections={manifestoSections}
                 />
+
+                <CTABanner />
             </div>
         </main>
     );
