@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { MagneticButton } from '@/components/ui/MagneticButton';
 
 export const InfluencerCarousel = () => {
     const scrollContainerRef = useRef(null);
@@ -23,20 +24,24 @@ export const InfluencerCarousel = () => {
                         Agentic influencers working to grow your brand 24/7.
                     </h2>
                     <div className="flex gap-4 shrink-0">
-                        <button
-                            onClick={() => scroll('left')}
-                            className="w-12 h-12 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal hover:bg-charcoal hover:text-cloud-dancer transition-colors"
-                            aria-label="Scroll left"
-                        >
-                            <ArrowLeft className="w-5 h-5" strokeWidth={1.5} />
-                        </button>
-                        <button
-                            onClick={() => scroll('right')}
-                            className="w-12 h-12 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal hover:bg-charcoal hover:text-cloud-dancer transition-colors"
-                            aria-label="Scroll right"
-                        >
-                            <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
-                        </button>
+                        <MagneticButton>
+                            <button
+                                onClick={() => scroll('left')}
+                                className="w-12 h-12 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal hover:bg-charcoal hover:text-cloud-dancer transition-colors"
+                                aria-label="Scroll left"
+                            >
+                                <ArrowLeft className="w-5 h-5" strokeWidth={1.5} />
+                            </button>
+                        </MagneticButton>
+                        <MagneticButton>
+                            <button
+                                onClick={() => scroll('right')}
+                                className="w-12 h-12 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal hover:bg-charcoal hover:text-cloud-dancer transition-colors"
+                                aria-label="Scroll right"
+                            >
+                                <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
+                            </button>
+                        </MagneticButton>
                     </div>
                 </div>
             </div>

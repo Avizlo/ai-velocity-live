@@ -43,19 +43,14 @@ export const Navbar = () => {
     }, [activeDropdown]);
 
     const handleMouseEnter = (name) => {
-        // Dropdowns temporarily disabled as requested
-        // if (name === 'Agentic Commerce' || name === 'Marketing' || name === 'Strategy') {
-        //     setActiveDropdown(name);
-        // } else {
-        //     setActiveDropdown(null);
-        // }
+        // Dropdowns temporarily disabled
     };
 
     useLayoutEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
 
-            // Toggle Glassmorphism past 10px
+            // Toggle border/blur past 10px
             if (currentScrollY > 10) {
                 setIsScrolled(true);
             } else {

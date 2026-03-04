@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Plus, X } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const defaultFaqs = [
     {
@@ -38,7 +40,7 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
     }, [isOpen]);
 
     return (
-        <div className="border-t border-charcoal/10 last:border-b">
+        <div className="border-t border-charcoal/10 last:border-b faq-item opacity-0 translate-y-4">
             {/* Question row */}
             <button
                 onClick={onToggle}
@@ -84,7 +86,7 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
                 }}
             >
                 <div ref={bodyRef}>
-                    <p className="pb-8 text-[#1A1A1A] font-sans text-sm leading-relaxed max-w-2xl">
+                    <p className="pb-8 text-[#1A1A1A] font-sans max-w-2xl">
                         {faq.answer}
                     </p>
                 </div>
@@ -95,18 +97,47 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
 
 export const FAQ = ({ title = "FAQ's", faqs = defaultFaqs, bgClass = "bg-cloud-dancer" }) => {
     const [openIndex, setOpenIndex] = useState(0);
+    const containerRef = useRef(null);
+    const titleRef = useRef(null);
 
     const toggle = (index) => {
         setOpenIndex(prev => (prev === index ? null : index));
     };
 
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            tl.fromTo(titleRef.current,
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
+            )
+                .fromTo(".faq-item",
+                    { y: 30, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out' },
+                    "-=0.4"
+                );
+        }, containerRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <section className={`py-24 ${bgClass}`}>
+        <section ref={containerRef} className={`py-24 ${bgClass}`}>
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16 lg:gap-24">
 
                     {/* Left: Title */}
-                    <div className="lg:pt-2 flex items-start">
+                    <div ref={titleRef} className="lg:pt-2 flex items-start opacity-0 translate-y-4">
                         <h2 className="text-5xl md:text-6xl font-serif text-charcoal tracking-tight">
                             {title}
                         </h2>

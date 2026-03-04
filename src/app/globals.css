@@ -24,6 +24,10 @@
   body {
     @apply bg-[#ffffff] text-[#1A1A1A];
   }
+
+  p {
+    @apply text-base font-light tracking-wide leading-[1.8];
+  }
 }
 
 /* 

@@ -317,7 +317,8 @@ export default function Marketing() {
 
                 <SplitFeature
                     reverse
-                    bgClass="bg-electric-mint"
+                    bgClass="bg-[#212121]"
+                    theme="dark"
                     image={heroFeature.image}
                     imageAlt={heroFeature.imageAlt}
                     title={heroFeature.title}

@@ -14,7 +14,7 @@ export const Footer = () => {
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white/95 tracking-tight leading-[1.1]">
                             Initialize your sovereign agentic architecture.
                         </h2>
-                        <a href="#contact" className="w-fit border-b border-white/30 pb-1 text-white/60 hover:text-white transition-colors duration-300 font-sans tracking-widest text-xs uppercase mt-4">
+                        <a href="#contact" className="w-fit border-b border-electric-mint/50 pb-1 text-electric-mint hover:text-white transition-colors duration-300 font-sans tracking-widest text-xs uppercase mt-4">
                             Start the dialogue
                         </a>
                     </div>

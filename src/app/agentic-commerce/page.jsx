@@ -162,7 +162,8 @@ const SplitFeature = ({
     ctaText = "Discover",
     ctaLink = "#contact",
     reverse = false,
-    bgClass = "bg-cloud-dancer"
+    bgClass = "bg-cloud-dancer",
+    theme = "light"
 }) => {
     return (
         <section className={`py-20 ${bgClass}`}>
@@ -180,17 +181,17 @@ const SplitFeature = ({
                     <div className={`flex flex-col justify-between h-full gap-16 ${reverse ? 'md:order-first' : ''}`}>
                         <div>
                             {title && (
-                                <h1 className="text-4xl md:text-5xl font-serif text-charcoal tracking-tight mb-8">
+                                <h1 className={`text-4xl md:text-5xl font-serif tracking-tight mb-8 ${theme === 'dark' ? 'text-white' : 'text-charcoal'}`}>
                                     {title}
                                 </h1>
                             )}
                             {text1 && (
-                                <p className="font-sans text-charcoal text-lg leading-relaxed">
+                                <p className={theme === 'dark' ? 'text-white/90' : 'text-charcoal'}>
                                     {text1}
                                 </p>
                             )}
                             {text2 && (
-                                <p className="font-sans text-charcoal text-lg leading-relaxed mt-4">
+                                <p className={`mt-4 ${theme === 'dark' ? 'text-white/90' : 'text-charcoal'}`}>
                                     {text2}
                                 </p>
                             )}
@@ -420,7 +421,8 @@ export default function AgenticCommerce() {
 
                 <SplitFeature
                     reverse
-                    bgClass="bg-electric-mint"
+                    bgClass="bg-[#212121]"
+                    theme="dark"
                     image={heroFeature.image}
                     imageAlt={heroFeature.imageAlt}
                     title={heroFeature.title}
