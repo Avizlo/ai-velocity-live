@@ -132,18 +132,22 @@ export const FAQ = ({ title = "FAQ's", label, faqs = defaultFaqs, bgClass = "bg-
     }, []);
 
     return (
-        <section ref={containerRef} className={`relative py-24 ${bgClass} overflow-hidden`}>
-            {/* Radial gradient overlay for depth */}
+        <section ref={containerRef} className="relative py-24 bg-cloud-dancer overflow-hidden">
+            {/* Subtle graduated green fade */}
             <div
                 className="absolute inset-0 pointer-events-none z-0"
                 style={{
-                    background: 'radial-gradient(ellipse at 50% 40%, rgba(255,255,255,0.35) 0%, transparent 70%)'
+                    background: `
+                        linear-gradient(180deg, rgba(192,233,203,0.08) 0%, rgba(223,244,231,0.15) 30%, rgba(223,244,231,0.12) 70%, rgba(192,233,203,0.06) 100%),
+                        radial-gradient(ellipse at 30% 50%, rgba(192,233,203,0.1) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 30%, rgba(223,244,231,0.08) 0%, transparent 50%)
+                    `
                 }}
             />
-            {/* Decorative Watermark */}
-            <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-[10%] pointer-events-none z-0 select-none">
-                <span className="font-serif italic text-[25vw] leading-none block tracking-tighter opacity-[0.06] text-charcoal">
-                    ?
+            {/* INSIGHTS Watermark */}
+            <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-[5%] pointer-events-none z-0 select-none">
+                <span className="font-serif italic text-[14vw] leading-none block tracking-tighter opacity-[0.04] text-charcoal">
+                    INSIGHTS
                 </span>
             </div>
 

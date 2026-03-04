@@ -360,7 +360,6 @@ export default function Marketing() {
                     title="FAQ's"
                     label="Knowledge Base"
                     faqs={commerceFaqs}
-                    bgClass="bg-electric-mint"
                 />
 
                 <FoundryManifesto
