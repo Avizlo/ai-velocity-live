@@ -21,12 +21,12 @@ export default function RootLayout({ children }) {
             <head>
                 <link rel="preload" href="/fonts/times-italic.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
             </head>
-            <body className="font-sans antialiased">
-                <div className="relative w-full min-h-screen bg-[#F0F0EC] text-[#1A1A1A]">
+            <body className="font-sans antialiased bg-charcoal">
+                <div className="relative w-full min-h-screen bg-[#F0F0EC] text-[#1A1A1A] z-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                     <Navbar />
                     {children}
-                    <Footer />
                 </div>
+                <Footer />
             </body>
         </html>
     );
