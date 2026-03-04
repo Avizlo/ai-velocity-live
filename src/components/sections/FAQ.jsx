@@ -102,6 +102,7 @@ export const FAQ = ({ title = "FAQ's", label, faqs = defaultFaqs, bgClass = "bg-
     const blob1Ref = useRef(null);
     const blob2Ref = useRef(null);
     const blob3Ref = useRef(null);
+    const blob4Ref = useRef(null);
 
     const toggle = (index) => {
         setOpenIndex(prev => (prev === index ? null : index));
@@ -130,11 +131,11 @@ export const FAQ = ({ title = "FAQ's", label, faqs = defaultFaqs, bgClass = "bg-
                     "-=0.4"
                 );
 
-            // Organic mesh gradient — 3 blobs drifting on infinite loops
-            const blobs = [blob1Ref.current, blob2Ref.current, blob3Ref.current];
+            // Organic mesh gradient — 4 blobs drifting on infinite loops
+            const blobs = [blob1Ref.current, blob2Ref.current, blob3Ref.current, blob4Ref.current];
 
             blobs.forEach((blob, i) => {
-                const duration = 12 + i * 4; // 12s, 16s, 20s
+                const duration = 12 + i * 4; // 12s, 16s, 20s, 24s
                 const xRange = 15 + i * 10;
                 const yRange = 10 + i * 8;
 
@@ -210,6 +211,19 @@ export const FAQ = ({ title = "FAQ's", label, faqs = defaultFaqs, bgClass = "bg-
                     background: 'radial-gradient(ellipse, rgba(255,255,255,0.25) 0%, rgba(200,240,215,0.1) 40%, transparent 65%)',
                     borderRadius: '50%',
                     filter: 'blur(45px)',
+                    willChange: 'transform'
+                }}
+            />
+            {/* Deep forest shadow blob */}
+            <div
+                ref={blob4Ref}
+                className="absolute pointer-events-none z-[1]"
+                style={{
+                    width: '60%', height: '65%',
+                    bottom: '5%', right: '-5%',
+                    background: 'radial-gradient(ellipse, rgba(80,140,90,0.14) 0%, rgba(60,120,75,0.08) 40%, transparent 65%)',
+                    borderRadius: '50%',
+                    filter: 'blur(70px)',
                     willChange: 'transform'
                 }}
             />
