@@ -1,3 +1,8 @@
+'use client';
+
+import { useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CTABanner } from '@/components/sections/CTABanner';
 import { GsapPageWrapper } from '@/components/ui/GsapPageWrapper';
 import { FAQ } from '@/components/sections/FAQ';
@@ -11,6 +16,8 @@ import { FoundryManifesto } from '@/components/sections/FoundryManifesto';
 const heroFeature = {
     image: "/images/agentic-agent-hero.webp",
     imageAlt: "Digital representation of an autonomous Agentic Commerce software delegate",
+    label: "Autonomous Procurement",
+    watermark: "Commerce",
     title: "The Future of Commerce",
     text1: "Agentic commerce represents the fundamental shift to autonomous software delegates executing complex procurement tasks with zero human friction. This is a total replacement of the traditional retail front end with specialized machine-to-machine negotiation rails that bypass the Document Object Model entirely. These digital agents do not care about sleek marketing copy or the psychological tricks used by legacy retail giants to manipulate human desire.",
     text2: "They parse raw data schemas and real-time inventory levels to identify the most efficient purchase route based on a user's pre-defined budget. Every critical product attribute must be instantly readable and verifiable to ensure the autonomous buyer can execute trade with surgical precision."
@@ -50,6 +57,8 @@ const commerceBentoData = {
 const secondaryFeature = {
     image: "/images/ai-model-9.webp",
     imageAlt: "Visualization of the v402 autonomous machine-readable settlement handshake",
+    label: "Settlement Protocol",
+    watermark: "Agents",
     title: "Agentic Agents",
     text1: "The 2026 signal for autonomous settlement is already appearing in the way global payments are being restructured for machine-to-machine commerce. At the heart of this transition is the v402 handshake, a protocol designed to facilitate secure and instant value transfers between agentic agents without human oversight. This system utilizes JSON-LD to provide semantic clarity to every transaction, ensuring that the intent of the buyer is perfectly aligned with the offer of the seller. When an agent initiates a purchase, it validates the cryptographic signatures of the merchant to prevent fraud in a way that legacy credit card processors simply cannot match. The speed of these settlements allows for a level of logistical agility that was previously impossible in international trade.",
     text2: "Ultimately, the move toward agentic commerce is a return to the fundamental principles of trade, stripped of the bloat and inefficiency of the early internet era. By focusing on technical density and high-fidelity data, brands can position themselves at the center of the new autonomous economy. Those who understand the physics of the handshake and the protocol will be the ones who define the next thirty years of global commerce. The transition is accelerating, and the era of the passive consumer is coming to a definitive end."
@@ -156,6 +165,8 @@ const manifestoSections = [
 const SplitFeature = ({
     image,
     imageAlt,
+    label,
+    watermark,
     title,
     text1,
     text2,
@@ -165,12 +176,50 @@ const SplitFeature = ({
     bgClass = "bg-cloud-dancer",
     theme = "light"
 }) => {
+    const containerRef = useRef(null);
+    const imageRef = useRef(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none reverse",
+                }
+            });
+
+            tl.fromTo(imageRef.current,
+                { y: 50, opacity: 0, scale: 0.95 },
+                { y: 0, opacity: 1, scale: 1, duration: 1, ease: 'power3.out' }
+            )
+                .fromTo(containerRef.current.querySelectorAll(".split-anim"),
+                    { y: 30, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' },
+                    "-=0.6"
+                );
+        }, containerRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <section className={`py-20 ${bgClass}`}>
-            <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
+        <section ref={containerRef} className={`relative py-20 ${bgClass} overflow-hidden`}>
+            {/* Typographic Watermark */}
+            {watermark && (
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none z-0 select-none">
+                    <span className={`font-serif italic text-[12vw] leading-none whitespace-nowrap block tracking-tighter opacity-[0.03] ${theme === 'dark' ? 'text-white' : 'text-charcoal'}`}>
+                        {watermark}
+                    </span>
+                </div>
+            )}
+            <div className="max-w-screen-2xl mx-auto px-6 md:px-12 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
                     {/* Left/Right: Image */}
-                    <div className={`group rounded-card overflow-hidden aspect-[4/5] w-full max-w-md ${reverse ? 'md:order-last md:justify-self-end' : ''}`}>
+                    <div ref={imageRef} className={`group rounded-card overflow-hidden aspect-[4/5] w-full max-w-md ${reverse ? 'md:order-last md:justify-self-end' : ''} opacity-0`}>
                         <img loading="lazy" decoding="async"
                             src={image}
                             alt={imageAlt || "Agentic AI model"}
@@ -180,23 +229,36 @@ const SplitFeature = ({
                     {/* Left/Right: Text + CTA */}
                     <div className={`flex flex-col justify-between h-full gap-16 ${reverse ? 'md:order-first' : ''}`}>
                         <div>
+                            {label && (
+                                <span className={`split-anim block font-mono text-[10px] tracking-[0.25em] uppercase mb-4 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/40' : 'text-charcoal/40'}`}>
+                                    {label}
+                                </span>
+                            )}
                             {title && (
-                                <h1 className={`text-4xl md:text-5xl font-serif tracking-tight mb-8 ${theme === 'dark' ? 'text-white' : 'text-charcoal'}`}>
+                                <h2 className={`split-anim text-4xl md:text-5xl font-serif tracking-tight mb-8 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white' : 'text-charcoal'}`}>
                                     {title}
-                                </h1>
+                                </h2>
                             )}
                             {text1 && (
-                                <p className={theme === 'dark' ? 'text-white/90' : 'text-charcoal'}>
+                                <p className={`split-anim font-sans opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/90' : 'text-charcoal'}`}>
                                     {text1}
                                 </p>
                             )}
                             {text2 && (
-                                <p className={`mt-4 ${theme === 'dark' ? 'text-white/90' : 'text-charcoal'}`}>
+                                <p className={`split-anim font-sans mt-4 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/90' : 'text-charcoal'}`}>
                                     {text2}
                                 </p>
                             )}
                         </div>
 
+                        <div className="split-anim opacity-0 translate-y-4">
+                            <a
+                                href={ctaLink}
+                                className={`inline-block border-b pb-1 transition-colors duration-300 font-sans tracking-widest text-xs uppercase ${theme === 'dark' ? 'text-white/70 border-white/30 hover:text-electric-mint hover:border-electric-mint/50' : 'text-charcoal border-charcoal/30 hover:text-electric-mint hover:border-electric-mint/50'}`}
+                            >
+                                {ctaText} →
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -205,28 +267,53 @@ const SplitFeature = ({
 };
 
 const StatementAction = ({ title, subtitle, statement, actionText }) => {
+    const sectionRef = useRef(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            gsap.fromTo(sectionRef.current.querySelectorAll('.stmt-anim'),
+                { y: 40, opacity: 0 },
+                {
+                    y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: 'top 80%',
+                        toggleActions: 'play none none reverse'
+                    }
+                }
+            );
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <section className="py-20 bg-cloud-dancer">
+        <section ref={sectionRef} className="py-20 bg-cloud-dancer">
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
                 {(title || subtitle) && (
                     <div className="mb-10 text-left">
+                        <span className="stmt-anim block font-mono text-[10px] tracking-[0.25em] uppercase mb-4 text-charcoal/40 opacity-0 translate-y-4">
+                            Commerce Protocol
+                        </span>
                         {title && (
-                            <h1 className="text-4xl md:text-5xl font-serif text-charcoal tracking-tight mb-4">
+                            <h1 className="stmt-anim text-4xl md:text-5xl font-serif text-charcoal tracking-tight mb-4 opacity-0 translate-y-4">
                                 {title}
                             </h1>
                         )}
                         {subtitle && (
-                            <p className="font-sans text-xs font-bold text-charcoal tracking-wide">
+                            <p className="stmt-anim font-sans text-xs font-bold text-charcoal tracking-wide opacity-0 translate-y-4">
                                 {subtitle}
                             </p>
                         )}
                     </div>
                 )}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_28rem] gap-12 lg:gap-20 items-center">
-                    <p className="font-serif italic text-[1.5rem] md:text-[2rem] lg:text-[2.2rem] text-charcoal leading-[1.3] tracking-tight lg:-mr-[125px] relative z-10">
+                    <p className="stmt-anim font-serif italic text-[1.5rem] md:text-[2rem] lg:text-[2.2rem] text-charcoal leading-[1.3] tracking-tight lg:-mr-[125px] relative z-10 opacity-0 translate-y-4">
                         {statement}
                     </p>
-                    <div className="w-full flex items-center justify-center">
+                    <div className="stmt-anim w-full flex items-center justify-center opacity-0 translate-y-4">
                         <p className="font-sans text-base md:text-lg text-charcoal font-bold tracking-tight text-center whitespace-nowrap">
                             {actionText}
                         </p>
@@ -238,7 +325,7 @@ const StatementAction = ({ title, subtitle, statement, actionText }) => {
 };
 
 const StatCard2 = ({ pct, dashPct, heading, body, link }) => (
-    <div className="rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[280px]">
+    <div className="rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[280px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
         <div className="flex items-center gap-3">
             <div className="relative w-14 h-14">
                 <svg className="w-full h-full -rotate-90" viewBox="0 0 56 56">
@@ -258,19 +345,41 @@ const StatCard2 = ({ pct, dashPct, heading, body, link }) => (
         <div className="mt-6 space-y-3">
             <h3 className="font-sans font-bold text-charcoal text-xl leading-tight">{heading}</h3>
             <p className="font-sans text-charcoal/60 text-sm leading-relaxed">{body}</p>
-            <span className="inline-block font-sans text-charcoal text-sm border-b border-charcoal/40 cursor-pointer hover:border-charcoal transition-colors duration-200">
-                {link}
+            <span className="inline-block font-sans text-charcoal text-xs tracking-widest uppercase border-b border-charcoal/30 pb-1 cursor-pointer hover:text-electric-mint hover:border-electric-mint/50 transition-colors duration-200">
+                {link} →
             </span>
         </div>
     </div>
 );
 
 const BentoGrid2 = ({ data }) => {
+    const gridRef = useRef(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            gsap.fromTo(gridRef.current.querySelectorAll('.bento-card'),
+                { y: 40, opacity: 0 },
+                {
+                    y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: gridRef.current,
+                        start: 'top 80%',
+                        toggleActions: 'play none none reverse'
+                    }
+                }
+            );
+        }, gridRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
         <section className="py-12 bg-cloud-dancer">
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4" style={{ gridTemplateRows: 'auto' }}>
-                    <div className="md:col-start-1 md:row-start-1">
+                <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-4" style={{ gridTemplateRows: 'auto' }}>
+                    <div className="bento-card md:col-start-1 md:row-start-1 opacity-0 translate-y-4">
                         <StatCard2
                             pct={data.statLine.pct}
                             dashPct={data.statLine.dashPct}
@@ -279,29 +388,33 @@ const BentoGrid2 = ({ data }) => {
                             link={data.statLine.link}
                         />
                     </div>
-                    <div className="group md:col-start-2 md:row-start-1 md:row-span-2 rounded-2xl overflow-hidden min-h-[580px]">
+                    <div className="bento-card group md:col-start-2 md:row-start-1 md:row-span-2 rounded-2xl overflow-hidden min-h-[580px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-4">
                         <img loading="lazy" decoding="async"
                             src={data.images.center}
                             alt={data.images.centerAlt || "Center featured"}
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                     </div>
-                    <div className="group md:col-start-3 md:row-start-1 rounded-2xl overflow-hidden min-h-[200px]">
+                    <div className="bento-card group md:col-start-3 md:row-start-1 rounded-2xl overflow-hidden min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-4">
                         <img loading="lazy" decoding="async"
                             src={data.images.brand}
                             alt={data.images.brandAlt || "Brand campaign"}
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                     </div>
-                    <div className="group md:col-start-1 md:row-start-2 rounded-2xl overflow-hidden min-h-[280px]">
+                    <div className="bento-card group md:col-start-1 md:row-start-2 rounded-2xl overflow-hidden min-h-[280px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-4">
                         <img loading="lazy" decoding="async"
                             src={data.images.bottomLeft}
                             alt={data.images.bottomLeftAlt || "Bottom left model"}
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                     </div>
-                    <div className="md:col-start-3 md:row-start-2 rounded-2xl bg-charcoal p-8 flex flex-col justify-between min-h-[180px]">
-                        <div className="space-y-3">
+                    <div className="bento-card relative md:col-start-3 md:row-start-2 rounded-2xl bg-charcoal p-8 flex flex-col justify-between min-h-[180px] ring-1 ring-white/5 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-4">
+                        {/* CTA Watermark */}
+                        <span className="absolute bottom-4 right-4 font-serif italic text-[4rem] leading-none text-white/[0.03] pointer-events-none select-none tracking-tighter">
+                            Velocity
+                        </span>
+                        <div className="space-y-3 relative z-10">
                             <h3 className="font-serif text-white text-3xl leading-tight tracking-tight">
                                 {data.cta.heading}
                             </h3>
@@ -311,10 +424,9 @@ const BentoGrid2 = ({ data }) => {
                         </div>
                         <a
                             href={data.cta.buttonLink}
-                            className="self-start inline-flex items-center gap-2 px-5 py-2.5 rounded-card bg-white text-charcoal text-sm font-sans font-medium hover:bg-electric-mint transition-all duration-300 group"
+                            className="relative z-10 self-start inline-block border-b border-white/30 pb-1 text-white/70 transition-colors duration-300 font-sans tracking-widest text-xs uppercase hover:text-electric-mint hover:border-electric-mint/50"
                         >
-                            {data.cta.buttonText}
-                            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                            {data.cta.buttonText} →
                         </a>
                     </div>
                 </div>
@@ -325,31 +437,57 @@ const BentoGrid2 = ({ data }) => {
 
 
 const NewsInsight = ({ title, description, posts }) => {
+    const newsRef = useRef(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            gsap.fromTo(newsRef.current.querySelectorAll('.news-anim'),
+                { y: 30, opacity: 0 },
+                {
+                    y: 0, opacity: 1, duration: 0.8, stagger: 0.12, ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: newsRef.current,
+                        start: 'top 80%',
+                        toggleActions: 'play none none reverse'
+                    }
+                }
+            );
+        }, newsRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <section className="py-20 bg-cloud-dancer">
+        <section ref={newsRef} className="py-20 bg-cloud-dancer">
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
                     <div className="flex flex-col justify-between h-full gap-16">
                         <div className="space-y-4">
-                            <h2 className="font-serif text-charcoal text-4xl md:text-5xl tracking-tight">
+                            <span className="news-anim block font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 opacity-0 translate-y-4">
+                                Latest Insights
+                            </span>
+                            <h2 className="news-anim font-serif text-charcoal text-4xl md:text-5xl tracking-tight opacity-0 translate-y-4">
                                 {title}
                             </h2>
-                            <p className="font-sans text-charcoal/50 text-sm leading-relaxed max-w-xs">
+                            <p className="news-anim font-sans text-charcoal/50 text-sm leading-relaxed max-w-xs opacity-0 translate-y-4">
                                 {description}
                             </p>
                         </div>
-                        <a
-                            href="#blog"
-                            className="self-start inline-flex items-center gap-2 px-6 py-3 rounded-card border border-charcoal/30 text-charcoal text-sm font-sans font-medium hover:bg-charcoal hover:text-white transition-all duration-300 group"
-                        >
-                            View Blog
-                            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                        </a>
+                        <div className="news-anim opacity-0 translate-y-4">
+                            <a
+                                href="#blog"
+                                className="inline-block border-b border-charcoal/30 pb-1 text-charcoal transition-colors duration-300 font-sans tracking-widest text-xs uppercase hover:text-electric-mint hover:border-electric-mint/50"
+                            >
+                                View Blog →
+                            </a>
+                        </div>
                     </div>
                     <div className="flex flex-col gap-5">
                         {posts.map((post, i) => (
-                            <a key={i} href="#blog" className="flex gap-5 items-start group cursor-pointer">
-                                <div className="shrink-0 w-44 md:w-52 aspect-[16/10] rounded-card overflow-hidden bg-charcoal/5">
+                            <a key={i} href="#blog" className="news-anim flex gap-5 items-start group cursor-pointer opacity-0 translate-y-4">
+                                <div className="shrink-0 w-44 md:w-52 aspect-[16/10] rounded-card overflow-hidden bg-charcoal/5 ring-1 ring-charcoal/5">
                                     <img loading="lazy" decoding="async"
                                         src={post.image}
                                         alt={post.alt}
@@ -425,6 +563,8 @@ export default function AgenticCommerce() {
                     theme="dark"
                     image={heroFeature.image}
                     imageAlt={heroFeature.imageAlt}
+                    label={heroFeature.label}
+                    watermark={heroFeature.watermark}
                     title={heroFeature.title}
                     text1={heroFeature.text1}
                     text2={heroFeature.text2}
@@ -437,6 +577,8 @@ export default function AgenticCommerce() {
                 <SplitFeature
                     image={secondaryFeature.image}
                     imageAlt={secondaryFeature.imageAlt}
+                    label={secondaryFeature.label}
+                    watermark={secondaryFeature.watermark}
                     title={secondaryFeature.title}
                     text1={secondaryFeature.text1}
                     text2={secondaryFeature.text2}
@@ -446,6 +588,12 @@ export default function AgenticCommerce() {
                     title="FAQ's"
                     faqs={commerceFaqs}
                     bgClass="bg-electric-mint"
+                />
+
+                <NewsInsight
+                    title="News & Insights"
+                    description="The latest thinking on agentic commerce, autonomous procurement, and the protocols rewriting global trade."
+                    posts={commercePosts}
                 />
 
                 <FoundryManifesto
