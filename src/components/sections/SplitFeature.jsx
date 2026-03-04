@@ -98,15 +98,15 @@ export const SplitFeature = ({
                         </div>
 
                         <div className="split-anim opacity-0 translate-y-4">
-                            <MagneticButton>
-                                <a
-                                    href={ctaLink}
-                                    className={`inline-flex items-center gap-2 px-6 py-3 rounded-card border text-sm font-sans font-medium transition-all duration-300 group ${theme === 'dark' ? 'border-white/30 text-white hover:bg-white hover:text-charcoal' : 'border-charcoal/30 text-charcoal hover:bg-charcoal hover:text-white'}`}
-                                >
-                                    {ctaText}
-                                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                                </a>
-                            </MagneticButton>
+                            <a
+                                href={ctaLink}
+                                className={`inline-block border-b pb-1 transition-colors duration-300 font-sans tracking-widest text-xs uppercase ${theme === 'dark'
+                                    ? 'border-electric-mint/50 text-electric-mint hover:text-white hover:border-white/50'
+                                    : 'border-charcoal/30 text-charcoal hover:text-electric-mint hover:border-electric-mint/50'
+                                    }`}
+                            >
+                                {ctaText} →
+                            </a>
                         </div>
                     </div>
 
