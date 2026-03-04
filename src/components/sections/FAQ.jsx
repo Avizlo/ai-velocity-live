@@ -95,7 +95,7 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
     );
 };
 
-export const FAQ = ({ title = "FAQ's", faqs = defaultFaqs, bgClass = "bg-cloud-dancer" }) => {
+export const FAQ = ({ title = "FAQ's", label, faqs = defaultFaqs, bgClass = "bg-cloud-dancer" }) => {
     const [openIndex, setOpenIndex] = useState(0);
     const containerRef = useRef(null);
     const titleRef = useRef(null);
@@ -137,7 +137,12 @@ export const FAQ = ({ title = "FAQ's", faqs = defaultFaqs, bgClass = "bg-cloud-d
                 <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16 lg:gap-24">
 
                     {/* Left: Title */}
-                    <div ref={titleRef} className="lg:pt-2 flex items-start opacity-0 translate-y-4">
+                    <div ref={titleRef} className="lg:pt-2 flex flex-col items-start opacity-0 translate-y-4">
+                        {label && (
+                            <span className="block font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 mb-4">
+                                {label}
+                            </span>
+                        )}
                         <h2 className="text-5xl md:text-6xl font-serif text-charcoal tracking-tight">
                             {title}
                         </h2>

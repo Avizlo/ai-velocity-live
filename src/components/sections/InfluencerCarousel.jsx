@@ -20,9 +20,14 @@ export const InfluencerCarousel = () => {
             {/* Header */}
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
-                    <h2 className="text-5xl md:text-6xl leading-[1.1] font-serif italic text-charcoal max-w-2xl tracking-tight">
-                        Agentic influencers working to grow your brand 24/7.
-                    </h2>
+                    <div>
+                        <span className="block font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 mb-4">
+                            AI Studio
+                        </span>
+                        <h2 className="text-5xl md:text-6xl leading-[1.1] font-serif italic text-charcoal max-w-2xl tracking-tight">
+                            Agentic influencers working to grow your brand 24/7.
+                        </h2>
+                    </div>
                     <div className="flex gap-4 shrink-0">
                         <MagneticButton>
                             <button

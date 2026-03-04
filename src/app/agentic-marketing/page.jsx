@@ -329,6 +329,7 @@ export default function Marketing() {
                     reverse
                     bgClass="bg-[#212121]"
                     theme="dark"
+                    label="Intelligence"
                     image={heroFeature.image}
                     imageAlt={heroFeature.imageAlt}
                     title={heroFeature.title}
@@ -339,6 +340,7 @@ export default function Marketing() {
                 <InfluencerCarousel />
 
                 <SplitFeature
+                    label="Influence"
                     image={secondaryFeature.image}
                     imageAlt={secondaryFeature.imageAlt}
                     title={secondaryFeature.title}
@@ -348,6 +350,7 @@ export default function Marketing() {
 
                 <FAQ
                     title="FAQ's"
+                    label="Knowledge Base"
                     faqs={commerceFaqs}
                     bgClass="bg-electric-mint"
                 />

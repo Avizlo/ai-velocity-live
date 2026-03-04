@@ -8,6 +8,7 @@ import { MagneticButton } from '@/components/ui/MagneticButton';
 export const SplitFeature = ({
     image = "/images/ai-model-1.webp",
     imageAlt,
+    label,
     title,
     text1 = "Our agentic systems combine sovereign AI intelligence with creative precision to bring exceptional growth velocity to every brand we activate. Specialising in autonomous content generation, digital identity design, and AI-powered campaign execution — we build infrastructure that performs without limits.",
     text2 = "We are dedicated to achieving exceptional revenue outcomes, while maintaining full brand integrity and strategic alignment for our clients and their audiences.",
@@ -65,6 +66,11 @@ export const SplitFeature = ({
                     {/* Left/Right: Text + CTA */}
                     <div ref={textRef} className={`flex flex-col justify-between h-full gap-16 ${reverse ? 'md:order-first' : ''}`}>
                         <div>
+                            {label && (
+                                <span className={`split-anim block font-mono text-[10px] tracking-[0.25em] uppercase mb-4 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/40' : 'text-charcoal/40'}`}>
+                                    {label}
+                                </span>
+                            )}
                             {title && (
                                 <h2 className={`split-anim text-4xl md:text-5xl font-serif tracking-tight mb-8 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white' : 'text-charcoal'}`}>
                                     {title}
