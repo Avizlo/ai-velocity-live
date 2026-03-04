@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import gsap from 'gsap';
 
 // Dynamically import the Canvas so it only renders on client
-const LiquidCanvas = dynamic(() => import('@/components/ui/LiquidCanvas').then(mod => mod.LiquidCanvas), { ssr: false });
+const ParticleWave = dynamic(() => import('@/components/ui/ParticleWave').then(mod => mod.ParticleWave), { ssr: false });
 
 export const Hero = () => {
     const containerRef = useRef(null);
@@ -23,9 +23,9 @@ export const Hero = () => {
 
     return (
         <section ref={containerRef} data-nav-theme="dark" className="relative min-h-[100svh] w-full flex flex-col justify-end pb-32 md:pb-52 overflow-hidden bg-charcoal">
-            {/* Liquid Metal Background Effect */}
+            {/* Particle Wave Background Effect */}
             <div className="absolute inset-0 z-0">
-                <LiquidCanvas />
+                <ParticleWave />
             </div>
 
             <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-6 md:px-12">
