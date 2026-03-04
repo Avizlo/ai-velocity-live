@@ -34,6 +34,25 @@ export const FoundryManifesto = ({ title = defaultTitle, leadIn = defaultLeadIn,
     const [isOpen, setIsOpen] = useState(false);
     const containerRef = useRef(null);
     const contentRef = useRef(null);
+    const vaultRef = useRef(null);
+    const btnRef = useRef(null);
+
+    const handleToggle = () => {
+        if (isOpen && vaultRef.current && btnRef.current) {
+            // Measure the button's position before collapse
+            const btnRect = btnRef.current.getBoundingClientRect();
+            const vaultHeight = vaultRef.current.scrollHeight;
+
+            setIsOpen(false);
+
+            // After state update, compensate scroll so button stays in view
+            requestAnimationFrame(() => {
+                window.scrollBy({ top: -vaultHeight, behavior: 'instant' });
+            });
+        } else {
+            setIsOpen(true);
+        }
+    };
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -77,6 +96,7 @@ export const FoundryManifesto = ({ title = defaultTitle, leadIn = defaultLeadIn,
                 {/* Hidden Vault Content - Always in the DOM for SEO, toggled visually via CSS Grid */}
                 <div
                     id="foundry-vault-content"
+                    ref={vaultRef}
                     aria-hidden={!isOpen}
                     className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 mb-10' : 'grid-rows-[0fr] opacity-0'}`}
                 >
@@ -94,7 +114,8 @@ export const FoundryManifesto = ({ title = defaultTitle, leadIn = defaultLeadIn,
                 <div className="pt-6 border-t border-charcoal/10 opacity-0 translate-y-4 w-full">
                     <button
                         id="vault-toggle-btn"
-                        onClick={() => setIsOpen(!isOpen)}
+                        ref={btnRef}
+                        onClick={handleToggle}
                         aria-expanded={isOpen}
                         aria-controls="foundry-vault-content"
                         className="inline-block border-b border-charcoal/30 pb-1 text-charcoal hover:text-electric-mint hover:border-electric-mint/50 transition-colors duration-300 font-sans tracking-widest text-xs uppercase cursor-pointer"
