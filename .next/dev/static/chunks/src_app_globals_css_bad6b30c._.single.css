@@ -1,4 +1,20 @@
 /* [project]/src/app/globals.css [app-client] (css) */
+@font-face {
+  font-family: AgenticTimes;
+  src: url("/fonts/times-italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: AgenticTimes;
+  src: url("/fonts/times-italic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 *, :before, :after, ::backdrop {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -261,7 +277,7 @@ img, video {
 }
 
 html {
-  font-family: var(--font-instrument-sans), sans-serif;
+  font-family: Instrument Sans, sans-serif;
 }
 
 body {

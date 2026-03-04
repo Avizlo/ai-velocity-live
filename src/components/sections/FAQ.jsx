@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useRef, useEffect } from 'react';
 import { Plus, X } from 'lucide-react';
 
@@ -91,7 +93,7 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
     );
 };
 
-export const FAQ = ({ title = "FAQ's", faqs = defaultFaqs }) => {
+export const FAQ = ({ title = "FAQ's", faqs = defaultFaqs, bgClass = "bg-cloud-dancer" }) => {
     const [openIndex, setOpenIndex] = useState(0);
 
     const toggle = (index) => {
@@ -99,7 +101,7 @@ export const FAQ = ({ title = "FAQ's", faqs = defaultFaqs }) => {
     };
 
     return (
-        <section className="py-24 bg-cloud-dancer">
+        <section className={`py-24 ${bgClass}`}>
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16 lg:gap-24">
 

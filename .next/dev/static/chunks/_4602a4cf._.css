@@ -311,11 +311,11 @@
 html, :host {
   -webkit-text-size-adjust: 100%;
   tab-size: 4;
+  line-height: 1.5;
+  font-family: var(--font-inter), sans-serif;
   font-feature-settings: normal;
   font-variation-settings: normal;
   -webkit-tap-highlight-color: transparent;
-  font-family: Inter, sans-serif;
-  line-height: 1.5;
 }
 
 body {
@@ -1848,11 +1848,11 @@ body {
 }
 
 .font-sans {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-inter), sans-serif;
 }
 
 .font-serif {
-  font-family: Instrument Serif, serif;
+  font-family: var(--font-instrument-serif), serif;
 }
 
 .text-2xl {

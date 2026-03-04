@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 
 const defaultTitle = "The x402 Sovereign Settlement Architecture";

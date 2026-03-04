@@ -1,23 +1,24 @@
 export const SplitFeature = ({
     image = "/images/ai-model-1.webp",
+    imageAlt,
     title,
     text1 = "Our agentic systems combine sovereign AI intelligence with creative precision to bring exceptional growth velocity to every brand we activate. Specialising in autonomous content generation, digital identity design, and AI-powered campaign execution — we build infrastructure that performs without limits.",
     text2 = "We are dedicated to achieving exceptional revenue outcomes, while maintaining full brand integrity and strategic alignment for our clients and their audiences.",
     ctaText = "Discover",
     ctaLink = "#contact",
-    reverse = false
+    reverse = false,
+    bgClass = "bg-cloud-dancer"
 }) => {
     return (
-        <section className="py-20 bg-cloud-dancer">
+        <section className={`py-20 ${bgClass}`}>
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
 
                     {/* Left/Right: Image */}
                     <div className={`group rounded-card overflow-hidden aspect-[4/5] w-full max-w-md ${reverse ? 'md:order-last md:justify-self-end' : ''}`}>
-                        <img
+                        <img loading="lazy" decoding="async"
                             src={image}
-                            alt="Agentic AI model"
-                            loading="lazy"
+                            alt={imageAlt || "Agentic AI model"}
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                     </div>
