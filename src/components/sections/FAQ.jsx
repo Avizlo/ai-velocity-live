@@ -99,7 +99,9 @@ export const FAQ = ({ title = "FAQ's", label, faqs = defaultFaqs, bgClass = "bg-
     const [openIndex, setOpenIndex] = useState(0);
     const containerRef = useRef(null);
     const titleRef = useRef(null);
-    const glowRef = useRef(null);
+    const blob1Ref = useRef(null);
+    const blob2Ref = useRef(null);
+    const blob3Ref = useRef(null);
 
     const toggle = (index) => {
         setOpenIndex(prev => (prev === index ? null : index));
@@ -127,44 +129,38 @@ export const FAQ = ({ title = "FAQ's", label, faqs = defaultFaqs, bgClass = "bg-
                     { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out' },
                     "-=0.4"
                 );
+
+            // Organic mesh gradient — 3 blobs drifting on infinite loops
+            const blobs = [blob1Ref.current, blob2Ref.current, blob3Ref.current];
+
+            blobs.forEach((blob, i) => {
+                const duration = 12 + i * 4; // 12s, 16s, 20s
+                const xRange = 15 + i * 10;
+                const yRange = 10 + i * 8;
+
+                gsap.to(blob, {
+                    xPercent: xRange,
+                    yPercent: yRange,
+                    scale: 1.15,
+                    duration: duration,
+                    ease: 'sine.inOut',
+                    repeat: -1,
+                    yoyo: true,
+                });
+
+                gsap.to(blob, {
+                    xPercent: -xRange * 0.7,
+                    yPercent: -yRange * 0.5,
+                    duration: duration * 0.7,
+                    ease: 'sine.inOut',
+                    repeat: -1,
+                    yoyo: true,
+                    delay: duration * 0.3,
+                });
+            });
         }, containerRef);
 
-        // Cursor-following glow
-        const section = containerRef.current;
-        const glow = glowRef.current;
-
-        const handleMouseMove = (e) => {
-            const rect = section.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            gsap.to(glow, {
-                left: x,
-                top: y,
-                duration: 0.6,
-                ease: 'power2.out',
-                overwrite: 'auto'
-            });
-        };
-
-        const handleMouseEnter = () => {
-            gsap.to(glow, { opacity: 1, duration: 0.4 });
-        };
-
-        const handleMouseLeave = () => {
-            gsap.to(glow, { opacity: 0, duration: 0.4 });
-        };
-
-        section.addEventListener('mousemove', handleMouseMove);
-        section.addEventListener('mouseenter', handleMouseEnter);
-        section.addEventListener('mouseleave', handleMouseLeave);
-
-        return () => {
-            ctx.revert();
-            section.removeEventListener('mousemove', handleMouseMove);
-            section.removeEventListener('mouseenter', handleMouseEnter);
-            section.removeEventListener('mouseleave', handleMouseLeave);
-        };
+        return () => ctx.revert();
     }, []);
 
     return (
@@ -180,15 +176,41 @@ export const FAQ = ({ title = "FAQ's", label, faqs = defaultFaqs, bgClass = "bg-
                 }}
             />
 
-            {/* Cursor-following radial glow */}
+            {/* Organic mesh gradient blobs */}
             <div
-                ref={glowRef}
-                className="absolute w-[500px] h-[500px] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[1] opacity-0"
+                ref={blob1Ref}
+                className="absolute pointer-events-none z-[1]"
                 style={{
-                    background: 'radial-gradient(circle, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.1) 35%, transparent 65%)',
+                    width: '55%', height: '70%',
+                    top: '-5%', left: '-10%',
+                    background: 'radial-gradient(ellipse, rgba(255,255,255,0.3) 0%, rgba(223,244,231,0.15) 40%, transparent 70%)',
                     borderRadius: '50%',
-                    filter: 'blur(20px)',
-                    willChange: 'left, top'
+                    filter: 'blur(60px)',
+                    willChange: 'transform'
+                }}
+            />
+            <div
+                ref={blob2Ref}
+                className="absolute pointer-events-none z-[1]"
+                style={{
+                    width: '45%', height: '60%',
+                    top: '30%', right: '-8%',
+                    background: 'radial-gradient(ellipse, rgba(150,210,170,0.2) 0%, rgba(192,233,203,0.1) 45%, transparent 70%)',
+                    borderRadius: '50%',
+                    filter: 'blur(50px)',
+                    willChange: 'transform'
+                }}
+            />
+            <div
+                ref={blob3Ref}
+                className="absolute pointer-events-none z-[1]"
+                style={{
+                    width: '40%', height: '50%',
+                    bottom: '-10%', left: '25%',
+                    background: 'radial-gradient(ellipse, rgba(255,255,255,0.25) 0%, rgba(200,240,215,0.1) 40%, transparent 65%)',
+                    borderRadius: '50%',
+                    filter: 'blur(45px)',
+                    willChange: 'transform'
                 }}
             />
 
