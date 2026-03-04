@@ -15,7 +15,13 @@ export const InfluencerCarousel = () => {
     };
 
     return (
-        <section className="py-24 bg-white" data-nav-theme="light">
+        <section className="relative py-24 bg-white overflow-hidden" data-nav-theme="light">
+            {/* Typographic Watermark */}
+            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none z-0 select-none">
+                <span className="font-serif italic text-[12vw] leading-none whitespace-nowrap block tracking-tighter opacity-[0.04] text-charcoal">
+                    INFLUENCE
+                </span>
+            </div>
 
             {/* Header */}
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12">

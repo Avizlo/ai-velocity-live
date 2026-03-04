@@ -330,6 +330,7 @@ export default function Marketing() {
                     bgClass="bg-[#212121]"
                     theme="dark"
                     label="Intelligence"
+                    watermark="VELOCITY"
                     image={heroFeature.image}
                     imageAlt={heroFeature.imageAlt}
                     title={heroFeature.title}
@@ -341,6 +342,7 @@ export default function Marketing() {
 
                 <SplitFeature
                     label="Influence"
+                    watermark="AGENCY"
                     image={secondaryFeature.image}
                     imageAlt={secondaryFeature.imageAlt}
                     title={secondaryFeature.title}
