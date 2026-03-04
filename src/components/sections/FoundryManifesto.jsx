@@ -97,10 +97,9 @@ export const FoundryManifesto = ({ title = defaultTitle, leadIn = defaultLeadIn,
                         onClick={() => setIsOpen(!isOpen)}
                         aria-expanded={isOpen}
                         aria-controls="foundry-vault-content"
-                        className="inline-flex items-center gap-2 px-8 py-3 rounded-card border border-charcoal/30 text-charcoal text-sm font-sans font-bold hover:bg-charcoal hover:text-white transition-all duration-300 group"
+                        className="inline-block border-b border-charcoal/30 pb-1 text-charcoal hover:text-electric-mint hover:border-electric-mint/50 transition-colors duration-300 font-sans tracking-widest text-xs uppercase cursor-pointer"
                     >
-                        {isOpen ? 'Read Less' : 'Read More'}
-                        <span className={`transition-transform duration-300 ${isOpen ? '-rotate-90' : 'rotate-90'}`}>→</span>
+                        {isOpen ? 'Read Less' : 'Read More'} →
                     </button>
                 </div>
 
