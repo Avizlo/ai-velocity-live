@@ -331,6 +331,8 @@ export default function Marketing() {
                     actionText={statementSection.actionText}
                 />
 
+                <InfluencerCarousel />
+
                 <SplitFeature
                     reverse
                     bgClass="bg-[#212121]"
@@ -343,8 +345,6 @@ export default function Marketing() {
                     text1={heroFeature.text1}
                     text2={heroFeature.text2}
                 />
-
-                <InfluencerCarousel />
 
                 <SplitFeature
                     label="Influence"
