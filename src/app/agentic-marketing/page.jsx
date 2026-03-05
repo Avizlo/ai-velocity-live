@@ -20,7 +20,7 @@ const heroFeature = {
 
 const statementSection = {
     title: "Agentic Marketing",
-    subtitle: "We are witnessing the end of an era where manual campaign management and static demographic targeting defined the industry.",
+    subtitle: "PHASE-OUT: MANUAL CAMPAIGN MANAGEMENT",
     statement: `The landscape of digital acquisition is transitioning from "Human- to - Platform" to "Agent - to - Agent, " and the legacy playbooks are being vaporized. Agentic marketing is a transformative evolution of brand growth where autonomous software delegates act on behalf of merchants to identify intent, optimize engagement, and execute conversions independently.`,
     actionText: "Are you ready?"
 };
