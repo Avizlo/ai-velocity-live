@@ -1,6 +1,7 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    turbopack: {},
     // Force Webpack with slower polling to prevent scratchpad hangs
     webpack: (config, { dev, isServer }) => {
         if (dev && !isServer) {
