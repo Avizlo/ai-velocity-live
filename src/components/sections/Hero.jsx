@@ -6,7 +6,6 @@ import gsap from 'gsap';
 
 // Dynamically import the animated backgrounds so they only render on client
 const ParticleWave = dynamic(() => import('@/components/ui/ParticleWave').then(mod => mod.ParticleWave), { ssr: false });
-const LiquidCanvas = dynamic(() => import('@/components/ui/LiquidCanvas').then(mod => mod.LiquidCanvas), { ssr: false });
 
 export const Hero = () => {
     const containerRef = useRef(null);
