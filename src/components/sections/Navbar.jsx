@@ -112,7 +112,8 @@ export const Navbar = () => {
         { name: 'Marketing', path: '/agentic-marketing' },
         { name: 'Payments', path: '/agentic-payments' },
         { name: 'AEO', path: '/agentic-aeo' },
-        { name: 'Strategy', path: '/agentic-strategy' }
+        { name: 'Strategy', path: '/agentic-strategy' },
+        { name: 'News & Insights', path: '/news-insights' }
     ];
 
     return (
@@ -120,14 +121,14 @@ export const Navbar = () => {
             <nav
                 ref={navRef}
                 onMouseLeave={() => setActiveDropdown(null)}
-                className={`fixed top-0 left-0 right-0 z-50 px-6 py-6 flex flex-col items-center transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] font-sans ${isVisible ? 'translate-y-0' : '-translate-y-full'
-                    } ${isScrolled || isMobileMenuOpen || activeDropdown
-                        ? (isMobileMenuOpen || navTheme === 'dark')
-                            ? 'bg-charcoal/70 backdrop-blur-2xl border-b border-white/[0.06] text-white shadow-[0_1px_20px_0_rgba(0,0,0,0.4)]'
-                            : 'bg-white/80 backdrop-blur-xl border-b border-charcoal/10 text-charcoal/75 shadow-[0_1px_0_0_rgba(192,233,203,0.3)]'
+                className={`fixed top-0 left-0 right-0 z-50 px-6 py-6 flex flex-col items-center transition-all duration-300 ease-out font-sans ${isVisible ? 'translate-y-0' : '-translate-y-full'} 
+                    ${isScrolled || isMobileMenuOpen || activeDropdown
+                        ? isMobileMenuOpen || navTheme === 'dark'
+                            ? 'bg-charcoal/80 backdrop-blur-2xl border-b border-white/10 text-white shadow-lg' // Scrolled Dark Mode
+                            : 'bg-white/90 backdrop-blur-2xl border-b border-charcoal/10 text-charcoal shadow-lg' // Scrolled Light Mode
                         : navTheme === 'dark'
-                            ? 'bg-transparent border-b border-transparent text-white'
-                            : 'bg-transparent border-b border-transparent text-charcoal/80'
+                            ? 'bg-transparent border-b border-transparent text-white' // Top Dark Mode
+                            : 'bg-transparent border-b border-transparent text-charcoal' // Top Light Mode
                     }`}
             >
                 <div className="flex items-center justify-between w-full max-w-screen-2xl px-6 md:px-12 relative">

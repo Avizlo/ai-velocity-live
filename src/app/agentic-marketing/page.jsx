@@ -3,6 +3,7 @@ import { GsapPageWrapper } from '@/components/ui/GsapPageWrapper';
 import { SplitFeature } from '@/components/sections/SplitFeature';
 import { FAQ } from '@/components/sections/FAQ';
 import { FoundryManifesto } from '@/components/sections/FoundryManifesto';
+import { RelatedInsights } from '@/components/sections/RelatedInsights';
 import { InfluencerCarousel } from '@/components/sections/InfluencerCarousel';
 
 // ============================================================================
@@ -360,6 +361,11 @@ export default function Marketing() {
                     title="FAQ's"
                     label="Knowledge Base"
                     faqs={commerceFaqs}
+                />
+
+                <RelatedInsights
+                    category="Agentic Marketing"
+                    description="How autonomous agents are transforming campaign orchestration, content generation, and performance marketing."
                 />
 
                 <FoundryManifesto

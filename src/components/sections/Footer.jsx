@@ -6,10 +6,10 @@ export const Footer = () => {
             className="relative h-[85vh] md:h-[70vh] w-full bg-charcoal z-0"
             style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
         >
-            <div className="fixed bottom-0 left-0 w-full h-[85vh] md:h-[70vh] bg-charcoal text-white flex flex-col justify-between pt-24 pb-8 px-6 md:px-12 z-0 overflow-hidden">
+            <div className="fixed bottom-0 left-0 w-full h-[85vh] md:h-[70vh] bg-charcoal text-white flex flex-col justify-between pt-24 pb-8 z-0 overflow-hidden">
 
                 {/* Top Section: CTA + Info */}
-                <div className="w-full max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-start gap-16 relative z-10">
+                <div className="w-full max-w-screen-2xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start gap-16 relative z-10">
                     <div className="flex flex-col gap-6 w-full max-w-lg">
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white/95 tracking-tight leading-[1.1]">
                             Initialize your sovereign agentic architecture.
@@ -43,12 +43,13 @@ export const Footer = () => {
                 </div>
 
                 {/* Bottom Bar - Minimal Row */}
-                <div className="w-full max-w-screen-2xl mx-auto border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-mono text-white/40 tracking-widest relative z-10">
+                <div className="w-full max-w-screen-2xl mx-auto px-6 md:px-12 border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-mono text-white/40 tracking-widest relative z-10">
                     <div className="flex flex-wrap gap-6 md:gap-8 justify-center">
                         <Link href="/" className="hover:text-white transition-colors uppercase">Home</Link>
                         <Link href="/agentic-commerce" className="hover:text-white transition-colors uppercase">Commerce</Link>
                         <Link href="/agentic-marketing" className="hover:text-white transition-colors uppercase">Marketing</Link>
                         <Link href="/agentic-strategy" className="hover:text-white transition-colors uppercase">Strategy</Link>
+                        <Link href="/news-insights" className="hover:text-white transition-colors uppercase">News & Insights</Link>
                     </div>
                     <div className="flex gap-6 justify-center">
                         <span>©2026 AI VELOCITY</span>

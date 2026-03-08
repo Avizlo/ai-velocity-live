@@ -7,6 +7,7 @@ import { CTABanner } from '@/components/sections/CTABanner';
 import { GsapPageWrapper } from '@/components/ui/GsapPageWrapper';
 import { FAQ } from '@/components/sections/FAQ';
 import { FoundryManifesto } from '@/components/sections/FoundryManifesto';
+import { RelatedInsights } from '@/components/sections/RelatedInsights';
 
 // ============================================================================
 // PAGE CONTENT VARIABLES
@@ -614,10 +615,9 @@ export default function AgenticCommerce() {
                     bgClass="bg-electric-mint"
                 />
 
-                <NewsInsight
-                    title="News & Insights"
+                <RelatedInsights
+                    category="Agentic Commerce"
                     description="The latest thinking on agentic commerce, autonomous procurement, and the protocols rewriting global trade."
-                    posts={commercePosts}
                 />
 
                 <FoundryManifesto
