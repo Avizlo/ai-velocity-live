@@ -67,7 +67,7 @@ export const RelatedInsights = ({
                         </div>
                         <div className="ri-anim opacity-0">
                             <Link
-                                href="/news-insights"
+                                href={`/news-insights/${category.toLowerCase().replace(/\s+/g, '-')}`}
                                 className="inline-block border-b border-charcoal/30 pb-1 text-charcoal transition-colors duration-300 font-sans tracking-widest text-xs uppercase hover:text-charcoal/60 hover:border-charcoal/60"
                             >
                                 More {category} Articles →

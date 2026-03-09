@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { insightsData } from '@/lib/insightsData';
+import StickyFilterBar from '@/components/ui/StickyFilterBar';
 import { useState, useEffect, useRef, useCallback, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -39,9 +40,7 @@ function NewsInsightsContent() {
     const router = useRouter();
     const [activeCategory, setActiveCategory] = useState('All');
     const [filteredPosts, setFilteredPosts] = useState(defaultPosts);
-    const [navVisible, setNavVisible] = useState(true);
     const [showMore, setShowMore] = useState(false);
-    const lastScrollY = useRef(0);
 
     const INITIAL_COUNT = getItemCountForRows(2); // Items to fill exactly 2 visual rows
     const PAGE_COUNT = getItemCountForRows(4);     // Items to fill exactly 4 visual rows
@@ -63,20 +62,7 @@ function NewsInsightsContent() {
         window.scrollTo({ top: 400, behavior: 'smooth' });
     }, [searchParams, router]);
 
-    // Mirror the Navbar's show/hide scroll logic
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            if (currentScrollY > lastScrollY.current && currentScrollY > 150) {
-                setNavVisible(false);
-            } else if (currentScrollY < lastScrollY.current) {
-                setNavVisible(true);
-            }
-            lastScrollY.current = currentScrollY;
-        };
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+
 
     // Read category from URL query params (e.g. ?category=agentic-payments)
     useEffect(() => {
@@ -133,7 +119,7 @@ function NewsInsightsContent() {
 
             {/* The Hero Spotlight (Full-Bleed Forensic Visual) */}
             {heroArticle && (
-                <section className="relative w-full h-[70vh] md:h-[85vh] overflow-hidden group border-b border-white/5">
+                <section className="relative w-full h-[70vh] md:h-[70vh] overflow-hidden group border-b border-white/5">
                     <Link href={`/news-insights/${heroArticle.slug}`} className="absolute inset-0 z-10 block">
                         <span className="sr-only">Access {heroArticle.title}</span>
                     </Link>
@@ -193,29 +179,7 @@ function NewsInsightsContent() {
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12 w-full mt-16 md:mt-24">
 
                 {/* Minimalist Native-Feel Filter Bar */}
-                <section className={`mb-16 border-b border-white/10 pb-6 flex flex-col md:flex-row justify-between md:items-end gap-6 sticky z-30 bg-charcoal pt-6 transition-all duration-300 ${navVisible ? 'top-[72px]' : 'top-0'}`}>
-                    <h2 className="font-mono text-xs uppercase tracking-widest text-white/40 mb-2 md:mb-0">
-                        News & Insights
-                    </h2>
-
-                    <div className="flex flex-wrap items-center gap-2 md:gap-4">
-                        {categories.map(cat => {
-                            const count = cat === 'All' ? defaultPosts.length : defaultPosts.filter(p => p.category === cat).length;
-                            return (
-                                <button
-                                    key={cat}
-                                    onClick={() => setActiveCategory(cat)}
-                                    className={`font-mono text-[10px] md:text-xs uppercase tracking-widest px-4 py-2 rounded-card transition-all duration-300 ${activeCategory === cat
-                                        ? 'bg-electric-mint text-charcoal shadow-[0_0_15px_rgba(133,216,172,0.3)]'
-                                        : 'bg-transparent text-white/50 hover:bg-white/5 hover:text-white border border-white/5'
-                                        }`}
-                                >
-                                    {cat} ({count})
-                                </button>
-                            );
-                        })}
-                    </div>
-                </section>
+                <StickyFilterBar activeCategory={activeCategory} label="News & Insights" />
 
                 {/* The Asymmetrical Bento Box Grid */}
                 <section className="min-h-[50vh]">

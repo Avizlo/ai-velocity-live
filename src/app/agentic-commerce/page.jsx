@@ -744,11 +744,11 @@ export default function AgenticCommerce() {
                                     Explore →
                                 </span>
                             </Link>
-                            <Link href="/agentic-photoshoots" className="group rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1">
+                            <Link href="/agentic-marketing" className="group rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1">
                                 <div>
-                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 block mb-3">Creative</span>
-                                    <h3 className="font-serif italic text-charcoal text-2xl leading-tight tracking-tight">AI Photoshoots</h3>
-                                    <p className="font-sans text-charcoal/60 text-sm leading-relaxed mt-2">AI-generated brand ambassadors fluent in 60+ languages, working 24/7.</p>
+                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 block mb-3">Growth</span>
+                                    <h3 className="font-serif italic text-charcoal text-2xl leading-tight tracking-tight">Agentic Marketing</h3>
+                                    <p className="font-sans text-charcoal/60 text-sm leading-relaxed mt-2">Autonomous AI campaign orchestration and content generation at machine speed.</p>
                                 </div>
                                 <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/50 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
                                     Explore →

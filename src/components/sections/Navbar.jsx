@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useLayoutEffect } from 'react';
+import { useNavVisibility } from '@/context/NavVisibilityContext';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MagneticButton } from '@/components/ui/MagneticButton';
@@ -17,14 +18,13 @@ if (typeof window !== 'undefined') {
 
 export const Navbar = () => {
     const pathname = usePathname();
+    const { navVisible, measureNav } = useNavVisibility();
     const navRef = useRef(null);
     const dropdownRef = useRef(null);
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isVisible, setIsVisible] = useState(true);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
-    const [navTheme, setNavTheme] = useState('dark'); // 'dark' = light text on dark bg, 'light' = dark text on light bg
-    const lastScrollY = useRef(0);
+    const [navTheme, setNavTheme] = useState('dark');
 
     useLayoutEffect(() => {
         if (activeDropdown) {
@@ -59,17 +59,6 @@ export const Navbar = () => {
             } else {
                 setIsScrolled(false);
             }
-
-            // Scroll Direction Logic
-            if (currentScrollY > lastScrollY.current && currentScrollY > 150) {
-                // Scrolling down -> Hide (unless mobile menu is open)
-                if (!isMobileMenuOpen) setIsVisible(false);
-            } else if (currentScrollY < lastScrollY.current) {
-                // Scrolling up -> Show
-                setIsVisible(true);
-            }
-
-            lastScrollY.current = currentScrollY;
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
@@ -77,7 +66,7 @@ export const Navbar = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [isMobileMenuOpen]);
+    }, []);
 
     // IntersectionObserver — detect which section is at the top and switch nav theme
     useLayoutEffect(() => {
@@ -119,9 +108,9 @@ export const Navbar = () => {
     return (
         <>
             <nav
-                ref={navRef}
+                ref={(node) => { navRef.current = node; measureNav(node); }}
                 onMouseLeave={() => setActiveDropdown(null)}
-                className={`fixed top-0 left-0 right-0 z-50 px-6 py-6 flex flex-col items-center transition-all duration-300 ease-out font-sans ${isVisible ? 'translate-y-0' : '-translate-y-full'} 
+                className={`fixed top-0 left-0 right-0 z-50 px-6 py-6 flex flex-col items-center transition-all duration-300 ease-out font-sans ${(navVisible || isMobileMenuOpen) ? 'translate-y-0' : '-translate-y-full'} 
                     ${isScrolled || isMobileMenuOpen || activeDropdown
                         ? isMobileMenuOpen || navTheme === 'dark'
                             ? 'bg-charcoal/80 backdrop-blur-2xl border-b border-white/10 text-white shadow-lg' // Scrolled Dark Mode
@@ -217,7 +206,7 @@ export const Navbar = () => {
                                 <div>
                                     <h4 className="text-charcoal font-sans font-medium mb-3 text-lg">Studio</h4>
                                     <div className="flex flex-col gap-3 font-mono text-xs opacity-90">
-                                        <Link href="/agentic-photoshoots" className="text-dew-mint font-bold hover:text-dew-mint-hover transition-colors duration-300">Agentic AI Photoshoots</Link>
+                                        <Link href="/agentic-marketing" className="text-dew-mint font-bold hover:text-dew-mint-hover transition-colors duration-300">Agentic Marketing</Link>
                                         <span className="opacity-60 cursor-default">Digital Lookbooks</span>
                                         <span className="opacity-60 cursor-default">AI Studio Production</span>
                                     </div>

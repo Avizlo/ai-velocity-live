@@ -17,15 +17,15 @@ export const GsapPageWrapper = ({ children, className }) => {
 
         sections.forEach((sec) => {
             gsap.fromTo(sec,
-                { y: 60, opacity: 0 },
+                { y: 30, opacity: 0 },
                 {
                     y: 0,
                     opacity: 1,
-                    duration: 1.2,
+                    duration: 0.6,
                     ease: "power3.out",
                     scrollTrigger: {
                         trigger: sec,
-                        start: "top 85%",
+                        start: "top 95%",
                         toggleActions: "play none none reverse"
                     }
                 }

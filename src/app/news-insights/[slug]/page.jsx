@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
 import { insightsData } from '@/lib/insightsData';
+import { isCategorySlug, CATEGORY_SLUGS, CATEGORY_META } from '@/lib/categoryRegistry';
+import CategoryPage from '@/components/pages/CategoryPage';
 import Image from 'next/image';
 import Link from 'next/link';
 import { NextProtocolBridge } from '@/components/sections/NextProtocolBridge';
@@ -14,6 +16,43 @@ const SITE_URL = 'https://ai-velocity.com';
 export async function generateMetadata({ params }) {
     const resolvedParams = await params;
     const { slug } = resolvedParams;
+
+    // Category page metadata
+    if (isCategorySlug(slug)) {
+        const meta = CATEGORY_META[slug];
+        const categoryName = CATEGORY_SLUGS[slug];
+        const categoryUrl = `${SITE_URL}/news-insights/${slug}`;
+
+        // Use the most recent article's image as OG image for the category
+        const heroArticle = [...insightsData]
+            .filter(post => post.category === categoryName)
+            .sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+        const ogImage = heroArticle
+            ? (heroArticle.image.startsWith('http') ? heroArticle.image : `${SITE_URL}${heroArticle.image}`)
+            : `${SITE_URL}/og-default.png`;
+
+        return {
+            title: meta.title,
+            description: meta.description,
+            alternates: { canonical: categoryUrl },
+            openGraph: {
+                title: meta.title,
+                description: meta.description,
+                url: categoryUrl,
+                type: 'website',
+                siteName: 'AI Velocity',
+                images: [{ url: ogImage, width: 1200, height: 630, alt: `${categoryName} — AI Velocity` }],
+            },
+            twitter: {
+                card: 'summary_large_image',
+                title: meta.title,
+                description: meta.description,
+                images: [ogImage],
+            },
+        };
+    }
+
+    // Article metadata
     const article = insightsData.find(post => post.slug === slug);
 
     if (!article) return { title: 'Not Found | AI Velocity' };
@@ -54,14 +93,22 @@ export async function generateMetadata({ params }) {
     };
 }
 
-// Pre-render all article slugs at build time
+// Pre-render all article slugs AND category slugs at build time
 export async function generateStaticParams() {
-    return insightsData.map(post => ({ slug: post.slug }));
+    const articleParams = insightsData.map(post => ({ slug: post.slug }));
+    const categoryParams = Object.keys(CATEGORY_SLUGS).map(slug => ({ slug }));
+    return [...articleParams, ...categoryParams];
 }
 
 export default async function ArticlePage({ params }) {
     const resolvedParams = await params;
     const { slug } = resolvedParams;
+
+    // If slug matches a known category, render the category page
+    if (isCategorySlug(slug)) {
+        return <CategoryPage categorySlug={slug} />;
+    }
+
     const article = insightsData.find(post => post.slug === slug);
 
     if (!article) return notFound();

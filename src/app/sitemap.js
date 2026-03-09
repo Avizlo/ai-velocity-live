@@ -1,4 +1,5 @@
 import { insightsData } from '@/lib/insightsData';
+import { CATEGORY_SLUGS } from '@/lib/categoryRegistry';
 
 const BASE_URL = 'https://ai-velocity.com';
 
@@ -41,12 +42,7 @@ export default function sitemap() {
             changeFrequency: 'monthly',
             priority: 0.8,
         },
-        {
-            url: `${BASE_URL}/agentic-photoshoots`,
-            lastModified: new Date('2026-03-01'),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
+
         {
             url: `${BASE_URL}/business-payments`,
             lastModified: new Date('2026-03-01'),
@@ -73,6 +69,23 @@ export default function sitemap() {
         },
     ];
 
+    // Dynamic blog category pages — lastModified from most recent article in category
+    const categoryPages = Object.keys(CATEGORY_SLUGS).map(slug => {
+        const categoryName = CATEGORY_SLUGS[slug];
+        const categoryArticles = insightsData
+            .filter(a => a.category === categoryName)
+            .sort((a, b) => new Date(b.date) - new Date(a.date));
+        const latestDate = categoryArticles.length > 0
+            ? new Date(categoryArticles[0].date)
+            : new Date();
+        return {
+            url: `${BASE_URL}/news-insights/${slug}`,
+            lastModified: latestDate,
+            changeFrequency: 'weekly',
+            priority: 0.75,
+        };
+    });
+
     // Dynamic blog article pages
     const articlePages = insightsData.map(article => ({
         url: `${BASE_URL}/news-insights/${article.slug}`,
@@ -81,5 +94,5 @@ export default function sitemap() {
         priority: 0.7,
     }));
 
-    return [...staticPages, ...articlePages];
+    return [...staticPages, ...categoryPages, ...articlePages];
 }
