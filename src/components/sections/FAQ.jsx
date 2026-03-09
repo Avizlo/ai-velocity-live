@@ -40,7 +40,7 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
     }, [isOpen]);
 
     return (
-        <div className="border-t border-charcoal/10 last:border-b faq-item opacity-0 translate-y-4">
+        <div className="border-t border-charcoal/10 last:border-b">
             {/* Question row */}
             <button
                 onClick={onToggle}
@@ -112,25 +112,6 @@ export const FAQ = ({ title = "FAQ's", label, faqs = defaultFaqs, bgClass = "bg-
         gsap.registerPlugin(ScrollTrigger);
 
         const ctx = gsap.context(() => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: "top 80%",
-                    end: "bottom 20%",
-                    toggleActions: "play none none reverse"
-                }
-            });
-
-            tl.fromTo(titleRef.current,
-                { y: 30, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
-            )
-                .fromTo(".faq-item",
-                    { y: 30, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out' },
-                    "-=0.4"
-                );
-
             // Organic mesh gradient — 4 blobs drifting on infinite loops
             const blobs = [blob1Ref.current, blob2Ref.current, blob3Ref.current, blob4Ref.current];
 
@@ -232,7 +213,7 @@ export const FAQ = ({ title = "FAQ's", label, faqs = defaultFaqs, bgClass = "bg-
                 <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16 lg:gap-24">
 
                     {/* Left: Title */}
-                    <div ref={titleRef} className="lg:pt-2 flex flex-col items-start opacity-0 translate-y-4">
+                    <div ref={titleRef} className="lg:pt-2 flex flex-col items-start">
                         {label && (
                             <span className="block font-mono text-[10px] tracking-[0.25em] uppercase text-[#1a1a1a]/50 mb-4">
                                 {label}

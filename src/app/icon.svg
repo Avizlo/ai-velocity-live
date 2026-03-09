@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Λ (A without horizontal bar) -->
+  <path d="M1 24 L6.5 10 L12 24" fill="none" stroke="#85D8AC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- I -->
+  <line x1="16" y1="10" x2="16" y2="24" stroke="#85D8AC" stroke-width="2" stroke-linecap="round"/>
+  <!-- V — mirror of Λ -->
+  <path d="M20 10 L25.5 24 L31 10" fill="none" stroke="#85D8AC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

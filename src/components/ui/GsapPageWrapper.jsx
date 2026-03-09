@@ -17,25 +17,34 @@ export const GsapPageWrapper = ({ children, className }) => {
 
         sections.forEach((sec) => {
             if (sec.hasAttribute('data-no-anim')) return;
-            gsap.fromTo(sec,
-                { y: 30, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.6,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: sec,
-                        start: "top 95%",
-                        toggleActions: "play none none reverse"
-                    }
+
+            // Check if section is already in viewport on load
+            const rect = sec.getBoundingClientRect();
+            const isInViewport = rect.top < window.innerHeight;
+
+            if (isInViewport) {
+                // Already visible — no animation needed
+                return;
+            }
+
+            // Below the fold — fade in on scroll
+            gsap.set(sec, { opacity: 0 });
+
+            gsap.to(sec, {
+                opacity: 1,
+                duration: 0.6,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: sec,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
                 }
-            );
+            });
         });
     }, { scope: container });
 
     return (
-        <div ref={container} className={`flex flex-col overflow-hidden ${className || ''}`}>
+        <div ref={container} className={`flex flex-col bg-cloud-dancer ${className || ''}`}>
             {children}
         </div>
     );

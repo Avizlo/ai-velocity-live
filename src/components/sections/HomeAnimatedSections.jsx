@@ -16,7 +16,7 @@ export const HomeAnimatedSections = ({ services, stats, latestInsights, faqs }) 
                         The world of commerce is changing.
                     </h2>
                     <p className="font-sans text-charcoal/60 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-                        AI agents will soon find, compare, and buy products without human input. Brands that embrace agentic sales and marketing will win.
+                        AI agents will soon find, compare, and buy products without human input. Brands that embrace agentic commerce, sales and marketing will win.
                     </p>
                 </div>
             </section>

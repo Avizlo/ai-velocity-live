@@ -137,7 +137,7 @@ export const Navbar = () => {
                         {/* Desktop Links - Using Sans for structure */}
                         <div className="hidden lg:flex items-center gap-8 text-sm font-medium opacity-90 tracking-widest">
                             {categories.map((cat) => (
-                                <MagneticButton key={cat.name} className="cursor-pointer group relative">
+                                <div key={cat.name} className="cursor-pointer group relative">
                                     <Link
                                         href={cat.path}
                                         className="block transition-colors duration-300 nav-link-text"
@@ -147,11 +147,12 @@ export const Navbar = () => {
                                         {/* Unified underline: short bar when active, full width on hover */}
                                         <span className={`absolute -bottom-1.5 left-1/2 h-[1.5px] -translate-x-1/2 transition-all duration-300 ease-out group-hover:w-full ${pathname === cat.path ? 'w-[16px] bg-electric-mint' : 'w-0 bg-current'}`}></span>
                                     </Link>
-                                </MagneticButton>
+                                </div>
                             ))}
                         </div>
 
                         <button
+                            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
                             className={`lg:hidden transition-colors ${isScrolled || isMobileMenuOpen || activeDropdown
                                 ? (isMobileMenuOpen || navTheme === 'dark')
                                     ? 'text-white/80 hover:text-white'
