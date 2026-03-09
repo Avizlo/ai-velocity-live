@@ -2,11 +2,9 @@
 
 User-agent: *
 Allow: /
-Disallow: /sandbox/
-Disallow: /sandbox2/
 
 # Sitemap
-Sitemap: https://ai-velocity.com/sitemap.xml
+Sitemap: https://aivelocity.dev/sitemap.xml
 
 # LLM Crawlers — explicitly allowed
 User-agent: GPTBot
