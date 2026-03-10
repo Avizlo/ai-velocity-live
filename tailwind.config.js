@@ -3,7 +3,19 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      colors: { 'cloud-dancer': '#ffffff', 'dew-mint': '#dff4e7', 'electric-mint': '#c0e9cb', 'charcoal': '#1A1A1A', 'steel': '#6B6B6B' },
+      colors: {
+        // TODO: Customise your brand palette here
+        'cloud-dancer': '#ffffff',   // Background — light pages
+        'dew-mint': '#dff4e7',       // Soft accent / hover states
+        'electric-mint': '#c0e9cb',  // Primary accent (CTAs, links, highlights)
+        'charcoal': '#1A1A1A',       // Dark background / text
+        'steel': '#6B6B6B',          // Muted body copy
+
+        // Semantic aliases — use these in your pages for quick rebranding
+        'primary': '#c0e9cb',        // Maps to electric-mint
+        'secondary': '#1A1A1A',      // Maps to charcoal
+        'accent': '#dff4e7',         // Maps to dew-mint
+      },
       fontFamily: {
         sans: ['var(--font-inter)', 'sans-serif'],
         serif: ['AgenticTimes', 'ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],

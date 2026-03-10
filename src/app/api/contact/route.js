@@ -113,7 +113,7 @@ export async function POST(request) {
             });
 
             await transporter.sendMail({
-                from: `"AI Velocity Contact" <${zohoEmail}>`,
+                from: `"Your Brand Contact" <${zohoEmail}>`,
                 to: zohoEmail,
                 replyTo: cleanEmail,
                 subject: `New Contact: ${cleanName}`,
@@ -127,7 +127,7 @@ export async function POST(request) {
                         <p><strong>Message:</strong></p>
                         <div style="background: #f5f5f5; padding: 16px; border-radius: 4px; white-space: pre-wrap;">${cleanMessage}</div>
                         <hr style="margin-top: 32px; border: none; border-top: 1px solid #eee;" />
-                        <p style="color: #999; font-size: 12px;">Sent from the AI Velocity contact form</p>
+                        <p style="color: #999; font-size: 12px;">Sent from the Your Brand contact form</p>
                     </div>
                 `,
             });

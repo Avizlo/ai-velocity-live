@@ -11,8 +11,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-    title: 'Ai Velocity Foundry | Leading the Era of Agentic Commerce',
-    description: 'Master the shift to Agentic Commerce and Marketing with Ai Velocity. We provide the tools for the next generation of commerce.',
+    title: 'Your Brand Name | Leading the Era of Agentic Commerce',
+    description: 'Master the shift to Agentic Commerce and Marketing with Your Brand. We provide the tools for the next generation of commerce.',
     keywords: 'Agentic Commerce, Agentic Marketing, Sovereign Visual Intelligence, Autonomous Growth',
 };
 

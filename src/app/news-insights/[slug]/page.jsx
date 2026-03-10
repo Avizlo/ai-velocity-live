@@ -10,7 +10,7 @@ import { ReadingProgress } from '@/components/ui/ReadingProgress';
 import { ShareButton } from '@/components/ui/ShareButton';
 import { ContextualLinker } from '@/components/ui/ContextualLinker';
 
-const SITE_URL = 'https://ai-velocity.com';
+const SITE_URL = 'https://example.com';
 
 // Generate dynamic metadata for SEO/AEO
 export async function generateMetadata({ params }) {
@@ -40,8 +40,8 @@ export async function generateMetadata({ params }) {
                 description: meta.description,
                 url: categoryUrl,
                 type: 'website',
-                siteName: 'AI Velocity',
-                images: [{ url: ogImage, width: 1200, height: 630, alt: `${categoryName} — AI Velocity` }],
+                siteName: 'Your Brand',
+                images: [{ url: ogImage, width: 1200, height: 630, alt: `${categoryName} — Your Brand` }],
             },
             twitter: {
                 card: 'summary_large_image',
@@ -55,13 +55,13 @@ export async function generateMetadata({ params }) {
     // Article metadata
     const article = insightsData.find(post => post.slug === slug);
 
-    if (!article) return { title: 'Not Found | AI Velocity' };
+    if (!article) return { title: 'Not Found | Your Brand' };
 
     const articleUrl = `${SITE_URL}/news-insights/${article.slug}`;
     const imageUrl = article.image.startsWith('http') ? article.image : `${SITE_URL}${article.image}`;
 
     return {
-        title: `${article.title} | AI Velocity`,
+        title: `${article.title} | Your Brand`,
         description: article.excerpt,
         alternates: {
             canonical: articleUrl,
@@ -122,7 +122,7 @@ export default async function ArticlePage({ params }) {
         '@type': article.category === 'News' ? 'NewsArticle' : 'Article',
         headline: article.title,
         description: article.excerpt,
-        image: article.image.startsWith('http') ? article.image : `https://ai-velocity.com${article.image}`,
+        image: article.image.startsWith('http') ? article.image : `https://example.com${article.image}`,
         datePublished: article.date,
         dateModified: article.dateModified || article.date,
         wordCount: wordCount,
@@ -131,20 +131,20 @@ export default async function ArticlePage({ params }) {
         isAccessibleForFree: true,
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': `https://ai-velocity.com/news-insights/${article.slug}`
+            '@id': `https://example.com/news-insights/${article.slug}`
         },
         author: {
             '@type': 'Organization',
             name: article.author,
-            url: 'https://ai-velocity.com'
+            url: 'https://example.com'
         },
         publisher: {
             '@type': 'Organization',
-            name: 'AI Velocity',
-            url: 'https://ai-velocity.com',
+            name: 'Your Brand',
+            url: 'https://example.com',
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://ai-velocity.com/logo.png'
+                url: 'https://example.com/logo.png'
             }
         },
         speakable: {
@@ -154,9 +154,9 @@ export default async function ArticlePage({ params }) {
         ...(article.categoryPage && article.categoryPage !== '/news-insights' ? {
             isPartOf: {
                 '@type': 'WebPage',
-                '@id': `https://ai-velocity.com${article.categoryPage}`,
+                '@id': `https://example.com${article.categoryPage}`,
                 name: article.category,
-                url: `https://ai-velocity.com${article.categoryPage}`
+                url: `https://example.com${article.categoryPage}`
             }
         } : {})
     };
@@ -184,19 +184,19 @@ export default async function ArticlePage({ params }) {
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Home',
-                item: 'https://ai-velocity.com',
+                item: 'https://example.com',
             },
             {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'News & Insights',
-                item: 'https://ai-velocity.com/news-insights',
+                item: 'https://example.com/news-insights',
             },
             {
                 '@type': 'ListItem',
                 position: 3,
                 name: article.title,
-                item: `https://ai-velocity.com/news-insights/${article.slug}`,
+                item: `https://example.com/news-insights/${article.slug}`,
             },
         ],
     };

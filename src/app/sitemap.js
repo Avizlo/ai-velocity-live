@@ -1,7 +1,7 @@
 import { insightsData } from '@/lib/insightsData';
 import { CATEGORY_SLUGS } from '@/lib/categoryRegistry';
 
-const BASE_URL = 'https://aivelocity.dev';
+const BASE_URL = 'https://example.com';
 
 export default function sitemap() {
     // Static pages

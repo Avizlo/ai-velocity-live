@@ -421,21 +421,21 @@ export default function AgenticPayments() {
         "@graph": [
             {
                 "@type": "Organization",
-                "@id": "https://ai-velocity.com/#organization",
-                "name": "AI Velocity",
-                "url": "https://ai-velocity.com",
+                "@id": "https://example.com/#organization",
+                "name": "Your Brand",
+                "url": "https://example.com",
                 "sameAs": [
-                    "https://www.linkedin.com/company/ai-velocity"
+                    "https://www.linkedin.com/company/yourbrand"
                 ]
             },
             {
                 "@type": "WebPage",
-                "@id": "https://ai-velocity.com/agentic-payments/#webpage",
-                "url": "https://ai-velocity.com/agentic-payments",
+                "@id": "https://example.com/agentic-payments/#webpage",
+                "url": "https://example.com/agentic-payments",
                 "name": "Agentic Payments — Autonomous Settlement Infrastructure",
                 "description": "Agentic payments orchestrate instant, machine-to-machine settlements via autonomous software delegates. The v402 handshake protocol enables sovereign, cryptographically verified settlement.",
-                "isPartOf": { "@id": "https://ai-velocity.com/#website" },
-                "about": { "@id": "https://ai-velocity.com/agentic-payments/#service" },
+                "isPartOf": { "@id": "https://example.com/#website" },
+                "about": { "@id": "https://example.com/agentic-payments/#service" },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", "h2", ".stmt-anim"]
@@ -448,24 +448,24 @@ export default function AgenticPayments() {
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://ai-velocity.com"
+                        "item": "https://example.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Agentic Payments",
-                        "item": "https://ai-velocity.com/agentic-payments"
+                        "item": "https://example.com/agentic-payments"
                     }
                 ]
             },
             {
                 "@type": "Service",
-                "@id": "https://ai-velocity.com/agentic-payments/#service",
+                "@id": "https://example.com/agentic-payments/#service",
                 "name": "Agentic Payments",
                 "description": "Autonomous AI agent infrastructure for machine-to-machine settlement, sovereign financial rails, and cryptographically verified transactions at global scale.",
                 "serviceType": "Autonomous Settlement Infrastructure",
                 "areaServed": "Worldwide",
-                "provider": { "@id": "https://ai-velocity.com/#organization" },
+                "provider": { "@id": "https://example.com/#organization" },
                 "hasOfferCatalog": {
                     "@type": "OfferCatalog",
                     "name": "Agentic Payment Services",

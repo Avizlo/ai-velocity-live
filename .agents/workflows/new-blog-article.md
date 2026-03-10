@@ -4,7 +4,7 @@ description: How to create a new blog article with gold-standard SEO, LLM schema
 
 # Blog Article Creation Standard
 
-Follow this guide when adding new articles to the AI Velocity blog. All articles are stored in `src/lib/insightsData.js` and rendered via the `src/app/news-insights/[slug]/page.jsx` template, which auto-generates all JSON-LD schema markup.
+Follow this guide when adding new articles to the Your Brand blog. All articles are stored in `src/lib/insightsData.js` and rendered via the `src/app/news-insights/[slug]/page.jsx` template, which auto-generates all JSON-LD schema markup.
 
 ---
 
@@ -19,7 +19,7 @@ Every article in the `insightsData` array must include these fields:
     title: "Your Article Title",
     category: "Agentic Commerce",
     date: "2026-04-01T08:00:00Z",
-    author: "AI Velocity Engineering",
+    author: "Your Brand Engineering",
     readTime: "8 min read",
     image: "/images/insights/your-slug.webp",
     excerpt: "...",
@@ -135,7 +135,7 @@ Every Insight article should use one of the two approved content styles. Choose 
 
 **Style A: Thought Leadership Insight**
 - Written from a first-person expertise perspective ("we recommend", "we have observed", "the approach we advocate")
-- Positions AI Velocity as a knowledgeable guide helping readers understand a topic
+- Positions Your Brand as a knowledgeable guide helping readers understand a topic
 - Can reference industry data, observations, and general experience
 - Example framing: "Why Every Enterprise Needs an Agentic Readiness Framework"
 - Tone: authoritative, advisory, educational
@@ -151,12 +151,12 @@ Every Insight article should use one of the two approved content styles. Choose 
 
 These rules are non-negotiable and apply to all article styles:
 
-1. **Never claim AI Velocity has built, deployed, launched, or shipped products, platforms, protocols, or services** unless they genuinely exist and are live
+1. **Never claim Your Brand has built, deployed, launched, or shipped products, platforms, protocols, or services** unless they genuinely exist and are live
 2. **Never use announcement framing** ("we are launching", "we have deployed", "now available") for things that do not exist
 3. **News articles must describe real events only.** If it has not happened, it is not news
 4. **Thought Leadership articles may say** "we recommend" or "we have observed" but must NOT claim "we built" or "we deployed"
-5. **Industry Analysis articles must not attribute industry developments to AI Velocity** unless AI Velocity genuinely contributed to them
-6. **When referencing data or statistics**, frame as industry observations ("industry benchmarking data shows", "analysis across enterprise deployments reveals") rather than proprietary claims ("our platform processed") unless the data genuinely comes from AI Velocity systems
+5. **Industry Analysis articles must not attribute industry developments to Your Brand** unless Your Brand genuinely contributed to them
+6. **When referencing data or statistics**, frame as industry observations ("industry benchmarking data shows", "analysis across enterprise deployments reveals") rather than proprietary claims ("our platform processed") unless the data genuinely comes from Your Brand systems
 
 ---
 

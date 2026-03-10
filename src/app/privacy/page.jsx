@@ -4,7 +4,7 @@ const sections = [
     {
         number: '01',
         title: 'Data We Collect',
-        content: `AI Velocity does not require user accounts, login credentials, or personal information to access this website. The data we collect is limited to:
+        content: `Your Brand does not require user accounts, login credentials, or personal information to access this website. The data we collect is limited to:
 
 **Automatically Collected Data** — When you visit our site, our hosting provider (Vercel) may collect standard server log data including your IP address, browser type, operating system, referring URL, pages visited, and timestamps. This data is used solely for security monitoring and performance optimisation.
 
@@ -70,9 +70,9 @@ We evaluate all third-party services for privacy compliance before integration. 
     {
         number: '08',
         title: 'Contact',
-        content: `For privacy-related enquiries, data requests, or questions about this policy, reach out to us on [X / Twitter](https://x.com/aivelocitydev) or via the contact channels on our website.
+        content: `For privacy-related enquiries, data requests, or questions about this policy, reach out to us on [X / Twitter](https://x.com/yourbrand) or via the contact channels on our website.
 
-**AI Velocity**
+**Your Brand**
 The Agentic Network · Everywhere. Always on.`,
     },
 ];
@@ -95,7 +95,7 @@ export default function PrivacyPage() {
                         Privacy Policy
                     </h1>
                     <p className="font-sans text-white/50 text-base md:text-lg leading-relaxed mt-6 max-w-2xl">
-                        How AI Velocity collects, uses, and protects your data. We believe in transparency, minimal data collection, and respecting your digital sovereignty.
+                        How Your Brand collects, uses, and protects your data. We believe in transparency, minimal data collection, and respecting your digital sovereignty.
                     </p>
                 </div>
             </section>

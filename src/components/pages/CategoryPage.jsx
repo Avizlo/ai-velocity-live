@@ -4,7 +4,7 @@ import { insightsData } from '@/lib/insightsData';
 import { CATEGORY_SLUGS, CATEGORY_META } from '@/lib/categoryRegistry';
 import StickyFilterBar from '@/components/ui/StickyFilterBar';
 
-const SITE_URL = 'https://ai-velocity.com';
+const SITE_URL = 'https://example.com';
 
 // ── CategoryPage — server-rendered filtered blog listing ────────────────────
 export default function CategoryPage({ categorySlug }) {
@@ -50,7 +50,7 @@ export default function CategoryPage({ categorySlug }) {
         '@context': 'https://schema.org',
         '@type': 'CollectionPage',
         name: `${categoryName} — News & Insights`,
-        description: categoryMeta?.description || `${categoryName} articles and insights from AI Velocity.`,
+        description: categoryMeta?.description || `${categoryName} articles and insights from Your Brand.`,
         url: `${SITE_URL}/news-insights/${categorySlug}`,
         isPartOf: {
             '@type': 'WebPage',
@@ -59,7 +59,7 @@ export default function CategoryPage({ categorySlug }) {
         },
         publisher: {
             '@type': 'Organization',
-            name: 'AI Velocity',
+            name: 'Your Brand',
             url: SITE_URL,
         },
         hasPart: allPosts.map(article => ({

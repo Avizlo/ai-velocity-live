@@ -325,21 +325,21 @@ export default function Marketing() {
         "@graph": [
             {
                 "@type": "Organization",
-                "@id": "https://ai-velocity.com/#organization",
-                "name": "AI Velocity",
-                "url": "https://ai-velocity.com",
+                "@id": "https://example.com/#organization",
+                "name": "Your Brand",
+                "url": "https://example.com",
                 "sameAs": [
-                    "https://www.linkedin.com/company/ai-velocity"
+                    "https://www.linkedin.com/company/yourbrand"
                 ]
             },
             {
                 "@type": "WebPage",
-                "@id": "https://ai-velocity.com/agentic-marketing/#webpage",
-                "url": "https://ai-velocity.com/agentic-marketing",
+                "@id": "https://example.com/agentic-marketing/#webpage",
+                "url": "https://example.com/agentic-marketing",
                 "name": "Agentic Marketing — Autonomous AI Campaign Orchestration",
                 "description": "Agentic marketing deploys autonomous AI agents to execute campaign orchestration, content generation, and performance optimisation at machine speed.",
-                "isPartOf": { "@id": "https://ai-velocity.com/#website" },
-                "about": { "@id": "https://ai-velocity.com/agentic-marketing/#service" },
+                "isPartOf": { "@id": "https://example.com/#website" },
+                "about": { "@id": "https://example.com/agentic-marketing/#service" },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", "h2", ".stmt-anim"]
@@ -352,24 +352,24 @@ export default function Marketing() {
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://ai-velocity.com"
+                        "item": "https://example.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Agentic Marketing",
-                        "item": "https://ai-velocity.com/agentic-marketing"
+                        "item": "https://example.com/agentic-marketing"
                     }
                 ]
             },
             {
                 "@type": "Service",
-                "@id": "https://ai-velocity.com/agentic-marketing/#service",
+                "@id": "https://example.com/agentic-marketing/#service",
                 "name": "Agentic Marketing",
                 "description": "Autonomous AI agent infrastructure for campaign orchestration, content generation, and performance marketing execution. Replaces legacy agency models with goal-driven digital labor.",
                 "serviceType": "Autonomous Marketing Infrastructure",
                 "areaServed": "Worldwide",
-                "provider": { "@id": "https://ai-velocity.com/#organization" },
+                "provider": { "@id": "https://example.com/#organization" },
                 "hasOfferCatalog": {
                     "@type": "OfferCatalog",
                     "name": "Agentic Marketing Services",

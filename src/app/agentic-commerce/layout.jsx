@@ -2,23 +2,23 @@
 import { insightsData } from '@/lib/insightsData';
 
 export const metadata = {
-    title: 'Agentic Commerce — Autonomous AI Agents for Procurement & Settlement | AI Velocity',
-    description: 'Agentic commerce replaces manual storefronts with autonomous AI agents that discover, negotiate, and settle purchases on behalf of your customers — 24/7, in 60+ languages. Learn how AI Velocity builds this infrastructure.',
+    title: 'Agentic Commerce — Autonomous AI Agents for Procurement & Settlement | Your Brand',
+    description: 'Agentic commerce replaces manual storefronts with autonomous AI agents that discover, negotiate, and settle purchases on behalf of your customers — 24/7, in 60+ languages. Learn how Your Brand builds this infrastructure.',
     alternates: {
-        canonical: 'https://ai-velocity.com/agentic-commerce',
+        canonical: 'https://example.com/agentic-commerce',
     },
     openGraph: {
         title: 'Agentic Commerce — Autonomous AI Procurement & Settlement',
         description: 'Autonomous AI agents that discover, negotiate, and settle purchases on behalf of your customers — 24/7, in 60+ languages. The future of commerce is agent-to-agent.',
-        url: 'https://ai-velocity.com/agentic-commerce',
-        siteName: 'AI Velocity',
+        url: 'https://example.com/agentic-commerce',
+        siteName: 'Your Brand',
         type: 'website',
         images: [
             {
-                url: 'https://ai-velocity.com/images/agentic-agent-hero.webp',
+                url: 'https://example.com/images/agentic-agent-hero.webp',
                 width: 1200,
                 height: 630,
-                alt: 'AI Velocity Agentic Commerce — Autonomous AI procurement and settlement',
+                alt: 'Your Brand Agentic Commerce — Autonomous AI procurement and settlement',
             },
         ],
     },
@@ -26,7 +26,7 @@ export const metadata = {
         card: 'summary_large_image',
         title: 'Agentic Commerce — Autonomous AI Procurement & Settlement',
         description: 'Autonomous AI agents that discover, negotiate, and settle purchases on behalf of your customers — 24/7, in 60+ languages.',
-        images: ['https://ai-velocity.com/images/agentic-agent-hero.webp'],
+        images: ['https://example.com/images/agentic-agent-hero.webp'],
     },
 };
 
@@ -36,18 +36,18 @@ export default function Layout({ children }) {
         .map(a => ({
             '@type': 'Article',
             headline: a.title,
-            url: `https://ai-velocity.com/news-insights/${a.slug}`,
+            url: `https://example.com/news-insights/${a.slug}`,
         }));
 
     const schema = {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
-        '@id': 'https://ai-velocity.com/agentic-commerce',
+        '@id': 'https://example.com/agentic-commerce',
         name: 'Agentic Commerce',
-        url: 'https://ai-velocity.com/agentic-commerce',
+        url: 'https://example.com/agentic-commerce',
         description: 'Agentic commerce replaces manual storefronts with autonomous AI agents that discover, negotiate, and settle purchases on behalf of your customers.',
-        isPartOf: { '@id': 'https://ai-velocity.com/#website' },
-        about: { '@id': 'https://ai-velocity.com/#organization' },
+        isPartOf: { '@id': 'https://example.com/#website' },
+        about: { '@id': 'https://example.com/#organization' },
         hasPart: categoryArticles,
     };
 

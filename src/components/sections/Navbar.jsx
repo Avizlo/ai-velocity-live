@@ -127,7 +127,7 @@ export const Navbar = () => {
                         {/* Logo / Brand - Using Serif for emotion/branding */}
                         <Link href="/" className="flex items-center gap-3 group relative z-50">
                             <span className="font-serif italic text-2xl tracking-wide opacity-90">
-                                AI VELOCITY
+                                YOUR BRAND
                             </span>
                         </Link>
                     </div>

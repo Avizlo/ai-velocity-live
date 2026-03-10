@@ -7,7 +7,7 @@ export const insightsData = [
         categoryPage: "/agentic-aeo",
         relatedSlugs: ["schema-markup-is-not-optional-the-aeo-technical-checklist", "why-every-enterprise-needs-agentic-readiness-framework"],
         date: "2026-03-01T08:00:00Z",
-        author: "AI Velocity Engineering",
+        author: "Your Brand Team",
         readTime: "10 min read",
         image: "/images/insights/the-end-of-legacy-seo.webp",
         excerpt: "Traditional search engines are being replaced by autonomous LLM agents. If your brand relies on keywords rather than JSON-LD and semantic legibility, your discovery pipeline is obsolete.",
@@ -137,7 +137,7 @@ The question is no longer whether to transition. The question is whether you wil
         categoryPage: "/agentic-payments",
         relatedSlugs: ["v402-handshake-how-machine-to-machine-negotiation-works", "autonomous-payment-settlement-what-cfos-need-to-know"],
         date: "2026-03-05T14:30:00Z",
-        author: "AI Velocity Engineering",
+        author: "Your Brand Team",
         readTime: "8 min read",
         image: "/images/insights/machine-to-machine-negotiation.webp",
         excerpt: "Autonomous purchasing agents need structured negotiation protocols to transact at machine speed. The organisations adopting M2M handshake protocols are capturing revenue invisible to traditional commerce.",
@@ -255,7 +255,7 @@ For organisations still evaluating whether M2M negotiation is relevant to their 
         categoryPage: "/agentic-commerce",
         relatedSlugs: ["product-data-liquidity-how-autonomous-agents-compare-and-buy", "zero-click-checkout-how-autonomous-agents-bypass-your-sales-funnel"],
         date: "2026-02-15T09:15:00Z",
-        author: "AI Velocity Engineering",
+        author: "Your Brand Team",
         readTime: "7 min read",
         image: "/images/insights/headless-architecture.webp",
         excerpt: "Monolithic platforms restrict the data liquidity modern LLMs require. Headless architecture is the only way to expose actionable APIs to autonomous agents.",
@@ -365,7 +365,7 @@ If your competitive strategy in 2026 still involves optimising visual page load 
         categoryPage: "/agentic-marketing",
         relatedSlugs: ["agent-first-content-strategy-what-to-publish-when-machines-are-your-audience", "brand-authority-signals-ai-agents-actually-trust"],
         date: "2026-02-28T10:00:00Z",
-        author: "AI Velocity Engineering",
+        author: "Your Brand Team",
         readTime: "7 min read",
         image: "/images/insights/marketing-stack-invisible.webp",
         excerpt: "Most marketing stacks were built for human dashboards. Autonomous agents cannot read your pixels, your PDFs, or your personalisation logic.",
@@ -461,7 +461,7 @@ The window to build this advantage is narrow. Once your competitors make their m
         categoryPage: "/agentic-payments",
         relatedSlugs: ["machine-to-machine-negotiation-protocols-reshaping-commerce", "v402-handshake-how-machine-to-machine-negotiation-works"],
         date: "2026-02-20T11:30:00Z",
-        author: "AI Velocity Engineering",
+        author: "Your Brand Team",
         readTime: "6 min read",
         image: "/images/insights/autonomous-payment-settlement.webp",
         excerpt: "Agent-initiated transactions now represent 8% of B2B settlement volume. Your payment infrastructure was not built for this.",
@@ -555,7 +555,7 @@ The CFOs who act now will define the governance frameworks that become industry 
         categoryPage: "/agentic-aeo",
         relatedSlugs: ["the-end-of-legacy-seo", "why-every-enterprise-needs-agentic-readiness-framework"],
         date: "2026-02-10T08:00:00Z",
-        author: "AI Velocity Engineering",
+        author: "Your Brand Team",
         readTime: "8 min read",
         image: "/images/insights/schema-markup-checklist.webp",
         excerpt: "Without comprehensive schema markup, your website is a closed book to autonomous agents. Here is the exact technical checklist we use.",
@@ -653,7 +653,7 @@ Schema markup adoption is accelerating, but it is far from saturated. In our ana
         categoryPage: "/agentic-commerce",
         relatedSlugs: ["headless-architecture-in-2026", "zero-click-checkout-how-autonomous-agents-bypass-your-sales-funnel"],
         date: "2026-02-05T09:00:00Z",
-        author: "AI Velocity Engineering",
+        author: "Your Brand Team",
         readTime: "7 min read",
         image: "/images/insights/product-data-liquidity.webp",
         excerpt: "Autonomous procurement agents evaluate products in milliseconds. If your product data is trapped in rendering layers, you have already lost the sale.",
@@ -737,7 +737,7 @@ The competitive advantage is clear and the window is closing. As more retailers 
         categoryPage: "/agentic-marketing",
         relatedSlugs: ["why-your-marketing-stack-is-invisible-to-autonomous-agents", "brand-authority-signals-ai-agents-actually-trust"],
         date: "2026-01-25T10:00:00Z",
-        author: "AI Velocity Engineering",
+        author: "Your Brand Team",
         readTime: "7 min read",
         image: "/images/insights/agent-first-content-strategy.webp",
         excerpt: "Your content strategy was built for human readers. Autonomous agents need a fundamentally different content diet, here is what they consume.",
@@ -764,7 +764,7 @@ The agent maps your content against known entity graphs, organisations, products
 
 ### Relationship Extraction
 
-The agent identifies how entities relate to each other in your content. "AI Velocity provides agentic commerce consulting" establishes a provider-service relationship. "Our v402 Handshake protocol reduces settlement times" establishes a tool-outcome relationship. The density and clarity of these relationships determines how well agents can integrate your content into their knowledge models.
+The agent identifies how entities relate to each other in your content. "Your Brand provides agentic commerce consulting" establishes a provider-service relationship. "Our v402 Handshake protocol reduces settlement times" establishes a tool-outcome relationship. The density and clarity of these relationships determines how well agents can integrate your content into their knowledge models.
 
 ### Source Authority Assessment
 
@@ -935,7 +935,7 @@ The commerce infrastructure of the next decade will be built on protocols like t
         categoryPage: "/agentic-aeo",
         relatedSlugs: ["the-end-of-legacy-seo", "schema-markup-is-not-optional-the-aeo-technical-checklist"],
         date: "2026-02-25T12:00:00Z",
-        author: "AI Velocity Engineering",
+        author: "Your Brand Team",
         readTime: "8 min read",
         image: "/images/insights/agentic-readiness-framework.webp",
         excerpt: "Most enterprises invest in AI strategy without measuring whether their infrastructure is visible to autonomous agents. An agentic readiness framework closes that gap.",
@@ -1049,7 +1049,7 @@ The gap between AI ambition and AI readiness is measurable, improvable, and comm
         categoryPage: "/agentic-commerce",
         relatedSlugs: ["headless-architecture-in-2026", "product-data-liquidity-how-autonomous-agents-compare-and-buy"],
         date: "2026-03-06T09:00:00Z",
-        author: "AI Velocity Engineering",
+        author: "Your Brand Team",
         readTime: "8 min read",
         image: "/images/insights/zero-click-checkout.webp",
         excerpt: "Autonomous purchasing agents skip your product pages, your cart, and your checkout flow entirely. If your commerce infrastructure only speaks HTML, you are invisible to the fastest-growing buyer segment.",
@@ -1169,7 +1169,7 @@ The question is not whether autonomous agents will buy your products. They alrea
         categoryPage: "/agentic-marketing",
         relatedSlugs: ["why-your-marketing-stack-is-invisible-to-autonomous-agents", "agent-first-content-strategy-what-to-publish-when-machines-are-your-audience"],
         date: "2026-03-04T08:00:00Z",
-        author: "AI Velocity Engineering",
+        author: "Your Brand Team",
         readTime: "8 min read",
         image: "/images/insights/brand-authority-signals.webp",
         excerpt: "Social proof, influencer mentions, and brand sentiment mean nothing to autonomous agents. Here is what they actually evaluate when deciding which brands to recommend.",
@@ -1301,7 +1301,7 @@ The brands that invest in agent trust now are building an advantage that compoun
         categoryPage: "/news-insights",
         relatedSlugs: ["solana-alpenglow-upgrade-targets-100ms-transaction-finality", "agent-native-commerce-platforms-launch-on-solana"],
         date: "2026-03-07T09:00:00Z",
-        author: "AI Velocity",
+        author: "Your Brand",
         readTime: "3 min read",
         image: "/images/insights/solana-ai-agent-registry.webp",
         excerpt: "Solana's new mainnet AI Agent Registry integrates native identity verification, with over 9,000 autonomous agents already deployed in the first week.",
@@ -1344,7 +1344,7 @@ The key metric to monitor is agent transaction volume through the registry. The 
         categoryPage: "/news-insights",
         relatedSlugs: ["solana-launches-ai-agent-registry-with-9000-agents", "agent-native-commerce-platforms-launch-on-solana"],
         date: "2026-03-06T10:00:00Z",
-        author: "AI Velocity",
+        author: "Your Brand",
         readTime: "3 min read",
         image: "/images/insights/solana-alpenglow.webp",
         excerpt: "The upcoming Alpenglow upgrade aims to reduce Solana's transaction finality from 12.8 seconds to 100-150 milliseconds, a threshold that unlocks real-time autonomous agent settlement.",
@@ -1387,7 +1387,7 @@ The upgrade also strengthens Solana's position as the primary settlement layer f
         categoryPage: "/news-insights",
         relatedSlugs: ["solana-launches-ai-agent-registry-with-9000-agents", "openclaw-autonomous-ai-agent-platform-hits-mainstream"],
         date: "2026-03-05T08:00:00Z",
-        author: "AI Velocity",
+        author: "Your Brand",
         readTime: "3 min read",
         image: "/images/insights/marketing-stack-invisible.webp",
         excerpt: "New platforms built specifically for AI agent participation are emerging on Solana, signalling a shift from agent-compatible infrastructure to agent-first commerce architecture.",
@@ -1438,7 +1438,7 @@ The agentic commerce ecosystem is no longer theoretical. It has a registry, a se
         categoryPage: "/news-insights",
         relatedSlugs: ["solana-launches-ai-agent-registry-with-9000-agents", "agent-native-commerce-platforms-launch-on-solana"],
         date: "2026-03-07T16:00:00Z",
-        author: "AI Velocity",
+        author: "Your Brand",
         readTime: "3 min read",
         image: "/images/insights/openclaw-ai-agent-platform.webp",
         excerpt: "OpenClaw is now on AWS Lightsail, integrated with Google Workspace, and its founder has joined OpenAI. The agentic infrastructure stack just consolidated.",
@@ -1485,7 +1485,7 @@ OpenClaw's model-agnostic, multi-channel architecture establishes a de facto sta
 
 The ClawJacked vulnerability and MoltMatch incident demonstrate that agent capability has outpaced agent governance. Organisations exposing APIs, product catalogues, or payment endpoints to autonomous agents need robust authentication, rate limiting, and transaction verification layers. The v402 Handshake protocol and structured schema markup become essential safeguards, not optional enhancements.
 
-## The AI Velocity Take
+## The Your Brand Take
 
 OpenClaw's mainstream adoption validates what the agentic commerce thesis has predicted: autonomous agents will become the primary interface between consumers and commercial infrastructure. The question is no longer whether agents will transact on behalf of users, but whether your infrastructure is visible, structured, and secure enough for them to do so.
 
@@ -1501,7 +1501,7 @@ The organisations that benefit most from this shift are those with agent-readabl
         categoryPage: "/agentic-commerce",
         relatedSlugs: ["headless-architecture-in-2026", "zero-click-checkout-how-autonomous-agents-bypass-your-sales-funnel", "product-data-liquidity-how-autonomous-agents-compare-and-buy"],
         date: "2026-03-08T10:00:00Z",
-        author: "AI Velocity Engineering",
+        author: "Your Brand Team",
         readTime: "7 min read",
         image: "/images/insights/agentic-intelligence-horizontal-economy.webp",
         excerpt: "Legacy agency retainers are a parasitic architecture bleeding capital into manual processes. Agentic intelligence replaces creative guesswork with programmatic precision.",

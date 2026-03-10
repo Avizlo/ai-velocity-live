@@ -23,7 +23,7 @@ const defaultFaqs = [
         answer: "We operate on live data dashboards that track conversion velocity, engagement depth, and revenue attribution in real time. Unlike legacy agencies that report monthly, our agentic systems surface performance insights instantly and auto-optimise campaigns mid-flight based on sub-second behavioural signals."
     },
     {
-        question: "What is the process for starting a project with Ai Velocity?",
+        question: "What is the process for starting a project with Your Brand?",
         answer: "It begins with a discovery session to map your brand's current architecture and growth objectives. From there, we design a bespoke agentic infrastructure, deploy your virtual team, and run a controlled launch sequence. Most clients see measurable output within the first 48 hours of activation."
     }
 ];

@@ -156,7 +156,7 @@ const manifestoSections = [
     },
     {
         title: "The Era of Algorithmic Negotiation",
-        content: "Scaling a global brand today requires the absolute elimination of managerial bureaucracy and the integration of goal-driven digital labor. A company can scale its volume tenfold without hiring a single new manager by utilizing the backend orchestrators of the AI Velocity engine. Routing the order securing the fulfillment and managing the customer email sequences happen invisibly through our autonomous nervous system. This infrastructure provides the grit and intelligence required to survive in an unmanaged arena where only the sovereign individual thrives."
+        content: "Scaling a global brand today requires the absolute elimination of managerial bureaucracy and the integration of goal-driven digital labor. A company can scale its volume tenfold without hiring a single new manager by utilizing the backend orchestrators of the Your Brand engine. Routing the order securing the fulfillment and managing the customer email sequences happen invisibly through our autonomous nervous system. This infrastructure provides the grit and intelligence required to survive in an unmanaged arena where only the sovereign individual thrives."
     }
 ];
 
@@ -561,21 +561,21 @@ export default function AgenticCommerce() {
         "@graph": [
             {
                 "@type": "Organization",
-                "@id": "https://ai-velocity.com/#organization",
-                "name": "AI Velocity",
-                "url": "https://ai-velocity.com",
+                "@id": "https://example.com/#organization",
+                "name": "Your Brand",
+                "url": "https://example.com",
                 "sameAs": [
-                    "https://www.linkedin.com/company/ai-velocity"
+                    "https://www.linkedin.com/company/yourbrand"
                 ]
             },
             {
                 "@type": "WebPage",
-                "@id": "https://ai-velocity.com/agentic-commerce/#webpage",
-                "url": "https://ai-velocity.com/agentic-commerce",
+                "@id": "https://example.com/agentic-commerce/#webpage",
+                "url": "https://example.com/agentic-commerce",
                 "name": "Agentic Commerce — Autonomous AI Agents for Procurement & Settlement",
                 "description": "Agentic commerce replaces manual storefronts with autonomous AI agents that discover, negotiate, and settle purchases on behalf of your customers — 24/7, in 60+ languages.",
-                "isPartOf": { "@id": "https://ai-velocity.com/#website" },
-                "about": { "@id": "https://ai-velocity.com/agentic-commerce/#service" },
+                "isPartOf": { "@id": "https://example.com/#website" },
+                "about": { "@id": "https://example.com/agentic-commerce/#service" },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", "h2", ".stmt-anim"]
@@ -588,24 +588,24 @@ export default function AgenticCommerce() {
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://ai-velocity.com"
+                        "item": "https://example.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Agentic Commerce",
-                        "item": "https://ai-velocity.com/agentic-commerce"
+                        "item": "https://example.com/agentic-commerce"
                     }
                 ]
             },
             {
                 "@type": "Service",
-                "@id": "https://ai-velocity.com/agentic-commerce/#service",
+                "@id": "https://example.com/agentic-commerce/#service",
                 "name": "Agentic Commerce",
                 "description": "Autonomous AI agent infrastructure for machine-to-machine procurement, negotiation, and settlement. Replaces manual storefronts with headless architecture optimised for agent-to-agent trade.",
                 "serviceType": "Autonomous Commerce Infrastructure",
                 "areaServed": "Worldwide",
-                "provider": { "@id": "https://ai-velocity.com/#organization" },
+                "provider": { "@id": "https://example.com/#organization" },
                 "hasOfferCatalog": {
                     "@type": "OfferCatalog",
                     "name": "Agentic Commerce Services",

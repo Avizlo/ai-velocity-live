@@ -33,7 +33,7 @@ export const Footer = () => {
                         <div className="flex gap-16 md:gap-24 font-mono text-xs text-white/50 shrink-0">
                             <div className="flex flex-col gap-3">
                                 <span className="text-white/80 font-sans tracking-widest text-[10px] uppercase mb-2">Connect</span>
-                                <a href="https://x.com/aivelocitydev" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Follow us on X</a>
+                                <a href="https://x.com/yourbrand" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Follow us on X</a>
                                 <button
                                     onClick={() => setIsContactOpen(true)}
                                     className="text-left hover:text-white transition-colors bg-transparent cursor-pointer"
@@ -47,7 +47,7 @@ export const Footer = () => {
                     {/* Massive Typography Background Watermark */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[40%] w-full text-center pointer-events-none z-0 opacity-[0.03]">
                         <span className="font-serif italic text-[16vw] leading-none whitespace-nowrap block tracking-tighter">
-                            AI VELOCITY
+                            YOUR BRAND
                         </span>
                     </div>
 
@@ -63,7 +63,7 @@ export const Footer = () => {
                             <Link href="/news-insights" className="hover:text-white transition-colors uppercase">News & Insights</Link>
                         </div>
                         <div className="flex gap-6 justify-center">
-                            <span>©2026 AI VELOCITY</span>
+                            <span>©2026 YOUR BRAND</span>
                             <Link href="/privacy" className="hover:text-white transition-colors uppercase">Privacy Policy</Link>
                         </div>
                     </div>

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { insightsData } from '@/lib/insightsData';
 
 export const metadata = {
-    title: 'Page Not Found | AI Velocity',
+    title: 'Page Not Found | Your Brand',
     description: 'The page you are looking for does not exist. Explore our agentic commerce services, latest insights, and more.',
 };
 

@@ -20,23 +20,23 @@ export const isCategorySlug = (slug) => slug in CATEGORY_SLUGS;
 // SEO metadata per category
 export const CATEGORY_META = {
     'agentic-commerce': {
-        title: 'Agentic Commerce Insights & Articles | AI Velocity',
+        title: 'Agentic Commerce Insights & Articles | Your Brand',
         description: 'Expert analysis on autonomous commerce infrastructure, headless architecture, machine-to-machine trade protocols, and agent-native product data strategies.',
     },
     'agentic-marketing': {
-        title: 'Agentic Marketing Insights & Articles | AI Velocity',
+        title: 'Agentic Marketing Insights & Articles | Your Brand',
         description: 'Insights on AI-powered marketing, autonomous content generation, agent-first brand strategy, and digital identity design for the agentic era.',
     },
     'agentic-payments': {
-        title: 'Agentic Payments Insights & Articles | AI Velocity',
+        title: 'Agentic Payments Insights & Articles | Your Brand',
         description: 'Deep analysis of machine-to-machine payment settlement, autonomous negotiation protocols, and programmable commerce infrastructure.',
     },
     'agentic-aeo': {
-        title: 'Agentic AEO Insights & Articles | AI Velocity',
+        title: 'Agentic AEO Insights & Articles | Your Brand',
         description: 'Expert guidance on Answer Engine Optimisation, structured data strategy, LLM citation signals, and transitioning from legacy SEO to AEO.',
     },
     'news': {
-        title: 'News & Industry Updates | AI Velocity',
+        title: 'News & Industry Updates | Your Brand',
         description: 'Latest news on autonomous AI agents, blockchain commerce infrastructure, and developments in the agentic economy.',
     },
 };

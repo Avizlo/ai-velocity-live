@@ -103,7 +103,7 @@ const manifestoSections = [
         content: "A luxury eyewear brand seeking to dominate a high-intent query for titanium frames must provide the machine with more than just a beautiful landing page. In the agentic era, a user might ask an autonomous assistant to find a specific weight-to-strength ratio at a set price point with a verified ethical supply chain. This is the functional bridge where the visual storefront disappears and the underlying technical physics take command. To satisfy this intent, the brand must utilize the Model Context Protocol to facilitate a high-fidelity API handshake between its internal inventory and the agentic workforce. This interaction relies on Retrieval-Augmented Generation and the deployment of RESTful services to provide real-time, verifiable data that the agent can reason with. Without this level of technical density, the brand remains invisible to the very systems that are now responsible for the majority of global commercial discovery."
     },
     {
-        content: "The intelligence layer of this operation is managed by OpenClaw, our proprietary engine designed to negotiate the terms of citation within the generative environment. OpenClaw functions by analyzing the inference costs and token usage of various search models to identify the most efficient path to authority. This is not about tricking an algorithm; it is about providing the precise \"Information Gain\" that the system requires to justify a recommendation. By optimizing for the specific weights and biases of frontier models, we ensure that the brand is not just mentioned, but cited as the Reference Zero source. This level of clinical precision is what separates the AI Velocity foundry from the generic \"GEO\" services that offer nothing more than surface-level brand mentions. We are building the structural integrity required to dominate the conversation between machines."
+        content: "The intelligence layer of this operation is managed by OpenClaw, our proprietary engine designed to negotiate the terms of citation within the generative environment. OpenClaw functions by analyzing the inference costs and token usage of various search models to identify the most efficient path to authority. This is not about tricking an algorithm; it is about providing the precise \"Information Gain\" that the system requires to justify a recommendation. By optimizing for the specific weights and biases of frontier models, we ensure that the brand is not just mentioned, but cited as the Reference Zero source. This level of clinical precision is what separates the Your Brand foundry from the generic \"GEO\" services that offer nothing more than surface-level brand mentions. We are building the structural integrity required to dominate the conversation between machines."
     },
     {
         content: "The 2026 signal is already clear as the market moves toward a reality of autonomous settlement through tools like the Whop x Tether WDK. This convergence of discovery and payment means that the agentic AEO process must now account for the entire commercial lifecycle within a single, atomic event. When an agent identifies a product, it must also have the capacity to verify the settlement layer and execute the trade without human intervention. This requires a headless architecture that allows the transactional logic to exist independently of the visual frontend, ensuring that the process is as fast as the intelligence driving it. We are moving toward a world where the payment is as autonomous as the search, creating a frictionless loop that legacy retailers are currently unable to navigate. The brands that survive this shift will be those that treat their technical infrastructure as a living, commercial organism."
@@ -431,21 +431,21 @@ export default function AgenticAEO() {
         "@graph": [
             {
                 "@type": "Organization",
-                "@id": "https://ai-velocity.com/#organization",
-                "name": "AI Velocity",
-                "url": "https://ai-velocity.com",
+                "@id": "https://example.com/#organization",
+                "name": "Your Brand",
+                "url": "https://example.com",
                 "sameAs": [
-                    "https://www.linkedin.com/company/ai-velocity"
+                    "https://www.linkedin.com/company/yourbrand"
                 ]
             },
             {
                 "@type": "WebPage",
-                "@id": "https://ai-velocity.com/agentic-aeo/#webpage",
-                "url": "https://ai-velocity.com/agentic-aeo",
+                "@id": "https://example.com/agentic-aeo/#webpage",
+                "url": "https://example.com/agentic-aeo",
                 "name": "Agentic AEO — Answer Engine Optimization for AI Agents",
                 "description": "Agentic AEO restructures your digital footprint so autonomous AI agents cite your brand as the canonical answer. Structured schema, semantic knowledge graphs, and entity anchoring.",
-                "isPartOf": { "@id": "https://ai-velocity.com/#website" },
-                "about": { "@id": "https://ai-velocity.com/agentic-aeo/#service" },
+                "isPartOf": { "@id": "https://example.com/#website" },
+                "about": { "@id": "https://example.com/agentic-aeo/#service" },
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": ["h1", "h2", ".stmt-anim"]
@@ -458,24 +458,24 @@ export default function AgenticAEO() {
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://ai-velocity.com"
+                        "item": "https://example.com"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Agentic AEO",
-                        "item": "https://ai-velocity.com/agentic-aeo"
+                        "item": "https://example.com/agentic-aeo"
                     }
                 ]
             },
             {
                 "@type": "Service",
-                "@id": "https://ai-velocity.com/agentic-aeo/#service",
+                "@id": "https://example.com/agentic-aeo/#service",
                 "name": "Agentic AEO",
                 "description": "Answer Engine Optimization infrastructure that makes your brand the canonical citation for autonomous AI agents like ChatGPT, Perplexity, and Gemini.",
                 "serviceType": "Answer Engine Optimization",
                 "areaServed": "Worldwide",
-                "provider": { "@id": "https://ai-velocity.com/#organization" },
+                "provider": { "@id": "https://example.com/#organization" },
                 "hasOfferCatalog": {
                     "@type": "OfferCatalog",
                     "name": "Agentic AEO Services",
