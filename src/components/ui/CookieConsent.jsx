@@ -8,10 +8,8 @@ export const CookieConsent = () => {
     const [visible, setVisible] = useState(false);
 
     useEffect(() => {
-        // Show banner only if user hasn't already responded
         const consent = localStorage.getItem(COOKIE_KEY);
         if (!consent) {
-            // Small delay so it doesn't flash on page load
             const timer = setTimeout(() => setVisible(true), 1500);
             return () => clearTimeout(timer);
         }
@@ -19,11 +17,13 @@ export const CookieConsent = () => {
 
     const accept = () => {
         localStorage.setItem(COOKIE_KEY, 'accepted');
+        window.dispatchEvent(new Event('cookie-consent-update'));
         setVisible(false);
     };
 
     const decline = () => {
         localStorage.setItem(COOKIE_KEY, 'declined');
+        window.dispatchEvent(new Event('cookie-consent-update'));
         setVisible(false);
     };
 
@@ -44,7 +44,7 @@ export const CookieConsent = () => {
                 <button
                     onClick={decline}
                     className="px-5 py-2 border border-white/20 text-white/70 font-sans text-xs uppercase tracking-widest rounded-card
-                        hover:border-white/40 hover:text-white/80 transition-all duration-300 cursor-pointer"
+                        hover:border-white/40 hover:text-white/90 transition-all duration-300 cursor-pointer"
                 >
                     Decline
                 </button>
