@@ -159,7 +159,7 @@ export const HomeAnimatedSections = ({ services, stats, latestInsights, faqs }) 
                         </div>
                         <Link
                             href="/news-insights"
-                            className="inline-block border-b border-charcoal/20 pb-1 text-charcoal/50 font-sans tracking-widest text-xs uppercase hover:text-electric-mint hover:border-electric-mint/50 transition-colors duration-200"
+                            className="inline-block border-b border-charcoal/20 pb-1 text-charcoal/50 font-sans tracking-widest text-xs uppercase hover:text-[#111] hover:border-[#111] transition-colors duration-200"
                         >
                             View All Insights →
                         </Link>

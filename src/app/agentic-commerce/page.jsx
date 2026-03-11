@@ -517,7 +517,7 @@ const NewsInsight = ({ title, description, posts }) => {
                         <div className="news-anim opacity-0 translate-y-4">
                             <a
                                 href="#blog"
-                                className="inline-block border-b border-charcoal/30 pb-1 text-charcoal transition-colors duration-300 font-sans tracking-widest text-xs uppercase hover:text-electric-mint hover:border-electric-mint/50"
+                                className="inline-block border-b border-charcoal/30 pb-1 text-charcoal transition-colors duration-300 font-sans tracking-widest text-xs uppercase hover:text-[#111] hover:border-[#111]"
                             >
                                 View Blog →
                             </a>
