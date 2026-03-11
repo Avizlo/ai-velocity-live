@@ -118,7 +118,7 @@ export const FoundryManifesto = ({ title = defaultTitle, leadIn = defaultLeadIn,
                         onClick={handleToggle}
                         aria-expanded={isOpen}
                         aria-controls="foundry-vault-content"
-                        className="inline-block border-b border-charcoal/30 pb-1 text-charcoal hover:text-electric-mint hover:border-electric-mint/50 transition-colors duration-300 font-sans tracking-widest text-xs uppercase cursor-pointer"
+                        className="inline-block border-b border-charcoal/30 pb-1 text-charcoal hover:text-[#111] hover:border-[#111] transition-colors duration-300 font-sans tracking-widest text-xs uppercase cursor-pointer"
                     >
                         {isOpen ? 'Read Less' : 'Read More'} →
                     </button>
