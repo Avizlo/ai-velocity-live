@@ -234,7 +234,7 @@ export default async function ArticlePage({ params }) {
 
                     {/* Left Column: Metadata & Details */}
                     <aside className="lg:col-span-3 order-2 lg:order-1">
-                        <div className="sticky top-32 flex flex-col gap-8 font-mono text-[10px] md:text-xs uppercase tracking-widest text-white/40">
+                        <div className="sticky top-32 flex flex-col gap-8 font-mono text-[10px] md:text-xs uppercase tracking-widest text-white/60">
 
                             <div>
                                 <span className="block text-white/20 mb-2">Category</span>

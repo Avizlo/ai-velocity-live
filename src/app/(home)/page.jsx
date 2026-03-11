@@ -185,7 +185,7 @@ export default function Home() {
 
                                     {/* Content */}
                                     <div className="relative z-10 p-8 md:p-10 flex flex-col justify-end h-full">
-                                        <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-white/40 block mb-3">
+                                        <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-white/60 block mb-3">
                                             {service.label}
                                         </span>
                                         <h3 className="font-serif italic text-white text-2xl md:text-3xl leading-tight tracking-tight">
