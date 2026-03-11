@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
                 <link rel="preconnect" href="https://www.googletagmanager.com" />
                 <link rel="preconnect" href="https://challenges.cloudflare.com" />
                 <link rel="preload" href="/fonts/times-italic.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-                <link rel="preload" href="/images/agentic-agent-hero.webp" as="image" type="image/webp" />
+
             </head>
             <body className="font-sans antialiased bg-cloud-dancer" suppressHydrationWarning>
                 <NavVisibilityProvider>
