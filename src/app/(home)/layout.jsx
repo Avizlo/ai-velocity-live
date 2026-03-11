@@ -1,34 +1,13 @@
 // Server Component for Homepage SEO Metadata
 import { insightsData } from '@/lib/insightsData';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata = {
+export const metadata = createMetadata({
+    pageTitle: 'Agentic Commerce Infrastructure | AI Velocity',
     title: 'Agentic Commerce Infrastructure | AI Velocity',
     description: 'AI Velocity builds agentic commerce infrastructure. Autonomous systems for marketing, payments, and discovery, engineered for AI agents that negotiate, transact, and settle at protocol speed.',
-    alternates: {
-        canonical: 'https://aivelocity.dev',
-    },
-    openGraph: {
-        title: 'Agentic Commerce Infrastructure | AI Velocity',
-        description: 'AI Velocity builds agentic commerce infrastructure. Autonomous systems for marketing, payments, and discovery, engineered for AI agents.',
-        url: 'https://aivelocity.dev',
-        siteName: 'AI Velocity',
-        type: 'website',
-        images: [
-            {
-                url: 'https://aivelocity.dev/og?title=Agentic%20Commerce%20Infrastructure&subtitle=AI%20Velocity',
-                width: 1200,
-                height: 630,
-                alt: 'AI Velocity, agentic commerce infrastructure for the autonomous economy',
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Agentic Commerce Infrastructure | AI Velocity',
-        description: 'AI Velocity builds agentic commerce infrastructure. Autonomous systems for marketing, payments, and discovery.',
-        images: ['https://aivelocity.dev/og?title=Agentic%20Commerce%20Infrastructure&subtitle=AI%20Velocity'],
-    },
-};
+    ogDescription: 'AI Velocity builds agentic commerce infrastructure. Autonomous systems for marketing, payments, and discovery, engineered for AI agents.',
+});
 
 export default function HomeLayout({ children }) {
     const schema = {

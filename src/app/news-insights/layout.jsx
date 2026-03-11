@@ -1,34 +1,15 @@
 import { insightsData } from '@/lib/insightsData';
+import { createMetadata } from '@/lib/metadata';
 
 // Server Component for News & Insights SEO Metadata
-export const metadata = {
+export const metadata = createMetadata({
+    pageTitle: 'News & Insights | AI Velocity',
     title: 'News & Insights | AI Velocity',
     description: 'Expert analysis on agentic commerce, autonomous marketing, AEO strategy, and machine-to-machine payment protocols. Insights from the AI Velocity engineering team.',
-    alternates: {
-        canonical: 'https://aivelocity.dev/news-insights',
-    },
-    openGraph: {
-        title: 'News & Insights | AI Velocity',
-        description: 'Expert analysis on agentic commerce, autonomous marketing, AEO strategy, and machine-to-machine payment protocols.',
-        url: 'https://aivelocity.dev/news-insights',
-        siteName: 'AI Velocity',
-        type: 'website',
-        images: [
-            {
-                url: 'https://aivelocity.dev/og?title=News%20%26%20Insights&subtitle=AI%20Velocity',
-                width: 1200,
-                height: 630,
-                alt: 'AI Velocity News & Insights — Expert analysis on agentic commerce and autonomous AI',
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'News & Insights | AI Velocity',
-        description: 'Expert analysis on agentic commerce, autonomous marketing, AEO strategy, and machine-to-machine payment protocols.',
-        images: ['https://aivelocity.dev/og?title=News%20%26%20Insights&subtitle=AI%20Velocity'],
-    },
-};
+    ogDescription: 'Expert analysis on agentic commerce, autonomous marketing, AEO strategy, and machine-to-machine payment protocols.',
+    path: '/news-insights',
+    ogSubtitle: 'AI Velocity',
+});
 
 // CollectionPage + BreadcrumbList JSON-LD for agent discoverability
 const collectionJsonLd = {

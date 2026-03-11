@@ -3,7 +3,7 @@
 const nextConfig = {
     turbopack: {},
     experimental: {
-        browsersListForSwc: true, // Use our package.json browserslist — drops legacy polyfills
+        inlineCss: true, // Inline all CSS into <style> tags — eliminates render-blocking CSS chain
     },
     images: {
         formats: ['image/avif', 'image/webp'],

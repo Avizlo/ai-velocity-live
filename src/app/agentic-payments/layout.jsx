@@ -1,33 +1,14 @@
 import { insightsData } from '@/lib/insightsData';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata = {
-    title: 'Agentic Payments | Autonomous Settlement Infrastructure | AI Velocity',
+export const metadata = createMetadata({
+    pageTitle: 'Agentic Payments | Autonomous Settlement Infrastructure | AI Velocity',
+    title: 'Agentic Payments, Autonomous Settlement Infrastructure',
     description: 'Agentic payments orchestrate instant, machine-to-machine settlements via autonomous software delegates. Explore the v402 handshake, sovereign settlement protocols, and the financial infrastructure powering agent-to-agent commerce.',
-    alternates: {
-        canonical: 'https://aivelocity.dev/agentic-payments',
-    },
-    openGraph: {
-        title: 'Agentic Payments — Autonomous Settlement Infrastructure',
-        description: 'Instant machine-to-machine settlements via autonomous AI delegates. The v402 handshake protocol enables sovereign, cryptographically verified settlement at global scale.',
-        url: 'https://aivelocity.dev/agentic-payments',
-        siteName: 'AI Velocity',
-        type: 'website',
-        images: [
-            {
-                url: 'https://aivelocity.dev/og?title=Agentic%20Payments&subtitle=Service%20Page',
-                width: 1200,
-                height: 630,
-                alt: 'AI Velocity Agentic Payments — Autonomous settlement infrastructure',
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Agentic Payments — Autonomous Settlement Infrastructure',
-        description: 'Instant machine-to-machine settlements via autonomous AI delegates. The financial infrastructure powering agent-to-agent commerce.',
-        images: ['https://aivelocity.dev/og?title=Agentic%20Payments&subtitle=Service%20Page'],
-    },
-};
+    ogDescription: 'Instant machine-to-machine settlements via autonomous AI delegates. The v402 handshake protocol enables sovereign, cryptographically verified settlement at global scale.',
+    path: '/agentic-payments',
+    ogSubtitle: 'Service Page',
+});
 
 export default function AgenticPaymentsLayout({ children }) {
     const categoryArticles = insightsData

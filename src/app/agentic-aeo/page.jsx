@@ -42,7 +42,7 @@ const secondaryFeature = {
     label: "Knowledge Infrastructure",
     watermark: "Entities",
     title: "Semantic Knowledge Graphs",
-    text1: "The 2026 signal for Agentic AEO is already appearing in the way global content infrastructure is being restructured for machine-to-machine discovery. At the heart of this transition is the semantic knowledge graph—a continuous data layer designed to facilitate instant answer retrieval by AI search agents without human intervention. This decentralized discovery layer allows language models to validate factual entities directly from your origin data, bypassing the noise and bias of legacy search engine algorithms.",
+    text1: "The 2026 signal for Agentic AEO is already appearing in the way global content infrastructure is being restructured for machine-to-machine discovery. At the heart of this transition is the semantic knowledge graph, a continuous data layer designed to facilitate instant answer retrieval by AI search agents without human intervention. This decentralized discovery layer allows language models to validate factual entities directly from your origin data, bypassing the noise and bias of legacy search engine algorithms.",
     text2: "By utilizing structured data formats like JSON-LD, this infrastructure provides mathematical clarity to every piece of content, ensuring your brand's authority perfectly aligns with the intelligence engine's query. This level of machine-readable legibility enables zero-click dominance and a total reduction in traditional SEO guesswork. Businesses that optimize their technical architecture for algorithmic synthesis and direct answer routing will dominate the next era of organic, human-free discovery."
 };
 
@@ -442,7 +442,7 @@ export default function AgenticAEO() {
                 "@type": "WebPage",
                 "@id": "https://aivelocity.dev/agentic-aeo/#webpage",
                 "url": "https://aivelocity.dev/agentic-aeo",
-                "name": "Agentic AEO — Answer Engine Optimization for AI Agents",
+                "name": "Agentic AEO, Answer Engine Optimization for AI Agents",
                 "description": "Agentic AEO restructures your digital footprint so autonomous AI agents cite your brand as the canonical answer. Structured schema, semantic knowledge graphs, and entity anchoring.",
                 "isPartOf": { "@id": "https://aivelocity.dev/#website" },
                 "about": { "@id": "https://aivelocity.dev/agentic-aeo/#service" },
@@ -493,7 +493,7 @@ export default function AgenticAEO() {
                             "itemOffered": {
                                 "@type": "Service",
                                 "name": "Information Gain Optimization",
-                                "description": "Unique, verifiable data that answer engines prioritize over commodity content — ensuring your brand is cited as the primary authority."
+                                "description": "Unique, verifiable data that answer engines prioritize over commodity content, ensuring your brand is cited as the primary authority."
                             }
                         },
                         {
@@ -615,7 +615,7 @@ export default function AgenticAEO() {
 
                 <RelatedInsights
                     category="Agentic AEO"
-                    description="Optimising for AI engines instead of search engines — the new frontier of brand visibility and discovery."
+                    description="Optimising for AI engines instead of search engines, the new frontier of brand visibility and discovery."
                 />
 
                 <FoundryManifesto

@@ -1,10 +1,10 @@
 {
   "name": "ai-velocity-v2",
   "browserslist": [
-    "Chrome >= 92",
-    "Firefox >= 90",
-    "Safari >= 15",
-    "Edge >= 92"
+    "Chrome >= 105",
+    "Firefox >= 104",
+    "Safari >= 16",
+    "Edge >= 105"
   ],
   "private": true,
   "version": "0.0.0",

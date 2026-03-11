@@ -1,33 +1,14 @@
 import { insightsData } from '@/lib/insightsData';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata = {
-    title: 'Agentic AEO — Answer Engine Optimization for AI Agents | AI Velocity',
+export const metadata = createMetadata({
+    pageTitle: 'Agentic AEO, Answer Engine Optimization for AI Agents | AI Velocity',
+    title: 'Agentic AEO, Answer Engine Optimization for AI Agents',
     description: 'Agentic AEO restructures your digital footprint so autonomous AI agents cite your brand as the canonical answer. Structured schema, semantic knowledge graphs, and entity anchoring that make you the primary source for LLMs, ChatGPT, Perplexity, and Gemini.',
-    alternates: {
-        canonical: 'https://aivelocity.dev/agentic-aeo',
-    },
-    openGraph: {
-        title: 'Agentic AEO — Answer Engine Optimization for AI Agents',
-        description: 'Make your brand the canonical answer for autonomous AI search agents. Entity anchoring, knowledge graphs, and structured schema that dominate the generative search layer.',
-        url: 'https://aivelocity.dev/agentic-aeo',
-        siteName: 'AI Velocity',
-        type: 'website',
-        images: [
-            {
-                url: 'https://aivelocity.dev/og?title=Agentic%20AEO&subtitle=Service%20Page',
-                width: 1200,
-                height: 630,
-                alt: 'AI Velocity Agentic AEO — Answer Engine Optimization for AI agents',
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Agentic AEO — Answer Engine Optimization for AI Agents',
-        description: 'Make your brand the canonical answer for autonomous AI search agents. Entity anchoring, knowledge graphs, and structured schema.',
-        images: ['https://aivelocity.dev/og?title=Agentic%20AEO&subtitle=Service%20Page'],
-    },
-};
+    ogDescription: 'Make your brand the canonical answer for autonomous AI search agents. Entity anchoring, knowledge graphs, and structured schema that dominate the generative search layer.',
+    path: '/agentic-aeo',
+    ogSubtitle: 'Service Page',
+});
 
 export default function AgenticAEOLayout({ children }) {
     const categoryArticles = insightsData

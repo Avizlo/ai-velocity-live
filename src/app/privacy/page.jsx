@@ -6,20 +6,20 @@ const sections = [
         title: 'Data We Collect',
         content: `AI Velocity does not require user accounts, login credentials, or personal information to access this website. The data we collect is limited to:
 
-**Automatically Collected Data** — When you visit our site, our hosting provider (Vercel) may collect standard server log data including your IP address, browser type, operating system, referring URL, pages visited, and timestamps. This data is used solely for security monitoring and performance optimisation.
+**Automatically Collected Data**: When you visit our site, our hosting provider (Vercel) may collect standard server log data including your IP address, browser type, operating system, referring URL, pages visited, and timestamps. This data is used solely for security monitoring and performance optimisation.
 
-**Analytics Data** — We may use privacy-respecting analytics tools to understand aggregate traffic patterns. This data is anonymised and cannot be used to identify individual visitors.
+**Analytics Data**: We may use privacy-respecting analytics tools to understand aggregate traffic patterns. This data is anonymised and cannot be used to identify individual visitors.
 
-**Contact Form Submissions** — If you voluntarily submit information through a contact form or email, we collect only what you provide (name, email, message content). This information is used exclusively to respond to your enquiry.`,
+**Contact Form Submissions**: If you voluntarily submit information through a contact form or email, we collect only what you provide (name, email, message content). This information is used exclusively to respond to your enquiry.`,
     },
     {
         number: '02',
         title: 'Cookies & Tracking',
         content: `This website uses only essential cookies required for basic site functionality. We do not use advertising cookies, social media tracking pixels, or third-party marketing trackers.
 
-**Essential Cookies** — These are strictly necessary for the website to function and cannot be disabled. They include session management and security tokens.
+**Essential Cookies**: These are strictly necessary for the website to function and cannot be disabled. They include session management and security tokens.
 
-**Third-Party Services** — Our site is hosted on Vercel, which may set its own essential cookies for performance and security. No third-party advertising or remarketing services are integrated into this website.
+**Third-Party Services**: Our site is hosted on Vercel, which may set its own essential cookies for performance and security. No third-party advertising or remarketing services are integrated into this website.
 
 You can control cookie behaviour through your browser settings at any time.`,
     },
@@ -28,10 +28,10 @@ You can control cookie behaviour through your browser settings at any time.`,
         title: 'How We Use Your Data',
         content: `Any data collected is used for the following purposes only:
 
-— To maintain and secure the website infrastructure
-— To analyse aggregate traffic patterns and improve site performance
-— To respond to direct enquiries submitted through contact channels
-— To comply with applicable legal obligations
+- To maintain and secure the website infrastructure
+- To analyse aggregate traffic patterns and improve site performance
+- To respond to direct enquiries submitted through contact channels
+- To comply with applicable legal obligations
 
 **We do not sell, rent, share, or trade your personal data with any third party.** We do not use your data for automated decision-making, profiling, or targeted advertising.`,
     },
@@ -47,9 +47,9 @@ We do not maintain long-term databases of visitor information. Anonymised analyt
         title: 'Your Rights',
         content: `Depending on your jurisdiction, you may have the following rights regarding your personal data:
 
-**Under GDPR (EU/UK)** — Right of access, rectification, erasure, restriction of processing, data portability, and the right to object to processing.
+**Under GDPR (EU/UK)**: Right of access, rectification, erasure, restriction of processing, data portability, and the right to object to processing.
 
-**Under CCPA (California)** — Right to know what personal information is collected, the right to request deletion, and the right to opt-out of the sale of personal information. As noted above, we do not sell personal information.
+**Under CCPA (California)**: Right to know what personal information is collected, the right to request deletion, and the right to opt-out of the sale of personal information. As noted above, we do not sell personal information.
 
 To exercise any of these rights, contact us at the address listed below. We will respond to verified requests within 30 days.`,
     },
@@ -58,7 +58,7 @@ To exercise any of these rights, contact us at the address listed below. We will
         title: 'Third-Party Services',
         content: `This website relies on the following third-party services, each with their own privacy policies:
 
-— **Vercel** (Hosting & CDN) — [vercel.com/legal/privacy-policy](https://vercel.com/legal/privacy-policy)
+- **Vercel** (Hosting & CDN): [vercel.com/legal/privacy-policy](https://vercel.com/legal/privacy-policy)
 
 We evaluate all third-party services for privacy compliance before integration. No third-party service is granted access to personal data beyond what is technically necessary for the website to function.`,
     },
@@ -123,8 +123,8 @@ export default function PrivacyPage() {
                                                     __html: paragraph
                                                         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                                                         .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-                                                        .replace(/\n— /g, '<br/>— ')
-                                                        .replace(/^— /g, '— ')
+                                                        .replace(/\n- /g, '<br/>- ')
+                                                        .replace(/^- /g, '- ')
                                                 }} />
                                             ))}
                                         </div>

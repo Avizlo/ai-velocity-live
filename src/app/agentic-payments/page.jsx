@@ -41,7 +41,7 @@ const secondaryFeature = {
     label: "Financial Infrastructure",
     watermark: "Protocols",
     title: "Autonomous Settlement Protocols",
-    text1: "The 2026 signal for agentic payments is already appearing in the way global financial infrastructure is being restructured for machine-to-machine commerce. At the heart of this transition is the v402 handshake—a secure autonomous settlement protocol designed to facilitate instant value transfers between AI agents without human oversight. This decentralized settlement layer allows digital delegates to validate cryptographic signatures directly with merchant databases, preventing fraud in a way that legacy credit card networks simply cannot match.",
+    text1: "The 2026 signal for agentic payments is already appearing in the way global financial infrastructure is being restructured for machine-to-machine commerce. At the heart of this transition is the v402 handshake, a secure autonomous settlement protocol designed to facilitate instant value transfers between AI agents without human oversight. This decentralized settlement layer allows digital delegates to validate cryptographic signatures directly with merchant databases, preventing fraud in a way that legacy credit card networks simply cannot match.",
     text2: "By utilizing structured data formats like JSON-LD, this infrastructure provides semantic clarity to every agent-initiated transaction, ensuring the buyer's intent perfectly aligns with the seller's offer. This level of machine-readable legibility enables frictionless cross-border execution and a total reduction in operational overhead. Businesses that optimize their technical architecture for algorithmic negotiation and programmatic revenue will dominate the next era of global, human-free trade."
 };
 
@@ -432,7 +432,7 @@ export default function AgenticPayments() {
                 "@type": "WebPage",
                 "@id": "https://aivelocity.dev/agentic-payments/#webpage",
                 "url": "https://aivelocity.dev/agentic-payments",
-                "name": "Agentic Payments — Autonomous Settlement Infrastructure",
+                "name": "Agentic Payments, Autonomous Settlement Infrastructure",
                 "description": "Agentic payments orchestrate instant, machine-to-machine settlements via autonomous software delegates. The v402 handshake protocol enables sovereign, cryptographically verified settlement.",
                 "isPartOf": { "@id": "https://aivelocity.dev/#website" },
                 "about": { "@id": "https://aivelocity.dev/agentic-payments/#service" },

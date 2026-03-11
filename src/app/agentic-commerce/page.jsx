@@ -572,8 +572,8 @@ export default function AgenticCommerce() {
                 "@type": "WebPage",
                 "@id": "https://aivelocity.dev/agentic-commerce/#webpage",
                 "url": "https://aivelocity.dev/agentic-commerce",
-                "name": "Agentic Commerce — Autonomous AI Agents for Procurement & Settlement",
-                "description": "Agentic commerce replaces manual storefronts with autonomous AI agents that discover, negotiate, and settle purchases on behalf of your customers — 24/7, in 60+ languages.",
+                "name": "Agentic Commerce, Autonomous AI Agents for Procurement & Settlement",
+                "description": "Agentic commerce replaces manual storefronts with autonomous AI agents that discover, negotiate, and settle purchases on behalf of your customers, 24/7, in 60+ languages.",
                 "isPartOf": { "@id": "https://aivelocity.dev/#website" },
                 "about": { "@id": "https://aivelocity.dev/agentic-commerce/#service" },
                 "speakable": {

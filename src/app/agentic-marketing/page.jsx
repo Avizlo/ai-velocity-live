@@ -336,7 +336,7 @@ export default function Marketing() {
                 "@type": "WebPage",
                 "@id": "https://aivelocity.dev/agentic-marketing/#webpage",
                 "url": "https://aivelocity.dev/agentic-marketing",
-                "name": "Agentic Marketing — Autonomous AI Campaign Orchestration",
+                "name": "Agentic Marketing, Autonomous AI Campaign Orchestration",
                 "description": "Agentic marketing deploys autonomous AI agents to execute campaign orchestration, content generation, and performance optimisation at machine speed.",
                 "isPartOf": { "@id": "https://aivelocity.dev/#website" },
                 "about": { "@id": "https://aivelocity.dev/agentic-marketing/#service" },
