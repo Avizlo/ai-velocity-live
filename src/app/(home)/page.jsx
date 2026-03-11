@@ -175,8 +175,9 @@ export default function Home() {
                                             src={service.image}
                                             alt={service.title}
                                             fill
+                                            quality={60}
                                             sizes="(max-width: 768px) 100vw, 50vw"
-                                            className="object-cover"
+                                            className="object-cover will-change-transform"
                                             style={{ objectPosition: service.bgPosition || 'center' }}
                                         />
                                     </div>
