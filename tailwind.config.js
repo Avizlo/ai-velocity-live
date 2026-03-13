@@ -20,9 +20,9 @@ export default {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'sans-serif'],
-        serif: ['AgenticTimes', 'ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+        serif: ['var(--font-agentic-times)', 'ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
         'sans-instrument': ['var(--font-instrument-sans)', 'sans-serif'],
-        'agentic-times': ['AgenticTimes', 'serif']
+        'agentic-times': ['var(--font-agentic-times)', 'serif']
       },
       spacing: { 'section-desktop': '120px', 'section-mobile': '80px' },
       borderRadius: { 'card': '10px' },
