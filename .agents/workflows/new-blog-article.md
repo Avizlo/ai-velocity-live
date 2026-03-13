@@ -18,13 +18,16 @@ Every article in the `insightsData` array must include these fields:
     slug: "your-article-slug",        // URL-safe, lowercase, hyphenated
     title: "Your Article Title",      // 50-65 characters ideal for SERPs
     category: "Agentic Commerce",     // See allowed categories below
+    categoryPage: "/agentic-commerce",// Links to parent service page (enables CTA banner + topical authority)
+    relatedSlugs: ["slug-1", "slug-2"], // Cross-links for "Further Reading" section (see Section 5b)
     date: "2026-04-01T08:00:00Z",     // ISO 8601 format
+    dateModified: "2026-04-01T08:00:00Z", // Update when article is edited (JSON-LD freshness signal)
     author: "AI Velocity Engineering",// Or specific author name
     readTime: "8 min read",           // Calculate: wordCount / 250
     image: "/images/insights/your-slug.webp",  // Local WebP in public/images/insights/ (see Image Requirements)
     excerpt: "...",                   // 150-160 characters, compelling summary
     content: `...`,                   // Markdown content (see Section 3)
-    faqs: [                           // Optional but STRONGLY recommended for Insight articles
+    faqs: [                           // REQUIRED for Insight articles (see Section 5)
         {
             question: "...",
             answer: "..."
@@ -182,39 +185,95 @@ Share specific insider knowledge about how you actually do the work, not just wh
 
 ## 5. FAQ Requirements
 
-Insight articles should include 3–5 FAQ items in the `faqs` array. This is the **highest-impact element for LLM citation** because:
+Insight articles should include 5–7 FAQ items in the `faqs` array. This is the **highest-impact element for LLM citation** because:
 
 - Google renders FAQPage schema as rich snippets
 - LLMs specifically extract structured Q&A for direct answers
 - The `ArticleFAQ` component renders them as expandable accordions
+- More FAQs = broader query coverage across long-tail search and LLM prompts
 
 **FAQ writing rules:**
 - Questions should match real user queries (how people would ask an LLM)
 - Answers should be 2-3 sentences, direct and authoritative
 - Include the target keyword naturally in both Q and A
+- Start answers with a clear, definitive statement (LLMs extract the first sentence)
 - News articles do NOT need FAQs
 
 ---
 
-## 6. SEO Checklist Before Publishing
+## 5b. Related Articles (`relatedSlugs`) Selection Rules
 
-- [ ] Title is 50-65 characters
-- [ ] Excerpt is 150-160 characters
-- [ ] Word count meets category target
-- [ ] Article contains at least 2 information gain elements
-- [ ] Insight articles have 3-5 FAQ items
-- [ ] Hero image downloaded, converted to WebP, saved to `public/images/insights/`
-- [ ] Hero image is unique (not used by any other article)
-- [ ] `image` field uses local path `/images/insights/slug.webp` (NOT an external URL)
-- [ ] `readTime` is calculated correctly (wordCount ÷ 250)
-- [ ] `date` is in ISO 8601 format
+Every Insight article should include 2-3 related articles in the `relatedSlugs` array. This powers the "Further Reading" section and strengthens internal topical authority.
+
+**Selection rules:**
+- At least 1 article from the **same category** (reinforces topical cluster)
+- At least 1 article from a **different category** (cross-pollinates traffic)
+- Maximum 3 related articles (keeps the section focused)
+- Choose articles that share a conceptual thread, not just a category label
+
+---
+
+## 5c. LLM Citation Optimisation
+
+These patterns increase the probability of your content being cited by ChatGPT, Gemini, Perplexity, and other answer engines:
+
+### Entity-First Sentences
+LLMs extract better when key entities appear at the start of a paragraph.
+- ❌ "In the evolving landscape of digital payments, Stripe has introduced a new protocol..."
+- ✅ "Stripe's Agentic Commerce Protocol enables AI agents to discover, negotiate, and purchase products programmatically."
+
+### Definition Patterns
+Explicit "X is Y" definitions get cited directly as answers.
+- ✅ "Shared Payment Tokens are single-use, time-limited credentials that allow AI agents to process payments without exposing underlying card data."
+- ✅ "Agentic commerce is a framework where autonomous AI agents execute commercial transactions on behalf of human buyers."
+
+### Comparison Structures
+LLMs frequently generate answers from "X vs Y" framings.
+- ✅ "Unlike traditional SEO, which optimises for human-readable pages, AEO optimises for machine-readable data structures."
+
+### Quantified Claims
+Specific numbers are more citable than vague assertions.
+- ❌ "Most consumers are open to agentic commerce."
+- ✅ "81% of consumers are open to using agentic commerce tools, according to industry research."
+
+---
+
+## 6. SEO & LLM Checklist Before Publishing
+
+### Data Fields
+- [ ] `id` is unique (check last id in `insightsData.js` and increment)
 - [ ] `slug` is URL-safe (lowercase, hyphens, no special characters)
-- [ ] No em dashes (—) used anywhere in the content
+- [ ] `title` is 50-65 characters
+- [ ] `excerpt` is 150-160 characters
+- [ ] `category` is one of the 5 allowed categories
+- [ ] `categoryPage` is set to the correct service page path (e.g. `/agentic-commerce`)
+- [ ] `relatedSlugs` includes 2-3 related article slugs (at least 1 same category, 1 different)
+- [ ] `date` is in ISO 8601 format
+- [ ] `dateModified` is set (same as `date` on first publish)
+- [ ] `readTime` is calculated correctly (wordCount ÷ 250)
+- [ ] `image` field uses local path `/images/insights/slug.webp` (NOT an external URL)
+
+### Content Quality
+- [ ] Word count meets category target (1,500-2,500 for Insights, 600-800 for News)
+- [ ] Article contains at least 2 information gain elements
+- [ ] Insight articles have 5-7 FAQ items
 - [ ] Content uses proper H2/H3 hierarchy (no H1)
-- [ ] Key terms are bolded for scan-legibility
+- [ ] Key terms are bolded on first mention for scan-legibility
+- [ ] No em dashes (—) used anywhere in the content
 - [ ] Insight article uses an approved content style (Thought Leadership or Industry Analysis)
 - [ ] Content passes all authenticity rules (no false product/deployment claims)
+- [ ] Key definitions use entity-first and "X is Y" patterns for LLM extraction
+
+### Image
+- [ ] Hero image sourced from Unsplash (or royalty-free equivalent)
+- [ ] Hero image is unique (not used by any other article)
+- [ ] Image downloaded, converted to WebP (1200px, quality 80), saved to `public/images/insights/`
 - [ ] Verified image loads on listing page AND article detail page in browser
+
+### Build & Deploy
+- [ ] `npm run build` passes with no errors
+- [ ] New article appears correctly on `/news-insights` listing page
+- [ ] Article detail page renders correctly at `/news-insights/[slug]`
 
 ---
 
