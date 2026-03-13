@@ -63,7 +63,7 @@ export const FoundryManifesto = ({ title = defaultTitle, leadIn = defaultLeadIn,
                         trigger: containerRef.current,
                         start: "top 80%",
                         end: "bottom 20%",
-                        toggleActions: "play none none reverse"
+                        once: true
                     }
                 });
 

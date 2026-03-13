@@ -189,7 +189,7 @@ const SplitFeature = ({
                         trigger: containerRef.current,
                         start: "top 80%",
                         end: "bottom 20%",
-                        toggleActions: "play none none reverse",
+                        once: true,
                     }
                 });
 
@@ -279,7 +279,7 @@ const StatementAction = ({ title, subtitle, statement, actionText }) => {
                         scrollTrigger: {
                             trigger: sectionRef.current,
                             start: 'top 80%',
-                            toggleActions: 'play none none reverse'
+                            once: true
                         }
                     }
                 );
@@ -393,7 +393,7 @@ const BentoGrid2 = ({ data }) => {
                         scrollTrigger: {
                             trigger: gridRef.current,
                             start: 'top 80%',
-                            toggleActions: 'play none none reverse'
+                            once: true
                         }
                     }
                 );
@@ -501,7 +501,7 @@ const NewsInsight = ({ title, description, posts }) => {
                         scrollTrigger: {
                             trigger: newsRef.current,
                             start: 'top 80%',
-                            toggleActions: 'play none none reverse'
+                            once: true
                         }
                     }
                 );

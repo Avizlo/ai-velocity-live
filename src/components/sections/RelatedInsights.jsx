@@ -42,7 +42,7 @@ export const RelatedInsights = ({
                     { y: 20, opacity: 0 },
                     {
                         y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out',
-                        scrollTrigger: { trigger: ref.current, start: 'top 80%', toggleActions: 'play none none reverse' }
+                        scrollTrigger: { trigger: ref.current, start: 'top 80%', once: true }
                     }
                 );
             }, ref);

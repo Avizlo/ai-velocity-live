@@ -148,7 +148,7 @@ const SplitFeature = ({
                         trigger: containerRef.current,
                         start: "top 80%",
                         end: "bottom 20%",
-                        toggleActions: "play none none reverse",
+                        once: true,
                     }
                 });
 
@@ -238,7 +238,7 @@ const StatementAction = ({ title, subtitle, statement, actionText, watermark = "
                         scrollTrigger: {
                             trigger: sectionRef.current,
                             start: 'top 80%',
-                            toggleActions: 'play none none reverse'
+                            once: true
                         }
                     }
                 );
@@ -304,7 +304,7 @@ const AeoDiscoveryGrid = () => {
                         scrollTrigger: {
                             trigger: gridRef.current,
                             start: 'top 80%',
-                            toggleActions: 'play none none reverse'
+                            once: true
                         }
                     }
                 );

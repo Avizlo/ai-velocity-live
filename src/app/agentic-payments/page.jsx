@@ -146,7 +146,7 @@ const SplitFeature = ({
                         trigger: containerRef.current,
                         start: "top 80%",
                         end: "bottom 20%",
-                        toggleActions: "play none none reverse",
+                        once: true,
                     }
                 });
 
@@ -236,7 +236,7 @@ const StatementAction = ({ title, subtitle, statement, actionText }) => {
                         scrollTrigger: {
                             trigger: sectionRef.current,
                             start: 'top 80%',
-                            toggleActions: 'play none none reverse'
+                            once: true
                         }
                     }
                 );
@@ -302,7 +302,7 @@ const PaymentsSettlementGrid = () => {
                         scrollTrigger: {
                             trigger: gridRef.current,
                             start: 'top 80%',
-                            toggleActions: 'play none none reverse'
+                            once: true
                         }
                     }
                 );
