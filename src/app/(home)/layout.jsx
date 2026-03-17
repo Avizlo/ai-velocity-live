@@ -4,9 +4,9 @@ import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
     pageTitle: 'Agentic Commerce Infrastructure | AI Velocity',
-    title: 'Agentic Commerce Infrastructure | AI Velocity',
+    title: 'AI Velocity | Agentic Economy Intelligence',
     description: 'AI Velocity builds agentic commerce infrastructure. Autonomous systems for marketing, payments, and discovery, engineered for AI agents that negotiate, transact, and settle at protocol speed.',
-    ogDescription: 'AI Velocity builds agentic commerce infrastructure. Autonomous systems for marketing, payments, and discovery, engineered for AI agents.',
+    ogDescription: 'Original research and strategic analysis on agentic commerce, AEO, and the autonomous economy.',
 });
 
 export default function HomeLayout({ children }) {

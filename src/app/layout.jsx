@@ -26,9 +26,10 @@ import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
     pageTitle: 'Ai Velocity Foundry | Leading the Era of Agentic Commerce',
-    title: 'Ai Velocity Foundry | Leading the Era of Agentic Commerce',
+    title: 'AI Velocity | Research & Intelligence on the Agentic Economy',
     description: 'Master the shift to Agentic Commerce and Marketing with Ai Velocity. We provide the tools for the next generation of commerce.',
-    ogSubtitle: 'Agentic Commerce',
+    ogSubtitle: 'Research & Intelligence',
+    ogDescription: 'Original research, technical analysis, and strategic intelligence on agentic commerce, autonomous marketing, and machine-to-machine payments.',
     keywords: 'Agentic Commerce, Agentic Marketing, Sovereign Visual Intelligence, Autonomous Growth',
 });
 
