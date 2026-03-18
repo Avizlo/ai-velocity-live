@@ -7,6 +7,7 @@ export const metadata = createMetadata({
     title: 'What Is Agentic Commerce? AI-Driven Shopping Revolution',
     description: 'Agentic commerce is the shift from human-driven online shopping to autonomous AI agents that find, negotiate, and settle transactions at protocol speed. Here is how it works.',
     ogDescription: 'Agentic commerce is the shift from human-driven online shopping to autonomous AI agents that find, negotiate, and settle transactions at protocol speed. Here is how it works.',
+    keywords: 'Agentic Commerce, Agent-to-Agent Commerce, Agentic Payments, Model Context Protocol, Autonomous AI Transactions',
     path: '/agentic-commerce',
     ogSubtitle: 'Service Page',
 });

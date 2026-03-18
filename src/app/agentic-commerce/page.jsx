@@ -740,14 +740,80 @@ export default function AgenticCommerce() {
             },
             {
                 "@type": "FAQPage",
-                "mainEntity": commerceFaqs.map(faq => ({
-                    "@type": "Question",
-                    "name": faq.question,
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": faq.answer
+                "mainEntity": [
+                    ...commerceFaqs.map(faq => ({
+                        "@type": "Question",
+                        "name": faq.question,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": faq.answer
+                        }
+                    })),
+                    {
+                        "@type": "Question",
+                        "name": "What is agentic commerce?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Agentic commerce is the shift from human-driven online shopping to autonomous AI agents that find, evaluate, negotiate, and complete transactions without human intervention. AI agents act as purchasing delegates for consumers, operating within pre-defined parameters to execute optimal transactions at machine speed."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How is agentic commerce different from traditional e-commerce?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Traditional e-commerce is designed for human psychology — visual merchandising, conversion optimisation, and friction reduction for human buyers. Agentic commerce is designed for machine logic — structured data, API-accessible inventory, and protocol-level settlement for autonomous agents. The metrics, infrastructure, and economics are fundamentally different."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is agent-to-agent commerce?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Agent-to-agent commerce is transactions that occur entirely between autonomous systems. A consumer's AI agent communicates directly with a merchant's commerce agent, negotiates terms using the agentic commerce protocol, and settles payment through cryptographic handshake with no human action required at any stage."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the Model Context Protocol and why does it matter for commerce?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The Model Context Protocol (MCP) is the technical standard that allows AI agents to connect with external data sources and services. For commerce, MCP is how consumer AI assistants access merchant product data, pricing, and transaction capability. Brands without MCP-compatible commerce infrastructure are inaccessible to the agents making purchasing decisions on their customers' behalf."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is zero-click search in the context of agentic commerce?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Zero-click search is when a consumer's AI assistant handles an entire purchase transaction invisibly — finding, evaluating, and buying a product without the consumer ever visiting a website or interacting with a checkout flow. The consumer expresses intent and receives a confirmation. All commercial activity occurs autonomously in the background."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How does agentic commerce handle trust and security?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Agentic commerce establishes trust at the protocol level through cryptographically signed mandates, agent identity verification, and mathematically verifiable authorisation chains. Every transaction generates a tamper-evident audit trail. Consumer spend controls enforce financial boundaries at the protocol level, and risk stack infrastructure monitors for anomalous agent behaviour in real time."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What do brands need to do to prepare for agentic commerce?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Brands need to build machine-readable product infrastructure, real-time inventory APIs, agent payment protocol integration, and answer engine authority. The four layers — structured data, live pricing access, autonomous settlement capability, and AI citation presence — together constitute agentic commerce readiness."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "When will agentic commerce become mainstream?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The infrastructure is being deployed now. Major technology platforms, payment networks, and AI assistant providers are building agentic commerce capability into their core products. Brands that begin restructuring their infrastructure in 2026 will be positioned as default suppliers to agents by the time autonomous purchasing reaches mass adoption. Brands that wait will find themselves locked out of the agent query pool."
+                        }
                     }
-                }))
+                ]
             },
             {
                 "@type": "Article",
