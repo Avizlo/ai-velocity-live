@@ -2148,4 +2148,153 @@ The infrastructure for agentic commerce is not being built in one place. It is b
             }
         ]
     },
+    {
+        id: "22",
+        slug: "stripe-mpp-machine-payments-protocol-agentic-commerce",
+        title: "MPP Is the HTTP of Agent Payments",
+        category: "Agentic Payments",
+        categoryPage: "/agentic-payments",
+        relatedSlugs: ["the-settlement-layer-is-live", "v402-handshake-how-machine-to-machine-negotiation-works", "stablecoins-settlement-layer-ai-agents"],
+        date: "2026-03-18T18:00:00Z",
+        dateModified: "2026-03-18T18:00:00Z",
+        author: "AI Velocity Engineering",
+        readTime: "8 min read",
+        image: "/images/insights/stripe-mpp-machine-payments-protocol.webp",
+        excerpt: "Stripe and Tempo just launched the Machine Payments Protocol, an open standard for how AI agents pay. This is the standardisation moment agentic commerce was waiting for.",
+        content: `
+## The Protocol That Was Missing
+
+For the past 18 months, AI Velocity has tracked a convergence: Stripe building an Agentic Commerce Suite, Visa shipping Intelligent Commerce, Mastercard launching Agent Pay, stablecoins emerging as the settlement layer. The infrastructure was assembling. The payment rails existed. The agent identity systems were operational.
+
+What was missing was the protocol. Not the infrastructure for making payments, but the specification for how an agent requests one, how a service responds, and how the two coordinate programmatically across any rail, any currency, any provider.
+
+On March 18, 2026, that protocol arrived.
+
+**The Machine Payments Protocol (MPP)**, co-authored by Stripe and Tempo, is an open standard that specifies how AI agents and services coordinate payments. It is internet-native, rail-agnostic, and designed for the transaction patterns that machines generate: microtransactions, continuous payments, high-frequency settlement, and autonomous authorisation within defined limits.
+
+MPP is not a product. It is a specification. That distinction matters more than anything else about this announcement.
+
+## What MPP Actually Specifies
+
+The protocol defines a structured interaction pattern between an agent (the buyer) and a service (the seller).
+
+An agent requests a resource from a service. The service responds with a payment request that includes the amount, the accepted payment methods, and the terms. The agent evaluates the request, authorises payment through its configured payment provider, and receives access to the resource. The entire exchange is programmatic. No checkout page. No redirect. No human in the loop.
+
+Three technical features make MPP more than a simple request-response cycle.
+
+### Sessions
+
+This is the most consequential design decision in the protocol. **Sessions** allow an agent to receive a single authorisation and then make continuous payments within defined limits. The agent does not re-authorise for each microtransaction. Instead, it operates within a pre-approved spending envelope.
+
+This solves a problem that has blocked practical agent commerce: the overhead of per-transaction authorisation. When an AI agent is purchasing API calls, data feeds, or compute resources, it may initiate hundreds of transactions per minute. Requiring individual authorisation for each one creates latency that defeats the purpose of autonomous operation.
+
+Sessions aggregate these micro-payments into a single settlement, reducing the transaction count that hits the underlying payment rail while maintaining a continuous flow of value between agent and service. Think of it as a tab at a bar, except the tab is cryptographically scoped and closes automatically when the spending limit is reached.
+
+### Rail Agnosticism
+
+MPP is **payment-rail agnostic**. It supports stablecoins, traditional credit and debit cards, Shared Payment Tokens (Stripe's SPTs), and even Bitcoin via Lightning network through integrations with Visa and Lightspark.
+
+This is a significant architectural decision. Previous agent payment solutions were rail-specific. Stripe's Agentic Commerce Suite was tied to Stripe's payment network. Stablecoin-based solutions like x402 required on-chain settlement. MPP abstracts the rail away from the protocol, allowing the agent and service to negotiate which payment method to use as part of the initial handshake.
+
+The practical implication: a single MPP integration allows a service to accept payment from any agent, regardless of whether that agent pays with USDC, a Visa token, or a Mastercard Agentic Token. The protocol handles the coordination. The underlying rail handles the settlement.
+
+### Open Standard
+
+MPP is published as an open specification, not a proprietary Stripe API. Any payment provider, any blockchain, any fintech can implement the protocol. Stripe's implementation happens to be the first and most mature, but the protocol itself is not locked to Stripe's infrastructure.
+
+This is the HTTP parallel that matters. HTTP succeeded not because one company controlled it, but because anyone could implement a web server. MPP is designed for the same adoption pattern: open specification, multiple implementations, network effects that compound as more agents and services adopt the standard.
+
+## Tempo: The Payment Layer Underneath
+
+MPP was co-authored with **Tempo**, a payments-focused Layer 1 blockchain incubated by Stripe and Paradigm. Tempo launched its mainnet simultaneously with the MPP announcement.
+
+Tempo is purpose-built for the transaction patterns that agent commerce generates. Traditional blockchains optimise for generality: smart contracts, DeFi protocols, governance mechanisms. Tempo optimises for a single use case: moving money. Instant settlement. Predictable low fees. High throughput. Global availability.
+
+The relationship between MPP and Tempo is similar to the relationship between HTTP and TCP/IP. MPP defines the application-layer protocol (how agents and services talk about payments). Tempo provides the transport layer (how the payments actually settle). You can use MPP without Tempo, settling on Visa or Mastercard rails instead. But Tempo is designed to be the most efficient settlement layer for MPP's transaction patterns, particularly for the high-frequency, low-value microtransactions where traditional rails are economically impractical.
+
+The partner list for the launch is not subtle: **Mastercard, OpenAI, Shopify, Anthropic, DoorDash, Nubank, Ramp, Revolut, Standard Chartered, Visa, and Lightspark.** This is not a startup announcement. This is the payments and AI industries declaring alignment around a common standard.
+
+## How MPP Fits Into the Existing Stack
+
+For readers who have been following AI Velocity's coverage of the agentic commerce infrastructure, MPP occupies a specific position in the transaction stack.
+
+**Discovery** is handled by structured product data, schema markup, and agent-readable APIs. Stripe's Agentic Commerce Protocol (ACP) handles product discovery and storefront integration.
+
+**Negotiation** is handled by machine-to-machine protocols like the v402 Handshake. The agent and service agree on terms, pricing, and conditions through structured programmatic exchange.
+
+**Payment** is where MPP operates. Once the agent has discovered a product and negotiated terms, MPP specifies how the payment is requested, authorised, and settled.
+
+**Settlement** is handled by the underlying rail: Tempo for stablecoin settlement, Stripe for card-based settlement, or any other rail that implements MPP's payment interface.
+
+This layered architecture means MPP does not compete with Stripe's existing Agentic Commerce Suite. It extends it. ACP handles the commerce layer. MPP handles the payment layer. They compose together but can also be used independently.
+
+## MPP vs AP2: Two Standards, One Problem
+
+The same week Stripe launched MPP, Google announced the **Agent Payments Protocol (AP2)**, developed in collaboration with American Express, Mastercard, and PayPal.
+
+AP2 extends Google's existing Agent2Agent (A2A) and Model Context Protocol (MCP) standards to cover payment initiation. It focuses on authentication, authorisation, and accountability: ensuring that an agent has verifiable authority to initiate a payment on behalf of a user.
+
+The two protocols address different layers of the same problem.
+
+**MPP** specifies the payment coordination protocol: how an agent requests payment from a service, how sessions aggregate microtransactions, and how settlements are executed across multiple rails.
+
+**AP2** specifies the authorisation framework: how an agent proves it has permission to spend, how that permission is scoped, and how the authorisation chain can be audited.
+
+In a mature agentic commerce stack, both protocols could operate together. AP2 verifies the agent's authority. MPP coordinates the actual payment. The protocols are complementary, not competitive, though the inevitable standards war between Stripe and Google will likely produce some friction before convergence.
+
+The critical observation: the fact that both Stripe and Google announced agent payment protocols within the same week signals that the standardisation window is open right now. The market is moving from proprietary integrations to open standards. The companies that align with the winning standard early will have a structural advantage as agent transaction volumes scale.
+
+## What This Means for the Agentic Commerce Thesis
+
+MPP validates three arguments that have been central to AI Velocity's analysis.
+
+**First, the settlement layer is live.** AI Velocity argued in its March 2026 coverage that Stripe, Visa, and Mastercard had converged on agentic payment infrastructure. MPP is the protocol that formalises that convergence into an open, implementable standard. The infrastructure was assembled. Now it has a specification.
+
+**Second, stablecoins are the settlement layer for agents.** MPP is rail-agnostic, but its co-author (Tempo) is a stablecoin-native blockchain. The protocol supports card rails, but its architectural sweet spot is the high-frequency, low-value transaction pattern where stablecoin settlement is economically superior. The design incentivises migration toward stablecoin settlement over time, even if initial adoption uses familiar card rails.
+
+**Third, standardisation accelerates adoption.** The agentic commerce conversation has been dominated by proprietary solutions: Stripe's ACP, Visa's Intelligent Commerce, Mastercard's Agent Pay. MPP shifts this from a proprietary arms race to an open-standard ecosystem. This is the pattern that turned the early web from a collection of proprietary networks into a universal platform.
+
+## The Standardisation Moment
+
+Every major technology platform was built on an open standard. The web runs on HTTP. Email runs on SMTP. Mobile payments run on NFC and EMV tokenisation. In each case, the standard was established early, multiple implementations followed, and the network effects compounded until the standard became unavoidable.
+
+MPP is bidding to be that standard for agent payments. Its open specification, rail-agnostic architecture, and backing by Stripe, Visa, Mastercard, OpenAI, and Anthropic give it the broadest coalition of any agentic payment standard announced to date. Google's AP2, while well-designed, addresses a narrower slice of the problem (authorisation rather than full payment coordination).
+
+The timing is not accidental. The SEC just classified stablecoins as non-security payment instruments. Tether just shipped edge AI inference. Solana has 9,000+ registered agents. The infrastructure stack is complete. What was missing was the protocol that ties it all together.
+
+Now it exists.
+
+The question for every enterprise, payment processor, and commerce platform is no longer whether to support agent payments. It is which protocol to implement, and how quickly.
+`,
+        faqs: [
+            {
+                question: "What is the Machine Payments Protocol (MPP)?",
+                answer: "The Machine Payments Protocol is an open standard co-authored by Stripe and Tempo that specifies how AI agents and services coordinate payments programmatically. It supports microtransactions, recurring payments, and continuous payment sessions, and is compatible with stablecoins, credit cards, and other payment rails."
+            },
+            {
+                question: "How do MPP Sessions work for agent payments?",
+                answer: "Sessions allow an AI agent to receive a single authorisation and then make continuous payments within defined spending limits without re-authorising each transaction. Micro-payments are aggregated into a single settlement, reducing transaction overhead while maintaining a continuous flow of value between the agent and service."
+            },
+            {
+                question: "What is Tempo blockchain and how does it relate to MPP?",
+                answer: "Tempo is a payments-focused Layer 1 blockchain incubated by Stripe and Paradigm, launched simultaneously with MPP. It provides instant settlement, predictable low fees, and high throughput specifically optimised for agent payment workloads. Tempo serves as the most efficient settlement layer for MPP transactions, though the protocol works with any payment rail."
+            },
+            {
+                question: "What is the difference between MPP and Google's AP2 protocol?",
+                answer: "MPP specifies the payment coordination protocol, covering how agents request payments, how sessions aggregate microtransactions, and how settlements execute across rails. AP2 specifies the authorisation framework, covering how agents prove permission to spend. The protocols are complementary: AP2 verifies authority while MPP coordinates the actual payment."
+            },
+            {
+                question: "Is MPP compatible with traditional payment methods like credit cards?",
+                answer: "Yes. MPP is payment-rail agnostic and supports stablecoins, traditional credit and debit cards, Stripe's Shared Payment Tokens, and Bitcoin via Lightning network. A single MPP integration allows a service to accept payment from any agent regardless of the underlying payment method."
+            },
+            {
+                question: "Which companies support the Machine Payments Protocol?",
+                answer: "MPP launched with support from Mastercard, OpenAI, Shopify, Anthropic, DoorDash, Nubank, Ramp, Revolut, Standard Chartered, Visa, and Lightspark. Stripe's existing merchants can accept MPP payments through their standard PaymentIntents API with minimal integration changes."
+            },
+            {
+                question: "How does MPP enable microtransactions for AI agents?",
+                answer: "MPP's Sessions mechanism allows agents to make hundreds of small payments within a pre-authorised spending envelope without per-transaction overhead. These micro-payments are aggregated into a single settlement on the underlying rail, making transactions as small as fractions of a cent economically viable for purchasing API calls, data feeds, and compute resources."
+            }
+        ]
+    },
 ];
