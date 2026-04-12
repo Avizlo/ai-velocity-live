@@ -39,6 +39,7 @@ export default function RootLayout({ children }) {
             <head>
                 <link rel="preconnect" href="https://www.googletagmanager.com" />
                 <link rel="preconnect" href="https://challenges.cloudflare.com" />
+                <link rel="alternate" type="application/rss+xml" title="AI Velocity — Agentic Commerce &amp; AI Economy News" href="https://aivelocity.dev/feed.xml" />
             </head>
             <body className="font-sans antialiased bg-cloud-dancer" suppressHydrationWarning>
                 <NavVisibilityProvider>
