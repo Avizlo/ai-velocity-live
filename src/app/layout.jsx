@@ -30,7 +30,8 @@ export default function RootLayout({ children }) {
             <head>
                 <link rel="preconnect" href="https://www.googletagmanager.com" />
                 <link rel="preconnect" href="https://challenges.cloudflare.com" />
-                <link rel="preload" href="/fonts/times-italic.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+<link rel="preload" href="/fonts/times-italic.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+                <link rel="alternate" type="application/rss+xml" title={`${siteConfig.name} — News & Insights`} href="/feed.xml" />
 
             </head>
             <body className="font-sans antialiased bg-cloud-dancer" suppressHydrationWarning>
