@@ -4,6 +4,7 @@ import { CookieConsent } from '@/components/ui/CookieConsent';
 import { ScrollToTop } from '@/components/ui/ScrollToTop';
 import { GoogleAnalytics } from '@/components/ui/GoogleAnalytics';
 import { NavVisibilityProvider } from '@/context/NavVisibilityContext';
+import { Analytics } from '@vercel/analytics/next';
 import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
@@ -52,6 +53,7 @@ export default function RootLayout({ children }) {
                     <ScrollToTop />
                     <GoogleAnalytics />
                 </NavVisibilityProvider>
+                <Analytics />
             </body>
         </html>
     );
