@@ -1884,6 +1884,7 @@ The remaining work is integration, not invention. Every major component exists. 
         id: "20",
         slug: "sec-digital-commodity-taxonomy-agentic-commerce",
         title: "The SEC Just Cleared the Path for AI Agents to Transact",
+        seoTitle: "SEC Classifies SOL, BTC & ETH as Digital Commodities — March 2026 Taxonomy",
         category: "Agentic Payments",
         categoryPage: "/agentic-payments",
         relatedSlugs: ["stablecoins-settlement-layer-ai-agents", "the-settlement-layer-is-live", "solana-launches-ai-agent-registry-with-9000-agents"],
