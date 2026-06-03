@@ -17,15 +17,6 @@ export const CTABanner = ({
                     </h2>
                 </div>
 
-                {/* Right: electric green link */}
-                <a
-                    href={buttonLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="self-start md:self-end w-fit border-b border-electric-mint/50 pb-1 text-electric-mint hover:text-white hover:border-white/50 transition-colors duration-300 font-sans tracking-widest text-xs uppercase whitespace-nowrap"
-                >
-                    {buttonText} →
-                </a>
             </div>
         </section>
     );
