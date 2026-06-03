@@ -33,7 +33,6 @@ export const Footer = () => {
                         <div className="flex gap-16 md:gap-24 font-mono text-xs text-white/60 shrink-0">
                             <div className="flex flex-col gap-3">
                                 <span className="text-white/80 font-sans tracking-widest text-[10px] uppercase mb-2">Connect</span>
-                                <a href="https://x.com/aivelocitydev" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Follow us on X</a>
                                 <button
                                     onClick={() => setIsContactOpen(true)}
                                     className="text-left hover:text-white transition-colors bg-transparent cursor-pointer"
