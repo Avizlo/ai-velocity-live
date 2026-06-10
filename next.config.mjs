@@ -10,6 +10,16 @@ const nextConfig = {
         minimumCacheTTL: 31536000, // 1 year — optimized images cached aggressively
         remotePatterns: [],
     },
+    async redirects() {
+        return [
+            {
+                // Article corrected 2026-06-10: "v402" was an erroneous protocol name; canonical article is x402
+                source: '/news-insights/v402-handshake-how-machine-to-machine-negotiation-works',
+                destination: '/news-insights/x402-protocol-how-machine-to-machine-payments-work',
+                permanent: true,
+            },
+        ];
+    },
     async headers() {
         return [
             {

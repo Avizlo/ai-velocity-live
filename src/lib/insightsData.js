@@ -1,5 +1,85 @@
 export const insightsData = [
     {
+        id: "24",
+        slug: "argentina-non-human-corporations-ai-run-companies",
+        title: "Argentina Moves to Legalise AI-Run 'Non-Human Corporations'",
+        category: "News",
+        categoryPage: "/news-insights",
+        relatedSlugs: ["x402-protocol-how-machine-to-machine-payments-work", "machine-to-machine-negotiation-protocols-reshaping-commerce", "autonomous-payment-settlement-what-cfos-need-to-know"],
+        date: "2026-06-10T09:00:00Z",
+        dateModified: "2026-06-10T09:00:00Z",
+        author: "AI Velocity",
+        image: "/images/insights/argentina-non-human-corporation.webp",
+        imageAlt: "Argentine President Javier Milei raising a fist at a podium, illustrating his push to legalise AI-run non-human corporations",
+        readTime: "4 min read",
+        excerpt: "Argentina has proposed the first legal framework for companies owned and run entirely by AI. Here is what the 'non-human corporation' bill actually says.",
+        content: `
+Argentina has proposed the world's first legal framework for companies owned and operated entirely by artificial intelligence. On 4 June 2026, President Javier Milei used a [Financial Times op-ed](https://www.batimes.com.ar/news/argentina/milei-promises-tech-firms-new-laws-and-unregulated-ai-in-argentina.phtml) to invite AI firms to a deliberately unregulated, low-tax Argentina, and a bill already before the Senate would create a new corporate category, the "non-human corporation", carrying full legal personality with no requirement for any human shareholder. Two clarifications matter before the analysis: this is not legal personhood for the AI model itself, and it is not yet law.
+
+## What Argentina Actually Proposed
+
+Milei's pitch rests on three stated pillars: a commitment to keep AI unregulated, the creation of the non-human corporation, and a low corporate tax rate. He framed the moment in historical terms, arguing Argentina should "become for AI what Amsterdam was for the age of sail."
+
+The enabling legislation is a draft General Companies Law, authored by deregulation minister Federico Sturzenegger and sent to the Senate in late May 2026. It would replace Law 19,550, the corporate statute that has governed Argentine companies since 1972, making this the deepest reform to the country's company law in over five decades.
+
+The bill creates two new structures, [explained in detail by the Argentine fact-checking outlet Chequeado](https://chequeado.com/el-explicador/reforma-de-la-ley-de-sociedades-que-son-las-dao-y-las-sociedades-automatizadas-y-cuales-son-los-riesgos-que-advierten-especialistas/). A sociedad automatizada (automated company) is a firm whose business is carried out by autonomous algorithmic systems or AI agents, without requiring human employees or managers for ordinary operation. A DAO (decentralised autonomous organisation) is a blockchain-governed structure where holdings are tokens and decisions are executed by protocol. Both would receive full legal personality and limited liability, meaning they can own assets, sign contracts, and answer for damages with their own capital.
+
+## What It Is Not
+
+For a topic this charged, precision is the story. Three corrections separate the reality from the headlines.
+
+It is not personhood for the AI. The legal personality attaches to the corporate wrapper, not to the model running it. An AI agent gains capability only because the company around it can hold a bank account and sign a contract. The agent itself is not a legal person.
+
+It is not regulation. Milei's first pillar is the absence of rules. The proposal is a deliberate non-regulation strategy, positioning Argentina as a single national special economic zone for AI, the approach Switzerland and Singapore once used to capture crypto and fintech.
+
+It is not law. The bill stalled in the Senate in early June 2026, with the governing bloc lacking a safe vote margin amid an unrelated dispute over judicial nominations. Passage and timing remain unsettled.
+
+## The Collision With Anthropic and Harari
+
+The proposal landed inside a single extraordinary week. On 4 June, the same day as Milei's op-ed, [Anthropic published a warning](https://www.anthropic.com/institute/recursive-self-improvement) that AI is approaching "recursive self-improvement" and argued it would "likely be a good thing" to have the option to slow or pause frontier development. Milei's message was the precise opposite: break free of restraint.
+
+Five days later, on 9 June, the historian Yuval Noah Harari used his own Financial Times column to argue against exactly this kind of law. Granting legal personhood to AI-run corporations, [Harari warned](https://www.batimes.com.ar/news/argentina/milei-defends-unregulated-ai-push-after-warning-from-historian-yuval-noah-harari.phtml), hands them "a master key" to financial and political systems, and risks creating "not a company-state, but an AI-state." Milei responded on X the same day, thanking Harari and saying he was preparing a rebuttal.
+
+The split is not fringe. On Milei's side, OpenAI's Sam Altman has publicly backed his vision of AI-driven growth. Against it, domestic critics including former lawmaker Elisa Carrió have called the plan "a catastrophic experiment for human dignity."
+
+## Why This Matters for Agentic Commerce
+
+Strip away the politics and a structural point remains. The agentic commerce stack has been solving how an autonomous agent transacts. Argentina is the first jurisdiction to legislate who the agent legally is when it does.
+
+The protocol layers are already live. The Agentic Commerce Protocol, from OpenAI and Stripe, handles checkout. Google's Agent Payments Protocol handles authorisation. The [x402 protocol handles settlement](/news-insights/x402-protocol-how-machine-to-machine-payments-work). What none of them resolve is legal standing: when an agent owns inventory, signs a supply contract, or is sued over a transaction, which legal entity is on the other side. The non-human corporation is an answer to that question, and it is the first one any government has put into a bill.
+
+For operators, the signal is not to incorporate an AI in Buenos Aires. It is that the legal infrastructure for autonomous economic actors has entered live legislative debate, years ahead of where most boards assume it sits. The jurisdictions that resolve agent legal identity will shape where agent-run commerce is domiciled, the same way company-formation rules already shape where firms register today.
+
+## What to Watch
+
+Three markers will signal whether this is a turning point or a provocation. First, the Senate vote: whether Sturzenegger can assemble a majority, or the bill dies in committee. Second, imitation: whether any other jurisdiction proposes a comparable corporate category, which would mark the start of regulatory competition rather than a one-country experiment. Third, the infrastructure underneath it: Argentina has a letter of intent with OpenAI and Sur Energy for Stargate Argentina, a Patagonian data centre of up to 500MW and a reported $25 billion, the financial bet that the legal pitch is designed to attract.
+
+Argentina has not changed the law yet. It has changed the question. The debate over who can own a company is now open, and autonomous agents are in it.
+`,
+        faqs: [
+            {
+                question: "What is a non-human corporation?",
+                answer: "A non-human corporation is a proposed legal category in Argentina for a company owned and operated entirely by AI agents or robots, with human shareholders permitted but not required. It would hold full legal personality, meaning it can own assets, sign contracts, and be liable for damages with its own capital. The proposal was put forward by President Javier Milei in June 2026 and is not yet law."
+            },
+            {
+                question: "Did Argentina give AI legal personhood?",
+                answer: "No. The proposed legal personality attaches to the corporate entity, not to the AI model itself. An AI agent gains practical capability because the company around it can hold accounts and sign contracts, but the agent is not recognised as a legal person. This distinction is central to understanding the proposal accurately."
+            },
+            {
+                question: "Is Argentina's AI corporate law in force?",
+                answer: "No. The draft General Companies Law was sent to the Argentine Senate in late May 2026 but stalled in early June when the governing bloc lacked a sufficient vote margin. It would replace Law 19,550, in force since 1972, but its passage and timing remain uncertain as of June 2026."
+            },
+            {
+                question: "What are sociedades automatizadas and DAOs in the bill?",
+                answer: "A sociedad automatizada, or automated company, is a firm whose business is carried out by autonomous algorithms or AI agents without requiring human employees or managers. A DAO, or decentralised autonomous organisation, is a blockchain-governed structure where holdings are tokens and decisions execute by protocol. The bill would grant both full legal personality and limited liability."
+            },
+            {
+                question: "How does Argentina's proposal relate to agentic commerce protocols?",
+                answer: "Protocols such as ACP, AP2, and x402 define how an autonomous agent checks out, is authorised, and settles payment. Argentina's non-human corporation addresses a different gap: the legal identity of the agent-run business when it owns assets or enters contracts. It is the first government attempt to define who an autonomous economic actor legally is."
+            }
+        ]
+    },
+    {
         id: "1",
         slug: "the-end-of-legacy-seo",
         title: "The End of Legacy SEO: Transitioning to Agentic AEO",
@@ -135,7 +215,7 @@ The question is no longer whether to transition. The question is whether you wil
         title: "Machine-to-Machine Negotiation Protocols Are Reshaping Autonomous Commerce",
         category: "Agentic Payments",
         categoryPage: "/agentic-payments",
-        relatedSlugs: ["v402-handshake-how-machine-to-machine-negotiation-works", "autonomous-payment-settlement-what-cfos-need-to-know"],
+        relatedSlugs: ["x402-protocol-how-machine-to-machine-payments-work", "autonomous-payment-settlement-what-cfos-need-to-know"],
         date: "2026-03-05T14:30:00Z",
         author: "AI Velocity Engineering",
         readTime: "8 min read",
@@ -459,7 +539,7 @@ The window to build this advantage is narrow. Once your competitors make their m
         title: "Autonomous Payment Settlement: What CFOs Need to Know in 2026",
         category: "Agentic Payments",
         categoryPage: "/agentic-payments",
-        relatedSlugs: ["machine-to-machine-negotiation-protocols-reshaping-commerce", "v402-handshake-how-machine-to-machine-negotiation-works"],
+        relatedSlugs: ["machine-to-machine-negotiation-protocols-reshaping-commerce", "x402-protocol-how-machine-to-machine-payments-work"],
         date: "2026-02-20T11:30:00Z",
         author: "AI Velocity Engineering",
         readTime: "6 min read",
@@ -482,7 +562,7 @@ The agent queries structured product catalogues via API, comparing pricing, avai
 
 ### Negotiation
 
-Using the v402 Handshake protocol or similar machine-to-machine negotiation standards, the agent proposes terms, evaluates counter-offers, and reaches agreement, all through structured data exchange. No emails. No phone calls. No PDFs.
+Through structured machine-to-machine exchange, the agent proposes terms, evaluates counter-offers, and reaches agreement, with settlement executing over open standards like the x402 protocol. No emails. No phone calls. No PDFs.
 
 ### Settlement Initiation
 
@@ -531,7 +611,7 @@ The CFOs who act now will define the governance frameworks that become industry 
         faqs: [
             {
                 question: "Are autonomous agent payments secure?",
-                answer: "Yes, when properly implemented. Agent payments use cryptographic identity verification, structured negotiation protocols like the v402 Handshake, and real-time fraud scoring designed specifically for non-human actors. Shadow-mode deployment for 30 days before going live ensures anomalies are detected before real transactions are processed."
+                answer: "Yes, when properly implemented. Agent payments use cryptographic identity verification, payment-mandate standards like Google's AP2, and settlement protocols like x402, where every payment is a signed, on-chain-auditable authorisation. Shadow-mode deployment before going live ensures anomalies are detected before real transactions are processed."
             },
             {
                 question: "What regulations apply to agent-initiated payments?",
@@ -690,7 +770,7 @@ Understanding the agent procurement workflow reveals why data liquidity is make-
 
 **Stage 3: Evaluation.** Remaining candidates are ranked across a multi-dimensional scoring matrix that weighs price, quality indicators (reviews, ratings, certifications), delivery terms, and vendor reliability. The agent's scoring model requires structured data for every dimension, missing data points result in penalty scores, not neutral scores. This stage takes 1-2 seconds.
 
-**Stage 4: Negotiation.** The top-ranked vendor receives a structured purchase intent signal. If your systems support machine-to-machine negotiation protocols like the v402 Handshake, the agent can negotiate volume pricing, delivery scheduling, and payment terms autonomously. If not, the agent either proceeds at the listed price or moves to the next vendor.
+**Stage 4: Negotiation.** The top-ranked vendor receives a structured purchase intent signal. If your systems expose machine-readable terms and support agentic transaction standards, checkout via the Agentic Commerce Protocol, settlement via x402, the agent can agree volume pricing, delivery scheduling, and payment terms autonomously. If not, the agent either proceeds at the listed price or moves to the next vendor.
 
 The entire workflow, from discovery to purchase decision, completes in under 5 seconds. The margin for error is zero. If your product data is not fully liquid at every stage, you are eliminated.
 
@@ -764,7 +844,7 @@ The agent maps your content against known entity graphs, organisations, products
 
 ### Relationship Extraction
 
-The agent identifies how entities relate to each other in your content. "AI Velocity provides agentic commerce consulting" establishes a provider-service relationship. "Our v402 Handshake protocol reduces settlement times" establishes a tool-outcome relationship. The density and clarity of these relationships determines how well agents can integrate your content into their knowledge models.
+The agent identifies how entities relate to each other in your content. "AI Velocity provides agentic commerce consulting" establishes a provider-service relationship. "x402 settlement removes the human checkout flow" establishes a tool-outcome relationship. The density and clarity of these relationships determines how well agents can integrate your content into their knowledge models.
 
 ### Source Authority Assessment
 
@@ -835,95 +915,107 @@ The organisations that adopt agent-first content strategy now will build a compo
     },
     {
         id: "9",
-        slug: "v402-handshake-how-machine-to-machine-negotiation-works",
-        title: "The v402 Handshake: How Machine-to-Machine Negotiation Actually Works",
+        slug: "x402-protocol-how-machine-to-machine-payments-work",
+        title: "The x402 Protocol: How Machine-to-Machine Payments Actually Work",
         category: "Agentic Payments",
         categoryPage: "/agentic-payments",
         relatedSlugs: ["machine-to-machine-negotiation-protocols-reshaping-commerce", "autonomous-payment-settlement-what-cfos-need-to-know"],
-        date: "2026-01-18T14:00:00Z",
+        date: "2026-06-10T09:00:00Z",
+        dateModified: "2026-06-10T09:00:00Z",
         author: "Protocol Team",
         readTime: "6 min read",
-        image: "/images/insights/v402-handshake.webp",
-        excerpt: "The v402 Handshake is the protocol enabling autonomous agents to negotiate pricing, terms, and settlement in real time. Here is how it works.",
+        image: "/images/insights/x402-protocol.webp",
+        imageAlt: "Abstract visualisation of the x402 payment protocol settling a machine-to-machine transaction over HTTP",
+        excerpt: "x402 is the open payment standard that lets AI agents pay over plain HTTP. Here is how the protocol works, who governs it, and what it takes to integrate.",
         content: `
-## The Problem the v402 Handshake Solves
+x402 is an open payment protocol that lets any client, human application or autonomous AI agent, pay for a resource over plain HTTP and receive it in the same exchange. No account creation, no card form, no checkout flow. It was originated by Coinbase, open-sourced in May 2025, and is now governed through the x402 Foundation under the Linux Foundation, with backing that includes Google, Stripe, Visa, and Cloudflare. By late April 2026, Coinbase reported roughly 69,000 active agents and 165 million transactions across the protocol. This article explains how the flow actually works, who runs it, and what integration genuinely requires.
 
-When two humans negotiate a business transaction, they use shared context, body language, trust built over previous interactions, and flexible natural language to navigate from initial offer to final agreement. When two autonomous agents need to negotiate, none of these mechanisms are available. Without a shared protocol, machine-to-machine negotiation devolves into rigid API calls, accept or reject, with no middle ground.
+## The Status Code That Waited Three Decades
 
-The v402 Handshake protocol was developed to fill this gap. It provides a structured, deterministic framework for autonomous agents to propose, counter-propose, and reach agreement on transactional terms, pricing, volume, delivery scheduling, payment terms, and dispute resolution, without human intervention.
+The original HTTP specification reserved status code 402, "Payment Required", for a digital commerce future that had not arrived. For thirty years it sat unused while the web routed every payment through accounts, card networks, and human-operated checkout pages.
 
-The protocol name derives from the HTTP 402 status code ("Payment Required"), which was reserved by the original HTTP specification for future use in digital commerce. The v402 Handshake reclaims this unused status code as the foundation for a machine-to-machine commercial negotiation standard.
+That architecture assumed a human at the keyboard. An autonomous agent cannot fill in a card form, complete a 3-D Secure challenge, or click a confirmation email. As agents became real economic actors, the missing piece was a way for a machine to pay another machine at the moment of request, inside the same protocol the web already runs on.
 
-## The Protocol Architecture
+[x402](https://docs.cdp.coinbase.com/x402/welcome) activates the dormant status code for exactly that purpose.
 
-The v402 Handshake operates on a simple but powerful architecture: structured intent exchange over authenticated channels.
+## How the x402 Flow Works
 
-### The Handshake Phases
+The protocol is a four-step request-response cycle. There is no session, no stored relationship, and no account on either side.
 
-**Phase 1: Intent Declaration.** The buying agent sends a structured intent signal to the selling agent's negotiation endpoint. This signal includes the product or service identifier, the desired quantity, the buyer's maximum acceptable terms across all negotiable dimensions (price, delivery, payment schedule), and the buyer's trust credentials.
+**Step 1: Request.** The client requests a resource, an API call, a dataset, a digital product, from the seller's server.
 
-**Phase 2: Capability Response.** The selling agent responds with its available terms, current pricing, available inventory, delivery options, and accepted payment methods. Critically, the response also includes the seller's negotiation parameters: which terms are flexible, what the minimum acceptable values are, and the seller's trust credentials.
+**Step 2: 402 Response.** If payment is required, the server responds with HTTP 402 and includes its payment instructions in the PAYMENT-REQUIRED header: the price, the accepted assets, and the network details.
 
-**Phase 3: Negotiation Loop.** If the buyer's intent and the seller's capability overlap (a "zone of agreement" exists), the agents enter a negotiation loop. Each agent proposes terms that move toward the centre of the zone. The protocol limits this loop to a maximum of 7 rounds to prevent infinite negotiation cycles. In practice, most negotiations resolve in 2-3 rounds.
+**Step 3: Signed Payment.** The client constructs a payment payload, signs it cryptographically, and retries the request with the payload carried in the PAYMENT-SIGNATURE header.
 
-**Phase 4: Settlement.** When both agents accept a term set, the protocol generates a cryptographically signed settlement contract, a machine-readable document that captures the agreed terms, the negotiation history, and the settlement instructions. This contract is immutable and serves as the authoritative record for both parties.
+**Step 4: Verification and Settlement.** A facilitator verifies the signed payment and settles it on-chain. The seller's server confirms with the facilitator and returns the requested resource. The seller never has to operate blockchain infrastructure; the facilitator absorbs that complexity.
 
-### Negotiation Strategies
+The entire exchange is machine-readable end to end. That is the property that matters for agentic commerce: an agent can discover a price, authorise a payment within its mandate, and complete settlement without a human ever entering the loop.
 
-The protocol supports three negotiation strategies, declared by each agent at Phase 1.
+## What Settles, and Where
 
-**Fixed.** The agent will not negotiate. Terms are take-or-leave. This is efficient for standardised, low-value transactions where negotiation overhead exceeds potential savings.
+x402 settles in stablecoins. USDC and EURC are supported natively through the EIP-3009 transfer-with-authorisation standard, and any ERC-20 token can be used via Permit2. Supported networks currently include Base, Polygon, Arbitrum, World, and Solana.
 
-**Bounded.** The agent will negotiate within declared bounds. This is the most common strategy for B2B transactions. Each negotiable dimension has a declared range, and the agent uses a scoring function to evaluate trade-offs across dimensions. An agent might accept a higher price in exchange for faster delivery, for example.
+Settlement cost is a facilitator decision rather than a protocol constant. Coinbase's hosted facilitator prices at 1,000 transactions per month free, then $0.001 per transaction, according to its published documentation. Because every payment is a cryptographically signed authorisation settled on-chain, the record is auditable by both parties without either trusting the other's database.
 
-**Adaptive.** The agent uses contextual signals, historical transaction data, market conditions, competitive pricing, to dynamically adjust its negotiation bounds. This is the most sophisticated strategy, used for high-value or strategic procurement.
+## Who Governs x402
 
-## Real-World Performance
+The governance trajectory is the strongest signal of the protocol's seriousness. Coinbase open-sourced x402 in May 2025. In September 2025, Coinbase and [Cloudflare co-founded the x402 Foundation](https://blog.cloudflare.com/x402/) to establish it as a neutral standard. On 2 April 2026, the protocol was donated to the Linux Foundation, with backing from Google, Stripe, and Visa.
 
-The v402 Handshake has been in production since Q4 2025, processing autonomous negotiations across a growing network of participating vendors.
+That sequence, vendor project to co-owned foundation to neutral standards body, is the same path HTTP-era infrastructure took. Payment rails that one company controls get adopted cautiously. Payment rails at the Linux Foundation get built into roadmaps.
 
-**Negotiation Speed.** Average time from Intent Declaration to Settlement is 2.3 seconds. The fastest recorded negotiation completed in 340 milliseconds (a Fixed-to-Fixed interaction). The slowest completed in 11.4 seconds (a complex Adaptive-to-Adaptive interaction with 6 negotiation rounds).
+The usage numbers reported alongside that move: approximately 69,000 active agents, 165 million transactions, and around $50 million in cumulative volume by late April 2026, per Coinbase. The volume figure is small against card networks. The transaction count is not, and the average transaction size it implies, fractions of a cent, reveals what the protocol is actually carrying: machine-scale micropayments that card economics cannot serve.
 
-**Agreement Rate.** When a zone of agreement exists, the protocol reaches settlement 97.3% of the time. The 2.7% failure rate is primarily due to trust verification failures rather than negotiation impasses.
+## Where x402 Sits in the Agentic Commerce Stack
 
-**Price Optimisation.** Across 12,000 total Bounded negotiations, buying agents achieved an average 8.4% improvement over the listed price, while selling agents maintained margins within 3% of their minimum acceptable threshold. Both parties benefit from the negotiation, this is not a zero-sum protocol.
+x402 is frequently described as more than it is, so precision matters here. x402 moves value. It does not negotiate terms, calculate taxes, manage fulfilment, or decide what to buy. Those jobs belong to other layers of the emerging stack.
 
-**Dispute Rate.** Transactions settled via v402 Handshake have a 0.3% dispute rate, compared to 2.1% for traditional purchase order transactions. The reduction is attributed to the protocol's explicit term capture and cryptographic settlement contracts, which eliminate the ambiguity that causes most commercial disputes.
+**The checkout layer** is led by the [Agentic Commerce Protocol (ACP)](https://openai.com/index/buy-it-in-chatgpt/), developed by OpenAI with Stripe and released under Apache 2.0. ACP defines how an agent presents products, builds an order, and completes a merchant checkout. It is already in production inside ChatGPT, with Etsy live for US users and Shopify merchants rolling out.
+
+**The authorisation layer** is contested by Google's Agent Payments Protocol (AP2), developed with more than 60 organisations including Mastercard, PayPal, and Adyen, and since transferred to the FIDO Alliance for community governance. AP2 defines the mandate: cryptographic proof that an agent is authorised to spend on a human's behalf, and within what limits.
+
+**The settlement layer** is x402. When the order exists and the mandate is valid, x402 is the wire that moves the money.
+
+Unlike a card transaction, which bundles authorisation, clearing, and settlement inside opaque network rules, the agentic stack separates the layers and makes each one machine-readable. The strategic consequence: a merchant can adopt the layers independently, and the layers can compete independently.
 
 ## Integration Requirements
 
-Implementing v402 Handshake support requires three components.
+For a commerce or API business, x402 integration is narrower than a payments migration. Three components matter.
 
-**Negotiation Endpoint.** A dedicated API endpoint that accepts Intent Declaration payloads and processes them through your pricing and availability logic. The endpoint must respond within 500 milliseconds to remain competitive, agents deprioritise slow responders.
+**Priced endpoints.** The resources you sell need to respond with HTTP 402 and well-formed payment instructions. For APIs and digital goods this is a server middleware decision, not a re-platform.
 
-**Term Configuration.** Your business logic needs to be expressed as machine-readable negotiation parameters: minimum prices, maximum discounts, available inventory, delivery capabilities, and accepted payment methods. These parameters should be dynamic, updating in real time from your ERP and inventory systems.
+**A facilitator relationship.** Verification and on-chain settlement run through a facilitator, so selecting one, and the assets and networks you accept through it, is the core commercial decision. Self-hosting the facilitator role is possible but reintroduces the blockchain operations the protocol exists to abstract away.
 
-**Settlement Handler.** A component that receives signed settlement contracts, creates corresponding records in your order management system, and initiates the agreed payment and delivery workflows. The handler must be idempotent to prevent duplicate settlements in the event of network retries.
+**Reconciliation.** Settled x402 payments need to land in your order management and finance systems like any other tender type. The on-chain record makes reconciliation verifiable, but the integration work is still yours to do.
 
-## The Future of Machine-to-Machine Commerce
+What x402 does not require is equally important: no card acquirer negotiation, no PCI scope expansion, and no human checkout redesign, because the human checkout is not involved.
 
-The v402 Handshake represents the first generation of machine-to-machine commercial protocols, but it will not be the last. The protocol roadmap includes multi-party negotiations (enabling three or more agents to negotiate simultaneously), conditional settlements (where terms are contingent on external events), and cross-protocol bridging (enabling v402 agents to negotiate with agents using competing protocols).
+## What This Means for Commerce Teams
 
-The organisations that implement v402 Handshake support now gain a structural advantage. They enter the negotiation network early, build reputation scores that influence future agent preferences, and shape the protocol's evolution through active participation. Those who wait will join a mature network where established participants have already built trust, optimised their negotiation strategies, and captured the highest-value agent relationships.
+The settlement layer for machine-to-machine commerce now exists, is neutrally governed, and is carrying real volume. The protocols above it, ACP for checkout and AP2 for authorisation, are live in the largest consumer AI surface and the largest payments coalitions respectively.
 
-The commerce infrastructure of the next decade will be built on protocols like the v402 Handshake. The question is not whether machine-to-machine negotiation will become standard, it is whether your business will be ready when it does.
+The practical move is not to predict a winner. It is to make your commercial logic, prices, products, terms, machine-readable now, so that whichever stack your buyers' agents arrive with, your business answers. Agents transact where the data lets them. Everywhere else is friction, and agents are built to route around friction.
 `,
         faqs: [
             {
-                question: "What is the v402 Handshake protocol?",
-                answer: "The v402 Handshake is a machine-to-machine negotiation protocol that enables autonomous agents to propose, counter-propose, and reach agreement on transactional terms including pricing, volume, delivery, and payment, without human intervention. Named after the HTTP 402 status code reserved for digital commerce."
+                question: "What is the x402 protocol?",
+                answer: "x402 is an open payment protocol that lets applications and AI agents pay for resources directly over HTTP using the 402 Payment Required status code. The server states its price in a PAYMENT-REQUIRED header, the client retries with a signed payment in a PAYMENT-SIGNATURE header, and a facilitator verifies and settles the payment on-chain. No accounts, card forms, or human checkout flows are involved."
             },
             {
-                question: "How fast are v402 Handshake negotiations?",
-                answer: "Average negotiation time from Intent Declaration to Settlement is 2.3 seconds. Fixed-to-Fixed interactions can complete in as little as 340 milliseconds. Complex Adaptive-to-Adaptive negotiations typically take 5-11 seconds across multiple rounds, with a maximum of 7 negotiation rounds permitted by the protocol."
+                question: "Who created x402 and who governs it now?",
+                answer: "x402 was created by Coinbase and open-sourced in May 2025. Coinbase and Cloudflare co-founded the x402 Foundation in September 2025, and the protocol was donated to the Linux Foundation on 2 April 2026, with backing that includes Google, Stripe, and Visa. Governance now sits with the foundation rather than any single vendor."
             },
             {
-                question: "Do I need to change my pricing model to support v402 Handshake?",
-                answer: "No. The v402 Handshake works with your existing pricing model. You configure your negotiation parameters, minimum prices, maximum discounts, volume thresholds, and the protocol handles the negotiation within those bounds. You retain full control over your pricing strategy while enabling autonomous agents to transact."
+                question: "What currencies and networks does x402 support?",
+                answer: "x402 settles in stablecoins: USDC and EURC are supported through the EIP-3009 standard, and any ERC-20 token can be used via Permit2. Supported networks currently include Base, Polygon, Arbitrum, World, and Solana. Settlement runs through a facilitator, so sellers do not need to operate blockchain infrastructure."
             },
             {
-                question: "What happens if a v402 Handshake negotiation fails?",
-                answer: "If no zone of agreement exists between the buyer's requirements and the seller's terms, the protocol returns a structured rejection with the specific dimensions that prevented agreement. The buying agent can then either adjust its requirements, move to the next vendor, or escalate to human review based on its configured fallback strategy."
+                question: "How is x402 different from ACP and AP2?",
+                answer: "x402, ACP, and AP2 are layers of the same agentic commerce stack rather than competitors. ACP, from OpenAI and Stripe, handles checkout and merchant integration. AP2, from Google and the FIDO Alliance coalition, handles authorisation: proving an agent may spend on a human's behalf. x402 is the settlement layer that actually moves the value once an order and a mandate exist."
+            },
+            {
+                question: "What does x402 integration actually require?",
+                answer: "x402 integration requires three things: priced endpoints that return HTTP 402 with payment instructions, a facilitator relationship for verification and on-chain settlement, and reconciliation of settled payments into your order and finance systems. It does not require card acquirer changes, PCI scope expansion, or a checkout redesign, because no human checkout is involved."
             }
         ]
     },
@@ -1086,7 +1178,7 @@ The agent evaluates all discovered products against its specification set. This 
 
 ### Phase 4: Negotiation (2-5s)
 
-If the vendor supports machine-to-machine negotiation protocols, the agent initiates a structured negotiation. Using protocols like the v402 Handshake, the agent proposes terms, receives counter-proposals, and converges on an agreement. Vendors without negotiation endpoints receive the agent's business only at the listed price, which often means losing the deal to a competitor who offered a programmatic volume discount.
+If the vendor supports structured machine-to-machine commerce, the agent initiates a programmatic exchange: it proposes terms, receives counter-proposals, and converges on an agreement, with settlement executing over standards like x402. Vendors without machine-readable terms receive the agent's business only at the listed price, which often means losing the deal to a competitor who offered a programmatic volume discount.
 
 ### Phase 5: Settlement (5-15s)
 
@@ -1483,7 +1575,7 @@ OpenClaw's model-agnostic, multi-channel architecture establishes a de facto sta
 
 ### Security is the Bottleneck, Not Capability
 
-The ClawJacked vulnerability and MoltMatch incident demonstrate that agent capability has outpaced agent governance. Organisations exposing APIs, product catalogues, or payment endpoints to autonomous agents need robust authentication, rate limiting, and transaction verification layers. The v402 Handshake protocol and structured schema markup become essential safeguards, not optional enhancements.
+The ClawJacked vulnerability and MoltMatch incident demonstrate that agent capability has outpaced agent governance. Organisations exposing APIs, product catalogues, or payment endpoints to autonomous agents need robust authentication, rate limiting, and transaction verification layers. Mandate standards like Google's AP2, signed settlement protocols like x402, and structured schema markup become essential safeguards, not optional enhancements.
 
 ## The AI Velocity Take
 
@@ -1622,7 +1714,7 @@ Industry benchmarking analysis across enterprise deployments reveals that brands
         title: "The Settlement Layer Is Live: Stripe, Visa, and Mastercard Converge on Agentic Payments",
         category: "Agentic Commerce",
         categoryPage: "/agentic-commerce",
-        relatedSlugs: ["autonomous-payment-settlement-what-cfos-need-to-know", "product-data-liquidity-how-autonomous-agents-compare-and-buy", "v402-handshake-how-machine-to-machine-negotiation-works"],
+        relatedSlugs: ["autonomous-payment-settlement-what-cfos-need-to-know", "product-data-liquidity-how-autonomous-agents-compare-and-buy", "x402-protocol-how-machine-to-machine-payments-work"],
         date: "2026-03-13T08:00:00Z",
         dateModified: "2026-03-13T08:00:00Z",
         author: "AI Velocity Engineering",
@@ -2155,7 +2247,7 @@ The infrastructure for agentic commerce is not being built in one place. It is b
         title: "MPP Is the HTTP of Agent Payments",
         category: "Agentic Payments",
         categoryPage: "/agentic-payments",
-        relatedSlugs: ["the-settlement-layer-is-live", "v402-handshake-how-machine-to-machine-negotiation-works", "stablecoins-settlement-layer-ai-agents"],
+        relatedSlugs: ["the-settlement-layer-is-live", "x402-protocol-how-machine-to-machine-payments-work", "stablecoins-settlement-layer-ai-agents"],
         date: "2026-03-18T18:00:00Z",
         dateModified: "2026-03-18T18:00:00Z",
         author: "AI Velocity Engineering",
@@ -2221,7 +2313,7 @@ For readers who have been following AI Velocity's coverage of the agentic commer
 
 **Discovery** is handled by structured product data, schema markup, and agent-readable APIs. Stripe's Agentic Commerce Protocol (ACP) handles product discovery and storefront integration.
 
-**Negotiation** is handled by machine-to-machine protocols like the v402 Handshake. The agent and service agree on terms, pricing, and conditions through structured programmatic exchange.
+**Negotiation** is handled through structured programmatic exchange. The agent and service agree on terms, pricing, and conditions machine-to-machine; settlement then executes over open standards like the x402 protocol.
 
 **Payment** is where MPP operates. Once the agent has discovered a product and negotiated terms, MPP specifies how the payment is requested, authorised, and settled.
 

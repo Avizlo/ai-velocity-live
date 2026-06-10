@@ -25,6 +25,7 @@ Every article in the `insightsData` array must include these fields:
     author: "AI Velocity Engineering",// Or specific author name
     readTime: "8 min read",           // Calculate: wordCount / 250
     image: "/images/insights/your-slug.webp",  // Local WebP in public/images/insights/ (see Image Requirements)
+    imageAlt: "Descriptive alt text", // What the hero image shows; falls back to title if omitted
     excerpt: "...",                   // 150-160 characters, compelling summary
     content: `...`,                   // Markdown content (see Section 3)
     faqs: [                           // REQUIRED for Insight articles (see Section 5)
@@ -107,6 +108,7 @@ Explanation of the key term.
 ```
 
 **Rules:**
+- **Answer-first opening (REQUIRED):** the first paragraph must directly state the article's core answer or finding in 2-3 self-contained sentences an LLM could quote verbatim. No scene-setting intros ("in today's rapidly evolving landscape"). A reader (or answer engine) that stops after paragraph one should leave with the correct takeaway.
 - Use `##` (H2) for main section breaks, these become anchor points
 - Use `###` (H3) for subsections within a main section
 - Never use `#` (H1), the article `title` is the H1
@@ -159,37 +161,37 @@ These rules are non-negotiable and apply to all article styles:
 
 ## 4. Information Gain Requirements
 
-Every article MUST include at least 2 of these 4 elements. These provide unique value that competitors cannot replicate, which Google's Information Gain Score algorithm rewards:
+Every article MUST include at least 2 of these 4 elements. These provide unique value that competitors cannot replicate, which Google's Information Gain scoring rewards.
 
-### Proprietary Data / Statistics
-> "Our internal analysis of 14,000 commercial queries found that LLM-generated answers now influence 61% of enterprise purchase decisions."
+**Sourcing rule (non-negotiable, applies to all four elements):** every number, statistic, or factual claim must trace to a real instrument: a named published study or report, a tool pull we actually ran (GSC, DataForSEO, Otterly, Raw Intel collectors), public data we actually analysed, or a primary-source document. Never invent figures to fit these patterns. An article with zero statistics is acceptable; an article with a fabricated statistic is not.
 
-Use specific numbers, percentages, and metrics. They should be representative of real experience.
+### Verified Data / Statistics
+> "Coinbase reported 165 million x402 transactions and roughly $50 million in cumulative volume by late April 2026."
+
+Use specific numbers with a named source. Original analysis of public data (protocol repos, filings, published datasets) counts as information gain and is the strongest form available to us.
 
 ### Case Studies
-> "A DTC skincare brand engaged us for an AEO transition. Within 90 days, their LLM citation rate went from zero to appearing across three major platforms."
-
-Include the vertical, the intervention, the timeframe, and the measurable result.
+> Real engagements only, anonymised with the client's permission, with the vertical, the intervention, the timeframe, and the measured result. If no real case study exists for the topic, use a different information-gain element. Never compose an illustrative client story.
 
 ### Contrarian Viewpoints
-> "Most agencies tell you to add more schema types. We've found the opposite: schema accuracy matters more than schema volume."
+> "Most agencies tell you to add more schema types. The evidence points the opposite way: schema accuracy matters more than schema volume."
 
-Challenge an industry assumption and explain why the conventional wisdom is wrong.
+Challenge an industry assumption and explain why the conventional wisdom is wrong. The supporting argument must rest on verifiable mechanism or sourced data, not asserted experience we cannot demonstrate.
 
 ### Process Insights
-> "The first thing we audit is never the JSON-LD — it's the server response headers."
+> "The first thing to audit is never the JSON-LD; it is the server response headers."
 
-Share specific insider knowledge about how you actually do the work, not just what the work involves.
+Share specific insider knowledge about how the work is actually done, not just what the work involves. Process insights describe method, so they need no external source, but they must describe a process we genuinely follow.
 
 ---
 
 ## 5. FAQ Requirements
 
-Insight articles should include 5–7 FAQ items in the `faqs` array. This is the **highest-impact element for LLM citation** because:
+Insight articles should include 5–7 FAQ items in the `faqs` array. This remains a **high-impact element for LLM citation**, but be clear about why:
 
-- Google renders FAQPage schema as rich snippets
-- LLMs specifically extract structured Q&A for direct answers
-- The `ArticleFAQ` component renders them as expandable accordions
+- **The content shape is the active ingredient, not the markup.** LLMs and answer engines extract clean, self-contained Q&A pairs whether or not schema is present. Write FAQs for extraction quality first.
+- Google **dropped FAQ rich results from Search on 7 May 2026** (Rich Results Test support removed June 2026, Search Console API support ends August 2026). FAQPage schema is no longer a SERP appearance lever. We keep the auto-generated FAQPage JSON-LD because it is a valid Schema.org type, costs nothing, aids machine parsing, and Google confirms unused structured data causes no harm — but do not justify FAQ work by rich snippets.
+- The `ArticleFAQ` component renders them as expandable accordions for human readers
 - More FAQs = broader query coverage across long-tail search and LLM prompts
 
 **FAQ writing rules:**
@@ -231,10 +233,14 @@ Explicit "X is Y" definitions get cited directly as answers.
 LLMs frequently generate answers from "X vs Y" framings.
 - ✅ "Unlike traditional SEO, which optimises for human-readable pages, AEO optimises for machine-readable data structures."
 
-### Quantified Claims
-Specific numbers are more citable than vague assertions.
+### Quantified Claims with Named Sources
+Specific numbers are more citable than vague assertions, and a named source is more citable than an anonymous one. Statistics, quotations, and source citations are the three strongest measured drivers of citation rate in generative-engine research.
 - ❌ "Most consumers are open to agentic commerce."
-- ✅ "81% of consumers are open to using agentic commerce tools, according to industry research."
+- ❌ "81% of consumers are open to using agentic commerce tools, according to industry research." (unattributed = weak signal and an accuracy risk)
+- ✅ "81% of consumers are open to using agentic commerce tools, according to Salesforce's Connected Shoppers report."
+
+### Outbound Source Citations (REQUIRED)
+Every Insight article must link to a minimum of **3 primary sources** (protocol documentation, official announcements, named studies, regulator/foundation pages). Link the source at the point of claim, not in a footer. This is both a citation-rate driver for answer engines and the enforcement mechanism for the verification rule: if a claim has no linkable source, it does not go in the article.
 
 ---
 
@@ -254,8 +260,11 @@ Specific numbers are more citable than vague assertions.
 - [ ] `image` field uses local path `/images/insights/slug.webp` (NOT an external URL)
 
 ### Content Quality
+- [ ] Opening paragraph is answer-first (core takeaway in the first 2-3 sentences, quotable standalone)
 - [ ] Word count meets category target (1,500-2,500 for Insights, 600-800 for News)
 - [ ] Article contains at least 2 information gain elements
+- [ ] Every statistic/external fact has a named source, verified via WebSearch/WebFetch this session
+- [ ] At least 3 outbound links to primary sources, placed at the point of claim
 - [ ] Insight articles have 5-7 FAQ items
 - [ ] Content uses proper H2/H3 hierarchy (no H1)
 - [ ] Key terms are bolded on first mention for scan-legibility
@@ -268,6 +277,7 @@ Specific numbers are more citable than vague assertions.
 - [ ] Hero image sourced from Unsplash (or royalty-free equivalent)
 - [ ] Hero image is unique (not used by any other article)
 - [ ] Image downloaded, converted to WebP (1200px, quality 80), saved to `public/images/insights/`
+- [ ] `imageAlt` field set with descriptive alt text
 - [ ] Verified image loads on listing page AND article detail page in browser
 
 ### Build & Deploy

@@ -74,7 +74,7 @@ const services = [
     {
         label: "Settlement",
         title: "Agentic Payments",
-        body: "Cryptographically verified, machine-to-machine settlements. The v402 handshake replaces the entire checkout flow.",
+        body: "Cryptographically signed, machine-to-machine settlements. The x402 protocol replaces the entire checkout flow.",
         href: "/agentic-payments",
         image: "/images/agentic-agent-hero.webp",
         bgPosition: "top",

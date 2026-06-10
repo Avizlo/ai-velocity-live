@@ -291,7 +291,7 @@ export default async function ArticlePage({ params }) {
                         <div className="w-full aspect-video rounded-card overflow-hidden mb-16 lg:mb-24 relative border border-white/10 shadow-2xl">
                             <Image
                                 src={article.image}
-                                alt={article.title}
+                                alt={article.imageAlt || article.title}
                                 fill
                                 className="object-cover object-top"
                                 priority

@@ -4,8 +4,8 @@ import { createMetadata } from '@/lib/metadata';
 export const metadata = createMetadata({
     pageTitle: 'Agentic Payments | Autonomous Settlement Infrastructure | AI Velocity',
     title: 'Agentic Payments, Autonomous Settlement Infrastructure',
-    description: 'Agentic payments orchestrate instant, machine-to-machine settlements via autonomous software delegates. Explore the v402 handshake, sovereign settlement protocols, and the financial infrastructure powering agent-to-agent commerce.',
-    ogDescription: 'Instant machine-to-machine settlements via autonomous AI delegates. The v402 handshake protocol enables sovereign, cryptographically verified settlement at global scale.',
+    description: 'Agentic payments orchestrate instant, machine-to-machine settlements via autonomous software delegates. Explore the x402 payment protocol, stablecoin settlement rails, and the financial infrastructure powering agent-to-agent commerce.',
+    ogDescription: 'Instant machine-to-machine settlements via autonomous AI delegates. The x402 protocol enables instant, cryptographically signed stablecoin settlement at global scale.',
     path: '/agentic-payments',
     ogSubtitle: 'Service Page',
 });

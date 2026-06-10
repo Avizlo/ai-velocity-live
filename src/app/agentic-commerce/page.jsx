@@ -57,11 +57,11 @@ const commerceBentoData = {
 
 const secondaryFeature = {
     image: "/images/ai-model-9.webp",
-    imageAlt: "Visualization of the v402 autonomous machine-readable settlement handshake",
+    imageAlt: "Visualization of the x402 payment protocol settling a machine-to-machine stablecoin transaction",
     label: "Settlement Protocol",
     watermark: "Agents",
     title: "Agentic Agents",
-    text1: "The 2026 signal for autonomous settlement is already appearing in the way global payments are being restructured for machine-to-machine commerce. At the heart of this transition is the v402 handshake, a protocol designed to facilitate secure and instant value transfers between agentic agents without human oversight. This system utilizes JSON-LD to provide semantic clarity to every transaction, ensuring that the intent of the buyer is perfectly aligned with the offer of the seller. When an agent initiates a purchase, it validates the cryptographic signatures of the merchant to prevent fraud in a way that legacy credit card processors simply cannot match. The speed of these settlements allows for a level of logistical agility that was previously impossible in international trade.",
+    text1: "The 2026 signal for autonomous settlement is already appearing in the way global payments are being restructured for machine-to-machine commerce. At the heart of this transition is x402, an open payment protocol built on the HTTP 402 Payment Required status code. The merchant server quotes a price in its response, the buying agent retries with a cryptographically signed payment payload, and a facilitator verifies the signature and settles the transfer in stablecoins on-chain. No accounts, no card forms, no human checkout flow. Every payment is signed and auditable in a way that legacy credit card processors simply cannot match. The speed of these settlements allows for a level of logistical agility that was previously impossible in international trade.",
     text2: "Ultimately, the move toward agentic commerce is a return to the fundamental principles of trade, stripped of the bloat and inefficiency of the early internet era. By focusing on technical density and high-fidelity data, brands can position themselves at the center of the new autonomous economy. Those who understand the physics of the handshake and the protocol will be the ones who define the next thirty years of global commerce. The transition is accelerating, and the era of the passive consumer is coming to a definitive end."
 };
 
@@ -137,7 +137,7 @@ const manifestoSections = [
             "Agentic commerce operates through a three-layer architecture: infrastructure, execution, and settlement.",
             "Infrastructure is the foundation. AI agents cannot interact with visual interfaces designed for human eyes. They require machine-readable product catalogs — structured databases that define attributes such as price, availability, specification, and delivery terms in formats that algorithms can parse instantly. Without this layer, a brand does not exist to an autonomous buyer.",
             "Execution is real-time data access. Once a product catalog is machine-readable, agents need live access to current pricing and inventory. Static pages are insufficient. An agent operating on behalf of a consumer asks a live question — \"Is this in stock? What does it cost right now?\" — and requires an instant, accurate answer. This demands API-first product infrastructure rather than traditional content management systems.",
-            "Settlement is the final layer. AI agents complete purchases through secure machine-to-machine payment protocols that require no human input. Cryptographic signatures authorize and verify funds at protocol speed. The v402 payment standard replaces the entire checkout flow with a programmatic handshake between the agent and the merchant server."
+            "Settlement is the final layer. AI agents complete purchases through secure machine-to-machine payment protocols that require no human input. Cryptographic signatures authorize and verify funds at protocol speed. The x402 payment protocol replaces the entire checkout flow with a programmatic exchange between the agent and the merchant server: the server responds with HTTP status 402 and payment instructions, the agent retries with a signed payment payload, and a facilitator verifies and settles the transfer in stablecoins on-chain."
         ]
     },
     {
@@ -225,7 +225,7 @@ const manifestoSections = [
             "The transition to agentic commerce readiness requires investment across four domains:",
             "Product data infrastructure. Every product attribute must be structured, machine-readable, and accessible through a standardised API. This means eliminating data stored in unstructured formats and replacing it with structured schemas that agents can parse programmatically.",
             "Real-time inventory and pricing APIs. Static product pages cannot support agent commerce. Merchants need live inventory systems that expose current availability, pricing, and delivery terms through authenticated API endpoints that agents can query in real time.",
-            "Agent payment integration. The v402 payment protocol and agent payments protocol (ap2) provide the technical standards for machine-to-machine settlement. Brands that integrate these protocols create a direct settlement pathway for agents, bypassing traditional payment friction entirely.",
+            "Agent payment integration. The x402 payment protocol and agent payments protocol (ap2) provide the technical standards for machine-to-machine settlement. Brands that integrate these protocols create a direct settlement pathway for agents, bypassing traditional payment friction entirely.",
             "Answer engine authority. Agentic commerce and answer engine optimisation are inseparable. Brands that are cited as authoritative sources in large language models — through structured content, AEO-optimised articles, and consistent presence in AI training data — receive preferential consideration when agents evaluate purchase options."
         ]
     },
@@ -724,7 +724,7 @@ export default function AgenticCommerce() {
                             "itemOffered": {
                                 "@type": "Service",
                                 "name": "Autonomous Settlement Infrastructure",
-                                "description": "Machine-to-machine payment rails using the v402 handshake protocol for instant, cryptographically verified settlement."
+                                "description": "Machine-to-machine payment rails using the x402 payment protocol for instant, cryptographically signed stablecoin settlement."
                             }
                         },
                         {

@@ -35,11 +35,11 @@ const statementSection = {
 
 const secondaryFeature = {
     image: "/images/ai-model-9.webp",
-    imageAlt: "Visualization of the v402 autonomous machine-readable settlement handshake",
+    imageAlt: "Visualization of the x402 payment protocol settling a machine-to-machine stablecoin transaction",
     label: "Financial Infrastructure",
     watermark: "Protocols",
     title: "Autonomous Settlement Protocols",
-    text1: "The 2026 signal for agentic payments is already appearing in the way global financial infrastructure is being restructured for machine-to-machine commerce. At the heart of this transition is the v402 handshake, a secure autonomous settlement protocol designed to facilitate instant value transfers between AI agents without human oversight. This decentralized settlement layer allows digital delegates to validate cryptographic signatures directly with merchant databases, preventing fraud in a way that legacy credit card networks simply cannot match.",
+    text1: "The 2026 signal for agentic payments is already appearing in the way global financial infrastructure is being restructured for machine-to-machine commerce. At the heart of this transition is x402, an open payment protocol originated by Coinbase and now governed by the x402 Foundation under the Linux Foundation. It is built on the HTTP 402 Payment Required status code: a server quotes a price in its response, the agent retries with a cryptographically signed payment payload, and a facilitator verifies the signature and settles the transfer in stablecoins on-chain. Every payment is signed and auditable in a way that legacy credit card networks simply cannot match.",
     text2: "By utilizing structured data formats like JSON-LD, this infrastructure provides semantic clarity to every agent-initiated transaction, ensuring the buyer's intent perfectly aligns with the seller's offer. This level of machine-readable legibility enables frictionless cross-border execution and a total reduction in operational overhead. Businesses that optimize their technical architecture for algorithmic negotiation and programmatic revenue will dominate the next era of global, human-free trade."
 };
 
@@ -90,7 +90,7 @@ const paymentsFaqs = [
 const manifestoTitle = "The Velocity of Agentic Payments in a Horizontal Economy";
 
 const manifestoLeadIn = [
-    "Consider a practical example within the emerging landscape of global logistics to ground these technical concepts in reality. A professional traveler requires a non-stop flight and a specific room type in a high-density urban environment during a peak booking window. In the legacy model, this individual would spend hours comparing multiple tabs and manually entering sensitive financial data into various fractured systems. In the agentic era, a digital proxy handles the negotiation and settlement instantly by communicating directly with the merchant's backend. The agent identifies the optimal inventory and utilizes the x402 Sentinel to verify the integrity and provenance of the vendor before any capital is committed. It then executes the purchase without human intervention, ensuring that the transaction is finalized before the specific inventory evaporates. This is the functional bridge between complex human intent and high-speed commercial execution.",
+    "Consider a practical example within the emerging landscape of global logistics to ground these technical concepts in reality. A professional traveler requires a non-stop flight and a specific room type in a high-density urban environment during a peak booking window. In the legacy model, this individual would spend hours comparing multiple tabs and manually entering sensitive financial data into various fractured systems. In the agentic era, a digital proxy handles the negotiation and settlement instantly by communicating directly with the merchant's backend. The agent identifies the optimal inventory and settles through the x402 protocol, where a facilitator verifies the cryptographically signed payment authorization before any capital moves. It then executes the purchase without human intervention, ensuring that the transaction is finalized before the specific inventory evaporates. This is the functional bridge between complex human intent and high-speed commercial execution.",
     "The technical physics of this movement rely on deep integration with the Model Context Protocol to facilitate high-fidelity communication between disparate systems. By exposing product and pricing data through machine-readable formats like JSON-LD, brands can finally become legible to the autonomous workforce. This is not about a simple API call; it is about creating a semantic environment where agents can reason about context and availability in real-time. Headless architecture serves as the foundation for this legibility, allowing the transactional logic to exist independently of a visual storefront. When the settlement layer is decoupled from the user interface, the potential for global velocity is truly unlocked for the first time. We are building the infrastructure for a world where every digital interaction is a potential point of sale that requires no manual oversight."
 ];
 
@@ -100,11 +100,11 @@ const manifestoSections = [
         content: "The 2026 shift toward autonomous settlement is already being signaled by the arrival of specialized tools like MoonPay Agents. These entities are designed to bridge the gap between traditional fiat environments and the high-velocity world of decentralized finance through secure, programmatic handshakes. By utilizing the Whop x Tether WDK, these agents can settle transactions in stablecoins across borders without the friction of a 60-country logistical nightmare. This represents the death of the traditional waiting period and the birth of a new commercial organism that prioritizes liquidity. When value can move instantly through a sovereign rail, the very concept of a clearing house becomes a legacy relic of a slower era. We are witnessing the emergence of a horizontal economy where the speed of settlement matches the speed of discovery."
     },
     {
-        content: "Security in the agentic era is managed through protocol-level trust rather than the behavioral heuristics of the past. The x402 Sentinel acts as the primary firewall for these autonomous transactions, ensuring that every request is cryptographically signed and perfectly auditable. Unlike traditional fraud detection systems that rely on guessing human intent based on historical patterns, this architecture uses cold, mathematical verification to approve trades. This allows for a massive reduction in false positives and the total vaporization of chargeback risk for the merchant. When the system can verify the agent's mandate through a secure, encrypted protocol, the need for manual review vanishes entirely. This is the clinical precision required to manage a global brand at scale in an increasingly volatile digital landscape."
+        content: "Security in the agentic era is managed through protocol-level trust rather than the behavioral heuristics of the past. Under the x402 protocol, every payment request carries a cryptographically signed authorization, and a facilitator verifies that signature before any funds settle. Unlike traditional fraud detection systems that rely on guessing human intent based on historical patterns, this architecture uses cold, mathematical verification to approve transfers. Settlement is on-chain, which makes every transaction perfectly auditable after the fact. When the system can verify the agent's authorization through a signed payload, the need for manual review vanishes entirely. This is the clinical precision required to manage a global brand at scale in an increasingly volatile digital landscape."
     },
     {
-        title: "The v402 Handshake and Total Data Integrity",
-        content: "The integration of the v402 handshake provides the final layer of reconciliation for the modern commercial foundry. This protocol allows for the seamless exchange of value and metadata in a single, atomic event that ensures total data integrity. It ensures that the payment is not just a transfer of funds but a transfer of complete commercial context including fulfillment requirements and tax compliance. When an agent executes a trade, the v402 handshake locks in the duties, taxes, and shipping requirements upfront to prevent any downstream friction. This eliminates the delivery shock that has plagued global retail for decades and establishes a new standard for customer transparency. It is the ultimate expression of structural integrity in a horizontal economy where every participant is a sovereign actor."
+        title: "The x402 Protocol and Settlement Integrity",
+        content: "The integration of the x402 protocol provides the settlement layer for the modern commercial foundry. The mechanics are deliberately simple. A server responds to a payment-gated request with HTTP status 402 and payment instructions; the agent retries with a signed payment payload; a facilitator verifies the signature and settles the transfer in stablecoins on-chain. The merchant never runs blockchain infrastructure. There are no accounts, no card forms, and no human checkout flow. By late April 2026, Coinbase reported roughly 69,000 active agents, 165 million transactions, and $50 million in cumulative volume across the protocol. It is the settlement standard for a horizontal economy where every participant is a sovereign actor."
     },
     {
         content: "The inevitability of this transition is driven by the sheer efficiency of the agentic workforce compared to legacy management structures. Traditional agencies often fail because they are built on a foundation of billable hours and manual labor that cannot scale with the speed of the modern web. The agentic model replaces this overhead with relentless, programmatic execution that operates without fatigue or distraction. These digital ambassadors work twenty-four hours a day to hunt for intent and settle trades across the global timeline. They do not require management or creative briefs because they are hard-coded to the brand's primary objectives. The competitive advantage for brands that adopt this early is insurmountable as they bypass the high costs of the legacy retainer model."
@@ -362,7 +362,7 @@ const PaymentsSettlementGrid = () => {
                     </div>
 
                     {/* Glassmorphic overlay card — top right */}
-                    <Link href="/news-insights/v402-handshake-how-machine-to-machine-negotiation-works" className="bento-anim relative group rounded-2xl overflow-hidden min-h-[270px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 opacity-0 block">
+                    <Link href="/news-insights/x402-protocol-how-machine-to-machine-payments-work" className="bento-anim relative group rounded-2xl overflow-hidden min-h-[270px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 opacity-0 block">
                         <Image
                             src="/images/blockchain-settlement-ledger.webp"
                             alt="Blockchain distributed ledger visualization"
@@ -372,8 +372,8 @@ const PaymentsSettlementGrid = () => {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent flex items-end p-6">
                             <div>
-                                <p className="font-sans font-bold text-white text-sm">The v402 Handshake</p>
-                                <p className="font-sans text-white/50 text-xs mt-1">How machine-to-machine negotiation actually works.</p>
+                                <p className="font-sans font-bold text-white text-sm">The x402 Protocol</p>
+                                <p className="font-sans text-white/50 text-xs mt-1">How machine-to-machine payments actually work.</p>
                                 <span className="inline-block font-sans text-white/70 text-xs tracking-widest uppercase border-b border-white/30 pb-1 mt-3 group-hover:text-electric-mint group-hover:border-electric-mint/50 transition-colors duration-200">
                                     Read Article →
                                 </span>
@@ -429,7 +429,7 @@ export default function AgenticPayments() {
                 "@id": "https://aivelocity.dev/agentic-payments/#webpage",
                 "url": "https://aivelocity.dev/agentic-payments",
                 "name": "Agentic Payments, Autonomous Settlement Infrastructure",
-                "description": "Agentic payments orchestrate instant, machine-to-machine settlements via autonomous software delegates. The v402 handshake protocol enables sovereign, cryptographically verified settlement.",
+                "description": "Agentic payments orchestrate instant, machine-to-machine settlements via autonomous software delegates. The x402 payment protocol enables instant, cryptographically signed stablecoin settlement.",
                 "isPartOf": { "@id": "https://aivelocity.dev/#website" },
                 "about": { "@id": "https://aivelocity.dev/agentic-payments/#service" },
                 "speakable": {
@@ -470,8 +470,8 @@ export default function AgenticPayments() {
                             "@type": "Offer",
                             "itemOffered": {
                                 "@type": "Service",
-                                "name": "v402 Settlement Protocol",
-                                "description": "Secure machine-to-machine handshake protocol for instant, cryptographically verified value transfers between autonomous agents."
+                                "name": "x402 Settlement Integration",
+                                "description": "Integration of the x402 payment protocol for instant, cryptographically signed stablecoin settlement between autonomous agents."
                             }
                         },
                         {

@@ -13,8 +13,8 @@ const defaultLeadIn = [
 
 const defaultSections = [
     {
-        title: "The Physics of the v402 Autonomous Handshake",
-        content: "True agentic commerce functions by completely bypassing the human-centric browser interface to feed raw JSON data directly to the agent's internal reasoning engine[cite: 1097]. We utilize the v402 autonomous handshake to establish a standardized, high-trust settlement protocol between the merchant's underlying database and the autonomous buyer's logic[cite: 271, 1104]. When an agent encounters a payment-gated resource, it reads the 402 Payment Required status and signs a USDC transaction to unlock access in approximately half a second[cite: 271]."
+        title: "The Physics of the x402 Payment Protocol",
+        content: "True agentic commerce functions by completely bypassing the human-centric browser interface to feed raw JSON data directly to the agent's internal reasoning engine[cite: 1097]. We utilize the x402 payment protocol, an open standard originated by Coinbase and now governed by the x402 Foundation under the Linux Foundation, to establish a standardized settlement layer between the merchant's server and the autonomous buyer's logic[cite: 271, 1104]. When an agent encounters a payment-gated resource, it reads the 402 Payment Required status and retries with a signed payment payload; a facilitator verifies the signature and settles the USDC transfer on-chain to unlock access[cite: 271]."
     },
     {
         title: "Vibe Trading and Cross-Chain Intent Execution",

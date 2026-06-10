@@ -78,6 +78,17 @@ export const ContextualLinker = ({ content, currentCategoryPage, className }) =>
     const usedCategories = new Set();
 
     const components = {
+        a: ({ children, href, ...props }) => (
+            <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-electric-mint underline decoration-electric-mint/30 underline-offset-2 hover:text-white hover:decoration-white/50 transition-colors duration-200"
+                {...props}
+            >
+                {children}
+            </a>
+        ),
         p: ({ children, ...props }) => {
             const processedChildren = processChildren(children, usedCategories, currentCategoryPage);
             return <p {...props}>{processedChildren}</p>;
