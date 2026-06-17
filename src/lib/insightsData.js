@@ -1,5 +1,115 @@
 export const insightsData = [
     {
+        id: "25",
+        slug: "ai-agents-hold-a-wallet-stripe-skills",
+        title: "AI Agents Can Now Hold a Wallet: What Stripe Skills Mean",
+        category: "Agentic Payments",
+        categoryPage: "/agentic-payments",
+        relatedSlugs: ["x402-protocol-how-machine-to-machine-payments-work", "autonomous-payment-settlement-what-cfos-need-to-know", "machine-to-machine-negotiation-protocols-reshaping-commerce"],
+        date: "2026-06-17T09:00:00Z",
+        dateModified: "2026-06-17T09:00:00Z",
+        author: "AI Velocity",
+        readTime: "6 min read",
+        image: "/images/insights/ai-agents-hold-a-wallet-stripe-skills.webp",
+        imageAlt: "Stylised winged-helmet figure representing an autonomous AI agent, illustrating Hermes Agent gaining Stripe payment skills",
+        excerpt: "An open-source AI agent just gained Stripe payment skills. The shift that matters is not that agents can pay, but that they can now hold spending power.",
+        content: `
+Autonomous AI agents can now hold and spend money under programmable limits. On 16 June 2026, Nous Research integrated a full suite of [Stripe skills into its open-source Hermes Agent](https://hermes-agent.nousresearch.com/), letting an agent buy products, pay per-call APIs, and provision its own SaaS, with configurable safety limits on every action. The capability that matters here is not that an agent can complete a payment. Checkout was already solved. It is that an agent can now hold scoped spending authority of its own.
+
+## The Threshold That Just Moved
+
+For the past year, agentic commerce has been about teaching agents to pass through human payment rails. An agent filled a cart, an agent reached a checkout, an agent submitted a card. The money still belonged to a person, and the agent borrowed access to it one transaction at a time.
+
+Holding a wallet is a different category of capability. An agent with delegated spending authority does not ask permission per purchase; it operates within a budget and a ruleset that a human set once. That is the line Hermes Agent and Stripe just crossed in public: the agent buys, pays per call, and even rents its own infrastructure, while the human supervises through limits rather than approvals.
+
+The distinction is easy to miss because the demo looks like ordinary shopping. The mechanism underneath is not ordinary. It is the difference between an agent that can use your money and an agent that has been given money to use. The first borrows trust for a moment; the second is delegated it standing, and standing delegation is what turns an assistant into an operator. Every consequential question that follows, security, accountability, what happens when the agent is wrong, flows from that single shift.
+
+## What Stripe Actually Built
+
+The Hermes integration sits on top of payment primitives Stripe has been assembling through 2026. Stripe announced 288 launches at its Sessions 2026 conference, with the unifying thesis that payments are shifting from transaction infrastructure for humans into programmable infrastructure for machines, [as Forrester summarised it](https://www.forrester.com/blogs/stripe-sessions-2026-stripe-is-rearchitecting-payments-for-an-agentic-ai-economy/). Four primitives do the load-bearing work, [detailed on Stripe's own blog](https://stripe.com/blog/giving-agents-the-ability-to-pay):
+
+**Shared Payment Tokens** are machine-native payment credentials with scoped controls over amount, currency, and merchant. The agent transacts without ever holding the underlying card details.
+
+**Link wallet for agents** lets a consumer grant an agent programmatic access through an OAuth flow. The agent requests single-use cards or shared payment tokens backed by the user's existing payment methods, and never sees the raw credentials.
+
+**Issuing for agents** exposes Stripe's full card-issuance API, so a developer can build a custom agent wallet with single-use virtual cards, fund storage, spending controls, and fraud tooling.
+
+**The Machine Payments Protocol** is Stripe's standard for agent-to-service payment, described by the company as still gaining adoption while the broader ecosystem catches up.
+
+Together these turn "let an agent pay" from a bespoke integration into a configurable product.
+
+## How Skills Package the Capability
+
+The reason this reached an open-source agent so quickly is the packaging format. In Hermes Agent, a skill is a SKILL.md file with a name, a description, and a procedure, loaded into context only when the agent needs it. Capabilities install through a Profile Builder dashboard that Nous Research [shipped on 11 June 2026](https://www.marktechpost.com/2026/06/11/nous-research-ships-hermes-agent-profile-builder-identity-model-skills-and-mcp-servers-in-one-dashboard-flow/), alongside model choice and MCP server configuration.
+
+A skill is therefore a distribution unit. A payment provider writes one skill definition, and every agent on the platform can adopt the capability without a custom build. This is why "Stripe skills" arrived as a bundle rather than a single feature: the format lets a whole suite of payment actions ship at once.
+
+## Why the Safety Limits Are the Product
+
+The headline is the spending. The product is the constraint.
+
+An agent that can spend without bounds is a liability no business will deploy. An agent that spends within a per-action limit, against a scoped token, on an approved merchant list, is something a finance team can sign off on. Stripe's shared payment tokens carry exactly these scoped controls, and Hermes attaches configurable limits to every action. The guardrail is not a footnote to the capability. It is the thing that makes the capability deployable.
+
+This inverts how most agent features are sold. The interesting engineering is rarely the action the agent can take; it is the precision of the boundary around it. Whoever owns the limit owns the trust, and trust is the gate on real money moving through autonomous systems.
+
+## Where This Sits in the Agentic Commerce Stack
+
+The agentic commerce stack now has a recognisable shape, and agent-held wallets are the newest layer. Checkout is handled by the Agentic Commerce Protocol from OpenAI and Stripe. Authorisation, proving an agent may act on a human's behalf, is handled by Google's Agent Payments Protocol. Settlement, the actual movement of value, runs over standards such as [the x402 protocol](/news-insights/x402-protocol-how-machine-to-machine-payments-work).
+
+Agent-side wallets and skills sit on top of all three. The protocols define how a transaction happens; the wallet defines whose budget it draws on and under what rules. The Hermes and Stripe integration is the first widely visible point where those layers meet inside a single consumer-facing agent.
+
+## The New Attack Surface
+
+Giving an agent a budget creates a risk that did not exist when humans approved every purchase. An autonomous agent reads untrusted input: web pages, API responses, the contents of a message it was asked to process. If that input can influence the agent's decisions, and the agent holds spending authority, then a successful prompt injection stops being a content problem and becomes a financial one.
+
+This is why the scoped controls are not optional polish. A shared payment token capped at a small amount, restricted to a named merchant, and valid for a single use, contains the blast radius of a compromised agent. An attacker who hijacks the agent's reasoning still cannot drain an account, because the credential the agent holds was never capable of draining one. Security in agentic payments is moving from detecting bad actors after the fact to bounding what any actor, legitimate or compromised, is permitted to do in advance.
+
+Stripe's design reflects that assumption. The credentials are scoped, the cards can be single-use, and the human sets the envelope rather than reviewing the contents. The system is built on the premise that the agent will sometimes be wrong or hijacked, and should hold regardless. That premise, not the convenience, is what makes the capability defensible.
+
+## Why Open Source Changes the Distribution
+
+The detail that should hold an operator's attention is not the partnership itself. It is that the agent receiving payment power is open source. Payment capability is no longer gated behind one proprietary platform a business could choose to wait out. A SKILL.md definition is portable, and any open agent that runs on a laptop, a server, or a messaging platform can install it.
+
+That reshapes the adoption curve. When a capability ships inside a single company's walled product, a brand can reasonably wait to see whether that product wins. When the same capability ships as an open format any agent can adopt, waiting is a bet against the whole category rather than one vendor. The question stops being whether a given platform succeeds and becomes how many agents, across how many platforms, will arrive able to pay.
+
+## What This Means for Operators
+
+The practical consequence is narrow and concrete. If autonomous agents increasingly arrive holding their own budgets, the businesses they can transact with are the ones exposing machine-readable prices, terms, and payment endpoints. An agent with a wallet and a spending limit will route around any merchant that still requires a human to complete a purchase.
+
+The work is not to issue your customers an agent. It is to make sure that when their agent shows up with money to spend, your commercial surface can take it. The wallet has moved to the agent's side of the table.
+
+## What to Watch
+
+Three signals will show whether agent-held wallets become infrastructure or stay a demo. The first is auto-approval. Stripe's Link wallet requires per-transaction consent today, with spending limits and automatic approval described as planned. The moment a human can set a budget and step away entirely is the moment the capability becomes genuinely autonomous rather than assisted.
+
+The second is the breadth of skills. Payment is one suite, and the same packaging that delivered it can deliver procurement, logistics, and contracting. An agent that can pay is useful; an agent that can pay, source, and negotiate is an economic actor.
+
+The third is the merchant side. None of this matters commercially until the businesses an agent wants to buy from expose machine-readable prices, terms, and payment endpoints. The capability now exists on the agent's side. Whether it has anywhere to spend depends on how fast the rest of the market becomes machine-transactable. The question for every brand is no longer whether to prepare for this, but whether its infrastructure is ready to be paid by a machine before its competitors' is.
+`,
+        faqs: [
+            {
+                question: "What are Stripe skills for AI agents?",
+                answer: "Stripe skills are packaged capabilities that let an AI agent make payments through Stripe's infrastructure: buying products, paying per-call API fees, and provisioning services, each with configurable safety limits. In Nous Research's Hermes Agent, they were added as an installable suite on 16 June 2026, built on Stripe primitives including Shared Payment Tokens and Link wallet for agents."
+            },
+            {
+                question: "Can an AI agent have its own payment method?",
+                answer: "Yes. Through Stripe's Issuing for agents and Link wallet for agents, an agent can be granted programmatic access to single-use cards or Shared Payment Tokens backed by a human's existing payment methods. The agent operates within a budget and ruleset rather than asking permission for each individual purchase, which is what distinguishes holding a wallet from borrowing one."
+            },
+            {
+                question: "What is Hermes Agent?",
+                answer: "Hermes Agent is an open-source, self-improving AI agent from Nous Research that runs on the command line, a desktop app, and messaging platforms. Capabilities are configured through a Profile Builder dashboard using Skills, defined as SKILL.md files, and MCP servers. It is unrelated to the Hermès luxury brand."
+            },
+            {
+                question: "How do safety limits on agent payments work?",
+                answer: "Stripe's Shared Payment Tokens carry scoped controls over amount, currency, and merchant, and the agent never sees the underlying card credentials. Hermes attaches configurable limits to every action. These constraints are what make autonomous spending deployable for a business, because a finance team can bound exactly what an agent is permitted to do."
+            },
+            {
+                question: "How does this relate to ACP, AP2, and x402?",
+                answer: "Those protocols define how an agent transacts: ACP handles checkout, Google's AP2 handles authorisation, and x402 handles settlement. Agent-held wallets and Stripe skills sit on top, defining whose budget a transaction draws on and under what rules. The Hermes and Stripe integration is an early case of all these layers meeting inside one agent."
+            }
+        ]
+    },
+    {
         id: "24",
         slug: "argentina-non-human-corporations-ai-run-companies",
         title: "Argentina Moves to Legalise AI-Run 'Non-Human Corporations'",
