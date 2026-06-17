@@ -590,7 +590,7 @@ However, a contrarian point that the industry rarely acknowledges: data liquidit
 
 LLM scrapers and autonomous agents operate under strict latency budgets. A traditional monolithic CMS might take 800 milliseconds to 3 seconds to render a full page, an acceptable delay for a human visitor, but an eternity for an autonomous agent evaluating dozens of suppliers in parallel.
 
-A headless API endpoint, by contrast, serves pre-built JSON payloads directly from the edge. No HTML rendering, no CSS parsing, no JavaScript execution, no image loading. Response times of 20–50 milliseconds are standard. This order-of-magnitude improvement in latency is not just a performance optimisation, it is a prerequisite for participation in the agentic commerce ecosystem.
+A headless API endpoint, by contrast, serves pre-built JSON payloads directly from the edge. No HTML rendering, no CSS parsing, no JavaScript execution, no image loading. Response times of 20 to 50 milliseconds are standard. This order-of-magnitude improvement in latency is not just a performance optimisation, it is a prerequisite for participation in the agentic commerce ecosystem.
 
 ## The Technical Implementation Path
 
@@ -616,7 +616,7 @@ Performance in the agentic commerce model is measured in milliseconds. Deploy yo
 
 Implement monitoring that tracks both human and agent interactions with your APIs. Measure response times, error rates, and schema validation results for automated requests. Identify which endpoints are most frequently accessed by LLM crawlers and optimise their performance. Track how your structured data appears in AI-generated responses to measure citation effectiveness.
 
-A process insight from our implementation work: most organisations set up monitoring and then wait for agent traffic to appear organically. This is a mistake. The first thing we do after deploying a headless API layer is submit the endpoints directly to known LLM crawler registries and trigger a manual crawl cycle. We then review the crawler's structured data extraction logs to verify that the JSON-LD is being parsed as intended. This proactive approach typically surfaces schema validation issues within 48 hours, compared to the 3–6 months it would take to identify the same issues through passive monitoring alone.
+A process insight from our implementation work: most organisations set up monitoring and then wait for agent traffic to appear organically. This is a mistake. The first thing we do after deploying a headless API layer is submit the endpoints directly to known LLM crawler registries and trigger a manual crawl cycle. We then review the crawler's structured data extraction logs to verify that the JSON-LD is being parsed as intended. This proactive approach typically surfaces schema validation issues within 48 hours, compared to the 3 to 6 months it would take to identify the same issues through passive monitoring alone.
 
 ## The Cost of Inaction
 
@@ -760,7 +760,7 @@ The window to build this advantage is narrow. Once your competitors make their m
 
 Traditional payment infrastructure was designed for a world where humans initiate transactions. A purchase order is raised, approved, sent to a vendor, invoiced, and settled, a process that typically takes 30 to 90 days. This cadence was acceptable when every transaction required human review at multiple checkpoints.
 
-Autonomous commerce operates on a fundamentally different timescale. An AI procurement agent can identify a need, evaluate vendors, negotiate terms, and initiate a purchase in under 60 seconds. But when that agent reaches the payment step, it hits a wall. Your payment gateway expects a browser session. Your invoicing system expects an email address. Your approval workflow expects a human to click a button. Agent-initiated transactions now represent approximately 8% of total B2B settlement volume, up from just 0.3% in 2024, and this figure is doubling every quarter. The gap between agent transaction speed and payment settlement speed is the single largest friction point in autonomous commerce today.
+Autonomous commerce operates on a fundamentally different timescale. An AI procurement agent can identify a need, evaluate vendors, negotiate terms, and initiate a purchase in under 60 seconds. But when that agent reaches the payment step, it hits a wall. Your payment gateway expects a browser session. Your invoicing system expects an email address. Your approval workflow expects a human to click a button. Agent-initiated transactions remain a small share of total B2B settlement volume today, but the trajectory is steep: Forrester projects that roughly a third of B2B payment workflows will involve AI agents by the end of 2026, and Gartner expects the majority of B2B buying to be agent-intermediated by 2028. The gap between agent transaction speed and payment settlement speed is the single largest friction point in autonomous commerce today.
 
 ## How Autonomous Agents Negotiate and Settle
 
@@ -1751,7 +1751,7 @@ OpenClaw, the fastest-growing open-source AI agent platform of 2026, has achieve
 
 First, Amazon Web Services announced general availability of OpenClaw on Lightsail on March 4, 2026. Pre-configured instances ship with Amazon Bedrock as the default AI model provider, reducing deployment time from hours to minutes.
 
-Second, Google released a dedicated command-line interface enabling developers to integrate OpenClaw with Google Workspace services, including Gmail, Google Drive, and Calendar. This effectively opens Google's enterprise ecosystem to autonomous agent orchestration.
+Second, OpenClaw gained integrations with Google Workspace services, including Gmail, Google Drive, and Calendar, extending autonomous agent orchestration into the enterprise tools teams already use every day.
 
 Third, Peter Steinberger, OpenClaw's founder, confirmed he is joining OpenAI to work on making AI agents more widely accessible. The OpenClaw project itself will transition to an open-source foundation to ensure continued independence.
 
@@ -2186,7 +2186,7 @@ The remaining work is integration, not invention. Every major component exists. 
         id: "20",
         slug: "sec-digital-commodity-taxonomy-agentic-commerce",
         title: "The SEC Just Cleared the Path for AI Agents to Transact",
-        seoTitle: "SEC Classifies SOL, BTC & ETH as Digital Commodities — March 2026 Taxonomy",
+        seoTitle: "SEC Classifies SOL, BTC & ETH as Digital Commodities: March 2026 Taxonomy",
         category: "Agentic Payments",
         categoryPage: "/agentic-payments",
         relatedSlugs: ["stablecoins-settlement-layer-ai-agents", "the-settlement-layer-is-live", "solana-launches-ai-agent-registry-with-9000-agents"],
@@ -2199,7 +2199,7 @@ The remaining work is integration, not invention. Every major component exists. 
         content: `
 ## What the SEC Actually Did
 
-On March 14, 2026, SEC Chairman Paul Atkins announced a formal crypto asset taxonomy that will reshape how digital assets are regulated in the United States. The framework establishes five categories: **Digital Commodities, Digital Collectibles, Digital Tools, Payment Stablecoins, and Digital Securities.** Each category carries distinct regulatory treatment, and the boundaries between them are now explicit rather than litigated case by case.
+On March 17, 2026, SEC Chairman Paul Atkins announced a formal crypto asset taxonomy that will reshape how digital assets are regulated in the United States. The framework establishes five categories: **Digital Commodities, Digital Collectibles, Digital Tools, Payment Stablecoins, and Digital Securities.** Each category carries distinct regulatory treatment, and the boundaries between them are now explicit rather than litigated case by case.
 
 The headline that caught the market's attention: **Solana (SOL) is classified as a non-security digital commodity**, alongside Bitcoin and Ethereum. SOL is not a security. It falls under CFTC jurisdiction, not SEC enforcement.
 
@@ -2249,7 +2249,7 @@ Solana's classification as a commodity intersects with several infrastructure de
 
 **9,000+ AI agents are already registered** on Solana's AI Agent Registry, launched in early March 2026. These agents have verifiable on-chain identities and transaction histories. With SOL now formally classified as a commodity, the entire registry operates on legally settled infrastructure.
 
-**The Alpenglow upgrade** targets 100-150 millisecond transaction finality, down from 12.8 seconds. Combined with commodity classification, this makes Solana the first major blockchain where agent-initiated stablecoin settlement is both technically instant and regulatory unambiguous.
+**The Alpenglow upgrade** targets 100-150 millisecond transaction finality, down from 12.8 seconds. Combined with commodity classification, this positions Solana to become the first major blockchain where agent-initiated stablecoin settlement is both near-instant and regulatorily unambiguous, once Alpenglow ships (mainnet expected in the second half of 2026).
 
 **Agent-native commerce platforms** like Virtuals.io are already reporting 340ms end-to-end transaction latency for autonomous agent purchases. These platforms no longer need to caveat their documentation with regulatory uncertainty disclaimers.
 
@@ -2288,7 +2288,7 @@ Whether this accelerates the agentic commerce timeline by six months or two year
         faqs: [
             {
                 question: "What is the SEC's new crypto asset taxonomy?",
-                answer: "The SEC's crypto asset taxonomy, announced on March 14, 2026, classifies digital assets into five categories: Digital Commodities, Digital Collectibles, Digital Tools, Payment Stablecoins, and Digital Securities. Each category carries distinct regulatory treatment, with Digital Commodities falling under CFTC jurisdiction and Digital Securities remaining under SEC oversight."
+                answer: "The SEC's crypto asset taxonomy, announced on March 17, 2026, classifies digital assets into five categories: Digital Commodities, Digital Collectibles, Digital Tools, Payment Stablecoins, and Digital Securities. Each category carries distinct regulatory treatment, with Digital Commodities falling under CFTC jurisdiction and Digital Securities remaining under SEC oversight."
             },
             {
                 question: "Is Solana (SOL) classified as a security or commodity?",
@@ -2533,7 +2533,7 @@ This layered architecture means MPP does not compete with Stripe's existing Agen
 
 ## MPP vs AP2: Two Standards, One Problem
 
-The same week Stripe launched MPP, Google announced the **Agent Payments Protocol (AP2)**, developed in collaboration with American Express, Mastercard, and PayPal.
+Six months before Stripe launched MPP, Google had announced the **Agent Payments Protocol (AP2)** in September 2025, developed in collaboration with American Express, Mastercard, and PayPal.
 
 AP2 extends Google's existing Agent2Agent (A2A) and Model Context Protocol (MCP) standards to cover payment initiation. It focuses on authentication, authorisation, and accountability: ensuring that an agent has verifiable authority to initiate a payment on behalf of a user.
 
@@ -2545,7 +2545,7 @@ The two protocols address different layers of the same problem.
 
 In a mature agentic commerce stack, both protocols could operate together. AP2 verifies the agent's authority. MPP coordinates the actual payment. The protocols are complementary, not competitive, though the inevitable standards war between Stripe and Google will likely produce some friction before convergence.
 
-The critical observation: the fact that both Stripe and Google announced agent payment protocols within the same week signals that the standardisation window is open right now. The market is moving from proprietary integrations to open standards. The companies that align with the winning standard early will have a structural advantage as agent transaction volumes scale.
+The critical observation: the fact that Stripe, Google, and the major card networks are all shipping agent payment protocols in the same window signals that the standardisation contest is open right now. The market is moving from proprietary integrations to open standards. The companies that align with the winning standard early will have a structural advantage as agent transaction volumes scale.
 
 ## What This Means for the Agentic Commerce Thesis
 
@@ -2646,7 +2646,7 @@ The five additions on April 24, 2026 are not symmetric in significance.
 
 **Salesforce** owns the enterprise commerce stack at the upper tier of B2B and B2C operators. Its membership places enterprise commerce inside the same governance body as marketplace and search-driven commerce.
 
-**Stripe** is the consequential addition. Stripe co-authored the **Agentic Commerce Protocol (ACP)** with OpenAI, launched on September 29, 2025 as the rival open standard for agent checkout. ACP currently powers ChatGPT Instant Checkout. Stripe joining the UCP Tech Council does not mean abandoning ACP. It means Stripe is now positioned inside both governance bodies, ensuring the protocols converge on shared primitives rather than diverge into incompatible silos.
+**Stripe** is the consequential addition. Stripe co-authored the **Agentic Commerce Protocol (ACP)** with OpenAI, launched on September 29, 2025 as the rival open standard for agent checkout. ACP powered ChatGPT's Instant Checkout feature, which OpenAI retired in March 2026 in favour of routing purchases to retailers' own sites; the protocol itself continues to operate across those retailer integrations. Stripe joining the UCP Tech Council does not mean abandoning ACP. It means Stripe is now positioned inside both governance bodies, ensuring the protocols converge on shared primitives rather than diverge into incompatible silos.
 
 That convergence stance is the actual signal of April 24. The narrative of "UCP won, ACP lost" misreads the structural move. The infrastructure is consolidating around interoperability, not around a single winning specification.
 
@@ -2729,7 +2729,7 @@ The protocol war is not over. The governance layer is settled. For merchants, th
             },
             {
                 question: "Has UCP won the agentic commerce protocol war?",
-                answer: "UCP has won the governance layer rather than the entire protocol war. The Agentic Commerce Protocol (ACP), maintained by OpenAI and Stripe, continues to operate and powers ChatGPT Instant Checkout. Stripe now sits on both governance bodies, signalling that the protocols are converging through interoperability rather than one displacing the other."
+                answer: "UCP has won the governance layer rather than the entire protocol war. The Agentic Commerce Protocol (ACP), maintained by OpenAI and Stripe, continues to operate across retailer integrations, though OpenAI retired the ChatGPT Instant Checkout feature it originally powered in March 2026. Stripe now sits on both governance bodies, signalling that the protocols are converging through interoperability rather than one displacing the other."
             },
             {
                 question: "What is the difference between UCP and ACP?",
