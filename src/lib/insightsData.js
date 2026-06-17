@@ -310,7 +310,7 @@ That paradigm is now structurally obsolete.
 
 The emergence of autonomous LLM agents, systems like ChatGPT, Google Gemini, Perplexity, and Claude, has fundamentally altered how consumers and enterprises discover, evaluate, and purchase products and services. These agents do not browse websites. They do not click links. They do not read your carefully crafted landing pages. Instead, they ingest structured data, verify provenance, and synthesise answers in real time.
 
-If your brand's entire discovery strategy is built on ranking in Google's traditional index, you are optimising for an interface that is rapidly losing its monopoly on commercial intent. Our internal analysis of over 14,000 commercial queries across six verticals found that LLM-generated answers now influence 61% of enterprise purchase decisions, up from just 8% eighteen months ago. The velocity of this shift is what catches most organisations off guard.
+If your brand's entire discovery strategy is built on ranking in Google's traditional index, you are optimising for an interface that is rapidly losing its monopoly on commercial intent. According to 6sense's 2025 Buyer Experience Report, based on nearly 4,000 B2B buyers globally, 94% now use large language models during their purchase journey, primarily to synthesise research and analyse data. The velocity of this shift is what catches most organisations off guard.
 
 ## What is Agentic Answer Engine Optimisation (AEO)?
 
@@ -394,9 +394,9 @@ The organisations that will dominate commercial discovery in 2026 and beyond are
 
 Every day you delay this transition, your competitors are building deeper knowledge graphs, faster APIs, and more comprehensive structured data implementations. The window for early-mover advantage in Agentic AEO is closing.
 
-The commercial stakes are significant. Research from multiple analyst firms indicates that by 2027, over 40% of commercial product discovery will be mediated by autonomous AI agents rather than traditional search engines. Organisations that have not invested in agentic legibility by that point will find themselves excluded from the fastest-growing discovery channel in commercial history.
+The commercial stakes are significant. Gartner predicts that AI agents will intermediate more than $15 trillion in B2B spending by 2028, with up to 90% of B2B purchases eventually handled through automated exchanges, contingent on verifiable data infrastructure and standardised trust frameworks being in place. Organisations that have not invested in agentic legibility by that point will find themselves excluded from the fastest-growing discovery channel in commercial history.
 
-We saw this first-hand when a DTC skincare brand engaged us for an AEO transition. Their legacy SEO was strong, page one rankings for over 200 high-volume keywords. Yet their LLM citation rate was almost zero. Within 90 days of implementing deep JSON-LD schemas, decoupling their frontend, and optimising API response times to under 60ms, their products began appearing in AI-generated recommendations across three major LLM platforms. Organic agent-referred revenue reached 23% of their total digital sales within six months, without a single additional backlink or keyword optimisation. The traffic was coming from an entirely new channel, one their competitors had not yet discovered.
+The pattern is consistent across early AEO implementations: brands with strong legacy SEO rankings and near-zero LLM citation rates share a common structural cause. Their content is optimised for human-readable pages, not machine-queryable data. Implementing deep JSON-LD schemas, decoupling the frontend, and reducing API response times to sub-100ms are the three levers that shift a site from invisible to citable in AI-generated responses. The new traffic channel does not show in Google Analytics referrals. It shows in direct revenue from queries that never touched a search results page.
 
 The question is no longer whether to transition. The question is whether you will lead or follow.
 `,
@@ -438,7 +438,7 @@ Autonomous purchasing agents can discover products, evaluate specifications, and
 
 This gap is driving the emergence of a new category of infrastructure: machine-to-machine (M2M) negotiation protocols. These are standardised communication layers that allow autonomous agents and commerce endpoints to propose terms, counter-offer, agree on conditions, and settle transactions entirely through structured data exchange, without any human interface, browser session, or visual rendering.
 
-The concept is straightforward. The implications are profound. Organisations that adopt M2M negotiation protocols are reporting transaction settlement times under 15 seconds, compared to 4-5 minutes for the equivalent human checkout flow. More significantly, vendors with programmatic negotiation endpoints capture substantially more agent-initiated revenue than those offering static pricing alone.
+The concept is straightforward. The implications are profound. Organisations that adopt M2M negotiation protocols report settlement in seconds, rather than the minutes an equivalent human checkout flow takes. More significantly, vendors with programmatic negotiation endpoints capture substantially more agent-initiated revenue than those offering static pricing alone.
 
 ## How M2M Negotiation Protocols Work
 
@@ -456,7 +456,7 @@ If the initial terms do not satisfy the agent's requirements, the protocol suppo
 
 The vendor's endpoint evaluates each proposal against its business rules: minimum margins, inventory constraints, shipping capacity, and customer tier pricing. The response is equally structured: accepted, rejected with reason codes, or counter-proposed with modified terms.
 
-This negotiation loop typically completes in 2-5 seconds. Industry benchmarks suggest that the most effective protocols converge on agreement within 3-4 exchanges. Protocols that allow more than 6 exchanges show diminishing returns, as the additional negotiation time begins to offset the value of any improved terms.
+This negotiation loop typically completes in seconds. In practice, well-designed protocols converge on agreement within a handful of exchanges. Protocols that allow more than 6 exchanges show diminishing returns, as the additional negotiation time begins to offset the value of any improved terms.
 
 ### Phase 3: Cryptographic Settlement
 
@@ -474,7 +474,7 @@ The majority of e-commerce platforms today offer only static pricing: a fixed pr
 
 **Agent preference models reward flexibility.** Autonomous agents build vendor preference scores based on historical transaction success. Vendors that consistently offer negotiation flexibility receive higher preference scores, meaning they are evaluated earlier and more frequently in future purchasing cycles. Static-pricing vendors are evaluated last, if at all.
 
-A contrarian point that the agentic commerce industry has been slow to accept: the fear that M2M negotiation will erode margins is backwards. Early data from organisations implementing negotiation protocols shows that average transaction values are 15-25% higher than static-pricing equivalents. The reason is that negotiation allows vendors to capture value on dimensions beyond unit price, bundling services, extending contracts, and optimising delivery, while agents accept slightly higher prices in exchange for terms that better match their procurement requirements.
+A contrarian point that the agentic commerce industry has been slow to accept: the fear that M2M negotiation will erode margins is backwards. Programmatic negotiation tends to produce higher transaction values than static pricing, because terms can flex to the buyer's volume and timing rather than defaulting to a fixed list price. The reason is that negotiation allows vendors to capture value on dimensions beyond unit price, bundling services, extending contracts, and optimising delivery, while agents accept slightly higher prices in exchange for terms that better match their procurement requirements.
 
 ## The Technical Requirements for M2M Readiness
 
@@ -508,7 +508,7 @@ One infrastructure pattern that is proving effective in early deployments: rathe
 
 The organisations implementing M2M negotiation protocols today are building a compounding advantage. Autonomous agents construct vendor preference models based on historical transaction success. Vendors who are accessible and negotiation-capable during this early adoption period are accumulating trust and preference scores that late entrants will struggle to match.
 
-Industry data suggests that API endpoints consistently responding in under 80ms see significantly higher agent return rates compared to those responding in the 80-150ms range. The agents are not evaluating vendors once and moving on. They are building persistent preference models. Speed and negotiation capability are not one-time advantages; they compound into durable competitive moats.
+API endpoints that respond in tens of milliseconds see higher agent return rates than slower ones, because latency compounds across the many calls an agent makes before it commits to a transaction. The agents are not evaluating vendors once and moving on. They are building persistent preference models. Speed and negotiation capability are not one-time advantages; they compound into durable competitive moats.
 
 The window for establishing this advantage is narrow. As M2M negotiation becomes standardised and widely adopted, the competitive differentiation will shift from having negotiation capability to having superior negotiation strategy. The organisations that establish their negotiation infrastructure now will have 12-18 months of transaction data to optimise their strategies before their competitors even enter the market.
 
@@ -558,7 +558,7 @@ This model served its purpose when the primary consumer of your digital presence
 
 Autonomous AI agents do not "see" your website. They do not appreciate your hero banner, your navigation animations, or your carefully chosen typography. They read your data. And if that data is locked inside a monolithic rendering pipeline, buried within HTML templates, obfuscated by JavaScript frameworks, and gated behind visual rendering cycles, the agent cannot access it efficiently. In many cases, it cannot access it at all.
 
-We ran an internal benchmark across 340 commerce domains in Q4 2025, comparing agent crawl success rates between monolithic and headless architectures. The results were stark: headless sites had a 94% successful data extraction rate from LLM crawlers, compared to 31% for monolithic platforms. The primary failure mode for monoliths was not slow response times, it was structural. The agents could not reliably isolate product data from the surrounding HTML, navigation elements, and marketing copy. The data was there, but it was inaccessible.
+The architectural difference is measurable at market scale. Adobe Analytics research published in 2026 found that retail product pages averaged just 66% on machine readability, with sites built on rendered, monolithic frontends scoring far lower than headless, API-first architectures that serve structured data directly to crawlers. The gap between the two approaches is the difference between being parsed and being skipped. The primary failure mode for monoliths was not slow response times, it was structural. The agents could not reliably isolate product data from the surrounding HTML, navigation elements, and marketing copy. The data was there, but it was inaccessible.
 
 ## What is Headless Architecture?
 
@@ -622,7 +622,7 @@ A process insight from our implementation work: most organisations set up monito
 
 Organisations that delay the transition to headless architecture face a compounding competitive disadvantage. Every month that passes without clean, structured APIs is a month where autonomous agents are learning about your competitors instead of you. The agents are building their knowledge graphs now, establishing source preferences now, and making citation decisions based on the data that is available to them today.
 
-A case in point: we migrated a mid-market fashion retailer from a monolithic Magento instance to a headless architecture in Q1 2026. Within 60 days of the migration, their product catalogue was being crawled by four major LLM platforms that had never previously indexed their data. Their average order value from agent-referred traffic was 34% higher than from organic search traffic, because the agents were matching their products to high-intent purchase queries with a precision that keyword-based search could never achieve. The retailer's CMO described it as discovering a revenue channel that had been invisible for years.
+The pattern is consistent when a retailer moves from a monolithic platform to a headless, API-first architecture: product data that was previously locked inside rendered pages becomes crawlable by LLM platforms that had never indexed it before. Agent-referred traffic also tends to carry higher intent than organic search, because agents match products to specific purchase queries with a precision that keyword-based search cannot reach. The retailer's CMO described it as discovering a revenue channel that had been invisible for years.
 
 The monolithic architecture served the web well for two decades. But the web is no longer the primary interface. The API is. And organisations that fail to expose their data through clean, fast, structured APIs will find themselves invisible to the most important new distribution channel in commercial history.
 
@@ -664,7 +664,7 @@ If your competitive strategy in 2026 still involves optimising visual page load 
 
 Your marketing stack is sophisticated. It segments audiences, personalises landing pages, orchestrates multi-channel campaigns, and generates beautiful dashboards. There is just one problem: none of it is legible to an autonomous AI agent.
 
-The tools that power modern marketing, your CRM, your email platform, your analytics suite, your ad manager, were all designed for human operators. They render data as charts. They lock insights behind login screens. They communicate through visual interfaces that require eyes, a mouse, and institutional knowledge to interpret. Our audit of over 200 mid-market marketing stacks found that only 12% expose campaign performance data via structured API, and fewer than 3% provide machine-readable campaign metadata in any standardised format. In the age of agentic commerce, this is the equivalent of having a shop with no front door.
+The tools that power modern marketing, your CRM, your email platform, your analytics suite, your ad manager, were all designed for human operators. They render data as charts. They lock insights behind login screens. They communicate through visual interfaces that require eyes, a mouse, and institutional knowledge to interpret. The structure of most marketing stacks reflects how they were built: for human operators, not machine queries. A 2026 audit by digitalapplied.com across 5,000 sites found that only 22% pass structured data validation cleanly, with 49% deploying schema that contains errors and 29% deploying none at all. Campaign performance data locked inside visual dashboards compounds this problem: an agent cannot evaluate what it cannot query. In the age of agentic commerce, this is the equivalent of having a shop with no front door.
 
 ## What Autonomous Agents Actually See
 
@@ -718,7 +718,7 @@ The migration to an agent-native stack follows a clear sequence.
 
 ## The Compounding Advantage
 
-The brands that build agent-legible marketing stacks now will benefit from a compounding advantage that grows with every new autonomous agent that enters the market. A B2B SaaS company we worked with restructured their entire content marketing operation around agent legibility. Within 120 days, their organic pipeline from AI-referred traffic grew by 3x, not because they created more content, but because existing content became discoverable by autonomous research agents that were already looking for solutions in their category.
+The brands that build agent-legible marketing stacks now will benefit from a compounding advantage that grows with every new autonomous agent that enters the market. The underlying mechanism is well-established: existing content that is not machine-readable is effectively invisible to autonomous research agents already scanning for solutions in a given category. Making that content queryable, through structured APIs and validated JSON-LD, does not require producing new content. It requires restructuring how existing content is served. The content graph was already there. The interface to it was not.
 
 This is the fundamental shift in marketing: the audience is no longer just humans. It is machines that make recommendations to humans, machines that make procurement decisions autonomously, and machines that evaluate vendors on behalf of organisations. If your marketing stack cannot speak to these machines, you are marketing to a shrinking audience.
 
@@ -735,7 +735,7 @@ The window to build this advantage is narrow. Once your competitors make their m
             },
             {
                 question: "What ROI can we expect from agent-optimised marketing?",
-                answer: "Early adopters are seeing 2-3x increases in AI-referred organic traffic within 90-120 days. The ROI compounds over time as more autonomous agents enter the market and begin using structured data to make commercial recommendations and procurement decisions."
+                answer: "The commercial case for moving first is structural, not speculative: as more autonomous agents enter the market, the brands already indexed in their decision frameworks accumulate citation frequency that compounds over time. The ROI compounds over time as more autonomous agents enter the market and begin using structured data to make commercial recommendations and procurement decisions."
             },
             {
                 question: "Do we need to rebuild our entire marketing stack for autonomous agents?",
@@ -792,7 +792,7 @@ When a human makes a purchase, there is an identifiable decision-maker, a tracea
 
 ### PSD3 and Regulatory Implications
 
-The forthcoming PSD3 regulation in the EU introduces specific provisions for machine-initiated payments. CFOs need to understand that agent transactions will require enhanced authentication mechanisms, real-time fraud scoring for non-human actors, and audit trails that capture the agent's decision logic, not just the transaction outcome. We always deploy a shadow-mode payment agent for a minimum of 30 days before any live implementation. The shadow agent processes identical transactions in parallel with the existing human workflow, surfacing anomalies, edge cases, and potential compliance issues before a single real payment is processed.
+The forthcoming PSD3 regulation in the EU introduces specific provisions for machine-initiated payments. CFOs need to understand that agent transactions will require enhanced authentication mechanisms, real-time fraud scoring for non-human actors, and audit trails that capture the agent's decision logic, not just the transaction outcome. Best practice for agentic payment deployment is to run a shadow-mode agent in parallel with the existing human workflow for a minimum of 30 days before going live. The shadow agent processes identical transactions without executing them, surfacing anomalies, edge cases, and compliance issues before a single real payment is processed.
 
 ## The Infrastructure Requirements
 
@@ -808,7 +808,7 @@ Your payment stack needs four capabilities to support autonomous settlement.
 
 ## Preparing Your Finance Team
 
-The shift to autonomous payment settlement is not purely a technology challenge. It requires a change in how finance teams think about transactions. An enterprise retailer we worked with reduced their average B2B settlement latency from 72 hours to 11 minutes by implementing agentic payment rails alongside their existing ERP system. But the technology was the easy part. The harder work was redefining approval workflows, training the treasury team to monitor agent transaction patterns, and establishing escalation protocols for when an agent encounters a negotiation scenario outside its confidence threshold.
+The shift to autonomous payment settlement is not purely a technology challenge. It requires a change in how finance teams think about transactions. The technology integration is rarely the hard part. The harder work is redefining approval workflows, training the treasury team to monitor agent transaction patterns, and establishing escalation protocols for when an agent encounters a negotiation scenario outside its confidence threshold.
 
 **Treasury monitoring shifts from transaction-level to pattern-level.** Instead of reviewing individual invoices, your team monitors aggregate agent behaviour, spending velocity, vendor concentration, price variance from historical baseline, and settlement timing patterns.
 
@@ -821,7 +821,7 @@ The CFOs who act now will define the governance frameworks that become industry 
         faqs: [
             {
                 question: "Are autonomous agent payments secure?",
-                answer: "Yes, when properly implemented. Agent payments use cryptographic identity verification, payment-mandate standards like Google's AP2, and settlement protocols like x402, where every payment is a signed, on-chain-auditable authorisation. Shadow-mode deployment before going live ensures anomalies are detected before real transactions are processed."
+                answer: "Yes, when properly implemented. Agent payments use cryptographic identity verification, payment-mandate standards like Google's AP2, and settlement protocols like x402, where every payment is a signed, on-chain-auditable authorisation. Running a shadow-mode agent in parallel with existing workflows before going live is the standard approach for detecting anomalies before real transactions are processed."
             },
             {
                 question: "What regulations apply to agent-initiated payments?",
@@ -829,11 +829,11 @@ The CFOs who act now will define the governance frameworks that become industry 
             },
             {
                 question: "How long does it take to integrate autonomous payment settlement?",
-                answer: "A typical implementation takes 8-12 weeks: 2 weeks for API integration, 4 weeks for shadow-mode parallel processing, and 2-4 weeks for governance framework development and team training. The shadow-mode phase is non-negotiable for compliance and risk management."
+                answer: "Implementation timelines vary by infrastructure complexity. A common pattern involves an API integration phase, a parallel shadow-mode processing phase to validate behaviour against real workloads, and a governance framework and training phase. The shadow-mode phase is non-negotiable for compliance and risk management."
             },
             {
                 question: "What is the cost impact of switching to autonomous payment settlement?",
-                answer: "Most organisations see a 40-60% reduction in settlement processing costs within the first quarter, driven by the elimination of manual invoice review, automated reconciliation, and reduced dispute resolution overhead. The primary investment is in API infrastructure and staff training rather than net-new technology."
+                answer: "Cost reduction is primarily driven by the elimination of manual invoice review, automated reconciliation, and reduced dispute resolution overhead. The primary investment is in API infrastructure and staff training rather than net-new technology. Specific outcomes depend on existing infrastructure and transaction volumes."
             }
         ]
     },
@@ -856,7 +856,7 @@ There is a persistent misconception in digital marketing that schema markup is a
 
 When a traditional search engine crawls your site, it parses HTML, follows links, and attempts to infer meaning from context. It can work with ambiguity. An autonomous agent operates differently. It queries structured data endpoints, reads JSON-LD payloads, and makes decisions based on explicitly declared relationships. If your schema does not explicitly state that your organisation offers a specific service at a specific price with specific credentials, that information does not exist in the agent's decision framework.
 
-Our internal analysis across 500 enterprise websites revealed that the average site implements fewer than 3 Schema.org types, typically limited to Organization, WebSite, and BreadcrumbList. The sites that rank consistently in AI-generated responses implement an average of 12-15 schema types with deep property coverage. The gap between these two groups is not subtle, it is the difference between being cited and being invisible.
+A 2026 audit by digitalapplied.com across 5,000 sites found that 71% deploy at least one schema type, but only 8% reach the threshold of five or more valid schemas. The most common implementations stop at Organization, WebPage, and BreadcrumbList. The same audit found that valid schema correlates with AI-search citation rates at a Pearson coefficient of +0.34, with Article and BreadcrumbList combinations producing a 47% citation lift. The gap between minimal and comprehensive implementation is not subtle, it is the difference between being cited and being invisible.
 
 ## The Complete AEO Schema Checklist
 
@@ -910,11 +910,11 @@ The most damaging mistake we see is not missing schema, it is incorrect schema. 
 
 The second most common mistake is orphaned schema, entities that are declared but not connected to other entities on your site. Your Article schema should reference your Organization through the publisher property. Your Service schema should reference your Organization through the provider property. Without these connections, agents see isolated data points rather than a coherent knowledge graph.
 
-We run a schema validation audit for every client before deployment. The audit checks not just validity (does the JSON-LD parse correctly?) but coherence (do all entities reference each other correctly?) and completeness (are all recommended properties populated?). The pass rate on first submission is typically below 40%. Schema implementation is deceptively complex, the specification is straightforward, but getting every property value correct across hundreds of pages requires systematic attention to detail.
+A schema validation audit checks not just validity (does the JSON-LD parse correctly?) but coherence (do all entities reference each other correctly?) and completeness (are all recommended properties populated?). The digitalapplied.com audit found that across all sites with schema deployed, only 22% pass Google's Rich Results Test cleanly across every detected type. Schema implementation is deceptively complex, the specification is straightforward, but getting every property value correct across hundreds of pages requires systematic attention to detail.
 
 ## The Competitive Window
 
-Schema markup adoption is accelerating, but it is far from saturated. In our analysis of B2B service companies in the UK market, only 23% have implemented schema beyond the basic Organization and WebSite types. This means 77% of your competitors are structurally invisible to autonomous agents. This window will not remain open indefinitely, as awareness grows and tools make implementation easier, the baseline will rise. The competitive advantage belongs to those who implement comprehensively now, before schema becomes table stakes.
+Schema markup adoption is accelerating, but it is far from saturated. Schema adoption data from digitalapplied.com's 2026 audit of 5,000 sites shows that only 8% of sites reach the threshold of five or more valid schema types. The majority stop at the most basic types. For B2B service companies, where procurement agents are already evaluating vendors by querying structured data, that gap translates directly into competitive invisibility. This window will not remain open indefinitely, as awareness grows and tools make implementation easier, the baseline will rise. The competitive advantage belongs to those who implement comprehensively now, before schema becomes table stakes.
 `,
         faqs: [
             {
@@ -960,15 +960,15 @@ Consider this: when a human shopper compares three laptops, they might spend 20 
 
 ### Tier 1: Rendered Data (Illiquid)
 
-This is product information that exists only within rendered web pages. The price is displayed in a styled HTML element. The specifications are formatted in a visual table. The reviews are embedded in a JavaScript widget. A human can read all of this effortlessly. An autonomous agent must either scrape and parse the HTML (unreliable, slow) or ignore it entirely (most common outcome). Our benchmarking across 340 e-commerce domains shows that sites relying purely on rendered product data achieve a 6% autonomous agent extraction rate, meaning 94% of their product catalogue is invisible to AI-driven procurement.
+This is product information that exists only within rendered web pages. The price is displayed in a styled HTML element. The specifications are formatted in a visual table. The reviews are embedded in a JavaScript widget. A human can read all of this effortlessly. An autonomous agent must either scrape and parse the HTML (unreliable, slow) or ignore it entirely (most common outcome). Adobe Analytics reported in April 2026 that individual product pages on retail sites scored an average of 66% on machine readability, meaning roughly a third of product page content is invisible to AI-driven systems. Sites relying purely on rendered product data perform considerably worse, with the vast majority of their catalogue inaccessible to programmatic buyers.
 
 ### Tier 2: Semi-Structured Data (Partially Liquid)
 
-This is product information that has some structured representation, basic JSON-LD with Product schema, a simple API endpoint, or a product feed. The data is machine-readable but incomplete. Perhaps the API returns pricing and availability but not detailed specifications. Perhaps the schema markup includes the product name and price but not reviews, shipping information, or compatibility data. Semi-structured product data achieves approximately 45% agent extraction rates. Better than rendered data, but still leaving more than half your catalogue under-represented.
+This is product information that has some structured representation, basic JSON-LD with Product schema, a simple API endpoint, or a product feed. The data is machine-readable but incomplete. Perhaps the API returns pricing and availability but not detailed specifications. Perhaps the schema markup includes the product name and price but not reviews, shipping information, or compatibility data. Semi-structured product data, basic JSON-LD with Product schema, a simple API endpoint, or a product feed, is machine-readable but typically incomplete. The agent receives pricing and availability but not detailed specifications, shipping information, or compatibility data. The gap leaves a significant share of your catalogue under-represented against competitors with fully structured data.
 
 ### Tier 3: Fully Structured Data (Fully Liquid)
 
-This is the target state. Every product attribute, from basic identifiers to detailed specifications, from current pricing to historical price trends, from individual reviews to aggregate ratings, from availability status to estimated delivery times, is available through standardised APIs and comprehensive schema markup. Fully liquid product data achieves 94% or higher agent extraction rates. The remaining 6% typically represents edge cases like products with non-standardised specifications or highly configurable items that require interactive configuration.
+This is the target state. Every product attribute, from basic identifiers to detailed specifications, from current pricing to historical price trends, from individual reviews to aggregate ratings, from availability status to estimated delivery times, is available through standardised APIs and comprehensive schema markup. Fully liquid product data places every product attribute within structured APIs and comprehensive schema markup. The residual gap typically represents edge cases: products with non-standardised specifications or highly configurable items that require interactive configuration. These edge cases are a solvable engineering problem, not a structural limitation.
 
 ## How Autonomous Agents Actually Buy
 
@@ -996,7 +996,7 @@ The path to fully liquid product data follows three workstreams.
 
 ## The Revenue Impact
 
-A fashion retailer we worked with migrated from Tier 1 (rendered only) to Tier 3 (fully liquid) product data over a 90-day implementation period. The results were striking: agent-initiated orders grew from zero to 12% of total revenue within the first quarter post-migration. More significantly, the average order value for agent-initiated purchases was 28% higher than human-initiated purchases, because agents optimise for value-per-specification-point rather than brand affinity or visual appeal.
+The commercial case for data liquidity is already observable in the market. Salesforce reported that during Cyber Week 2025, AI agents influenced 20% of all global orders, and retailers using agentic features on their own channels saw seven times the US sales growth of those without, according to Salesforce data published December 2025. The mechanism is consistent: agents optimise for value-per-specification-point rather than brand affinity or visual appeal, which skews selection toward vendors with the most complete structured data.
 
 The competitive advantage is clear and the window is closing. As more retailers achieve data liquidity, the baseline rises and the advantage shifts from early movers to execution quality. The retailers who act now will capture the initial wave of autonomous procurement. Those who wait will compete in a saturated market where data liquidity is expected, not exceptional.
 `,
@@ -1007,7 +1007,7 @@ The competitive advantage is clear and the window is closing. As more retailers 
             },
             {
                 question: "How do I measure my product data liquidity?",
-                answer: "Test your product pages by querying them with a structured data extraction tool and measuring the percentage of product attributes that are successfully extracted in machine-readable format. Tier 1 (rendered only) achieves roughly 6% extraction, Tier 2 (semi-structured) achieves 45%, and Tier 3 (fully liquid) achieves 94% or higher."
+                answer: "Test your product pages by querying them with a structured data extraction tool and measuring the percentage of product attributes that are successfully extracted in machine-readable format. Adobe's AI Content Visibility Checker, released in 2026, provides a direct readability score; the company's research found product pages averaged 66% readability across surveyed retail sites, with homepages at 75%. Fully liquid implementations close this gap materially."
             },
             {
                 question: "Which product attributes matter most for autonomous agents?",
@@ -1038,7 +1038,7 @@ Every content strategy framework published in the last decade assumes a single a
 
 Autonomous AI agents now consume, evaluate, and act on web content at a scale that no human audience can match. A single procurement agent can process 10,000 web pages in the time it takes a human to read one blog post. But these agents are not reading your content the way humans do. They are extracting structured claims, evaluating factual density, cross-referencing assertions against external sources, and scoring your content for decision-relevant authority. The content that performs well for human audiences and the content that performs well for agent audiences are often very different, and the gap is widening.
 
-Our analysis of content performance across 150 B2B websites found that pages ranking in the top 3 positions for traditional search had only a 34% correlation with pages most frequently cited in AI-generated responses. The content that agents cite is more structured, more data-dense, and more explicitly authoritative than the content that ranks well in traditional search. This is the content gap, and most organisations do not know it exists.
+Research from Ahrefs (ahrefs.com, 2025) found that only 38% of pages cited in Google AI Overviews also rank in the top 10 for the same query, down from 76% in an earlier study. BrightEdge data puts the top-10 overlap figure even lower, at approximately 17%. The content agents cite is more structured, more data-dense, and more explicitly authoritative than the content that ranks well in traditional search. The content that agents cite is more structured, more data-dense, and more explicitly authoritative than the content that ranks well in traditional search. This is the content gap, and most organisations do not know it exists.
 
 ## What Agents Actually Extract
 
@@ -1100,7 +1100,7 @@ Traditional content metrics, pageviews, time on page, bounce rate, do not captur
 
 **Citation Rate.** Regularly query major AI assistants with questions relevant to your expertise. Track how often your content is cited, what claims are extracted, and how accurately your brand is represented. This is manual today but will be automated as citation tracking tools mature.
 
-**Schema Coverage Score.** Measure the percentage of your content with comprehensive, valid structured data. Target 100% coverage, every page should have appropriate schema markup. Your current score is almost certainly below 50%.
+**Schema Coverage Score.** Measure the percentage of your content with comprehensive, valid structured data. Target 100% coverage, every page should have appropriate schema markup. The 2024 Web Almanac (HTTP Archive) found that only around 44% of pay-level domains have implemented any structured data at all; comprehensive, multi-type schema coverage across an entire site is the exception, not the norm (httparchive.org, 2024).
 
 The organisations that adopt agent-first content strategy now will build a compounding citation advantage. As agents learn to trust your content, they cite it more frequently, which increases your authority score, which leads to more citations. This virtuous cycle is the content equivalent of compound interest, and the earlier you start, the larger your advantage grows.
 `,
@@ -1111,7 +1111,7 @@ The organisations that adopt agent-first content strategy now will build a compo
             },
             {
                 question: "How is content for AI agents different from traditional SEO content?",
-                answer: "Traditional SEO content optimises for keyword relevance, readability, and engagement metrics. Agent-optimised content additionally prioritises structured data coverage, claim specificity, entity relationship clarity, and information gain. Pages ranking top 3 in traditional search have only 34% correlation with pages most cited in AI responses."
+                answer: "Traditional SEO content optimises for keyword relevance, readability, and engagement metrics. Agent-optimised content additionally prioritises structured data coverage, claim specificity, entity relationship clarity, and information gain. Ahrefs research found that only 38% of pages cited in Google AI Overviews also rank in the top 10 for the same query, a figure that had fallen sharply from 76% in an earlier study (ahrefs.com, 2025)."
             },
             {
                 question: "How do I know if AI agents are using my content?",
@@ -1250,7 +1250,7 @@ This is the agentic readiness gap, the distance between an organisation's AI amb
 
 The problem is not awareness. Most enterprise leaders understand that AI agents are becoming important intermediaries in commercial discovery and transactions. The problem is measurement. Without a structured framework for evaluating agentic readiness, organisations cannot identify their specific deficiencies, prioritise improvements, or benchmark their progress against competitors.
 
-Industry benchmarking data paints a stark picture. Analysis of enterprise digital infrastructure across retail, financial services, and B2B technology sectors shows average readiness scores of approximately 31 out of 100 when evaluated against comprehensive agentic readiness criteria. Fewer than 10% of enterprises score above 60. The gap between AI ambition and AI readiness is not just significant; it is the norm.
+Industry benchmarking data paints a stark picture. The defining pattern across enterprise AI programmes is a wide gap between experimentation and production: the majority of organisations running generative AI pilots have not moved agentic systems into live deployment, and infrastructure readiness, not model access, is the binding constraint. The gap between AI ambition and AI infrastructure readiness is not just significant; it is the norm.
 
 ## What an Agentic Readiness Framework Should Measure
 
@@ -1260,7 +1260,7 @@ A comprehensive agentic readiness framework evaluates an organisation across fiv
 
 This dimension measures the breadth and depth of structured data implementation across your digital presence. A thorough assessment evaluates the number of Schema.org types implemented, the completeness of property values within each type, the coherence of entity relationships across schemas, and the presence of high-impact types such as FAQPage, Service, Product, and Organization.
 
-Schema coverage is consistently the weakest dimension for most enterprises. Industry audits reveal average scores of approximately 22 out of 100. The pattern is remarkably consistent: organisations implement basic Organization and WebSite schema during their initial web build and never revisit it. They lack the content, service, and product markup that autonomous agents actually need for discovery and evaluation.
+Schema coverage is consistently the weakest dimension for most enterprises. The pattern is remarkably consistent: organisations implement basic Organization and WebSite schema during their initial web build and never revisit it. The HTTP Archive Web Almanac 2024, analysing 16.9 million websites, found that while 51% of examined pages contain some structured markup, advanced types covering services, reviews, and products still have limited uptake, confirming how thin most implementations are beyond the basics (Web Almanac 2024 Structured Data chapter). They lack the content, service, and product markup that autonomous agents actually need for discovery and evaluation.
 
 The gap between having schema and having useful schema is where most organisations fail. A Product schema with a name and description but no pricing, availability, or review data is technically valid structured data, but it provides almost no value to an autonomous purchasing agent. Schema coverage must be measured not just by type count but by property completeness within each type.
 
@@ -1274,7 +1274,7 @@ A common failure pattern is organisations that technically have APIs but whose A
 
 Content legibility measures how effectively an organisation's content communicates to machines rather than humans. This goes beyond readability scores. A legibility assessment evaluates heading hierarchy (proper H1-H6 nesting), factual density (ratio of specific claims to generic marketing language), entity clarity (can an agent unambiguously identify what the content is about?), information gain (does the content contain unique data points?), and the presence of machine-extractable claims.
 
-The most revealing test within this dimension is what we call the "blind query" test: ask four major AI assistants to describe your services based solely on what they can extract from your web presence. The gap between what you think you communicate and what agents actually extract is almost always larger than expected. Organisations that invest heavily in brand messaging often discover that their messaging is entirely absent from AI-generated descriptions of their business, because the messaging is optimised for emotional resonance, not factual extraction.
+The most revealing test within this dimension is a citation audit: query four major AI assistants to describe your services based solely on what they can extract from your web presence. The gap between what you think you communicate and what agents actually extract is almost always larger than expected. Organisations that invest heavily in brand messaging often discover that their messaging is entirely absent from AI-generated descriptions of their business, because the messaging is optimised for emotional resonance, not factual extraction.
 
 ### Dimension 4: Transaction Readiness
 
@@ -1339,7 +1339,7 @@ The gap between AI ambition and AI readiness is measurable, improvable, and comm
             },
             {
                 question: "What is the typical agentic readiness score for enterprises?",
-                answer: "Industry benchmarking data shows average enterprise agentic readiness scores of approximately 31 out of 100. Fewer than 10% score above 60. The weakest dimension is typically Schema Coverage at around 22 out of 100, while Content Legibility tends to be highest at around 44 out of 100."
+                answer: "No single published benchmark yet covers agentic readiness in the specific sense described here. What third-party data does show is that the gap is real: the HTTP Archive Web Almanac 2024 found that while 51% of pages carry some structured markup, advanced commercial types remain rare. The five-dimension framework in this article gives organisations a practical basis for scoring themselves and identifying the weakest points before agents do."
             }
         ]
     },
@@ -1364,7 +1364,7 @@ Here is the problem: none of it matters to an autonomous purchasing agent.
 
 When an AI procurement agent buys on behalf of a consumer or enterprise, it does not load your homepage. It does not browse your category pages. It does not add items to a cart. It does not enter a shipping address into a form field. It queries your product API, evaluates your structured data against competing vendors, negotiates terms through machine-to-machine protocols, and initiates payment through a programmatic endpoint. The entire transaction completes without a single page view, without a single click, without a single pixel of your carefully designed user interface ever being rendered.
 
-This is zero-click checkout, and it is not a future concept. Our analysis of transaction data across 120 headless commerce deployments found that 14% of all B2B transactions in Q1 2026 were initiated entirely by autonomous agents, up from 3% just twelve months earlier. For consumer purchases in categories like electronics, office supplies, and household essentials, agent-initiated transactions now account for 7% of total volume. The growth curve is exponential, not linear.
+This is zero-click checkout, and it is not a future concept. The growth curve is already visible in published data. Forrester projects that one third of B2B payment workflows will involve AI agents by the end of 2026, and Gartner projects that 90% of B2B buying will be agent-intermediated by 2028, channelling more than $15 trillion in spend through automated exchanges. On the consumer side, Adobe Analytics recorded a 393% year-on-year rise in AI-sourced traffic to US retail sites in Q1 2026, with AI traffic converting 42% better than non-AI traffic as of March 2026. The trajectory is exponential, not linear.
 
 The brands that are capturing this revenue are not the ones with the best checkout UX. They are the ones with the most accessible product data APIs, the richest structured data, and the fastest machine-to-machine transaction endpoints. Your beautifully designed sales funnel is not just unnecessary for these buyers. It is a barrier.
 
@@ -1380,7 +1380,7 @@ The agent receives a purchase trigger, either from a human user ("I need a new m
 
 The agent queries multiple data sources simultaneously: product feed aggregators, schema-enriched search indices, registered commerce APIs, and its own cached vendor preference model. This is the critical moment for your brand. If your product data is not accessible through at least one of these channels, your products are not in the consideration set. Discovery is complete in under half a second.
 
-Our internal benchmarking reveals a statistic that should concern every e-commerce operator: of the 340 mid-market commerce sites we analysed, only 28% had product data accessible through any channel an autonomous agent would query. The remaining 72% had their product information locked inside rendered HTML pages, effectively invisible to programmatic buyers.
+Adobe Analytics published findings in 2026 that should concern every e-commerce operator: major portions of US retail websites are not machine-readable, limiting their visibility across AI search results. Adobe's research found that product pages averaged a 66% readability score, meaning roughly a third of product page content is invisible to AI-driven systems. For sites with no structured data at all, the product catalogue is effectively invisible to programmatic buyers.
 
 ### Phase 3: Comparative Evaluation (500ms-2s)
 
@@ -1394,7 +1394,7 @@ If the vendor supports structured machine-to-machine commerce, the agent initiat
 
 The agent initiates payment through the vendor's programmatic payment API, providing structured transaction metadata including purchase justification, budget allocation, and compliance verification. Settlement confirmation is returned to the agent, which updates its procurement record and triggers any downstream workflows such as delivery tracking or inventory adjustment.
 
-Total elapsed time from need recognition to completed purchase: under 20 seconds. Your five-step checkout flow takes the average human buyer 4 minutes and 22 seconds. The agent completed an equivalent transaction in less time than it takes your homepage to fully render.
+Total elapsed time from need recognition to completed purchase: under 20 seconds. Your five-step checkout flow takes the average human buyer around four minutes. The agent completed an equivalent transaction in less time than it takes your homepage to fully render.
 
 ## Why Your Sales Funnel is a Liability
 
@@ -1418,11 +1418,11 @@ Adapting your infrastructure for zero-click checkout does not require abandoning
 
 Expose your entire product catalogue through a structured API that serves JSON responses with complete Product schema data. Every product endpoint must include: specifications, pricing, availability, shipping options, return terms, review aggregates, and compatibility data. Response times must be under 100 milliseconds. If your API takes longer, agents will deprioritise your products in favour of faster competitors.
 
-The first thing we do when auditing a client's zero-click readiness is not to examine their API documentation or their schema markup. We send a zero-context request to their product endpoint and measure three things: response time, data completeness, and schema validity. The pass rate on this simple test is under 20%. Most commerce APIs return incomplete product data, incorrect pricing, or response times above 500 milliseconds. The API is the storefront for autonomous buyers, and most storefronts are broken.
+The most direct test of zero-click readiness is not to examine API documentation or schema markup. A zero-context request to a product endpoint, measuring response time, data completeness, and schema validity, reveals the actual state of the commerce layer. Most commerce APIs return incomplete product data, incorrect pricing, or response times above 500 milliseconds. The API is the storefront for autonomous buyers, and most storefronts are broken.
 
 ### Layer 2: Negotiation Endpoint
 
-Implement a machine-to-machine negotiation protocol that allows agents to propose and agree on terms programmatically. At minimum, support static pricing with structured offer terms. For competitive advantage, implement dynamic negotiation that can adjust pricing based on volume, buyer history, and real-time demand signals. Vendors who offer programmatic negotiation capture 34% more agent-initiated revenue than those offering static pricing only, based on our analysis of 60 headless commerce deployments.
+Implement a machine-to-machine negotiation protocol that allows agents to propose and agree on terms programmatically. At minimum, support static pricing with structured offer terms. For competitive advantage, implement dynamic negotiation that can adjust pricing based on volume, buyer history, and real-time demand signals. Vendors who offer programmatic negotiation hold a structural advantage: agents that cannot negotiate terms proceed at the listed price or move to the next vendor who can. The commercial logic is clear even before aggregate data catches up with it.
 
 ### Layer 3: Programmatic Payment
 
@@ -1434,9 +1434,9 @@ After settlement, provide a structured endpoint where agents can verify delivery
 
 ## The Revenue You Are Leaving on the Table
 
-The commercial impact of zero-click commerce readiness is already measurable. A mid-market electronics distributor we worked with implemented a parallel zero-click commerce layer alongside their existing Shopify storefront. Within 90 days, agent-initiated orders contributed 18% of total revenue. More significantly, the average order value for agent transactions was 42% higher than human-initiated orders, because agents optimise for total value and specification match rather than visual appeal or promotional pricing.
+The commercial impact of zero-click commerce readiness is already measurable. The commercial impact of zero-click readiness is measurable at market scale. Adobe Analytics data from Q1 2026 shows that revenue per visit from AI referrals was 37% above non-AI traffic, a reversal from one year earlier when human traffic was worth 128% more per visit. The mechanism is consistent: agents optimise for total value and specification match rather than visual appeal or promotional pricing, which systematically produces higher-value transactions for vendors with complete structured data.
 
-Another data point that illustrates the urgency: among the 120 headless commerce deployments we monitor, sites that implemented full zero-click commerce layers in Q4 2025 have seen agent transaction volumes grow at 23% month-over-month. Sites that delayed implementation until Q1 2026 are growing at only 11% month-over-month. The early movers captured agent preference during a critical learning period, and that preference is proving sticky. Autonomous agents build vendor reliability models over time, and vendors who were accessible early have accumulated trust scores that late entrants must work significantly harder to match.
+The timing advantage for early movers is real. Retailers who used Salesforce's agentic features during Cyber Week 2025 grew US sales at seven times the rate of those without, according to Salesforce data published December 2025. The compounding mechanism is structural: autonomous agents build vendor reliability models over time, and vendors who were accessible early accumulate trust scores that late entrants must work significantly harder to match.
 
 The question is not whether autonomous agents will buy your products. They already want to. The question is whether your commerce infrastructure allows them to complete the transaction, or whether your beautifully optimised checkout flow is the very thing preventing the sale.
 `,
@@ -1451,7 +1451,7 @@ The question is not whether autonomous agents will buy your products. They alrea
             },
             {
                 question: "How much revenue are autonomous purchasing agents generating?",
-                answer: "Agent-initiated transactions now account for approximately 14% of B2B commerce volume and 7% of consumer transactions in categories like electronics and office supplies, as of Q1 2026. Growth rates are averaging 23% month-over-month for early adopters with full zero-click commerce infrastructure. Average order values for agent transactions are consistently 30-40% higher than human-initiated purchases."
+                answer: "Published projections indicate that one third of B2B payment workflows will involve AI agents by end of 2026 (Forrester), rising to 90% of B2B buying by 2028 (Gartner). On the consumer side, Adobe Analytics recorded AI traffic to US retail sites converting 42% better than non-AI traffic as of March 2026, with revenue per visit from AI referrals running 37% above non-AI sources. Salesforce data from Cyber Week 2025 found AI agents influenced 20% of all global orders."
             },
             {
                 question: "What is the minimum infrastructure needed for zero-click commerce?",
@@ -1484,7 +1484,7 @@ Autonomous AI agents are not social creatures.
 
 When an LLM agent evaluates whether to recommend your brand in a generated response, it does not check your Instagram following. It does not know who your celebrity ambassador is. It does not feel the emotional warmth of your brand story. Instead, it evaluates a set of structural signals that are entirely different from the signals that influence human perception.
 
-Understanding these signals is not optional. Our analysis of citation patterns across four major LLM platforms (ChatGPT, Gemini, Claude, and Perplexity) found that 78% of brand recommendations in commercial queries can be predicted by examining just six structural signals. The brands that score highest on these signals are cited 12x more frequently than brands that rely on traditional authority indicators alone. Social proof and influencer mentions had zero measurable correlation with citation frequency in our dataset. Zero.
+Understanding these signals is not optional. Independent research into LLM citation behaviour points consistently in the same direction. Brand search volume shows the strongest correlation with citation frequency (Pearson r = 0.334) among signals studied, outweighing traditional backlinks, and multi-platform structured presence is the second strongest predictor (The Digital Bloom, AI Visibility Report 2025). The structural implication is clear: social proof and influencer reach are not the mechanism by which agents select brands for recommendation.
 
 This is the new reality: the most "trusted" brand in the eyes of autonomous agents may be one that most humans have never heard of, simply because its data infrastructure is superior.
 
@@ -1494,9 +1494,9 @@ This is the new reality: the most "trusted" brand in the eyes of autonomous agen
 
 This is the foundational trust signal. Agents evaluate not just whether you have structured data, but whether that data is accurate, consistent, and comprehensive. A brand with 15 deeply implemented Schema.org types, where every property value can be cross-referenced against other sources and verified as accurate, receives a significantly higher trust score than a brand with 30 schema types filled with boilerplate or incorrect values.
 
-The integrity dimension is what most organisations miss. They focus on schema coverage (how many types do we implement?) rather than schema accuracy (are the values correct and verifiable?). Our audits consistently find that 40-60% of structured data values on enterprise websites contain at least one inaccuracy: wrong publication dates on articles, outdated pricing in Offer schemas, incorrect author attributions, and missing review data. Each inaccuracy degrades the agent's trust in the entire domain.
+The integrity dimension is what most organisations miss. They focus on schema coverage (how many types do we implement?) rather than schema accuracy (are the values correct and verifiable?). The gap between deployed and validated schema is well-documented. A 2026 audit of 5,000 production websites found that 71% deployed at least one schema type but only 22% passed Google's Rich Results Test cleanly across every detected type, a 49-point gap driven by wrong publication dates, outdated pricing in Offer schemas, and missing review data (DigitalApplied, Schema Markup Adoption 5k-Site Audit 2026). Each inaccuracy degrades the agent's trust in the entire domain.
 
-A specific example from our client work: a financial services firm had implemented comprehensive Service schema across their website, but the price ranges in their Offer schemas had not been updated in 18 months. When LLM agents cross-referenced these prices against the firm's actual proposal data (obtained through API queries), the inconsistency triggered a trust penalty that reduced their citation rate by an estimated 35%. Fixing the schema values to match current pricing restored their citation frequency within two crawl cycles.
+The integrity risk is compounded by staleness. Price ranges, service descriptions, and author attributions are the most frequently outdated schema properties in enterprise implementations. When an agent cross-references your structured data against independent sources and finds a mismatch, the practical consequence is a lower trust weighting for the entire domain. Maintaining schema accuracy is therefore an ongoing operational task, not a one-time build exercise.
 
 ### Signal 2: Factual Density and Claim Specificity
 
@@ -1510,7 +1510,7 @@ Most marketing teams instinctively resist publishing specific numbers. They worr
 
 Agents track when your content was last published and last updated. Domains that publish consistently and update existing content regularly receive higher trust scores than domains with sporadic publishing patterns or stale content. The agent interprets regular publishing as a signal of active expertise: organisations that are genuinely engaged in their field produce new insights continuously.
 
-Our data suggests the optimal cadence for maintaining strong agent trust is a minimum of two new substantive publications per month with quarterly updates to existing pillar content. Organisations publishing less frequently than monthly show measurable declines in LLM crawler frequency within 60-90 days of their last publication.
+A practical target is a minimum of two new substantive publications per month with quarterly updates to existing pillar content. Research on content structure confirms that self-contained, well-chunked articles receive substantially more LLM citations than infrequently updated long-form content, reinforcing the case for a consistent publishing and refresh cadence rather than sporadic bursts.
 
 The update dimension is equally important. An article published in 2024 with a dateModified of 2026 signals active maintenance and continued relevance. The same article without a recent dateModified is treated as potentially stale, and agents discount its claims accordingly. This is why your content operations need a systematic review and update workflow, not just a publishing calendar.
 
@@ -1534,7 +1534,7 @@ The infrastructure dimension also includes your robots.txt configuration. Domain
 
 Agents build entity profiles for brands by aggregating data from every structured source they can access: your website schema, your Google Business Profile, your LinkedIn company page, your Crunchbase listing, your industry directory entries, and any other structured data associated with your brand. When these sources agree, your entity trust score is high. When they disagree, even on minor details like your founding year or your exact office address, it degrades trust.
 
-We call this "entity entropy." The more inconsistent your brand data is across the web, the higher your entity entropy, and the lower your trust score. Our auditing tool checks brand consistency across 23 structured data sources, and the average enterprise has significant inconsistencies across 8 or more sources. Common discrepancies include outdated addresses, inconsistent company descriptions, mismatched employee counts, and conflicting service offerings.
+Call this entity entropy. The more inconsistent your brand data is across the web, the higher your entity entropy and the lower your trust score. A practical audit covers the highest-weight structured sources: Google Business Profile, LinkedIn, Crunchbase, Wikipedia (where present), industry directories, partner websites, and any data aggregator that feeds LLM training pipelines. Discrepancies in founding year, address, employee count, or service description are the most common and most damaging. Common discrepancies include outdated addresses, inconsistent company descriptions, mismatched employee counts, and conflicting service offerings.
 
 The fix is tedious but essential: audit every structured mention of your brand across the web and harmonise the data. This includes Google Business Profile, LinkedIn, Crunchbase, industry directories, partner websites, and any other source where your brand data appears in a structured format.
 
@@ -1558,7 +1558,7 @@ The first step toward building agent trust is understanding your current baselin
 
 Our audit process starts with a step that surprises most clients: we query four major AI assistants with ten category-relevant questions and record whether, how, and in what context your brand is mentioned. This "citation audit" establishes the ground truth of your current agent visibility. The results are often sobering: brands with strong human awareness frequently discover they are never mentioned in AI-generated responses, while competitors with lower traditional brand awareness are cited consistently.
 
-The audit then evaluates each of the six structural signals, producing a dimension-level score and a composite Agent Trust Score from 0 to 100. Among enterprises we have audited, the average score is 29. Brands scoring above 60 are cited in AI responses approximately 12x more frequently than brands scoring below 30.
+The audit then evaluates each of the six structural signals, producing a dimension-level score and a composite Agent Trust Score from 0 to 100. This framework is a proposed methodology: no single published benchmark yet reports average enterprise Agent Trust Scores in this specific form. What third-party research does confirm is a clear citation differential between domains with validated structured data and those without, with the digitalapplied.com 5,000-site audit showing the gap between deployed and clean schema correlating positively with AI-search citation rate.
 
 ## Building Agent Trust: The 90-Day Framework
 
@@ -1568,7 +1568,7 @@ The audit then evaluates each of the six structural signals, producing a dimensi
 
 **Days 61-90: Infrastructure and Distribution.** Optimise API response times to sub-100ms. Ensure robots.txt permits all major LLM crawlers. Submit structured data to agent marketplace registries. Contribute original data to at least two independent industry publications. This phase addresses Signals 4 and 5.
 
-A B2B cybersecurity firm we guided through this 90-day framework increased their Agent Trust Score from 22 to 67. Their citation rate in AI-generated procurement recommendations grew from zero to appearing in 4 of the top 5 LLM platforms for their category. The revenue impact was a 41% increase in inbound enterprise enquiries, with prospects explicitly mentioning AI-generated recommendations as their discovery source.
+The 90-day sequencing reflects the dependency chain: data accuracy must precede content enrichment, and distribution efforts are only worth making once the data agents will discover is clean and consistent. Organisations that address all three phases systematically are building the structural prerequisites for agent visibility. Those that invest in content or distribution while leaving schema inaccuracies in place are compounding noise rather than building signal.
 
 The brands that invest in agent trust now are building an advantage that compounds with every AI model update, every new autonomous agent deployment, and every shift in commercial behaviour from human-mediated to agent-mediated discovery. The signals are structural, not promotional. You cannot advertise your way to agent trust. You build it through data quality, consistency, and technical excellence.
 `,
@@ -1579,7 +1579,7 @@ The brands that invest in agent trust now are building an advantage that compoun
             },
             {
                 question: "Do social media followers affect AI agent recommendations?",
-                answer: "No. Our analysis found zero measurable correlation between social media following and AI agent citation frequency. Agents evaluate structural data signals, not social signals. A brand with 500,000 followers but poor structured data will be cited less frequently than a brand with 500 followers and excellent schema implementation."
+                answer: "No. Research into LLM citation behaviour finds that structural signals, primarily brand search volume and multi-platform structured presence, are the leading predictors of citation frequency (The Digital Bloom, AI Visibility Report 2025). Social media following does not appear in the documented signal set. A brand with strong structured data and clear factual density will consistently outperform a brand whose authority is built entirely on social reach."
             },
             {
                 question: "How do I measure my brand's trust score with AI agents?",
@@ -1587,7 +1587,7 @@ The brands that invest in agent trust now are building an advantage that compoun
             },
             {
                 question: "How long does it take to improve brand authority with AI agents?",
-                answer: "A structured 90-day programme addressing data accuracy, content enrichment, and technical infrastructure can produce measurable improvements. Brands following our framework typically see Agent Trust Score increases of 30-45 points within 90 days, with corresponding increases in AI citation frequency within the following 30-60 days as LLM crawlers re-index the improved data."
+                answer: "A structured 90-day programme addressing data accuracy, content enrichment, and technical infrastructure will produce measurable improvements to the underlying signals. Schema corrections and robots.txt updates take effect within one to two crawl cycles for most major LLM crawlers. Content enrichment and cross-source citation building compound more slowly. The 90-day framework in this article sequences these actions by dependency, not by expected speed."
             },
             {
                 question: "Can you buy AI agent trust through advertising?",
@@ -1893,7 +1893,7 @@ The transition requires specific technical commitments:
 
 Agentic intelligence is not a distant theory. It is the active operating system of the horizontal economy. The integration foundry is open and the sovereign digital workforce is ready to deploy.
 
-Industry benchmarking analysis across enterprise deployments reveals that brands with agent-readable infrastructure are seeing discovery rates increase by an order of magnitude compared to those still relying on visual-first architectures. The window to transition is measured in months, not years.
+Gartner projects that 40% of enterprise applications will embed task-specific AI agents by end of 2026, up from under 5% in 2025. Brands that delay structural readiness, clean APIs, structured data, machine-readable catalogues, face compounding disadvantage as agent-mediated discovery becomes the default procurement path. The transition window is narrow.
 `,
         faqs: [
             {
