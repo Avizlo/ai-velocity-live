@@ -10,7 +10,7 @@ export const insightsData = [
         dateModified: "2026-06-26T09:00:00Z",
         author: "AI Velocity",
         readTime: "5 min read",
-        image: "/images/insights/ai-ghost-citations-brand-mention-gap.webp",
+        image: "/images/insights/ai-ghost-citations-brand-mention-gap-v2.webp",
         imageAlt: "Abstract field of faint ring nodes representing citations with a few solid bright nodes representing named brands",
         excerpt: "AI search can cite your content and still never say your name. New June 2026 data quantifies the gap between being a source and being the brand buyers see.",
         content: `
@@ -102,7 +102,7 @@ Being cited proves your content earned its place in the answer. Being named is t
         dateModified: "2026-06-25T09:00:00Z",
         author: "AI Velocity",
         readTime: "4 min read",
-        image: "/images/insights/colorado-ai-act-delay-regulation.webp",
+        image: "/images/insights/colorado-ai-act-delay-regulation-v2.webp",
         imageAlt: "Abstract timeline showing a regulatory deadline marker shifted from an earlier date to a later one",
         excerpt: "Colorado delayed and gutted the most-feared US state AI law. Treating the reprieve as permission to stop is the most expensive mistake a business can make.",
         content: `
