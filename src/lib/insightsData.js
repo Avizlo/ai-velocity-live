@@ -10,8 +10,8 @@ export const insightsData = [
         dateModified: "2026-06-26T09:00:00Z",
         author: "AI Velocity",
         readTime: "5 min read",
-        image: "/images/insights/ai-ghost-citations-brand-mention-gap-v2.webp",
-        imageAlt: "Abstract field of faint ring nodes representing citations with a few solid bright nodes representing named brands",
+        image: "/images/insights/ghost-citations-unsplash.webp",
+        imageAlt: "Glowing blue network of interconnected nodes and lines, representing how AI answer engines cite many sources while naming few brands",
         excerpt: "AI search can cite your content and still never say your name. New June 2026 data quantifies the gap between being a source and being the brand buyers see.",
         content: `
 AI search will cite your content without ever naming your brand. A June 2026 study by Semrush and growth advisor Kevin Indig, analysing 3,981 brand appearances across ChatGPT, Gemini, Google AI Overviews, and Google AI Mode, [found that 74.9% of brand appearances included a citation but only 38.3% included an actual brand mention](https://www.semrush.com/blog/the-ghost-citations-study/). In other words, the majority of the time an answer engine draws on your content, it uses you as a source and never says your name. This is the ghost citation problem, and it breaks the assumption underneath most AEO measurement.
@@ -102,8 +102,8 @@ Being cited proves your content earned its place in the answer. Being named is t
         dateModified: "2026-06-25T09:00:00Z",
         author: "AI Velocity",
         readTime: "4 min read",
-        image: "/images/insights/colorado-ai-act-delay-regulation-v2.webp",
-        imageAlt: "Abstract timeline showing a regulatory deadline marker shifted from an earlier date to a later one",
+        image: "/images/insights/colorado-ai-act-unsplash.webp",
+        imageAlt: "Grid of blue blocks with a single white block standing apart, representing one jurisdiction diverging on AI regulation",
         excerpt: "Colorado delayed and gutted the most-feared US state AI law. Treating the reprieve as permission to stop is the most expensive mistake a business can make.",
         content: `
 Colorado has delayed and gutted the most closely watched AI law in the United States. On 14 May 2026, Governor Polis signed SB 189, which pushes the Colorado AI Act's effective date from 30 June 2026 to 1 January 2027 and strips out the provisions businesses feared most. If you deploy AI in hiring, lending, housing, healthcare, or any consequential decision, the temptation is to exhale. That would be a mistake. The deadline did not disappear, the liability did not move, and the rest of the regulatory map is already live.
