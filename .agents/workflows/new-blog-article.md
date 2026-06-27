@@ -39,29 +39,24 @@ Every article in the `insightsData` array must include these fields:
 
 ### Image Requirements — MANDATORY Local WebP Workflow
 
-All blog images **MUST** be stored locally as optimised WebP files. Do NOT reference external URLs (e.g. Unsplash CDN) in production articles.
+**STANDING RULE (Mark, 2026-06-27): heroes come from Unsplash, always.** Source every hero from [Unsplash](https://unsplash.com) (or an equivalent royalty-free photo source). Do NOT use AI-generated or hand-built abstract/SVG heroes as the default; only do so if Mark explicitly asks for one on a given post. Photographs with colour and life are preferred over flat dark abstracts.
+
+All blog images **MUST** then be stored locally as optimised WebP files. Do NOT reference external URLs (e.g. Unsplash CDN) in production articles.
 
 **Step-by-step procedure for every new article:**
 
-1. **Source a high-resolution image** from [Unsplash](https://unsplash.com) (or another royalty-free source). Minimum 1200px wide.
+1. **Find a suitable photo on Unsplash.** Minimum 1200px wide. Screen it against the brand DNA visual rules: dark/cool/technical and purposeful; reject warm tones (orange/gold/yellow), soft-focus or golden-hour lifestyle aesthetics, and stock clichés (gavels, handshakes, robot-shaking-human-hand). Avoid Premium/Getty results (licensing); use standard free Unsplash photos. A little colour is good; warm colour is not.
 2. **Check for duplicates** — verify no existing article in `insightsData` uses the same image. Every article must have a unique hero image.
-3. **Download and convert to WebP** using this command from the project root:
+3. **Download and convert to WebP.** The reliable method (handles Unsplash's redirect) is the download endpoint plus `curl -L`, then sharp. From the project root, replacing PHOTO_ID and slug:
    ```bash
-   # Install sharp if not already available
-   npm install sharp --no-save
-
-   # Download and convert (replace SLUG and URL)
-   node -e "
-   const sharp = require('sharp');
-   const https = require('https');
-   const fs = require('fs');
-   const url = 'UNSPLASH_URL_HERE?q=80&w=1200&auto=format&fit=crop';
-   const out = 'public/images/insights/ARTICLE-SLUG.webp';
-   https.get(url, r => { if(r.statusCode >= 300 && r.headers.location) { https.get(r.headers.location, r2 => { const c=[]; r2.on('data',d=>c.push(d)); r2.on('end',()=>sharp(Buffer.concat(c)).resize(1200,null,{withoutEnlargement:true}).webp({quality:80}).toFile(out).then(()=>console.log('Done:',out))); }); } else { const c=[]; r.on('data',d=>c.push(d)); r.on('end',()=>sharp(Buffer.concat(c)).resize(1200,null,{withoutEnlargement:true}).webp({quality:80}).toFile(out).then(()=>console.log('Done:',out))); } });
-   "
+   npm install sharp --no-save   # if not already available
+   curl -sL "https://unsplash.com/photos/PHOTO_ID/download?force=true&w=1600" -o /tmp/hero.bin
+   node -e "require('sharp')('/tmp/hero.bin').resize(1200,800,{fit:'cover',position:'centre'}).webp({quality:82}).toFile('public/images/insights/ARTICLE-SLUG.webp').then(i=>console.log('ok',i.width+'x'+i.height))"
    ```
-4. **Set the `image` field** in `insightsData.js` to the local path: `/images/insights/your-slug.webp`
-5. **Verify the image loads** in the browser on both the listing page and the article detail page.
+   The PHOTO_ID is the short code at the end of the Unsplash photo URL (e.g. `unsplash.com/photos/...-pREq0ns_p_E` → `pREq0ns_p_E`). Always open the resulting WebP to confirm it actually shows what you expect before wiring it in.
+4. **Set the `image` field** in `insightsData.js` to the local path: `/images/insights/your-slug.webp`, and set a descriptive `imageAlt`.
+5. **Cache note:** `/images` is served `immutable` for a year. When REPLACING an existing image, use a new filename (the old URL will not refresh for visitors otherwise).
+6. **Verify the image loads** in the browser on both the listing page and the article detail page.
 
 > **Why local WebP?** Eliminates external DNS lookups, prevents broken images if the source CDN changes, keeps visitor data private (GDPR-friendly), gives full cache control, and ensures images are indexed under your domain for image search SEO. WebP files are 60-80% smaller than equivalent JPEGs.
 
