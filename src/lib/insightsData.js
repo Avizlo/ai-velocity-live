@@ -1,5 +1,179 @@
 export const insightsData = [
     {
+        id: "28",
+        slug: "ghost-citations-cited-by-ai-but-not-named",
+        title: "The Ghost Citation Problem: Cited by AI, Never Named",
+        category: "Agentic AEO",
+        categoryPage: "/agentic-aeo",
+        relatedSlugs: ["brand-authority-signals-ai-agents-actually-trust", "schema-markup-is-not-optional-the-aeo-technical-checklist", "openai-partner-network-ai-consulting-land-grab"],
+        date: "2026-06-26T09:00:00Z",
+        dateModified: "2026-06-26T09:00:00Z",
+        author: "AI Velocity",
+        readTime: "5 min read",
+        image: "/images/insights/ai-ghost-citations-brand-mention-gap.webp",
+        imageAlt: "Abstract field of faint ring nodes representing citations with a few solid bright nodes representing named brands",
+        excerpt: "AI search can cite your content and still never say your name. New June 2026 data quantifies the gap between being a source and being the brand buyers see.",
+        content: `
+AI search will cite your content without ever naming your brand. A June 2026 study by Semrush and growth advisor Kevin Indig, analysing 3,981 brand appearances across ChatGPT, Gemini, Google AI Overviews, and Google AI Mode, [found that 74.9% of brand appearances included a citation but only 38.3% included an actual brand mention](https://www.semrush.com/blog/the-ghost-citations-study/). In other words, the majority of the time an answer engine draws on your content, it uses you as a source and never says your name. This is the ghost citation problem, and it breaks the assumption underneath most AEO measurement.
+
+## Citations and Mentions Are Not the Same Win
+
+For a decade, search success meant a link. The link was the destination, the credit, and the conversion path in one. Answer engines have split those apart. A citation is the model using your page as a source. A mention is the model naming your brand in the answer it gives the user. Only 13.2% of appearances in the Semrush dataset were both cited and mentioned.
+
+The distinction matters because users act on mentions, not citations. When a buyer asks ChatGPT which platform to use and the answer recommends three named brands, those three brands win the consideration set. The dozen sources the model quietly read to assemble that answer, including possibly yours, are invisible to the buyer. You can be the research behind the recommendation and still lose the recommendation.
+
+## Why the Two Diverge
+
+The mechanism is straightforward once you see it. Answer engines synthesise. They pull facts from source pages (citations) but they name the entities they have the strongest, most consistent representation of (mentions). A model cites a page because it answered a query. It names a brand because it knows that brand as an entity: a well-defined node with consistent attributes across the web that the model is confident enough to put in front of a user.
+
+That is why a small brand with excellent content can be cited constantly and named rarely, while a brand with weaker content but a strong, consistent entity footprint gets named repeatedly. [BrightEdge has documented the corollary](https://www.brightedge.com/resources/weekly-ai-search-insights/ai-search-same-brands-different-sources): AI engines frequently cite different sources but recommend the same brands. The sources are interchangeable. The named brands are not.
+
+The citation slots are also less stable than they look. Ahrefs, analysing a large sample of AI Overview results, [found that only 38% of cited pages rank in the top 10 for the query, down from 76% a year earlier](https://www.searchenginejournal.com/google-ai-overview-citations-from-top-ranking-pages-drop-sharply/568637/). The source an engine reaches for shifts query to query and month to month. The brand it has learned to name is far more durable. Optimising for the unstable slot while ignoring the durable one is the strategic error the ghost citation data exposes.
+
+## What This Looks Like in a Real Query
+
+Consider a buyer who asks an assistant to recommend a platform for a specific job. The model runs the question, reads a dozen or more pages to assemble context, and returns an answer that names three or four products with a sentence on each. The buyer evaluates those named products and ignores everything else, because everything else is invisible to them.
+
+Your page may have been one of the dozen the model read. If your brand was not in the named shortlist, you contributed the research that sold a competitor. The citation counted in your analytics. The recommendation went to whoever the model was confident enough to name. That asymmetry, repeated across thousands of commercial queries a day, is the commercial cost of the ghost citation gap.
+
+## The Measurement Shift This Forces
+
+Most brands measuring AEO today track citation rate: how often they appear as a source. That number can rise while commercial outcomes flatline, because citation is not the metric that moves buyers. The discipline now is to track two numbers separately:
+
+**Citation rate** tells you whether your content is good enough to be used. It is a content-quality signal.
+
+**Mention rate** tells you whether your brand is strong enough to be recommended. It is an entity-strength signal.
+
+A healthy AEO programme moves both, and a programme that moves only citation rate is optimising the half that does not convert. Treating them as one number hides the gap that the Semrush data just made impossible to ignore.
+
+## How to Become the Named Brand
+
+Closing the gap is an entity problem, not a content-volume problem. Four levers move mention rate.
+
+**Entity consistency.** A model names brands it can resolve confidently. That requires the same brand facts, name, category, founding details, core offering, repeated consistently across your site, your structured data, and the third-party sources the model trusts. Inconsistency across these sources is the single most common reason a frequently-cited brand goes unnamed.
+
+**Brand-entity strength over backlinks.** Independent research into AI citation behaviour finds brand search volume to be the strongest single correlate of citation frequency, ahead of traditional backlinks. Building a recognised entity, the thing people search for by name, feeds the same signal models use to decide who to name.
+
+**Definitional, attributable content.** Write the sentences a model can lift as an answer with your name still attached: clear "X is Y" definitions, named frameworks, and claims specific enough that paraphrasing them without attribution would lose meaning. Generic content gets absorbed; distinctive, named content gets named. We covered the underlying signals in [brand authority signals AI agents actually trust](/news-insights/brand-authority-signals-ai-agents-actually-trust).
+
+**Structured data that ties content to entity.** Schema that connects each page back to a coherent Organization entity helps the model link the source it is citing to the brand it should name. Citation without that link is exactly how a page gets used and the brand gets dropped.
+
+## The Starting Point
+
+The fastest way to find your own ghost citations is to run your top commercial queries through ChatGPT, Gemini, and Google AI Mode and record two things for each: were you cited as a source, and were you named in the answer. The pattern usually emerges within a dozen queries. Where you are cited but not named, the fix is rarely more content; it is tightening the entity, the consistency of your brand facts across the web, and the strength of the named-search demand that teaches models who you are. Treat the named-but-absent queries as the priority backlog, because those are the answers a competitor is currently winning with your research underneath them.
+
+## What to Watch
+
+Two shifts will decide how much this matters. The first is whether the answer engines begin surfacing more named recommendations by default as commercial intent features mature; the more the interface foregrounds named brands, the more expensive the ghost citation gap becomes. The second is measurement tooling: as mention-rate tracking separates from citation tracking across the AEO platforms, the brands that have been quietly cited-but-not-named will see the gap quantified on their own dashboards.
+
+Being cited proves your content earned its place in the answer. Being named is the only version of that win the buyer ever sees. The brands that understand the difference will spend the next year closing it. The rest will keep congratulating themselves on a citation rate that never reaches a customer.
+`,
+        faqs: [
+            {
+                question: "What is a ghost citation in AI search?",
+                answer: "A ghost citation is when an answer engine uses your content as a source but does not name your brand in the answer it shows the user. A June 2026 Semrush and Kevin Indig study found that 74.9% of brand appearances across ChatGPT, Gemini, and Google's AI surfaces included a citation, but only 38.3% included an actual brand mention, meaning most of the time a brand is used as a source it is never named."
+            },
+            {
+                question: "What is the difference between a citation and a mention in AI answers?",
+                answer: "A citation is the model drawing on your page as a source. A mention is the model naming your brand in the answer. Users act on mentions, because the named brands form the consideration set, while the underlying sources are invisible to them. Only about 13% of brand appearances in the Semrush study were both cited and mentioned."
+            },
+            {
+                question: "Why does AI cite my content but not mention my brand?",
+                answer: "Answer engines cite pages that answer a query but name entities they can resolve confidently. If your brand is not represented as a strong, consistent entity across your site, your structured data, and trusted third-party sources, the model will use your content and name a competitor it knows better. The gap is an entity-strength problem, not a content-quality problem."
+            },
+            {
+                question: "How do I get named by AI answer engines, not just cited?",
+                answer: "Strengthen your brand as an entity: keep brand facts consistent across all sources, build recognised brand search demand, publish definitional and attributable content with named frameworks, and use structured data that links every page back to a coherent Organization entity. These are the levers that move mention rate rather than just citation rate."
+            },
+            {
+                question: "Should I measure citation rate or mention rate for AEO?",
+                answer: "Both, separately. Citation rate measures whether your content is good enough to be used; mention rate measures whether your brand is strong enough to be recommended. A programme that moves only citation rate is optimising the half that does not convert, because buyers act on the named brands, not the cited sources."
+            }
+        ]
+    },
+    {
+        id: "29",
+        slug: "colorado-ai-act-delayed-dont-exhale",
+        title: "Colorado Just Defanged Its AI Law. Do Not Exhale.",
+        category: "News",
+        categoryPage: "/news-insights",
+        relatedSlugs: ["argentina-non-human-corporations-ai-run-companies", "openai-partner-network-ai-consulting-land-grab", "why-every-enterprise-needs-agentic-readiness-framework"],
+        date: "2026-06-25T09:00:00Z",
+        dateModified: "2026-06-25T09:00:00Z",
+        author: "AI Velocity",
+        readTime: "4 min read",
+        image: "/images/insights/colorado-ai-act-delay-regulation.webp",
+        imageAlt: "Abstract timeline showing a regulatory deadline marker shifted from an earlier date to a later one",
+        excerpt: "Colorado delayed and gutted the most-feared US state AI law. Treating the reprieve as permission to stop is the most expensive mistake a business can make.",
+        content: `
+Colorado has delayed and gutted the most closely watched AI law in the United States. On 14 May 2026, Governor Polis signed SB 189, which pushes the Colorado AI Act's effective date from 30 June 2026 to 1 January 2027 and strips out the provisions businesses feared most. If you deploy AI in hiring, lending, housing, healthcare, or any consequential decision, the temptation is to exhale. That would be a mistake. The deadline did not disappear, the liability did not move, and the rest of the regulatory map is already live.
+
+## What Actually Changed
+
+The original Colorado AI Act (SB 24-205) was the most comprehensive state AI law in the country, built around a duty of care to prevent algorithmic discrimination. [SB 189 repeals and replaces that structure](https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189). The headline changes:
+
+**The duty of care is gone.** The obligation to use reasonable care to protect consumers from algorithmic discrimination has been eliminated entirely.
+
+**Risk programmes and impact assessments are gone.** Mandatory risk management programmes for deployers and annual impact assessments, the operational core of the original law, are no longer required.
+
+**The frame shifts from risk to disclosure.** The revised law moves to a narrower, transparency-based regime covering "automated decision-making technology" (ADMT) that makes or materially influences consequential decisions, and it does not take effect until 1 January 2027, [according to multiple legal analyses of the bill](https://www.troutmanprivacy.com/2026/05/colorado-legislature-passes-bill-to-repeal-and-replace-colorado-ai-act/).
+
+In practice, Colorado moved from the toughest AI compliance regime in the country to one of the lighter ones, and bought everyone another six months.
+
+The retreat had been building. A federal magistrate judge stayed enforcement of the original law in late April 2026, and a state working group had spent months arguing the compliance burden would fall hardest on small deployers. SB 189 was the legislature resolving that pressure by rewriting the law rather than letting it take effect as drafted. This is a notable contrast with the direction elsewhere: while Argentina is busy [building legal infrastructure for AI-run companies](/news-insights/argentina-non-human-corporations-ai-run-companies), the most ambitious US state attempt to constrain AI decision-making just got pared back.
+
+## Why It Looks Like a Reprieve
+
+The relief is understandable. Compliance teams had been building toward a 30 June deadline that required impact assessments, bias documentation, and consumer notifications across every high-risk system. That work is suddenly not legally mandatory in Colorado, and it is not due until 2027 even in its reduced form. For a business that was behind, this reads as a pardon.
+
+It is not a pardon. It is a gap between what the law now requires and what the risk environment still demands, and that gap is exactly where avoidable damage happens.
+
+## Why It Is Not
+
+Three reasons the reprieve is a trap.
+
+**The deadline still comes.** 1 January 2027 is not far, and ADMT disclosure obligations still require knowing which of your systems make consequential decisions, what they do, and how to explain them. Organisations that stop now will rebuild the same inventory under time pressure later.
+
+**The rest of the map is already live.** AI regulation did not pause anywhere else. Illinois made AI-driven employment discrimination a civil rights violation effective 1 January 2026. Texas's Responsible Artificial Intelligence Governance Act took effect the same day. California's hiring rules took effect in October 2025, with further bills in the legislature. In the EU, the AI Act's high-risk obligations, which cover AI used in employment, credit, and essential services, [now apply from 2 December 2027 after a deferral agreed in 2026](https://artificialintelligenceact.eu/implementation-timeline/), but the direction is fixed and the documentation it demands is substantial. A business operating across states or borders does not get to follow Colorado's timeline; it has to meet the strictest regime it touches.
+
+**The underlying liability never depended on the statute.** Algorithmic discrimination was illegal before Colorado's AI Act under existing civil rights and anti-discrimination law, and it remains illegal after SB 189. The statute created documentation duties; it did not create the liability. Removing the duty to assess does not remove the exposure if a hiring or lending model produces discriminatory outcomes. It just removes the paper trail that would have helped you catch it first.
+
+## The Operator's Move
+
+The right response to the delay is to keep doing the work, decoupled from any single statute, because every serious framework converges on the same core practices. Maintain an inventory of where AI influences consequential decisions. Test those systems for biased outcomes and document the testing. Keep clear records of what each system does and why. Disclose automated decision-making to the people subject to it. None of this is Colorado-specific. It is what the EU AI Act, the live state laws, and basic litigation defence all require in some form.
+
+A business that treats the Colorado delay as a reason to dismantle its AI governance is optimising for the one jurisdiction that just got easier while ignoring the several that did not. The smart operator banks the extra time as a head start, not a holiday.
+
+## What to Watch
+
+Two things. First, whether Colorado's retreat signals a broader softening or just a single state blinking; a federal preemption push or further state delays would change the calculus, while continued action in Illinois, Texas, and California would confirm the patchwork is here to stay. Second, the first enforcement action anywhere, under any of these regimes, against an AI-driven decision system, which will reprice how seriously boards take the governance work they were tempted to shelve.
+
+The most-feared AI law in America just lost its teeth. The risk it was written to address did not. Confusing the two is the expensive part.
+`,
+        faqs: [
+            {
+                question: "Is the Colorado AI Act still happening?",
+                answer: "Yes, but in a weaker form and on a later date. On 14 May 2026, Governor Polis signed SB 189, which repeals and replaces the original Colorado AI Act, delays the effective date from 30 June 2026 to 1 January 2027, and removes the duty of care, mandatory risk management programmes, and annual impact assessments in favour of a disclosure-based framework for automated decision-making technology."
+            },
+            {
+                question: "What did SB 189 remove from the Colorado AI Act?",
+                answer: "SB 189 eliminated the duty to use reasonable care to prevent algorithmic discrimination, removed mandatory risk management programmes for deployers, and removed annual impact assessment requirements. It shifts the law to a narrower transparency and disclosure regime covering automated decision-making technology that makes or materially influences consequential decisions."
+            },
+            {
+                question: "Does the delay mean businesses can stop their AI compliance work?",
+                answer: "No. The new effective date of 1 January 2027 still arrives, other jurisdictions are already enforcing AI rules (Illinois, Texas, and California in 2026, and the EU AI Act's high-risk obligations from December 2027), and algorithmic discrimination remains illegal under existing civil rights law regardless of the statute. Stopping now means rebuilding the same governance later under time pressure and higher exposure."
+            },
+            {
+                question: "What AI employment laws are already in effect in 2026?",
+                answer: "Illinois made AI-driven employment discrimination a civil rights violation effective 1 January 2026, Texas's Responsible Artificial Intelligence Governance Act took effect the same day, and California's AI hiring rules took effect in October 2025. The EU AI Act's high-risk obligations covering areas including employment apply from 2 December 2027. AI regulation paused in Colorado, not elsewhere."
+            },
+            {
+                question: "What should businesses do about AI governance now?",
+                answer: "Keep the core practices in place regardless of any single law: maintain an inventory of where AI influences consequential decisions, test those systems for biased outcomes and document it, keep clear records of what each system does, and disclose automated decision-making to affected people. Every serious framework, from the EU AI Act to live US state laws, converges on these, so the work is durable even as individual statutes shift."
+            }
+        ]
+    },
+    {
         id: "27",
         slug: "openai-partner-network-ai-consulting-land-grab",
         title: "OpenAI's $150M Partner Network and the AI Consulting Land Grab",
