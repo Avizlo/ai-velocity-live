@@ -55,14 +55,18 @@ export async function generateMetadata({ params }) {
     const articleUrl = `${SITE_URL}/news-insights/${article.slug}`;
     const imageUrl = `${SITE_URL}/og?title=${encodeURIComponent(article.title)}&subtitle=News%20%26%20Insights`;
 
+    // SEO title can override the editorial H1 — used to match search intent on the SERP
+    // while preserving the article's editorial voice on the page itself.
+    const serpTitle = article.seoTitle || article.title;
+
     return {
-        title: `${article.title} | ${siteConfig.name}`,
+        title: `${serpTitle} | ${siteConfig.name}`,
         description: article.excerpt,
         alternates: {
             canonical: articleUrl,
         },
         openGraph: {
-            title: article.title,
+            title: serpTitle,
             description: article.excerpt,
             url: articleUrl,
             type: 'article',
@@ -81,7 +85,7 @@ export async function generateMetadata({ params }) {
         },
         twitter: {
             card: 'summary_large_image',
-            title: article.title,
+            title: serpTitle,
             description: article.excerpt,
             images: [imageUrl],
         },
