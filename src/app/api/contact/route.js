@@ -2,6 +2,12 @@ import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 // ── Rate limiting (in-memory, per-IP) ──
+// NOTE: this Map lives in the serverless function's memory, so it resets on every
+// cold start and is NOT shared across instances. On multi-instance deployments
+// (Vercel, most serverless hosts) this gives only a soft, best-effort limit — an
+// attacker spread across instances can exceed MAX_REQUESTS_PER_WINDOW. For a real
+// limit in production, back this with a durable KV store (e.g. Upstash Redis,
+// Vercel KV, Cloudflare KV) keyed by IP.
 const rateLimitMap = new Map();
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
 const MAX_REQUESTS_PER_WINDOW = 5;
@@ -24,17 +30,37 @@ function isRateLimited(ip) {
 }
 
 // ── Turnstile verification ──
-async function verifyTurnstile(token) {
-    const secret = process.env.TURNSTILE_SECRET_KEY || '1x0000000000000000000000000000000AA';
+let warnedNoTurnstile = false;
+
+async function verifyTurnstile(token, ip) {
+    const secret = process.env.TURNSTILE_SECRET_KEY;
+
+    if (!secret) {
+        // Dev mode: no secret configured, so we can't verify. Warn once per
+        // server lifetime and allow through — never silently bypass in prod,
+        // where TURNSTILE_SECRET_KEY must be set.
+        if (!warnedNoTurnstile) {
+            console.warn(
+                'TURNSTILE_SECRET_KEY is not set — Turnstile verification is DISABLED. ' +
+                'This is only safe for local development; set TURNSTILE_SECRET_KEY before deploying.'
+            );
+            warnedNoTurnstile = true;
+        }
+        return { ok: true };
+    }
+
+    if (!token) {
+        return { ok: false, reason: 'missing' };
+    }
 
     const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({ secret, response: token }),
+        body: new URLSearchParams({ secret, response: token, ...(ip ? { remoteip: ip } : {}) }),
     });
 
     const data = await res.json();
-    return data.success === true;
+    return data.success === true ? { ok: true } : { ok: false, reason: 'invalid' };
 }
 
 // ── Sanitize input ──
@@ -86,59 +112,69 @@ export async function POST(request) {
             );
         }
 
-        // Turnstile verification
-        if (turnstileToken) {
-            const isValid = await verifyTurnstile(turnstileToken);
-            if (!isValid) {
-                return NextResponse.json(
-                    { error: 'Bot verification failed. Please try again.' },
-                    { status: 403 }
-                );
-            }
-        }
-
-        // ── Send email via Zoho SMTP ──
-        const zohoEmail = process.env.ZOHO_EMAIL;
-        const zohoPassword = process.env.ZOHO_PASSWORD;
-
-        if (zohoEmail && zohoPassword) {
-            const transporter = nodemailer.createTransport({
-                host: 'smtp.zoho.eu',
-                port: 465,
-                secure: true,
-                auth: {
-                    user: zohoEmail,
-                    pass: zohoPassword,
+        // Turnstile verification — enforced whenever TURNSTILE_SECRET_KEY is configured.
+        // A missing/invalid token is always rejected; there is no bypass once the
+        // secret is set. Only unconfigured (dev, no secret) mode allows through.
+        const turnstileResult = await verifyTurnstile(turnstileToken, ip);
+        if (!turnstileResult.ok) {
+            return NextResponse.json(
+                {
+                    error: turnstileResult.reason === 'missing'
+                        ? 'Bot verification token missing. Please try again.'
+                        : 'Bot verification failed. Please try again.',
                 },
-            });
-
-            await transporter.sendMail({
-                from: `"Your Brand Contact" <${zohoEmail}>`,
-                to: zohoEmail,
-                replyTo: cleanEmail,
-                subject: `New Contact: ${cleanName}`,
-                html: `
-                    <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-                        <h2 style="color: #1A1A1A; border-bottom: 2px solid #c0e9cb; padding-bottom: 12px;">
-                            New Contact Form Submission
-                        </h2>
-                        <p><strong>Name:</strong> ${cleanName}</p>
-                        <p><strong>Email:</strong> <a href="mailto:${cleanEmail}">${cleanEmail}</a></p>
-                        <p><strong>Message:</strong></p>
-                        <div style="background: #f5f5f5; padding: 16px; border-radius: 4px; white-space: pre-wrap;">${cleanMessage}</div>
-                        <hr style="margin-top: 32px; border: none; border-top: 1px solid #eee;" />
-                        <p style="color: #999; font-size: 12px;">Sent from the Your Brand contact form</p>
-                    </div>
-                `,
-            });
-        } else {
-            // Development fallback — log to server console
-            console.log('──── CONTACT FORM SUBMISSION ────');
-            console.log(`Name: ${cleanName}`);
-            console.log(`Email: ${cleanEmail}`);
-            console.log(`Message: ${cleanMessage}`);
-            console.log('─────────────────────────────────');
+                { status: 400 }
+            );
         }
+
+        // ── Send email via SMTP ──
+        const emailHost = process.env.EMAIL_HOST;
+        const emailUser = process.env.EMAIL_USER;
+        const emailPass = process.env.EMAIL_PASS;
+        const emailPort = Number(process.env.EMAIL_PORT) || 465;
+        const emailFrom = process.env.EMAIL_FROM || emailUser;
+        const emailTo = process.env.EMAIL_TO || emailUser;
+
+        if (!emailHost || !emailUser || !emailPass) {
+            console.error(
+                'Contact form error: email is not configured (EMAIL_HOST/EMAIL_USER/EMAIL_PASS missing). ' +
+                'Set these in your environment — see .env.example.'
+            );
+            return NextResponse.json(
+                { error: 'Email not configured' },
+                { status: 500 }
+            );
+        }
+
+        const transporter = nodemailer.createTransport({
+            host: emailHost,
+            port: emailPort,
+            secure: emailPort === 465,
+            auth: {
+                user: emailUser,
+                pass: emailPass,
+            },
+        });
+
+        await transporter.sendMail({
+            from: `"Your Brand Contact" <${emailFrom}>`,
+            to: emailTo,
+            replyTo: cleanEmail,
+            subject: `New Contact: ${cleanName}`,
+            html: `
+                <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
+                    <h2 style="color: #1A1A1A; border-bottom: 2px solid #c0e9cb; padding-bottom: 12px;">
+                        New Contact Form Submission
+                    </h2>
+                    <p><strong>Name:</strong> ${cleanName}</p>
+                    <p><strong>Email:</strong> <a href="mailto:${cleanEmail}">${cleanEmail}</a></p>
+                    <p><strong>Message:</strong></p>
+                    <div style="background: #f5f5f5; padding: 16px; border-radius: 4px; white-space: pre-wrap;">${cleanMessage}</div>
+                    <hr style="margin-top: 32px; border: none; border-top: 1px solid #eee;" />
+                    <p style="color: #999; font-size: 12px;">Sent from the Your Brand contact form</p>
+                </div>
+            `,
+        });
 
         return NextResponse.json({ success: true });
     } catch (err) {
