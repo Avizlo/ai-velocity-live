@@ -1,4 +1,4 @@
-# 🚀 AI Velocity Template
+# 🚀 Agentic Website Template
 
 A premium, high-performance Next.js website template with GSAP animations, dark-mode design system, and full blog/insights infrastructure. Built for speed and visual excellence.
 
