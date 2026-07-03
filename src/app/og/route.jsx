@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import { siteConfig, colors } from '@/lib/site.config';
 
 export const runtime = 'edge';
 
@@ -6,9 +7,9 @@ export async function GET(request) {
     const { searchParams } = new URL(request.url);
 
     // Extract customisable parameters from query string
-    const title = searchParams.get('title') || 'Your Brand';
+    const title = searchParams.get('title') || siteConfig.name;
     const subtitle = searchParams.get('subtitle') || '';
-    const accent = searchParams.get('accent') || '#c0e9cb'; // electric-mint
+    const accent = searchParams.get('accent') || colors.electricMint;
 
     return new ImageResponse(
         (
@@ -20,7 +21,7 @@ export async function GET(request) {
                     flexDirection: 'column',
                     justifyContent: 'flex-end',
                     padding: '80px',
-                    backgroundColor: '#1A1A1A',
+                    backgroundColor: colors.charcoal,
                     fontFamily: 'Georgia, serif',
                     position: 'relative',
                     overflow: 'hidden',
@@ -125,7 +126,7 @@ export async function GET(request) {
                             letterSpacing: '3px',
                         }}
                     >
-                        Your Brand
+                        {siteConfig.name}
                     </span>
                 </div>
             </div>

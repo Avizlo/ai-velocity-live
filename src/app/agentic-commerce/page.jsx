@@ -10,6 +10,7 @@ import { GsapPageWrapper } from '@/components/ui/GsapPageWrapper';
 import { FAQ } from '@/components/sections/FAQ';
 import { FoundryManifesto } from '@/components/sections/FoundryManifesto';
 import { RelatedInsights } from '@/components/sections/RelatedInsights';
+import { colors } from '@/lib/site.config';
 
 // ============================================================================
 // PAGE CONTENT VARIABLES
@@ -342,10 +343,10 @@ const StatCard2 = ({ label, pct, dashPct, heading, body, link }) => {
                 <div className="flex items-center gap-3">
                     <div className="relative w-14 h-14">
                         <svg className="w-full h-full -rotate-90" viewBox="0 0 56 56">
-                            <circle cx="28" cy="28" r="24" fill="none" stroke="#1A1A1A22" strokeWidth="3" />
+                            <circle cx="28" cy="28" r="24" fill="none" stroke={`${colors.charcoal}22`} strokeWidth="3" />
                             <circle
                                 cx="28" cy="28" r="24" fill="none"
-                                stroke="#1A1A1A" strokeWidth="3"
+                                stroke={colors.charcoal} strokeWidth="3"
                                 strokeDasharray={circumference}
                                 strokeLinecap="round"
                                 style={{ animation: 'ringFill 5s ease-in-out infinite' }}
@@ -674,7 +675,7 @@ export default function AgenticCommerce() {
 
                 <SplitFeature
                     reverse
-                    bgClass="bg-[#212121]"
+                    bgClass="bg-charcoal-light"
                     theme="dark"
                     image={heroFeature.image}
                     imageAlt={heroFeature.imageAlt}

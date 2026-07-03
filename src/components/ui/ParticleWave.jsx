@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from 'react';
+import { colors } from '@/lib/site.config';
 
 // ── Simplex-style noise (lightweight, no dependencies) ──────────────────────
 const permutation = [];
@@ -92,7 +93,7 @@ export const ParticleWave = () => {
             m.y += (m.targetY - m.y) * 0.03;
 
             // Clear
-            ctx.fillStyle = '#111111';
+            ctx.fillStyle = colors.ink;
             ctx.fillRect(0, 0, width, height);
 
             // Mouse position in pixel space
@@ -134,7 +135,7 @@ export const ParticleWave = () => {
                     const heightBrightness = (noiseVal + 1) * 0.5; // 0..1
                     const cursorGlow = cursorInfluence * cursorInfluence;
 
-                    // Color: electric-mint (#85D8AC) with varying intensity
+                    // Color: electric-mint (colors.electricMint from site.config.js) with varying intensity
                     const mintR = 133, mintG = 216, mintB = 172;
                     const baseAlpha = 0.12 + heightBrightness * 0.35;
                     const alpha = Math.min(1, baseAlpha + cursorGlow * 0.5);

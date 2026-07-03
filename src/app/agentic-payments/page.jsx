@@ -532,7 +532,7 @@ export default function AgenticPayments() {
 
                 <SplitFeature
                     reverse
-                    bgClass="bg-[#212121]"
+                    bgClass="bg-charcoal-light"
                     theme="dark"
                     image={heroFeature.image}
                     imageAlt={heroFeature.imageAlt}

@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
             </head>
             <body className="font-sans antialiased bg-cloud-dancer" suppressHydrationWarning>
                 <NavVisibilityProvider>
-                    <div className="relative w-full min-h-screen bg-cloud-dancer text-[#1A1A1A] z-10">
+                    <div className="relative w-full min-h-screen bg-cloud-dancer text-charcoal z-10">
                         <Navbar />
                         {children}
                     </div>

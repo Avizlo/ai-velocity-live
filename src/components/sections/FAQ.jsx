@@ -50,15 +50,13 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
                 className="w-full flex items-center justify-between gap-8 py-7 text-left group cursor-pointer"
             >
                 <h3
-                    className="font-sans text-lg font-medium tracking-tight transition-colors duration-300"
-                    style={{ color: isOpen ? '#1A1A1A' : '#1A1A1A' }}
+                    className="font-sans text-lg font-medium tracking-tight text-charcoal transition-colors duration-300"
                 >
                     {faq.question}
                 </h3>
 
                 <span
-                    className="shrink-0 flex items-center justify-center transition-all duration-300"
-                    style={{ color: isOpen ? '#1A1A1A' : '#1A1A1A' }}
+                    className="shrink-0 flex items-center justify-center text-charcoal transition-all duration-300"
                 >
                     <span
                         className="inline-block transition-transform duration-400 ease-[cubic-bezier(0.25,1,0.5,1)]"
@@ -86,7 +84,7 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
                 }}
             >
                 <div ref={bodyRef}>
-                    <p className="pb-8 text-[#1A1A1A] font-sans max-w-2xl">
+                    <p className="pb-8 text-charcoal font-sans max-w-2xl">
                         {faq.answer}
                     </p>
                 </div>
@@ -215,11 +213,11 @@ export const FAQ = ({ title = "FAQ's", label, faqs = defaultFaqs, bgClass = "bg-
                     {/* Left: Title */}
                     <div ref={titleRef} className="lg:pt-2 flex flex-col items-start">
                         {label && (
-                            <span className="block font-mono text-[10px] tracking-[0.25em] uppercase text-[#1a1a1a]/50 mb-4">
+                            <span className="block font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/50 mb-4">
                                 {label}
                             </span>
                         )}
-                        <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif italic text-[#1a1a1a] tracking-tight">
+                        <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif italic text-charcoal tracking-tight">
                             {title}
                         </h2>
                     </div>

@@ -9,6 +9,8 @@ export default {
         'dew-mint': '#dff4e7',       // Soft accent / hover states
         'electric-mint': '#c0e9cb',  // Primary accent (CTAs, links, highlights)
         'charcoal': '#1A1A1A',       // Dark background / text
+        'charcoal-light': '#212121', // Secondary dark surface (banners, cards)
+        'ink': '#111111',            // Deepest dark surface (canvas fills)
         'steel': '#6B6B6B',          // Muted body copy
 
         // Semantic aliases — use these in your pages for quick rebranding

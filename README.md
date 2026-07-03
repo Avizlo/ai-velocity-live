@@ -23,22 +23,27 @@ npm run dev
 
 ## Customisation Checklist
 
-### 1. Brand Identity
-- [ ] **Brand name** — Search & replace `Your Brand` across all files
-- [ ] **Logo** — Add your logo to `public/` and update the Navbar brand text in `src/components/sections/Navbar.jsx`
-- [ ] **Favicon** — Replace `src/app/favicon.ico`
+> **Honest estimate:** wiring in your own brand name, URL, and colors takes
+> minutes (see below). A full rebrand — new copy across every page, new
+> images, new service pages, a genuinely different visual identity — is
+> realistically **2–3 days of work**, not an afternoon. Budget for it.
+
+### 1. Brand Identity — single source of truth
+All brand strings (name, tagline, canonical URL, X handle, contact email)
+live in **`src/lib/site.config.js`**. Edit the `siteConfig` object there and
+it flows through every page's metadata, JSON-LD structured data, and OG
+images automatically via `src/lib/metadata.js` and `createMetadata()`.
+- [ ] Edit `src/lib/site.config.js` — `name`, `tagline`, `xHandle`, `contactEmail`, `legalName`
+- [ ] **Site URL** — set `NEXT_PUBLIC_SITE_URL` as an env var (see `.env.example`); `site.config.js` reads it with a fallback to `https://example.com`
+- [ ] **Logo** — add your logo to `public/` and update the Navbar brand text in `src/components/sections/Navbar.jsx`
+- [ ] **Favicon** — replace `src/app/favicon.ico`
 
 ### 2. Colors
-Edit `tailwind.config.js` — all brand colors are in one place:
-```js
-colors: {
-  'electric-mint': '#c0e9cb',  // Your primary accent
-  'charcoal': '#1A1A1A',       // Dark background
-  'dew-mint': '#dff4e7',       // Soft accent
-  'cloud-dancer': '#ffffff',   // Light background
-  'steel': '#6B6B6B',          // Muted text
-}
-```
+Brand colors are defined in two places that must stay in sync:
+- `tailwind.config.js` — the Tailwind token palette (`electric-mint`, `charcoal`, `charcoal-light`, `ink`, `dew-mint`, `cloud-dancer`, `steel`) — use these as utility classes (`bg-charcoal`, `text-electric-mint`, etc.) anywhere a `className` reaches.
+- `src/lib/site.config.js` exports a matching `colors` object for the handful of places Tailwind classes can't reach — inline `style` objects, canvas/GSAP code, and the `next/og` edge route (`src/app/og/route.jsx`), which can't consume Tailwind at all.
+
+Change a color in both files to keep them consistent.
 
 ### 3. Fonts
 - Sans font: Inter (via `next/font` in `layout.jsx`)
@@ -54,21 +59,17 @@ colors: {
 - [ ] **CTA Banner** — `src/components/sections/CTABanner.jsx`
 
 ### 5. SEO & Metadata
-- [ ] Update `src/app/(home)/layout.jsx` — JSON-LD schema, Open Graph, meta
-- [ ] Update each service page `layout.jsx` — page-specific SEO
+- [ ] Confirm `src/lib/site.config.js` values are correct — every page's metadata and JSON-LD reads from it
 - [ ] Update `public/robots.txt` — sitemap URL and LLM crawler rules
 - [ ] Update `src/app/sitemap.js` — site URL and page list
+- [ ] Update `public/llms.txt` / `public/llms-full.txt` — brand/contact placeholders
 
 ### 6. Images
 - [ ] Add images to `public/images/` (see `public/images/README.md` for structure)
 - [ ] Update image references in page files and `insightsData.js`
 
 ### 7. Contact Form
-- [ ] Set up email credentials in `.env.local`
-- [ ] Get Cloudflare Turnstile keys and add to `.env.local`
-
-### 8. Domain
-- [ ] Search & replace `https://example.com` with your actual domain URL
+- [ ] Set up email + Turnstile credentials in `.env.local` — see `.env.example` for the full list of required variables and where to get them
 
 ## Architecture
 

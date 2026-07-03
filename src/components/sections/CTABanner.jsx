@@ -7,7 +7,7 @@ export const CTABanner = ({
     buttonLink = `https://x.com/${siteConfig.xHandle.replace('@', '')}`
 }) => {
     return (
-        <section className="w-full bg-[#212121] py-24">
+        <section className="w-full bg-charcoal-light py-24">
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12 flex flex-col md:flex-row md:items-end md:justify-between gap-10">
                 {/* Left: editorial heading */}
                 <div className="flex flex-col gap-4">
