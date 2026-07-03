@@ -1,13 +1,15 @@
-const SITE_URL = 'https://aivelocity.dev';
-const SITE_NAME = 'AI Velocity';
-const TWITTER_HANDLE = '@aivelocitydev';
+import { siteConfig } from './site.config';
+
+const SITE_URL = siteConfig.url;
+const SITE_NAME = siteConfig.name;
+const TWITTER_HANDLE = siteConfig.xHandle;
 
 /**
  * Creates a complete Next.js metadata object with OpenGraph, Twitter, and canonical.
  *
  * @param {Object} options
- * @param {string} options.title        - OG / Twitter title (shorter, no "| AI Velocity" suffix)
- * @param {string} options.pageTitle    - Full <title> tag (with "| AI Velocity" suffix)
+ * @param {string} options.title        - OG / Twitter title (shorter, no "| Your Brand" suffix)
+ * @param {string} options.pageTitle    - Full <title> tag (with "| Your Brand" suffix)
  * @param {string} options.description  - Meta + OG description
  * @param {string} options.path         - URL path, e.g. '/agentic-commerce' (omit for root)
  * @param {string} options.ogSubtitle   - Subtitle for OG image route, e.g. 'Service Page'

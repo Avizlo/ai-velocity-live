@@ -9,8 +9,9 @@ import { ArticleFAQ } from '@/components/sections/ArticleFAQ';
 import { ReadingProgress } from '@/components/ui/ReadingProgress';
 import { ShareButton } from '@/components/ui/ShareButton';
 import { ContextualLinker } from '@/components/ui/ContextualLinker';
+import { siteConfig } from '@/lib/site.config';
 
-const SITE_URL = 'https://aivelocity.dev';
+const SITE_URL = siteConfig.url;
 
 // Generate dynamic metadata for SEO/AEO
 export async function generateMetadata({ params }) {
@@ -34,8 +35,8 @@ export async function generateMetadata({ params }) {
                 description: meta.description,
                 url: categoryUrl,
                 type: 'website',
-                siteName: 'AI Velocity',
-                images: [{ url: ogImage, width: 1200, height: 630, alt: `${categoryName}, AI Velocity` }],
+                siteName: siteConfig.name,
+                images: [{ url: ogImage, width: 1200, height: 630, alt: `${categoryName}, ${siteConfig.name}` }],
             },
             twitter: {
                 card: 'summary_large_image',
@@ -49,13 +50,13 @@ export async function generateMetadata({ params }) {
     // Article metadata
     const article = insightsData.find(post => post.slug === slug);
 
-    if (!article) return { title: 'Not Found | AI Velocity' };
+    if (!article) return { title: `Not Found | ${siteConfig.name}` };
 
     const articleUrl = `${SITE_URL}/news-insights/${article.slug}`;
     const imageUrl = `${SITE_URL}/og?title=${encodeURIComponent(article.title)}&subtitle=News%20%26%20Insights`;
 
     return {
-        title: `${article.title} | AI Velocity`,
+        title: `${article.title} | ${siteConfig.name}`,
         description: article.excerpt,
         alternates: {
             canonical: articleUrl,
@@ -116,7 +117,7 @@ export default async function ArticlePage({ params }) {
         '@type': article.category === 'News' ? 'NewsArticle' : 'Article',
         headline: article.title,
         description: article.excerpt,
-        image: article.image.startsWith('http') ? article.image : `https://aivelocity.dev${article.image}`,
+        image: article.image.startsWith('http') ? article.image : `${SITE_URL}${article.image}`,
         datePublished: article.date,
         dateModified: article.dateModified || article.date,
         wordCount: wordCount,
@@ -125,20 +126,20 @@ export default async function ArticlePage({ params }) {
         isAccessibleForFree: true,
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': `https://aivelocity.dev/news-insights/${article.slug}`
+            '@id': `${SITE_URL}/news-insights/${article.slug}`
         },
         author: {
             '@type': 'Organization',
             name: article.author,
-            url: 'https://aivelocity.dev'
+            url: SITE_URL
         },
         publisher: {
             '@type': 'Organization',
-            name: 'AI Velocity',
-            url: 'https://aivelocity.dev',
+            name: siteConfig.name,
+            url: SITE_URL,
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://aivelocity.dev/logo.png'
+                url: `${SITE_URL}/logo.png`
             }
         },
         speakable: {
@@ -148,9 +149,9 @@ export default async function ArticlePage({ params }) {
         ...(article.categoryPage && article.categoryPage !== '/news-insights' ? {
             isPartOf: {
                 '@type': 'WebPage',
-                '@id': `https://aivelocity.dev${article.categoryPage}`,
+                '@id': `${SITE_URL}${article.categoryPage}`,
                 name: article.category,
-                url: `https://aivelocity.dev${article.categoryPage}`
+                url: `${SITE_URL}${article.categoryPage}`
             }
         } : {})
     };
@@ -178,19 +179,19 @@ export default async function ArticlePage({ params }) {
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Home',
-                item: 'https://aivelocity.dev',
+                item: SITE_URL,
             },
             {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'News & Insights',
-                item: 'https://aivelocity.dev/news-insights',
+                item: `${SITE_URL}/news-insights`,
             },
             {
                 '@type': 'ListItem',
                 position: 3,
                 name: article.title,
-                item: `https://aivelocity.dev/news-insights/${article.slug}`,
+                item: `${SITE_URL}/news-insights/${article.slug}`,
             },
         ],
     };

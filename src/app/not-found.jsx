@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { insightsData } from '@/lib/insightsData';
+import { siteConfig } from '@/lib/site.config';
 
 export const metadata = {
-    title: 'Page Not Found | AI Velocity',
+    title: `Page Not Found | ${siteConfig.name}`,
     description: 'The page you are looking for does not exist. Explore our agentic commerce services, latest insights, and more.',
 };
 

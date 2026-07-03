@@ -1,8 +1,10 @@
+import { siteConfig } from '@/lib/site.config';
+
 export const CTABanner = ({
     title = "Stay current. The future is moving fast.",
     subtitle = "FOLLOW US",
     buttonText = "Follow us on X",
-    buttonLink = "https://x.com/aivelocitydev"
+    buttonLink = `https://x.com/${siteConfig.xHandle.replace('@', '')}`
 }) => {
     return (
         <section className="w-full bg-[#212121] py-24">

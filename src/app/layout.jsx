@@ -14,11 +14,12 @@ const inter = Inter({
 });
 
 import { createMetadata } from '@/lib/metadata';
+import { siteConfig } from '@/lib/site.config';
 
 export const metadata = createMetadata({
-    pageTitle: 'Ai Velocity Foundry | Leading the Era of Agentic Commerce',
-    title: 'Ai Velocity Foundry | Leading the Era of Agentic Commerce',
-    description: 'Master the shift to Agentic Commerce and Marketing with Ai Velocity. We provide the tools for the next generation of commerce.',
+    pageTitle: `${siteConfig.name} | ${siteConfig.tagline}`,
+    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+    description: `Master the shift to Agentic Commerce and Marketing with ${siteConfig.name}. We provide the tools for the next generation of commerce.`,
     ogSubtitle: 'Agentic Commerce',
     keywords: 'Agentic Commerce, Agentic Marketing, Sovereign Visual Intelligence, Autonomous Growth',
 });
