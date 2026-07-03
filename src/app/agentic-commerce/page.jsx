@@ -3,8 +3,7 @@
 import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { loadGsap } from '@/lib/loadGsap';
 import { CTABanner } from '@/components/sections/CTABanner';
 import { GsapPageWrapper } from '@/components/ui/GsapPageWrapper';
 import { FAQ } from '@/components/sections/FAQ';
@@ -182,30 +181,37 @@ const SplitFeature = ({
     const imageRef = useRef(null);
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
+        let ctx;
+        let cancelled = false;
+        loadGsap().then((mod) => {
+            if (!mod || cancelled) return;
+            const { gsap } = mod;
+            ctx = gsap.context(() => {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        once: true,
+                    }
+                });
 
-        const ctx = gsap.context(() => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: "top 80%",
-                    end: "bottom 20%",
-                    once: true,
-                }
-            });
+                tl.fromTo(imageRef.current,
+                    { y: 50, opacity: 0, scale: 0.95 },
+                    { y: 0, opacity: 1, scale: 1, duration: 1, ease: 'power3.out' }
+                )
+                    .fromTo(containerRef.current.querySelectorAll(".split-anim"),
+                        { y: 30, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' },
+                        "-=0.6"
+                    );
+            }, containerRef);
+        });
 
-            tl.fromTo(imageRef.current,
-                { y: 50, opacity: 0, scale: 0.95 },
-                { y: 0, opacity: 1, scale: 1, duration: 1, ease: 'power3.out' }
-            )
-                .fromTo(containerRef.current.querySelectorAll(".split-anim"),
-                    { y: 30, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' },
-                    "-=0.6"
-                );
-        }, containerRef);
-
-        return () => ctx.revert();
+        return () => {
+            cancelled = true;
+            ctx && ctx.revert();
+        };
     }, []);
 
     return (
@@ -221,7 +227,7 @@ const SplitFeature = ({
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
                     {/* Left/Right: Image */}
-                    <div ref={imageRef} className={`group rounded-card overflow-hidden aspect-[4/5] w-full max-w-md relative ${reverse ? 'md:order-last md:justify-self-end' : ''} opacity-0`}>
+                    <div ref={imageRef} className={`group rounded-card overflow-hidden aspect-[4/5] w-full max-w-md relative ${reverse ? 'md:order-last md:justify-self-end' : ''}`}>
                         <Image
                             src={image}
                             alt={imageAlt || "Agentic AI model"}
@@ -235,22 +241,22 @@ const SplitFeature = ({
                     <div className={`flex flex-col justify-between h-full gap-16 ${reverse ? 'md:order-first' : ''}`}>
                         <div>
                             {label && (
-                                <span className={`split-anim block font-mono text-[10px] tracking-[0.25em] uppercase mb-4 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/60' : 'text-charcoal/40'}`}>
+                                <span className={`split-anim block font-mono text-[10px] tracking-[0.25em] uppercase mb-4  ${theme === 'dark' ? 'text-white/60' : 'text-charcoal/40'}`}>
                                     {label}
                                 </span>
                             )}
                             {title && (
-                                <h2 className={`split-anim text-4xl md:text-5xl font-serif tracking-tight mb-8 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white' : 'text-charcoal'}`}>
+                                <h2 className={`split-anim text-4xl md:text-5xl font-serif tracking-tight mb-8  ${theme === 'dark' ? 'text-white' : 'text-charcoal'}`}>
                                     {title}
                                 </h2>
                             )}
                             {text1 && (
-                                <p className={`split-anim font-sans opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/90' : 'text-charcoal'}`}>
+                                <p className={`split-anim font-sans  ${theme === 'dark' ? 'text-white/90' : 'text-charcoal'}`}>
                                     {text1}
                                 </p>
                             )}
                             {text2 && (
-                                <p className={`split-anim font-sans mt-4 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/90' : 'text-charcoal'}`}>
+                                <p className={`split-anim font-sans mt-4  ${theme === 'dark' ? 'text-white/90' : 'text-charcoal'}`}>
                                     {text2}
                                 </p>
                             )}
@@ -266,23 +272,30 @@ const StatementAction = ({ title, subtitle, statement, actionText }) => {
     const sectionRef = useRef(null);
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        const ctx = gsap.context(() => {
-            gsap.fromTo(sectionRef.current.querySelectorAll('.stmt-anim'),
-                { y: 40, opacity: 0 },
-                {
-                    y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: 'top 80%',
-                        once: true
+        let ctx;
+        let cancelled = false;
+        loadGsap().then((mod) => {
+            if (!mod || cancelled) return;
+            const { gsap } = mod;
+            ctx = gsap.context(() => {
+                gsap.fromTo(sectionRef.current.querySelectorAll('.stmt-anim'),
+                    { y: 40, opacity: 0 },
+                    {
+                        y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: sectionRef.current,
+                            start: 'top 80%',
+                            once: true
+                        }
                     }
-                }
-            );
-        }, sectionRef);
+                );
+            }, sectionRef);
+        });
 
-        return () => ctx.revert();
+        return () => {
+            cancelled = true;
+            ctx && ctx.revert();
+        };
     }, []);
 
     return (
@@ -376,23 +389,30 @@ const BentoGrid2 = ({ data }) => {
     const gridRef = useRef(null);
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        const ctx = gsap.context(() => {
-            gsap.fromTo(gridRef.current.querySelectorAll('.bento-card'),
-                { y: 40, opacity: 0 },
-                {
-                    y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: gridRef.current,
-                        start: 'top 80%',
-                        once: true
+        let ctx;
+        let cancelled = false;
+        loadGsap().then((mod) => {
+            if (!mod || cancelled) return;
+            const { gsap } = mod;
+            ctx = gsap.context(() => {
+                gsap.fromTo(gridRef.current.querySelectorAll('.bento-card'),
+                    { y: 40, opacity: 0 },
+                    {
+                        y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: gridRef.current,
+                            start: 'top 80%',
+                            once: true
+                        }
                     }
-                }
-            );
-        }, gridRef);
+                );
+            }, gridRef);
+        });
 
-        return () => ctx.revert();
+        return () => {
+            cancelled = true;
+            ctx && ctx.revert();
+        };
     }, []);
 
     return (
@@ -416,7 +436,7 @@ const BentoGrid2 = ({ data }) => {
                 </div>
 
                 <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-4" style={{ gridTemplateRows: 'auto' }}>
-                    <div className="bento-card md:col-start-1 md:row-start-1 opacity-0 translate-y-4">
+                    <div className="bento-card md:col-start-1 md:row-start-1 ">
                         <StatCard2
                             label={data.statLine.label}
                             pct={data.statLine.pct}
@@ -425,7 +445,7 @@ const BentoGrid2 = ({ data }) => {
                             body={data.statLine.body}
                         />
                     </div>
-                    <div className="bento-card group md:col-start-2 md:row-start-1 md:row-span-2 rounded-2xl overflow-hidden min-h-[580px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-4 relative">
+                    <div className="bento-card group md:col-start-2 md:row-start-1 md:row-span-2 rounded-2xl overflow-hidden min-h-[580px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg  relative">
                         <Image
                             src={data.images.center}
                             alt={data.images.centerAlt || "Center featured"}
@@ -434,7 +454,7 @@ const BentoGrid2 = ({ data }) => {
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                     </div>
-                    <div className="bento-card group md:col-start-3 md:row-start-1 rounded-2xl overflow-hidden min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-4 relative">
+                    <div className="bento-card group md:col-start-3 md:row-start-1 rounded-2xl overflow-hidden min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg  relative">
                         <Image
                             src={data.images.brand}
                             alt={data.images.brandAlt || "Brand campaign"}
@@ -443,7 +463,7 @@ const BentoGrid2 = ({ data }) => {
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                     </div>
-                    <div className="bento-card group md:col-start-1 md:row-start-2 rounded-2xl overflow-hidden min-h-[280px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-4 relative">
+                    <div className="bento-card group md:col-start-1 md:row-start-2 rounded-2xl overflow-hidden min-h-[280px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg  relative">
                         <Image
                             src={data.images.bottomLeft}
                             alt={data.images.bottomLeftAlt || "Bottom left model"}
@@ -452,7 +472,7 @@ const BentoGrid2 = ({ data }) => {
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                     </div>
-                    <Link href="/news-insights/solana-launches-ai-agent-registry-with-9000-agents" className="bento-card relative md:col-start-3 md:row-start-2 rounded-2xl bg-charcoal p-8 flex flex-col justify-between min-h-[180px] ring-1 ring-white/5 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-4 block">
+                    <Link href="/news-insights/solana-launches-ai-agent-registry-with-9000-agents" className="bento-card relative md:col-start-3 md:row-start-2 rounded-2xl bg-charcoal p-8 flex flex-col justify-between min-h-[180px] ring-1 ring-white/5 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg  block">
                         {/* CTA Watermark */}
                         <span className="absolute bottom-4 right-4 font-serif italic text-[4rem] leading-none text-white/[0.03] pointer-events-none select-none tracking-tighter">
                             Solana
@@ -480,23 +500,30 @@ const NewsInsight = ({ title, description, posts }) => {
     const newsRef = useRef(null);
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        const ctx = gsap.context(() => {
-            gsap.fromTo(newsRef.current.querySelectorAll('.news-anim'),
-                { y: 30, opacity: 0 },
-                {
-                    y: 0, opacity: 1, duration: 0.8, stagger: 0.12, ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: newsRef.current,
-                        start: 'top 80%',
-                        once: true
+        let ctx;
+        let cancelled = false;
+        loadGsap().then((mod) => {
+            if (!mod || cancelled) return;
+            const { gsap } = mod;
+            ctx = gsap.context(() => {
+                gsap.fromTo(newsRef.current.querySelectorAll('.news-anim'),
+                    { y: 30, opacity: 0 },
+                    {
+                        y: 0, opacity: 1, duration: 0.8, stagger: 0.12, ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: newsRef.current,
+                            start: 'top 80%',
+                            once: true
+                        }
                     }
-                }
-            );
-        }, newsRef);
+                );
+            }, newsRef);
+        });
 
-        return () => ctx.revert();
+        return () => {
+            cancelled = true;
+            ctx && ctx.revert();
+        };
     }, []);
 
     return (
@@ -505,17 +532,17 @@ const NewsInsight = ({ title, description, posts }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
                     <div className="flex flex-col justify-between h-full gap-16">
                         <div className="space-y-4">
-                            <span className="news-anim block font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 opacity-0 translate-y-4">
+                            <span className="news-anim block font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 ">
                                 Latest Insights
                             </span>
-                            <h2 className="news-anim font-serif text-charcoal text-4xl md:text-5xl tracking-tight opacity-0 translate-y-4">
+                            <h2 className="news-anim font-serif text-charcoal text-4xl md:text-5xl tracking-tight ">
                                 {title}
                             </h2>
-                            <p className="news-anim font-sans text-charcoal/50 text-sm leading-relaxed max-w-xs opacity-0 translate-y-4">
+                            <p className="news-anim font-sans text-charcoal/50 text-sm leading-relaxed max-w-xs ">
                                 {description}
                             </p>
                         </div>
-                        <div className="news-anim opacity-0 translate-y-4">
+                        <div className="news-anim ">
                             <a
                                 href="#blog"
                                 className="inline-block border-b border-charcoal/30 pb-1 text-charcoal transition-colors duration-300 font-sans tracking-widest text-xs uppercase hover:text-[#111] hover:border-[#111]"
@@ -526,7 +553,7 @@ const NewsInsight = ({ title, description, posts }) => {
                     </div>
                     <div className="flex flex-col gap-5">
                         {posts.map((post, i) => (
-                            <a key={i} href="#blog" className="news-anim flex gap-5 items-start group cursor-pointer opacity-0 translate-y-4">
+                            <a key={i} href="#blog" className="news-anim flex gap-5 items-start group cursor-pointer ">
                                 <div className="shrink-0 w-44 md:w-52 aspect-[16/10] rounded-card overflow-hidden bg-charcoal/5 ring-1 ring-charcoal/5 relative">
                                     <Image
                                         src={post.image}

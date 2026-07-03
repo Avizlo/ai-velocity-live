@@ -3,8 +3,7 @@
 import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { loadGsap } from '@/lib/loadGsap';
 import { CTABanner } from '@/components/sections/CTABanner';
 import { GsapPageWrapper } from '@/components/ui/GsapPageWrapper';
 import { SplitFeature } from '@/components/sections/SplitFeature';
@@ -228,30 +227,37 @@ const BentoGrid2 = ({ data }) => {
     const gridRef = useRef(null);
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        const ctx = gsap.context(() => {
-            gsap.fromTo(gridRef.current.querySelectorAll('.bento-card'),
-                { y: 40, opacity: 0 },
-                {
-                    y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: gridRef.current,
-                        start: 'top 80%',
-                        once: true
+        let ctx;
+        let cancelled = false;
+        loadGsap().then((mod) => {
+            if (!mod || cancelled) return;
+            const { gsap } = mod;
+            ctx = gsap.context(() => {
+                gsap.fromTo(gridRef.current.querySelectorAll('.bento-card'),
+                    { y: 40, opacity: 0 },
+                    {
+                        y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: gridRef.current,
+                            start: 'top 80%',
+                            once: true
+                        }
                     }
-                }
-            );
-        }, gridRef);
+                );
+            }, gridRef);
+        });
 
-        return () => ctx.revert();
+        return () => {
+            cancelled = true;
+            ctx && ctx.revert();
+        };
     }, []);
 
     return (
         <section className="py-12 bg-cloud-dancer">
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
                 <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-4" style={{ gridTemplateRows: 'auto' }}>
-                    <div className="bento-card md:col-start-1 md:row-start-1 opacity-0 translate-y-4">
+                    <div className="bento-card md:col-start-1 md:row-start-1">
                         <StatCard2
                             pct={data.statLine.pct}
                             dashPct={data.statLine.dashPct}
@@ -260,7 +266,7 @@ const BentoGrid2 = ({ data }) => {
                             link={data.statLine.link}
                         />
                     </div>
-                    <div className="bento-card group md:col-start-2 md:row-start-1 md:row-span-2 rounded-2xl overflow-hidden min-h-[580px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-4 relative">
+                    <div className="bento-card group md:col-start-2 md:row-start-1 md:row-span-2 rounded-2xl overflow-hidden min-h-[580px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg relative">
                         <Image
                             src={data.images.center}
                             alt="AI-generated model executing autonomous cross-channel marketing campaigns"
@@ -269,7 +275,7 @@ const BentoGrid2 = ({ data }) => {
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                     </div>
-                    <div className="bento-card group md:col-start-3 md:row-start-1 rounded-2xl overflow-hidden min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-4 relative">
+                    <div className="bento-card group md:col-start-3 md:row-start-1 rounded-2xl overflow-hidden min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg relative">
                         <Image
                             src={data.images.brand}
                             alt="AI-generated brand ambassador photoshoot for autonomous influencer campaigns"
@@ -278,7 +284,7 @@ const BentoGrid2 = ({ data }) => {
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                     </div>
-                    <div className="bento-card group md:col-start-1 md:row-start-2 rounded-2xl overflow-hidden min-h-[280px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-4 relative">
+                    <div className="bento-card group md:col-start-1 md:row-start-2 rounded-2xl overflow-hidden min-h-[280px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg relative">
                         <Image
                             src={data.images.bottomLeft}
                             alt="AI-generated product model for agentic commerce content creation"
@@ -287,7 +293,7 @@ const BentoGrid2 = ({ data }) => {
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                     </div>
-                    <div className="bento-card relative md:col-start-3 md:row-start-2 rounded-2xl bg-charcoal p-8 flex flex-col justify-between min-h-[180px] ring-1 ring-white/5 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-4">
+                    <div className="bento-card relative md:col-start-3 md:row-start-2 rounded-2xl bg-charcoal p-8 flex flex-col justify-between min-h-[180px] ring-1 ring-white/5 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                         {/* Faint watermark inside CTA card */}
                         <span className="absolute bottom-4 right-4 font-serif italic text-[4rem] leading-none text-white/[0.03] pointer-events-none select-none tracking-tighter">
                             Velocity

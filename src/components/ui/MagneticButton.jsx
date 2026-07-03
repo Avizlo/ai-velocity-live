@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from 'react';
-import gsap from 'gsap';
+import { loadGsap } from '@/lib/loadGsap';
 
 export const MagneticButton = ({ children, className = '' }) => {
     const magneticRef = useRef(null);
@@ -10,38 +10,51 @@ export const MagneticButton = ({ children, className = '' }) => {
         const magnetic = magneticRef.current;
         if (!magnetic) return;
 
-        const onMouseMove = (e) => {
-            const { clientX, clientY } = e;
-            const { left, top, width, height } = magnetic.getBoundingClientRect();
-            const centerX = left + width / 2;
-            const centerY = top + height / 2;
+        let cancelled = false;
+        let gsapRef = null;
+        let onMouseMove;
+        let onMouseLeave;
 
-            const x = (clientX - centerX) * 0.3;
-            const y = (clientY - centerY) * 0.3;
+        loadGsap().then((mod) => {
+            if (!mod || cancelled) return;
+            const { gsap } = mod;
+            gsapRef = gsap;
 
-            gsap.to(magnetic, {
-                x,
-                y,
-                duration: 1,
-                ease: 'power3.out',
-            });
-        };
+            onMouseMove = (e) => {
+                const { clientX, clientY } = e;
+                const { left, top, width, height } = magnetic.getBoundingClientRect();
+                const centerX = left + width / 2;
+                const centerY = top + height / 2;
 
-        const onMouseLeave = () => {
-            gsap.to(magnetic, {
-                x: 0,
-                y: 0,
-                duration: 1,
-                ease: 'elastic.out(1, 0.3)',
-            });
-        };
+                const x = (clientX - centerX) * 0.3;
+                const y = (clientY - centerY) * 0.3;
 
-        magnetic.addEventListener('mousemove', onMouseMove);
-        magnetic.addEventListener('mouseleave', onMouseLeave);
+                gsap.to(magnetic, {
+                    x,
+                    y,
+                    duration: 1,
+                    ease: 'power3.out',
+                });
+            };
+
+            onMouseLeave = () => {
+                gsap.to(magnetic, {
+                    x: 0,
+                    y: 0,
+                    duration: 1,
+                    ease: 'elastic.out(1, 0.3)',
+                });
+            };
+
+            magnetic.addEventListener('mousemove', onMouseMove);
+            magnetic.addEventListener('mouseleave', onMouseLeave);
+        });
 
         return () => {
-            magnetic.removeEventListener('mousemove', onMouseMove);
-            magnetic.removeEventListener('mouseleave', onMouseLeave);
+            cancelled = true;
+            if (onMouseMove) magnetic.removeEventListener('mousemove', onMouseMove);
+            if (onMouseLeave) magnetic.removeEventListener('mouseleave', onMouseLeave);
+            gsapRef && gsapRef.killTweensOf(magnetic);
         };
     }, []);
 

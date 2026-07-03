@@ -5,8 +5,7 @@ import Image from 'next/image';
 import { useRef, useEffect } from 'react';
 import { insightsData } from '@/lib/insightsData';
 import { ArrowRight } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { loadGsap } from '@/lib/loadGsap';
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
 const getArticlesByCategory = (category, count = 99) => {
@@ -35,17 +34,25 @@ export const RelatedInsights = ({
     const posts = getArticlesByCategory(category, 2);
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-        const ctx = gsap.context(() => {
-            gsap.fromTo(ref.current.querySelectorAll('.ri-anim'),
-                { y: 20, opacity: 0 },
-                {
-                    y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out',
-                    scrollTrigger: { trigger: ref.current, start: 'top 80%', once: true }
-                }
-            );
-        }, ref);
-        return () => ctx.revert();
+        let ctx;
+        let cancelled = false;
+        loadGsap().then((mod) => {
+            if (!mod || cancelled) return;
+            const { gsap } = mod;
+            ctx = gsap.context(() => {
+                gsap.fromTo(ref.current.querySelectorAll('.ri-anim'),
+                    { y: 20, opacity: 0 },
+                    {
+                        y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out',
+                        scrollTrigger: { trigger: ref.current, start: 'top 80%', once: true }
+                    }
+                );
+            }, ref);
+        });
+        return () => {
+            cancelled = true;
+            ctx && ctx.revert();
+        };
     }, []);
 
     if (posts.length === 0) return null;
@@ -57,17 +64,17 @@ export const RelatedInsights = ({
                     {/* Left — Title, description, CTA */}
                     <div className="flex flex-col justify-between h-full gap-16">
                         <div className="space-y-4">
-                            <span className="ri-anim block font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 opacity-0">
+                            <span className="ri-anim block font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40">
                                 Latest Insights
                             </span>
-                            <h2 className="ri-anim font-serif text-charcoal text-4xl md:text-5xl tracking-tight opacity-0">
+                            <h2 className="ri-anim font-serif text-charcoal text-4xl md:text-5xl tracking-tight">
                                 {title}
                             </h2>
-                            <p className="ri-anim font-sans text-charcoal/50 text-sm leading-relaxed max-w-xs opacity-0">
+                            <p className="ri-anim font-sans text-charcoal/50 text-sm leading-relaxed max-w-xs">
                                 {description}
                             </p>
                         </div>
-                        <div className="ri-anim opacity-0">
+                        <div className="ri-anim">
                             <Link
                                 href={category ? `/news-insights/${category.toLowerCase().replace(/\s+/g, '-')}` : '/news-insights'}
                                 className="inline-block border-b border-charcoal/30 pb-1 text-charcoal transition-colors duration-300 font-sans tracking-widest text-xs uppercase hover:text-charcoal/60 hover:border-charcoal/60"
@@ -80,7 +87,7 @@ export const RelatedInsights = ({
                     {/* Right — Article rows */}
                     <div className="flex flex-col gap-6">
                         {posts.map((post) => (
-                            <Link key={post.id} href={`/news-insights/${post.slug}`} className="ri-anim opacity-0">
+                            <Link key={post.id} href={`/news-insights/${post.slug}`} className="ri-anim">
                                 <article className="flex gap-5 items-start group cursor-pointer">
                                     <div className="shrink-0 w-44 md:w-52 aspect-[16/10] rounded-card overflow-hidden bg-charcoal/5 ring-1 ring-charcoal/5 relative">
                                         <Image

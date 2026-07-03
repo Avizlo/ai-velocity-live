@@ -2,8 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Plus, X } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { loadGsap } from '@/lib/loadGsap';
 
 const defaultFaqs = [
     {
@@ -107,40 +106,47 @@ export const FAQ = ({ title = "FAQ's", label, faqs = defaultFaqs, bgClass = "bg-
     };
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
+        let ctx;
+        let cancelled = false;
+        loadGsap().then((mod) => {
+            if (!mod || cancelled) return;
+            const { gsap } = mod;
+            ctx = gsap.context(() => {
+                // Organic mesh gradient — 4 blobs drifting on infinite loops
+                const blobs = [blob1Ref.current, blob2Ref.current, blob3Ref.current, blob4Ref.current];
 
-        const ctx = gsap.context(() => {
-            // Organic mesh gradient — 4 blobs drifting on infinite loops
-            const blobs = [blob1Ref.current, blob2Ref.current, blob3Ref.current, blob4Ref.current];
+                blobs.forEach((blob, i) => {
+                    const duration = 12 + i * 4; // 12s, 16s, 20s, 24s
+                    const xRange = 15 + i * 10;
+                    const yRange = 10 + i * 8;
 
-            blobs.forEach((blob, i) => {
-                const duration = 12 + i * 4; // 12s, 16s, 20s, 24s
-                const xRange = 15 + i * 10;
-                const yRange = 10 + i * 8;
+                    gsap.to(blob, {
+                        xPercent: xRange,
+                        yPercent: yRange,
+                        scale: 1.15,
+                        duration: duration,
+                        ease: 'sine.inOut',
+                        repeat: -1,
+                        yoyo: true,
+                    });
 
-                gsap.to(blob, {
-                    xPercent: xRange,
-                    yPercent: yRange,
-                    scale: 1.15,
-                    duration: duration,
-                    ease: 'sine.inOut',
-                    repeat: -1,
-                    yoyo: true,
+                    gsap.to(blob, {
+                        xPercent: -xRange * 0.7,
+                        yPercent: -yRange * 0.5,
+                        duration: duration * 0.7,
+                        ease: 'sine.inOut',
+                        repeat: -1,
+                        yoyo: true,
+                        delay: duration * 0.3,
+                    });
                 });
+            }, containerRef);
+        });
 
-                gsap.to(blob, {
-                    xPercent: -xRange * 0.7,
-                    yPercent: -yRange * 0.5,
-                    duration: duration * 0.7,
-                    ease: 'sine.inOut',
-                    repeat: -1,
-                    yoyo: true,
-                    delay: duration * 0.3,
-                });
-            });
-        }, containerRef);
-
-        return () => ctx.revert();
+        return () => {
+            cancelled = true;
+            ctx && ctx.revert();
+        };
     }, []);
 
     return (

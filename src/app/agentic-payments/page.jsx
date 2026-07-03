@@ -3,8 +3,7 @@
 import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { loadGsap } from '@/lib/loadGsap';
 import { CTABanner } from '@/components/sections/CTABanner';
 import { GsapPageWrapper } from '@/components/ui/GsapPageWrapper';
 import { FAQ } from '@/components/sections/FAQ';
@@ -138,30 +137,37 @@ const SplitFeature = ({
     const imageRef = useRef(null);
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
+        let ctx;
+        let cancelled = false;
+        loadGsap().then((mod) => {
+            if (!mod || cancelled) return;
+            const { gsap } = mod;
+            ctx = gsap.context(() => {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        once: true,
+                    }
+                });
 
-        const ctx = gsap.context(() => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: "top 80%",
-                    end: "bottom 20%",
-                    once: true,
-                }
-            });
+                tl.fromTo(imageRef.current,
+                    { y: 50, opacity: 0, scale: 0.95 },
+                    { y: 0, opacity: 1, scale: 1, duration: 1, ease: 'power3.out' }
+                )
+                    .fromTo(containerRef.current.querySelectorAll(".split-anim"),
+                        { y: 30, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' },
+                        "-=0.6"
+                    );
+            }, containerRef);
+        });
 
-            tl.fromTo(imageRef.current,
-                { y: 50, opacity: 0, scale: 0.95 },
-                { y: 0, opacity: 1, scale: 1, duration: 1, ease: 'power3.out' }
-            )
-                .fromTo(containerRef.current.querySelectorAll(".split-anim"),
-                    { y: 30, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' },
-                    "-=0.6"
-                );
-        }, containerRef);
-
-        return () => ctx.revert();
+        return () => {
+            cancelled = true;
+            ctx && ctx.revert();
+        };
     }, []);
 
     return (
@@ -177,7 +183,7 @@ const SplitFeature = ({
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
                     {/* Left/Right: Image */}
-                    <div ref={imageRef} className={`group rounded-card overflow-hidden aspect-[4/5] w-full max-w-md relative ${reverse ? 'md:order-last md:justify-self-end' : ''} opacity-0`}>
+                    <div ref={imageRef} className={`group rounded-card overflow-hidden aspect-[4/5] w-full max-w-md relative ${reverse ? 'md:order-last md:justify-self-end' : ''}`}>
                         <Image
                             src={image}
                             alt={imageAlt || "Agentic AI model"}
@@ -191,22 +197,22 @@ const SplitFeature = ({
                     <div className={`flex flex-col justify-between h-full gap-16 ${reverse ? 'md:order-first' : ''}`}>
                         <div>
                             {label && (
-                                <span className={`split-anim block font-mono text-[10px] tracking-[0.25em] uppercase mb-4 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/60' : 'text-charcoal/40'}`}>
+                                <span className={`split-anim block font-mono text-[10px] tracking-[0.25em] uppercase mb-4  ${theme === 'dark' ? 'text-white/60' : 'text-charcoal/40'}`}>
                                     {label}
                                 </span>
                             )}
                             {title && (
-                                <h2 className={`split-anim text-4xl md:text-5xl font-serif tracking-tight mb-8 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white' : 'text-charcoal'}`}>
+                                <h2 className={`split-anim text-4xl md:text-5xl font-serif tracking-tight mb-8  ${theme === 'dark' ? 'text-white' : 'text-charcoal'}`}>
                                     {title}
                                 </h2>
                             )}
                             {text1 && (
-                                <p className={`split-anim font-sans opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/90' : 'text-charcoal'}`}>
+                                <p className={`split-anim font-sans  ${theme === 'dark' ? 'text-white/90' : 'text-charcoal'}`}>
                                     {text1}
                                 </p>
                             )}
                             {text2 && (
-                                <p className={`split-anim font-sans mt-4 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/90' : 'text-charcoal'}`}>
+                                <p className={`split-anim font-sans mt-4  ${theme === 'dark' ? 'text-white/90' : 'text-charcoal'}`}>
                                     {text2}
                                 </p>
                             )}
@@ -222,23 +228,30 @@ const StatementAction = ({ title, subtitle, statement, actionText }) => {
     const sectionRef = useRef(null);
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        const ctx = gsap.context(() => {
-            gsap.fromTo(sectionRef.current.querySelectorAll('.stmt-anim'),
-                { y: 40, opacity: 0 },
-                {
-                    y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: 'top 80%',
-                        once: true
+        let ctx;
+        let cancelled = false;
+        loadGsap().then((mod) => {
+            if (!mod || cancelled) return;
+            const { gsap } = mod;
+            ctx = gsap.context(() => {
+                gsap.fromTo(sectionRef.current.querySelectorAll('.stmt-anim'),
+                    { y: 40, opacity: 0 },
+                    {
+                        y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: sectionRef.current,
+                            start: 'top 80%',
+                            once: true
+                        }
                     }
-                }
-            );
-        }, sectionRef);
+                );
+            }, sectionRef);
+        });
 
-        return () => ctx.revert();
+        return () => {
+            cancelled = true;
+            ctx && ctx.revert();
+        };
     }, []);
 
     return (
@@ -284,23 +297,30 @@ const PaymentsSettlementGrid = () => {
     const gridRef = useRef(null);
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        const ctx = gsap.context(() => {
-            gsap.fromTo(gridRef.current.querySelectorAll('.bento-anim'),
-                { y: 40, opacity: 0 },
-                {
-                    y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: gridRef.current,
-                        start: 'top 80%',
-                        once: true
+        let ctx;
+        let cancelled = false;
+        loadGsap().then((mod) => {
+            if (!mod || cancelled) return;
+            const { gsap } = mod;
+            ctx = gsap.context(() => {
+                gsap.fromTo(gridRef.current.querySelectorAll('.bento-anim'),
+                    { y: 40, opacity: 0 },
+                    {
+                        y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: gridRef.current,
+                            start: 'top 80%',
+                            once: true
+                        }
                     }
-                }
-            );
-        }, gridRef);
+                );
+            }, gridRef);
+        });
 
-        return () => ctx.revert();
+        return () => {
+            cancelled = true;
+            ctx && ctx.revert();
+        };
     }, []);
 
     return (
@@ -323,7 +343,7 @@ const PaymentsSettlementGrid = () => {
 
                 <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-4" style={{ gridTemplateRows: 'auto auto' }}>
                     {/* Tall KPI Panel — left, spans 2 rows */}
-                    <div className="bento-anim relative md:row-span-2 rounded-2xl bg-charcoal p-8 flex flex-col min-h-[560px] ring-1 ring-charcoal/5 overflow-hidden transition-all duration-300 hover:-translate-y-1 opacity-0">
+                    <div className="bento-anim relative md:row-span-2 rounded-2xl bg-charcoal p-8 flex flex-col min-h-[560px] ring-1 ring-charcoal/5 overflow-hidden transition-all duration-300 hover:-translate-y-1">
                         {/* Watermark */}
                         <span className="absolute bottom-4 right-4 font-serif italic text-[4.5rem] leading-none text-white/[0.03] pointer-events-none select-none tracking-tighter">
                             Protocol
@@ -356,7 +376,7 @@ const PaymentsSettlementGrid = () => {
                     </div>
 
                     {/* Large center image — spans 2 rows */}
-                    <div className="bento-anim group md:row-span-2 rounded-2xl overflow-hidden min-h-[560px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 opacity-0 relative">
+                    <div className="bento-anim group md:row-span-2 rounded-2xl overflow-hidden min-h-[560px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 relative">
                         <Image
                             src="/images/autonomous-payment-processing.webp"
                             alt="Secure autonomous payment processing"
@@ -367,7 +387,7 @@ const PaymentsSettlementGrid = () => {
                     </div>
 
                     {/* Glassmorphic overlay card — top right */}
-                    <Link href="/news-insights/v402-handshake-how-machine-to-machine-negotiation-works" className="bento-anim relative group rounded-2xl overflow-hidden min-h-[270px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 opacity-0 block">
+                    <Link href="/news-insights/v402-handshake-how-machine-to-machine-negotiation-works" className="bento-anim relative group rounded-2xl overflow-hidden min-h-[270px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1 block">
                         <Image
                             src="/images/blockchain-settlement-ledger.webp"
                             alt="Blockchain distributed ledger visualization"
@@ -387,7 +407,7 @@ const PaymentsSettlementGrid = () => {
                     </Link>
 
                     {/* CTA card — bottom right (mint) */}
-                    <Link href="/news-insights/autonomous-payment-settlement-what-cfos-need-to-know" className="bento-anim relative rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[270px] ring-1 ring-charcoal/5 overflow-hidden transition-all duration-300 hover:-translate-y-1 opacity-0 block">
+                    <Link href="/news-insights/autonomous-payment-settlement-what-cfos-need-to-know" className="bento-anim relative rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[270px] ring-1 ring-charcoal/5 overflow-hidden transition-all duration-300 hover:-translate-y-1 block">
                         <span className="absolute bottom-3 right-4 font-serif italic text-[3.5rem] leading-none text-charcoal/[0.06] pointer-events-none select-none tracking-tighter">
                             Settle
                         </span>

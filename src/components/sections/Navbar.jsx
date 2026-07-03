@@ -1,9 +1,8 @@
 "use client";
 
-import { useRef, useState, useLayoutEffect } from 'react';
+import { useRef, useState, useEffect, useLayoutEffect } from 'react';
 import { useNavVisibility } from '@/context/NavVisibilityContext';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { loadGsap } from '@/lib/loadGsap';
 import { MagneticButton } from '@/components/ui/MagneticButton';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -11,10 +10,6 @@ import { Menu, X } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
 const ParticleWave = dynamic(() => import('@/components/ui/ParticleWave').then(mod => mod.ParticleWave), { ssr: false });
-
-if (typeof window !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger);
-}
 
 export const Navbar = () => {
     const pathname = usePathname();
@@ -26,23 +21,39 @@ export const Navbar = () => {
     const [activeDropdown, setActiveDropdown] = useState(null);
     const [navTheme, setNavTheme] = useState('dark');
 
-    useLayoutEffect(() => {
-        if (activeDropdown) {
-            gsap.killTweensOf(dropdownRef.current);
-            gsap.set(dropdownRef.current, { display: 'block' });
-            gsap.fromTo(dropdownRef.current,
-                { height: 0, opacity: 0 },
-                { height: 'auto', opacity: 1, duration: 0.4, ease: 'power2.out' }
-            );
-        } else if (dropdownRef.current) {
-            gsap.killTweensOf(dropdownRef.current);
-            gsap.to(dropdownRef.current, {
-                height: 0, opacity: 0, duration: 0.4, ease: 'power2.out',
-                onComplete: () => {
-                    if (dropdownRef.current) gsap.set(dropdownRef.current, { display: 'none' });
-                }
-            });
-        }
+    useEffect(() => {
+        let cancelled = false;
+        loadGsap().then((mod) => {
+            if (!dropdownRef.current) return;
+
+            if (!mod) {
+                // Reduced motion (or SSR) — toggle instantly, no animation.
+                dropdownRef.current.style.display = activeDropdown ? 'block' : 'none';
+                dropdownRef.current.style.height = activeDropdown ? 'auto' : '0';
+                dropdownRef.current.style.opacity = activeDropdown ? '1' : '0';
+                return;
+            }
+            if (cancelled) return;
+            const { gsap } = mod;
+
+            if (activeDropdown) {
+                gsap.killTweensOf(dropdownRef.current);
+                gsap.set(dropdownRef.current, { display: 'block' });
+                gsap.fromTo(dropdownRef.current,
+                    { height: 0, opacity: 0 },
+                    { height: 'auto', opacity: 1, duration: 0.4, ease: 'power2.out' }
+                );
+            } else {
+                gsap.killTweensOf(dropdownRef.current);
+                gsap.to(dropdownRef.current, {
+                    height: 0, opacity: 0, duration: 0.4, ease: 'power2.out',
+                    onComplete: () => {
+                        if (dropdownRef.current) gsap.set(dropdownRef.current, { display: 'none' });
+                    }
+                });
+            }
+        });
+        return () => { cancelled = true; };
     }, [activeDropdown]);
 
     const handleMouseEnter = (name) => {

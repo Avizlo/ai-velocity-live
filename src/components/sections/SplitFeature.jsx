@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { loadGsap } from '@/lib/loadGsap';
 import { MagneticButton } from '@/components/ui/MagneticButton';
 import Image from 'next/image';
 
@@ -23,30 +22,37 @@ export const SplitFeature = ({
     const textRef = useRef(null);
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
+        let ctx;
+        let cancelled = false;
+        loadGsap().then((mod) => {
+            if (!mod || cancelled) return;
+            const { gsap } = mod;
+            ctx = gsap.context(() => {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        once: true,
+                    }
+                });
 
-        const ctx = gsap.context(() => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: "top 80%",
-                    end: "bottom 20%",
-                    once: true,
-                }
-            });
+                tl.fromTo(imageRef.current,
+                    { y: 50, opacity: 0, scale: 0.95 },
+                    { y: 0, opacity: 1, scale: 1, duration: 1, ease: 'power3.out' }
+                )
+                    .fromTo(".split-anim",
+                        { y: 30, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' },
+                        "-=0.6"
+                    );
+            }, containerRef);
+        });
 
-            tl.fromTo(imageRef.current,
-                { y: 50, opacity: 0, scale: 0.95 },
-                { y: 0, opacity: 1, scale: 1, duration: 1, ease: 'power3.out' }
-            )
-                .fromTo(".split-anim",
-                    { y: 30, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' },
-                    "-=0.6"
-                );
-        }, containerRef);
-
-        return () => ctx.revert();
+        return () => {
+            cancelled = true;
+            ctx && ctx.revert();
+        };
     }, []);
 
     return (
@@ -63,7 +69,7 @@ export const SplitFeature = ({
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
 
                     {/* Left/Right: Image */}
-                    <div ref={imageRef} className={`group rounded-card overflow-hidden aspect-[4/5] w-full max-w-md relative ${reverse ? 'md:order-last md:justify-self-end' : ''} opacity-0`}>
+                    <div ref={imageRef} className={`group rounded-card overflow-hidden aspect-[4/5] w-full max-w-md relative ${reverse ? 'md:order-last md:justify-self-end' : ''}`}>
                         <Image
                             src={image}
                             alt={imageAlt || "Agentic AI model"}
@@ -78,22 +84,22 @@ export const SplitFeature = ({
                     <div ref={textRef} className={`flex flex-col justify-between h-full gap-16 ${reverse ? 'md:order-first' : ''}`}>
                         <div>
                             {label && (
-                                <span className={`split-anim block font-mono text-[10px] tracking-[0.25em] uppercase mb-4 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/60' : 'text-charcoal/40'}`}>
+                                <span className={`split-anim block font-mono text-[10px] tracking-[0.25em] uppercase mb-4 ${theme === 'dark' ? 'text-white/60' : 'text-charcoal/40'}`}>
                                     {label}
                                 </span>
                             )}
                             {title && (
-                                <h2 className={`split-anim text-4xl md:text-5xl font-serif tracking-tight mb-8 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white' : 'text-charcoal'}`}>
+                                <h2 className={`split-anim text-4xl md:text-5xl font-serif tracking-tight mb-8 ${theme === 'dark' ? 'text-white' : 'text-charcoal'}`}>
                                     {title}
                                 </h2>
                             )}
                             {text1 && (
-                                <p className={`split-anim font-sans opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/90' : 'text-charcoal'}`}>
+                                <p className={`split-anim font-sans ${theme === 'dark' ? 'text-white/90' : 'text-charcoal'}`}>
                                     {text1}
                                 </p>
                             )}
                             {text2 && (
-                                <p className={`split-anim font-sans mt-4 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/90' : 'text-charcoal'}`}>
+                                <p className={`split-anim font-sans mt-4 ${theme === 'dark' ? 'text-white/90' : 'text-charcoal'}`}>
                                     {text2}
                                 </p>
                             )}

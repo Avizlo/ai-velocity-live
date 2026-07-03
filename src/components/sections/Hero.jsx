@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
-import gsap from 'gsap';
+import { loadGsap } from '@/lib/loadGsap';
 
 // Dynamically import the animated backgrounds so they only render on client
 const ParticleWave = dynamic(() => import('@/components/ui/ParticleWave').then(mod => mod.ParticleWave), { ssr: false });
@@ -14,25 +14,34 @@ export const Hero = () => {
     const subRef = useRef(null);
 
     useEffect(() => {
-        const ctx = gsap.context(() => {
-            const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+        let ctx;
+        let cancelled = false;
+        loadGsap().then((mod) => {
+            if (!mod || cancelled) return;
+            const { gsap } = mod;
+            ctx = gsap.context(() => {
+                const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
-            tl.fromTo(outlineRef.current,
-                { y: 80, opacity: 0 },
-                { y: 0, opacity: 1, duration: 1.4 }
-            )
-                .fromTo(solidRef.current,
+                tl.fromTo(outlineRef.current,
                     { y: 80, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 1.4 },
-                    "-=1.1"
+                    { y: 0, opacity: 1, duration: 1.4 }
                 )
-                .fromTo(subRef.current,
-                    { y: 30, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 1.2 },
-                    "-=0.8"
-                );
-        }, containerRef);
-        return () => ctx.revert();
+                    .fromTo(solidRef.current,
+                        { y: 80, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 1.4 },
+                        "-=1.1"
+                    )
+                    .fromTo(subRef.current,
+                        { y: 30, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 1.2 },
+                        "-=0.8"
+                    );
+            }, containerRef);
+        });
+        return () => {
+            cancelled = true;
+            ctx && ctx.revert();
+        };
     }, []);
 
     return (

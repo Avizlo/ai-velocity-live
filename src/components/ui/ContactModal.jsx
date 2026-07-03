@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from 'react';
-import gsap from 'gsap';
+import { loadGsap } from '@/lib/loadGsap';
 import { Turnstile } from '@marsidev/react-turnstile';
 
 // Turnstile site key — uses Cloudflare's always-pass test key in development.
@@ -23,28 +23,58 @@ export const ContactModal = ({ isOpen, onClose }) => {
     useEffect(() => {
         if (!overlayRef.current || !panelRef.current) return;
 
-        if (isOpen) {
-            document.body.style.overflow = 'hidden';
-            gsap.set(overlayRef.current, { display: 'flex' });
-            const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-            tl.fromTo(overlayRef.current, { opacity: 0 }, { opacity: 1, duration: 0.4 })
-                .fromTo(panelRef.current, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, '-=0.25');
-        } else {
-            const tl = gsap.timeline({
-                defaults: { ease: 'power3.in' },
-                onComplete: () => {
-                    gsap.set(overlayRef.current, { display: 'none' });
-                    document.body.style.overflow = '';
-                    // Reset form after close animation
-                    setFormData({ name: '', email: '', message: '', _honeypot: '' });
-                    setStatus('idle');
-                    setErrorMessage('');
-                    setTurnstileToken(null);
-                },
-            });
-            tl.to(panelRef.current, { y: 40, opacity: 0, duration: 0.35 })
-                .to(overlayRef.current, { opacity: 0, duration: 0.3 }, '-=0.15');
-        }
+        let cancelled = false;
+
+        const resetForm = () => {
+            document.body.style.overflow = '';
+            setFormData({ name: '', email: '', message: '', _honeypot: '' });
+            setStatus('idle');
+            setErrorMessage('');
+            setTurnstileToken(null);
+        };
+
+        loadGsap().then((mod) => {
+            if (cancelled || !overlayRef.current || !panelRef.current) return;
+
+            if (!mod) {
+                // Reduced motion — open/close instantly, no animation.
+                if (isOpen) {
+                    document.body.style.overflow = 'hidden';
+                    overlayRef.current.style.display = 'flex';
+                    overlayRef.current.style.opacity = '1';
+                    panelRef.current.style.opacity = '1';
+                    panelRef.current.style.transform = 'none';
+                } else {
+                    overlayRef.current.style.display = 'none';
+                    resetForm();
+                }
+                return;
+            }
+
+            const { gsap } = mod;
+
+            if (isOpen) {
+                document.body.style.overflow = 'hidden';
+                gsap.set(overlayRef.current, { display: 'flex' });
+                const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+                tl.fromTo(overlayRef.current, { opacity: 0 }, { opacity: 1, duration: 0.4 })
+                    .fromTo(panelRef.current, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, '-=0.25');
+            } else {
+                const tl = gsap.timeline({
+                    defaults: { ease: 'power3.in' },
+                    onComplete: () => {
+                        gsap.set(overlayRef.current, { display: 'none' });
+                        resetForm();
+                    },
+                });
+                tl.to(panelRef.current, { y: 40, opacity: 0, duration: 0.35 })
+                    .to(overlayRef.current, { opacity: 0, duration: 0.3 }, '-=0.15');
+            }
+        });
+
+        return () => {
+            cancelled = true;
+        };
     }, [isOpen]);
 
     // ── Close on Escape ──

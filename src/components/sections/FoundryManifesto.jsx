@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { loadGsap } from '@/lib/loadGsap';
 
 const defaultTitle = "The x402 Sovereign Settlement Architecture";
 
@@ -55,39 +54,46 @@ export const FoundryManifesto = ({ title = defaultTitle, leadIn = defaultLeadIn,
     };
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
+        let ctx;
+        let cancelled = false;
+        loadGsap().then((mod) => {
+            if (!mod || cancelled) return;
+            const { gsap } = mod;
+            ctx = gsap.context(() => {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        once: true
+                    }
+                });
 
-        const ctx = gsap.context(() => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: "top 80%",
-                    end: "bottom 20%",
-                    once: true
-                }
-            });
+                tl.fromTo(contentRef.current.children,
+                    { y: 40, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' }
+                );
+            }, containerRef);
+        });
 
-            tl.fromTo(contentRef.current.children,
-                { y: 40, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' }
-            );
-        }, containerRef);
-
-        return () => ctx.revert();
+        return () => {
+            cancelled = true;
+            ctx && ctx.revert();
+        };
     }, []);
 
     return (
         <section ref={containerRef} id="agentic-foundry-manifesto" aria-labelledby="manifesto-title" className="py-24 bg-cloud-dancer">
             <div ref={contentRef} className="max-w-4xl mx-auto px-6 md:px-12">
 
-                <header className="mb-10 opacity-0 translate-y-4">
+                <header className="mb-10">
                     <h2 id="manifesto-title" className="text-3xl md:text-5xl font-serif tracking-tight text-charcoal">
                         {title}
                     </h2>
                 </header>
 
                 {/* Always Visible Lead-in Text */}
-                <div className="space-y-6 font-sans text-charcoal/80 mb-8 opacity-0 translate-y-4">
+                <div className="space-y-6 font-sans text-charcoal/80 mb-8">
                     {leadIn.map((paragraph, index) => (
                         <p key={index}>{paragraph}</p>
                     ))}
@@ -111,7 +117,7 @@ export const FoundryManifesto = ({ title = defaultTitle, leadIn = defaultLeadIn,
                 </div>
 
                 {/* Call to Action Toggle Button */}
-                <div className="pt-6 border-t border-charcoal/10 opacity-0 translate-y-4 w-full">
+                <div className="pt-6 border-t border-charcoal/10 w-full">
                     <button
                         id="vault-toggle-btn"
                         ref={btnRef}

@@ -1,35 +1,42 @@
 'use client';
 import { useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { loadGsap } from '@/lib/loadGsap';
 
 export const StrategyOption3 = () => {
     const containerRef = useRef(null);
     const scrollContainerRef = useRef(null);
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
+        let mm;
+        let cancelled = false;
+        loadGsap().then((mod) => {
+            if (!mod || cancelled) return;
+            const { gsap } = mod;
 
-        const scrollContainer = scrollContainerRef.current;
-        let mm = gsap.matchMedia();
+            const scrollContainer = scrollContainerRef.current;
+            mm = gsap.matchMedia();
 
-        // Desktop only horizontal scroll
-        mm.add("(min-width: 768px)", () => {
-            let totalWidth = scrollContainer.offsetWidth - window.innerWidth;
+            // Desktop only horizontal scroll
+            mm.add("(min-width: 768px)", () => {
+                let totalWidth = scrollContainer.offsetWidth - window.innerWidth;
 
-            gsap.to(scrollContainer, {
-                x: -totalWidth,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    pin: true,
-                    scrub: 1,
-                    end: () => "+=" + totalWidth
-                }
+                gsap.to(scrollContainer, {
+                    x: -totalWidth,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        pin: true,
+                        scrub: 1,
+                        end: () => "+=" + totalWidth
+                    }
+                });
             });
         });
 
-        return () => mm.revert();
+        return () => {
+            cancelled = true;
+            mm && mm.revert();
+        };
     }, []);
 
     const panels = [
