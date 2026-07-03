@@ -328,9 +328,43 @@ function NewsInsightsContent() {
     );
 }
 
+// Static index rendered into the prerendered HTML while the interactive grid
+// hydrates. This is what crawlers without JavaScript (including most LLM
+// crawlers) see, so it must contain the full article link list.
+function StaticArticleIndex() {
+    return (
+        <main className="min-h-screen bg-charcoal px-6 md:px-12 py-24">
+            <div className="max-w-screen-2xl mx-auto">
+                <h1 className="text-4xl md:text-6xl font-serif text-white tracking-tight mb-12">News & Insights</h1>
+                <ul className="space-y-6">
+                    {defaultPosts.map((article) => (
+                        <li key={article.id}>
+                            <Link href={`/news-insights/${article.slug}`} className="group block">
+                                <span className="font-mono text-[10px] uppercase tracking-widest text-electric-mint">
+                                    {article.category}
+                                    {' '}&bull;{' '}
+                                    <time dateTime={article.date}>
+                                        {new Date(article.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: '2-digit' })}
+                                    </time>
+                                </span>
+                                <span className="block font-serif text-white/90 group-hover:text-electric-mint text-2xl leading-tight mt-1">
+                                    {article.title}
+                                </span>
+                                <span className="block text-white/60 font-sans text-sm leading-relaxed mt-1 max-w-3xl">
+                                    {article.excerpt}
+                                </span>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </main>
+    );
+}
+
 export default function NewsInsightsGallery() {
     return (
-        <Suspense fallback={<div className="min-h-screen bg-charcoal" />}>
+        <Suspense fallback={<StaticArticleIndex />}>
             <NewsInsightsContent />
         </Suspense>
     );

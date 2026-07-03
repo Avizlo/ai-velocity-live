@@ -225,16 +225,16 @@ const manifestoSections = [
             "The transition to agentic commerce readiness requires investment across four domains:",
             "Product data infrastructure. Every product attribute must be structured, machine-readable, and accessible through a standardised API. This means eliminating data stored in unstructured formats and replacing it with structured schemas that agents can parse programmatically.",
             "Real-time inventory and pricing APIs. Static product pages cannot support agent commerce. Merchants need live inventory systems that expose current availability, pricing, and delivery terms through authenticated API endpoints that agents can query in real time.",
-            "Agent payment integration. The x402 payment protocol and agent payments protocol (ap2) provide the technical standards for machine-to-machine settlement. Brands that integrate these protocols create a direct settlement pathway for agents, bypassing traditional payment friction entirely.",
-            "Answer engine authority. Agentic commerce and answer engine optimisation are inseparable. Brands that are cited as authoritative sources in large language models — through structured content, AEO-optimised articles, and consistent presence in AI training data — receive preferential consideration when agents evaluate purchase options."
+            "Agent payment integration. The Agentic Commerce Protocol (ACP) handles agent checkout, the Universal Commerce Protocol (UCP) orchestrates the full commerce lifecycle, the Agent Payments Protocol (AP2) governs authorisation mandates, and x402 and the Machine Payments Protocol (MPP) provide machine-to-machine settlement. Brands that integrate these protocols create a direct pathway for agents, bypassing traditional payment friction entirely.",
+            "Answer engine authority. Agentic commerce and answer engine optimisation are inseparable. Brands that are cited as authoritative sources in large language models (through structured content, AEO-optimised articles, and consistent presence in AI training data) receive preferential consideration when agents evaluate purchase options."
         ]
     },
     {
         title: "Why Agentic Commerce Is Happening Now",
         content: [
             "Three converging forces are driving the transition at accelerating speed.",
-            "AI assistant adoption has reached the consumer mainstream. More than 61% of enterprise purchasing decisions are now influenced by LLM answers. As AI assistants move from novelty to infrastructure, their role in purchase decision-making scales proportionally.",
-            "Payment protocol standardisation has provided the settlement layer that autonomous commerce requires. The emergence of stablecoin settlement, x402 payment standards, and cryptographically verified agent identity protocols means that the financial infrastructure for autonomous transactions now exists at scale.",
+            "AI assistant adoption has reached the consumer mainstream. Adobe Analytics measured AI-referred traffic to US retail sites growing 393% year on year in the first quarter of 2026, converting better than organic search for the first time. As AI assistants move from novelty to infrastructure, their role in purchase decision-making scales proportionally.",
+            "Payment protocol standardisation has provided the settlement layer that autonomous commerce requires. With UCP generally available to Shopify merchants, AP2 under FIDO Alliance governance, and stablecoin settlement live through x402 and MPP, the financial infrastructure for autonomous transactions now exists at scale.",
             "Structural pressure on legacy retail is accelerating the transition. E-commerce conversion rates, customer acquisition costs, and cart abandonment rates have been deteriorating for years as human attention becomes more fragmented. Brands that route their commerce through agent networks escape the economics of attention-based retail entirely."
         ]
     },

@@ -60,6 +60,8 @@ export const Footer = () => {
                             <Link href="/agentic-aeo" className="hover:text-white transition-colors uppercase">AEO</Link>
                             <Link href="/agentic-strategy" className="hover:text-white transition-colors uppercase">Strategy</Link>
                             <Link href="/news-insights" className="hover:text-white transition-colors uppercase">News & Insights</Link>
+                            <Link href="/about" className="hover:text-white transition-colors uppercase">About</Link>
+                            <Link href="/contact" className="hover:text-white transition-colors uppercase">Contact</Link>
                         </div>
                         <div className="flex gap-6 justify-center">
                             <span>©2026 AI VELOCITY</span>
