@@ -37,7 +37,7 @@ export const GsapPageWrapper = ({ children, className }) => {
                 scrollTrigger: {
                     trigger: sec,
                     start: "top 85%",
-                    toggleActions: "play none none reverse"
+                    once: true
                 }
             });
         });

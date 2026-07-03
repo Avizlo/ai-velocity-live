@@ -61,12 +61,12 @@ const nextConfig = {
 
         return [
             {
-                // All static pages & assets — browser caches 24h, CDN caches 24h, stale OK for 24h
+                // All static pages & assets — browser caches 24h, CDN caches 30 days, stale OK for 24h
                 source: '/((?!api).*)',
                 headers: [
                     {
                         key: 'Cache-Control',
-                        value: 'public, max-age=86400, s-maxage=86400, stale-while-revalidate=86400',
+                        value: 'public, max-age=86400, s-maxage=2592000, stale-while-revalidate=86400',
                     },
                 ],
             },
