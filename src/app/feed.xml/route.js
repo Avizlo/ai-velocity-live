@@ -1,10 +1,11 @@
 import { insightsData } from '@/lib/insightsData';
+import { siteConfig } from '@/lib/site.config';
 
 export const dynamic = 'force-static';
 export const revalidate = 86400;
 
 export async function GET() {
-    const baseUrl = 'https://aivelocity.dev';
+    const baseUrl = siteConfig.url;
 
     const items = [...insightsData]
         .sort((a, b) => new Date(b.date) - new Date(a.date))
@@ -22,8 +23,8 @@ export async function GET() {
       <guid isPermaLink="true">${url}</guid>
       <description>${excerpt}</description>
       <pubDate>${pubDate}</pubDate>
-      <category>${article.category || 'AI Velocity'}</category>
-      <author>editorial@aivelocity.dev (${article.author || 'AI Velocity'})</author>
+      <category>${article.category || siteConfig.name}</category>
+      <author>${siteConfig.contactEmail} (${article.author || siteConfig.name})</author>
     </item>`;
         })
         .join('');
@@ -31,7 +32,7 @@ export async function GET() {
     const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>AI Velocity — Agentic Commerce &amp; AI Economy News</title>
+    <title>${siteConfig.name} — News &amp; Insights</title>
     <link>${baseUrl}</link>
     <description>Independent news, analysis and intelligence on agentic commerce, autonomous marketing, AI-native payments, and the emerging machine economy.</description>
     <language>en-gb</language>
@@ -39,7 +40,7 @@ export async function GET() {
     <atom:link rel="hub" href="https://pubsubhubbub.appspot.com/"/>
     <image>
       <url>${baseUrl}/og-image.png</url>
-      <title>AI Velocity</title>
+      <title>${siteConfig.name}</title>
       <link>${baseUrl}</link>
     </image>${items}
   </channel>
