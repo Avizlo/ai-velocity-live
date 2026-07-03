@@ -23,6 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 .next
+.vite/
 *.tar.gz
 AI_Velocity_V3_backup_2026-03-07/
 
