@@ -1,5 +1,101 @@
 export const insightsData = [
     {
+        id: "30",
+        slug: "salesforce-bets-on-both-agentic-commerce-protocols",
+        title: "Salesforce Bets on Both Agentic Commerce Protocols at Once",
+        category: "Agentic Commerce",
+        categoryPage: "/agentic-commerce",
+        relatedSlugs: ["ucp-google-tech-council-governance-layer-agentic-commerce", "zero-click-checkout-how-autonomous-agents-bypass-your-sales-funnel", "stripe-mpp-machine-payments-protocol-agentic-commerce"],
+        date: "2026-07-10T09:00:00Z",
+        dateModified: "2026-07-10T09:00:00Z",
+        author: "AI Velocity Engineering",
+        readTime: "6 min read",
+        image: "/images/insights/salesforce-bets-on-both-agentic-commerce-protocols.webp",
+        imageAlt: "Macro close-up of a dark blue circuit board with gold contact pads and traces",
+        excerpt: "Salesforce's Agentforce Commerce went live July 6 running OpenAI's ACP for ChatGPT and Google's UCP for Gemini, not picking a side in the protocol split.",
+        content: `
+Salesforce's Agentforce Commerce went generally available on July 6, 2026, running two competing agentic commerce protocols at once: OpenAI and Stripe's **Agentic Commerce Protocol (ACP)** powers its ChatGPT integration, while Google's **Universal Commerce Protocol (UCP)** powers its Gemini and AI Mode integrations. Salesforce did not build a third proprietary standard, and it did not wait for one protocol to beat the other before shipping. For an enterprise commerce platform whose retailers need to be transactable on whichever AI surface their customers actually use, that dual-protocol posture is the substantive news, not the individual agents themselves.
+
+## What Went Live on July 6
+
+Salesforce's **Shopper Agent**, **Buyer Agent**, and **Merchant Agent** are now generally available, [Salesforce confirmed](https://www.salesforce.com/news/stories/agentforce-commerce-announcement/), with native ChatGPT integration reaching general availability in July 2026 and Google Search, including AI Mode, plus the Gemini app following later in the summer.
+
+The three agents cover different jobs rather than three versions of the same one. The Shopper Agent runs on the storefront: live inventory checks, carrier cutoff confirmation, and store pickup options, closing a sale inside a single conversation and carrying that context into later service interactions. The Buyer Agent targets B2B procurement: taking orders over WhatsApp and SMS, confirming SKUs through image recognition, and applying contract pricing without requiring a buyer to log into a portal. The Merchant Agent works the back office: catalog and promotion operations driven by natural-language instructions, so a category manager can push a promotion or correct a pricing error by describing the change rather than navigating an admin grid.
+
+The ChatGPT and Gemini integrations are structurally distinct from the Shopper Agent itself, a distinction Salesforce's own materials blur. The Shopper Agent is the conversational agent that runs on a retailer's own storefront, in the retailer's voice. ChatGPT and Gemini instead get a separate, catalog-level integration, drawing on the same backend: a retailer's product catalog, pricing, inventory, and customer accounts sync directly from Salesforce's Business Manager, with no third-party middleware required, so a shopper who discovers a product inside ChatGPT and a shopper on the retailer's own site are treated as one known customer rather than two strangers. Critically, the retailer stays **Merchant of Record** for every transaction: order data, the customer relationship, and fulfilment stay on the retailer's own systems rather than transferring to OpenAI. That detail is consistent with how ChatGPT commerce has evolved since OpenAI retired its original in-chat Instant Checkout feature in March 2026 in favour of routing purchases back to retailers' own sites, a shift already visible when Stripe joined Google's UCP Tech Council in April.
+
+## The Catalog Sync Is Doing More Work Than It Looks Like
+
+"Syncs directly from Business Manager" reads as a minor implementation detail. It is not. For a catalog to sync cleanly into ChatGPT or Gemini and remain transactable, the underlying product data has to be structurally complete: accurate real-time stock counts, current pricing, carrier and fulfilment metadata, and identifiers that map cleanly to whatever schema the receiving protocol expects. Retailers whose product information management is inconsistent across channels do not get a clean sync. They get an agent that quotes stale prices or promises stock that has already sold out, which is a worse outcome than no agent at all.
+
+This is the same underlying requirement this blog has flagged before in the context of UCP onboarding: the protocol is rarely the bottleneck. Merchants who have spent the past two years consolidating product data into a single structured source of truth will find the Business Manager sync straightforward. Merchants who still maintain divergent catalogs across storefront, marketplace listings, and POS will find that the agent surfaces the data quality problem rather than solving it.
+
+## Running ACP and UCP at the Same Time
+
+Salesforce's route to July 6 started eight months earlier. On October 14, 2025, [Salesforce announced support for the Agentic Commerce Protocol](https://www.salesforce.com/news/press-releases/2025/10/14/stripe-openai-agentic-commerce-protocol-announcement/) in collaboration with Stripe and OpenAI, the standard that now underpins the ChatGPT catalog integration reaching GA this month. Separately, Salesforce has [announced native support for Google's Universal Commerce Protocol](https://www.salesforce.com/news/stories/google-universal-commerce-protocol-support-announcement/), giving Gemini and AI Mode a standardised way to reach a merchant's inventory, loyalty, and order systems in real time, beyond simple product discovery and checkout.
+
+That is two separately governed, competing open standards, both wired natively into the same commerce platform, shipping in the same release cycle. Agentic Commerce Protocol is maintained by OpenAI and Stripe and is scoped to single-transaction checkout inside generative AI environments, principally ChatGPT. Universal Commerce Protocol is Google's broader standard, governing discovery, cart construction, checkout, identity linking, and post-purchase order management. Salesforce is not choosing between them. It is building to both simultaneously and pointing the same underlying product data layer at either one.
+
+## Why Dual-Protocol Support Isn't Fence-Sitting
+
+The instinctive read of a vendor supporting two rival standards is that it is hedging, waiting to see which one wins before committing fully. Salesforce's move argues the opposite: in a market with more than one dominant AI surface, dual-protocol support is not a hedge, it is the only strategy that actually reaches the customer.
+
+ChatGPT and Gemini are not converging into a single interface any more than Android and iOS did. A retailer whose commerce stack only speaks ACP is invisible to Gemini and AI Mode traffic. A retailer whose stack only speaks UCP is invisible inside ChatGPT. Salesforce's enterprise customers do not get to choose which AI assistant their own shoppers use, so a platform that forces its merchants into a single protocol is a platform that forecloses a distribution channel on their behalf.
+
+This mirrors a pattern already visible at the protocol layer itself. Stripe, ACP's co-author, joined Google's UCP Tech Council in April 2026 without retiring ACP. Salesforce sitting on both protocols at the implementation layer is the same logic one level up the stack: the entity that wants to get paid does not get to wait for the standards fight to resolve before building.
+
+## The Buyer Agent Deserves More Attention Than It's Getting
+
+Coverage of Agentforce Commerce has focused almost entirely on the Shopper Agent's ChatGPT integration, understandable given the consumer-facing novelty, but the Buyer Agent is arguably the more structurally significant of the three for enterprise sellers. B2B ordering has resisted the automation that reshaped B2C: confirming a SKU from a photo, applying negotiated contract pricing, and placing a reorder without navigating a portal are steps that still commonly require a phone call or a named sales rep. Routing that workflow through WhatsApp and SMS, channels B2B buyers already use for everything else, removes the portal-login friction that has kept large parts of B2B procurement manual.
+
+## What the Shopping Index Numbers Actually Show
+
+Salesforce is pairing the GA announcement with performance claims drawn from its own [Shopping Index](https://www.salesforce.com/retail/shopping-index/) research, based on Salesforce's analysis of more than 1.5 billion shoppers. According to that data, retailers running their own shopper agents grew sales 59% faster than retailers that had not deployed one, and traffic referred by AI assistants converted at eight times the rate of traffic referred by social platforms.
+
+Those numbers are Salesforce's own reported research, not an independently audited study, and a platform vendor citing performance gains among its own customers carries an obvious selection bias: retailers motivated enough to deploy a shopper agent early are also more likely to be stronger operators generally. The comparison is suggestive, not causal, and should be read that way.
+
+What is independently verifiable is that named retailers are live on the platform now. **PacSun**, whose Chief Digital and Information Officer Shirley Gao has described extending the retailer's catalog into ChatGPT as a way to meet shoppers where they already are, and **Iceland Foods**, where Head of Ecommerce Technology Luke Barber's team piloted Salesforce's Storefront Next ahead of this release, are both named, on-record deployments rather than composite case studies. Nitin Mangtani, Salesforce's EVP and GM of Agentforce Commerce, [framed the timing bluntly](https://www.cxtoday.com/crm/salesforce-agentforce-commerce-generally-available/): "The brands that win will have their Shopper Agent live on their own properties for the 2026 shopping season."
+
+## What This Means Beyond Salesforce's Own Customers
+
+The practical lesson extends past Salesforce's install base. Merchants evaluating any commerce platform, Salesforce or otherwise, should be asking which protocols it speaks natively, not which one it has bet on. A platform locked to a single protocol is a platform that will need re-architecting the moment a competing AI surface takes meaningful share of its customers' shopping traffic.
+
+Salesforce has not disclosed Agentforce Commerce-specific pricing, and general Agentforce credit and per-conversation pricing does not necessarily carry across to the Commerce product line, so cost is a real open question for any retailer sizing this up rather than a solved variable. What is not in question is the data-readiness requirement underneath it. Salesforce's July 6 release did not invent that requirement. It confirmed it, by becoming the first major enterprise commerce platform built to satisfy two rival protocols out of the same data layer, rather than one.
+
+The vendors still building toward a single-protocol integration are making a bet that one AI surface, ChatGPT, Gemini, or whatever comes next, will consolidate agentic shopping the way Google Search consolidated general search. Nothing in the current market structure supports that bet: two separately governed protocols, backed by OpenAI and Stripe on one side and Google's ten-member Tech Council on the other, are both live in production in the same quarter. The more defensible position, and the one Salesforce just took in production rather than on a roadmap slide, is that the surface stays fragmented and the data layer has to serve all of it at once.
+`,
+        faqs: [
+            {
+                question: "What is Salesforce Agentforce Commerce?",
+                answer: "Agentforce Commerce is Salesforce's suite of AI commerce agents, comprising the Shopper Agent, Buyer Agent, and Merchant Agent, which went generally available on July 6, 2026. The agents handle storefront sales, B2B procurement, and back-office catalog management respectively, with native integrations into ChatGPT, Google Search AI Mode, and the Gemini app."
+            },
+            {
+                question: "Does Salesforce's ChatGPT integration use OpenAI's Agentic Commerce Protocol?",
+                answer: "Yes. Salesforce first announced support for the Agentic Commerce Protocol (ACP) with Stripe and OpenAI on October 14, 2025, and that integration underpins the product catalog sync into ChatGPT that reached general availability in July 2026."
+            },
+            {
+                question: "Does Agentforce Commerce also support Google's Universal Commerce Protocol?",
+                answer: "Yes. Salesforce has announced native support for Google's Universal Commerce Protocol (UCP), which powers its Gemini app and Google Search AI Mode integrations arriving later in summer 2026. Salesforce is running ACP and UCP simultaneously rather than choosing one."
+            },
+            {
+                question: "Who is the Merchant of Record when a customer buys through ChatGPT via Agentforce Commerce?",
+                answer: "The retailer remains Merchant of Record for every transaction. Order data, the customer relationship, and fulfilment stay on the retailer's own systems rather than transferring to OpenAI, consistent with how ChatGPT commerce evolved after OpenAI retired its original in-chat Instant Checkout in March 2026."
+            },
+            {
+                question: "What results is Salesforce reporting from retailers using shopper agents?",
+                answer: "According to Salesforce's own Shopping Index, based on analysis of more than 1.5 billion shoppers, retailers running their own shopper agents grew sales 59% faster than those that had not deployed one, and AI-referred traffic converted at eight times the rate of social-referred traffic. These figures are Salesforce's own reported research rather than an independently audited result."
+            },
+            {
+                question: "What does the Buyer Agent do for B2B commerce?",
+                answer: "The Buyer Agent orchestrates B2B ordering over WhatsApp and SMS, confirming SKUs through image recognition and applying contract pricing without requiring the buyer to log into a portal. It targets procurement workflows that traditionally required a sales rep or a portal session."
+            },
+            {
+                question: "When do Google Search and Gemini integrations for Agentforce Commerce go live?",
+                answer: "Google Search, including AI Mode, and the Gemini app integrations are scheduled for later in summer 2026, following the ChatGPT integration's general availability in July 2026. Salesforce has not published an exact date for the Google-side rollout."
+            }
+        ]
+    },
+    {
         id: "28",
         slug: "ghost-citations-cited-by-ai-but-not-named",
         title: "The Ghost Citation Problem: Cited by AI, Never Named",
