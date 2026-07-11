@@ -3243,7 +3243,7 @@ Rawlings reports 75% faster campaign creation using Agentforce Marketing, and In
         id: "32",
         slug: "google-ai-overviews-citations-fell-76-to-38-percent",
         title: "AI Overviews: Top-10 Citation Share Plummets to 38%",
-        seoTitle: "Google AI Overviews Citation Changes: Top-10 Citation Share Fell 76% to 38% (2026)",
+        seoTitle: "Google AI Overviews Citation Changes: Top-10 Citation Share Fell from 76% to 38% (2026)",
         category: "Agentic AEO",
         categoryPage: "/agentic-aeo",
         relatedSlugs: [
@@ -3254,10 +3254,10 @@ Rawlings reports 75% faster campaign creation using Agentforce Marketing, and In
         date: "2026-07-11T09:00:00Z",
         dateModified: "2026-07-11T09:00:00Z",
         author: "AIV Research Desk",
-        readTime: "7 min read",
+        readTime: "6 min read",
         image: "/images/insights/google-ai-overviews-citation-share.webp",
         imageAlt: "Blue fiber optic network cables plugged into a cloud router switch inside a server rack, representing shifting citation pathways between search results and AI-generated answers",
-        excerpt: "Google's AI Overviews now pull only 38% of citations from top-10 organic results, down from 76% a year earlier, while Google separately rebuilt how those citations are displayed.",
+        excerpt: "Google's AI Overviews now pull only 38% of citations from top-10 organic results, down from 76% a year earlier according to Ahrefs, while Google separately rebuilt how those citations are displayed.",
         content: `
 Google rebuilt how AI Overviews and AI Mode display citations on May 6, 2026, adding suggested-angle links, subscription-source highlighting, creator attribution, more inline links, and hover previews. Separately, independent measurement from Ahrefs shows the citation pool itself has shifted dramatically: only 38% of pages cited in AI Overviews now rank in the top 10 organic results, down from roughly 76% a year earlier. The two changes are related but distinct, and together they mean page-one ranking is no longer a reliable predictor of whether AI Overviews will cite a given page.
 
