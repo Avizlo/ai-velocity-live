@@ -2059,7 +2059,8 @@ The upgrade also strengthens Solana's position as the primary settlement layer f
         date: "2026-03-05T08:00:00Z",
         author: "AI Velocity",
         readTime: "3 min read",
-        image: "/images/insights/marketing-stack-invisible.webp",
+        image: "/images/insights/agent-native-commerce-platforms-launch-on-solana.webp",
+        imageAlt: "Close-up of a green-lit server rack panel in a dark data centre",
         excerpt: "New platforms built specifically for AI agent participation are emerging on Solana, signalling a shift from agent-compatible infrastructure to agent-first commerce architecture.",
         content: `
 ## A New Category of Commerce Platform
