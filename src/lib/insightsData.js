@@ -3239,4 +3239,109 @@ Rawlings reports 75% faster campaign creation using Agentforce Marketing, and In
             }
         ]
     },
+    {
+        id: "32",
+        slug: "google-ai-overviews-citations-fell-76-to-38-percent",
+        title: "AI Overviews: Top-10 Citation Share Plummets to 38%",
+        seoTitle: "Google AI Overviews Citation Changes: Top-10 Citation Share Fell 76% to 38% (2026)",
+        category: "Agentic AEO",
+        categoryPage: "/agentic-aeo",
+        relatedSlugs: [
+            "ghost-citations-cited-by-ai-but-not-named",
+            "schema-markup-is-not-optional-the-aeo-technical-checklist",
+            "ucp-google-tech-council-governance-layer-agentic-commerce"
+        ],
+        date: "2026-07-11T09:00:00Z",
+        dateModified: "2026-07-11T09:00:00Z",
+        author: "AIV Research Desk",
+        readTime: "7 min read",
+        image: "/images/insights/google-ai-overviews-citation-share.webp",
+        imageAlt: "Blue fiber optic network cables plugged into a cloud router switch inside a server rack, representing shifting citation pathways between search results and AI-generated answers",
+        excerpt: "Google's AI Overviews now pull only 38% of citations from top-10 organic results, down from 76% a year earlier, while Google separately rebuilt how those citations are displayed.",
+        content: `
+Google rebuilt how AI Overviews and AI Mode display citations on May 6, 2026, adding suggested-angle links, subscription-source highlighting, creator attribution, more inline links, and hover previews. Separately, independent measurement from Ahrefs shows the citation pool itself has shifted dramatically: only 38% of pages cited in AI Overviews now rank in the top 10 organic results, down from roughly 76% a year earlier. The two changes are related but distinct, and together they mean page-one ranking is no longer a reliable predictor of whether AI Overviews will cite a given page.
+
+## What Changed in How Google's AI Overviews Show Sources?
+
+On **May 6, 2026**, Google announced five changes to how AI Overviews and AI Mode present source citations, [reported by Search Engine Land](https://searchengineland.com/google-updates-links-within-ai-overviews-ai-mode-476571):
+
+* **Suggested-angle links** appended to the end of AI-generated responses, pointing to additional related sources
+* **Subscription-source highlighting**, flagging when a cited source sits behind a paywall or subscription
+* **Creator attribution** for citations drawn from social and discussion platforms, naming the individual creator rather than just the platform
+* **More inline links**, positioned directly next to the specific text they support rather than clustered at the end
+* **Hover previews** on desktop, showing a preview card when a user hovers over an inline citation link
+
+A Google VP framed the changes as making it "easy for you to connect with authentic voices," per Search Engine Land's reporting. None of the five changes touch which pages get cited in the first place, that shift comes from a separate mechanism covered below.
+
+## The Citation Pool Got Much Bigger, and Much Less Top-10-Shaped
+
+**AI Overview citations no longer track organic ranking the way they used to.** [Ahrefs' Brand Radar team](https://ahrefs.com/blog/ai-overview-citations-top-10/), analysing 863,000 keyword SERPs and 4 million AI Overview URLs, found that only 38% of pages cited in AI Overviews also rank in the top 10 of organic results (37.10% when isolating organic blue-link citations from ads and other SERP features). Published March 2, 2026, the finding is a sharp drop from Ahrefs' own July 2025 study of 1.9 million citations, which put the top-10 overlap at approximately 76%.
+
+| Measurement date | Source | Top-10 citation overlap | Sample size |
+|---|---|---|---|
+| July 2025 | Ahrefs | ~76% | 1.9M citations |
+| October 2025 | BrightEdge (third-party, not independently re-verified here) | ~54% | not disclosed in available reporting |
+| March 2, 2026 | Ahrefs Brand Radar | 38% (37.10% blue-links only) | 863K SERPs / 4M AI Overview URLs |
+
+Ahrefs attributes the decline to **query fan-out**, a technique where Google splits a single user query into multiple related sub-queries and pulls citations from across the full set of resulting SERPs rather than primarily the original query's top-ranked pages. WebSearch coverage of the shift correlates its timing with Gemini 3 becoming the default model powering AI Overviews on January 27, 2026, though that connection is reported as correlation in third-party coverage rather than confirmed by Google as a stated cause.
+
+### Why Query Fan-Out Breaks the Old Ranking-to-Citation Assumption
+
+**Query fan-out is the process by which Google expands one search query into several related sub-queries before generating an AI Overview.** Where a conventional SERP surfaces one ranked list for one query, fan-out generates citations from an entire tree of related searches, most of which the publisher never sees or optimises for directly. The practical consequence: a page sitting at position one for its primary target query can still be passed over for AI Overview citation in favour of a page ranking lower, but higher, for one of the fanned-out sub-queries.
+
+This runs against a common assumption in SEO-adjacent AEO advice: that ranking well in classic organic search is a reliable proxy for AI Overview citation, and that AEO work is mostly "SEO plus schema." The Ahrefs data says otherwise. A page can be page-one-ranked and still miss the citation pool entirely, because the citation pool is no longer built from that page's ranked query alone. **Traditional SEO treats the SERP as a ladder: climb to position one and citations follow. Query fan-out treats it as a tree**, where citations are drawn from dozens of branches most publishers never target directly. If 62% of citations now come from outside the top 10, optimising only for a page's primary keyword is, by the numbers, a losing strategy.
+
+### A Worked Example of Fan-Out in Practice
+
+Take a hypothetical buyer query: "best CRM for a small business." Under the old model, Google would generate one SERP for that exact phrase, and an AI Overview would draw its citations from whichever pages ranked highest for it, most likely a handful of established comparison sites and vendor pages already sitting at positions one through five. Under query fan-out, Google instead expands that single query into a set of related sub-queries it judges the user might also mean or need answered: "CRM with QuickBooks integration," "CRM pricing comparison 2026," "free CRM for under 10 users," and similar variants. The AI Overview then draws citations from across the top results for *each* of those sub-queries, not just the original phrase.
+
+The practical effect: a page that ranks first for "best CRM for a small business" but says nothing about pricing tiers or specific integrations can lose citation share to a narrower page, even a forum thread or a niche comparison post, that ranks only fourth or fifth for one of the fanned-out sub-queries but answers it precisely. Ranking well for the head term no longer guarantees inclusion once the query has been split into a tree of narrower intents.
+
+## What the Five Display Changes Mean for Publishers
+
+Two of Google's five May 2026 changes carry direct AEO consequences, separate from the citation-pool shift above:
+
+* **Subscription-source highlighting** flags paywalled content as a subscription source inside an AI Overview citation, rather than showing it identically to free pages. The implementation lever here is [Google's own \`isAccessibleForFree\` structured-data property](https://developers.google.com/search/docs/appearance/structured-data/paywalled-content), set to \`false\` on \`NewsArticle\` or \`CreativeWork\` markup (with \`hasPart\`/\`cssSelector\` used to scope exactly which sections are gated). Publishers running a metered or hard paywall without this property already risk being treated as cloaking under Google's spam policies, independent of the new citation display; the May 2026 change raises the stakes by making the subscription flag visibly part of the citation itself.
+* **Creator attribution** shifts naming credit toward individual authors on social and discussion platforms rather than the platform itself. The scaffolding that feeds this is entity-level author markup, \`Person\`-typed \`author\` fields with a linked \`ProfilePage\` or \`sameAs\` references to verifiable author profiles, not just a brand-level \`Organization\` byline. A page whose only author signal is a generic company name gives Google's attribution engine nothing to attach a creator citation to.
+
+The other three changes (suggested-angle links, more inline links, hover previews) affect how users interact with a citation once it is shown, not whether a given page gets selected as a source.
+
+## Does This Change What AI Velocity Advises Clients to Do?
+
+**Answer engine optimisation is not the same exercise as ranking-page-one SEO, and the gap between the two just got measurably wider.** The technical scaffolding still matters, valid schema, clean markup, the checklist AI Velocity has already documented in its [AEO technical checklist](https://aivelocity.dev/news-insights/schema-markup-is-not-optional-the-aeo-technical-checklist). But schema and ranking alone no longer explain who gets cited. The separate finding that a large share of AI citations name no brand at all, covered in AI Velocity's [ghost citation analysis](https://aivelocity.dev/news-insights/ghost-citations-cited-by-ai-but-not-named), compounds the same problem from a different angle: being cited is necessary but not sufficient, and now even being cited is decoupled from ranking well.
+
+The practical shift for publishers: audit content coverage across the plausible **set** of sub-queries a topic could fan out into, not just the single target keyword a page was written for. A page that only answers its primary query narrowly is optimising for a citation mechanism that, per Ahrefs' data, now accounts for a minority of AI Overview citations.
+`,
+        reverifyTriggers: [
+            "Google publishes an official response or rebuttal to Ahrefs' March 2026 citation-share methodology",
+            "A subsequent Ahrefs Brand Radar or comparable large-sample study updates the 38% top-10 citation-share figure",
+            "Google ships further changes to AI Overviews/AI Mode source display beyond the five announced 2026-05-06"
+        ],
+        faqs: [
+            {
+                question: "What percentage of AI Overview citations come from top-10 organic results in 2026?",
+                answer: "Ahrefs' March 2026 Brand Radar analysis found 38% of pages cited in Google AI Overviews also rank in the top 10 organic results (37.10% for organic blue-link citations specifically), based on 863,000 keyword SERPs and 4 million AI Overview URLs."
+            },
+            {
+                question: "How much did AI Overview citation overlap with top-10 rankings decline?",
+                answer: "It fell from approximately 76% in Ahrefs' July 2025 study to 38% in the March 2026 study, a drop Ahrefs attributes to Google's growing use of query fan-out in generating AI Overviews."
+            },
+            {
+                question: "What is query fan-out in Google AI Overviews?",
+                answer: "Query fan-out is the process where Google expands a single search query into multiple related sub-queries and draws AI Overview citations from across all of the resulting result sets, rather than primarily from the original query's top-ranked pages."
+            },
+            {
+                question: "What five changes did Google make to AI Overview citations in May 2026?",
+                answer: "On May 6, 2026, Google added suggested-angle links, subscription-source highlighting, creator attribution for social and discussion citations, more inline links positioned next to cited text, and hover previews for desktop citation links."
+            },
+            {
+                question: "Does ranking first in Google Search still guarantee an AI Overview citation?",
+                answer: "No. Ahrefs' data shows a majority of AI Overview citations, 62% as of March 2026, now come from pages outside the top 10 organic results, meaning top-ranked pages are cited less predictably than in mid-2025."
+            },
+            {
+                question: "Is the AI Overview citation-share decline confirmed by Google itself?",
+                answer: "No. The 76%-to-38% figure is Ahrefs' independent third-party measurement via its Brand Radar tool, not a statistic Google has published or confirmed. Google's own May 2026 announcement covered how citations are displayed, not how source pages are selected."
+            }
+        ]
+    },
 ];
