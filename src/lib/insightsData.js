@@ -3122,6 +3122,7 @@ The protocol war is not over. The governance layer is settled. For merchants, th
         id: "31",
         slug: "salesforce-agentic-marketing-buys-contentful",
         title: "Salesforce Gives Marketers AI Agents, Then Buys Contentful",
+        seoTitle: "Agentforce Marketing: Why Salesforce's Contentful Buy Matters More",
         category: "Agentic Marketing",
         categoryPage: "/agentic-marketing",
         relatedSlugs: [
@@ -3130,8 +3131,8 @@ The protocol war is not over. The governance layer is settled. For merchants, th
             "brand-authority-signals-ai-agents-actually-trust"
         ],
         date: "2026-07-11T09:00:00Z",
-        dateModified: "2026-07-11T09:00:00Z",
-        author: "AI Velocity Engineering",
+        dateModified: "2026-07-11T16:00:00Z",
+        author: "AIV Research Desk",
         readTime: "6 min read",
         image: "/images/insights/salesforce-agentic-marketing-buys-contentful.webp",
         imageAlt: "Abstract blue network of interconnected lines and nodes representing a structured content data layer",
@@ -3139,13 +3140,21 @@ The protocol war is not over. The governance layer is settled. For merchants, th
         content: `
 **Salesforce** announced **Agentforce Marketing** at Connections 2026 on June 3, giving marketers AI agents that build pipeline, generate content, and run campaigns autonomously within guardrails the marketer sets. Two days earlier, on June 1, **Salesforce** [signed a definitive agreement to acquire Contentful](https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-contentful/), the composable content platform used by more than 4,800 brands, and that deal is the more consequential move even though it drew far less coverage. The agents generate the demos. The content layer determines whether they generate anything a brand can actually ship.
 
-## What Salesforce Announced at Connections 2026
+## What Did Salesforce Announce at Connections 2026?
 
 **Salesforce** [detailed](https://www.salesforce.com/news/stories/agentic-marketing-teams-announcement/) four task-specific agents at Connections: **Hunter** and **Piper** handle prospecting and real-time SDR qualification and are generally available now; MCP-based campaign management inside Slack reached general availability in June 2026. The two agents that matter for this story are still in pilot: **Agentforce Content Agent**, which generates omni-channel campaign content (email, mobile, SMS, RCS) from a marketer's description and localises it in the same workflow, and the **Marketing Goals Agent**, which takes a plain-language goal such as "recover declining conversion among parents shopping during peak back-to-school demand" and builds, launches, and adjusts a campaign against it inside budget and guardrail limits the marketer sets upfront.
 
+| Agent | What It Does | Status | Since |
+| --- | --- | --- | --- |
+| Hunter | Prospecting and lead qualification | Generally available | June 2026 |
+| Piper | Real-time SDR qualification | Generally available | June 2026 |
+| MCP campaign management (Slack) | Campaign management inside Slack via MCP | Generally available | June 2026 |
+| Content Agent | Generates omni-channel campaign content (email, mobile, SMS, RCS) | Pilot | June 2026 |
+| Marketing Goals Agent | Builds, launches, and adjusts campaigns from a plain-language goal | Pilot | June 2026 |
+
 **Content Agent** is where the actual bottleneck sits, and it is a bottleneck this announcement does not yet solve.
 
-## The Contentful Acquisition Is the Real Story
+## Why the Contentful Acquisition Is the Real Story
 
 **Content Agent's ability to generate omni-channel campaign content depends entirely on having a structured content layer to assemble from.** An agent that can write copy but has nowhere consistent to pull brand-approved components, product data, and previously approved assets is a chatbot with a campaign brief, not a production system. This is the gap the Contentful acquisition closes, and independent analysis of agentic content tooling backs up why it matters: [Focus Reactive's March 2026 analysis of agentic CMS architecture](https://focusreactive.com/blog/agentic-cms/) found that an AI agent working against flat, unstructured HTML "can't reliably find all product pages that reference a discontinued SKU," while an agent working against a typed content model with explicit schema relationships can do the equivalent lookup in seconds, and does it at a fraction of the token and API cost.
 
@@ -3153,9 +3162,11 @@ The protocol war is not over. The governance layer is settled. For merchants, th
 
 That is an admission, not just a talking point: the agents needed a content layer they did not have. The deal is expected to close in **Salesforce's** fiscal Q3 2027, subject to regulatory approval, meaning Content Agent's pilot customers are currently testing an agent whose long-term content infrastructure has been announced but not yet integrated.
 
+Neither company has officially disclosed the purchase price. [The Information reported](https://www.theinformation.com/briefings/salesforce-acquires-contentful-latest-move-boost-ai) the deal at $1 billion to $1.5 billion, citing a person with direct knowledge of the terms, a steep discount to the [$3 billion valuation](https://www.siliconreport.com/salesforce-said-to-acquire-contentful-at-a-discount-to-earlier-valuation-a700eeeaa768758e) Contentful carried after its 2021 Series F. That gap reinforces the reading above: this looks less like Salesforce paying a premium for a splashy AI feature and more like Salesforce buying essential infrastructure while market conditions let it do so cheaply. A buyer confident it is overpaying for a strategic flex does not typically get a discount to a five-year-old valuation; a buyer closing a genuine architectural gap, on terms favourable to itself, does.
+
 **Coverage of Connections 2026 led with the agents, not the acquisition;** several outlets ran the Agentforce Marketing news as the headline and mentioned Contentful, if at all, as a supporting detail lower in the piece. That inverts the actual dependency. An autonomous campaign agent is a commodity now, every major CRM and marketing cloud vendor ships one. A composable, structured content layer that an agent can query and assemble from without manual publishing steps is not a commodity yet, and it is the component that determines whether "generate omni-channel content" means real, on-brand, deployable assets or plausible-looking drafts a human still has to fix.
 
-## The Numbers Salesforce Is Citing
+## What Statistics Is Salesforce Citing?
 
 **Salesforce** backs the launch with figures from its own [State of Marketing report](https://www.salesforce.com/marketing/resources/state-of-marketing-report/): 86% of marketers say AI has fundamentally changed how customers engage with brands, 78% say they need more personalised content than human teams alone can produce, and 64% say customer behaviour is changing faster than they can adapt to it. These are vendor-sourced figures framing the problem Salesforce is selling a solution to, and should be read as motivation for the product rather than independent evidence of its performance.
 
@@ -3163,7 +3174,7 @@ Named customer results carry more weight because they are attributable to a spec
 
 Both figures come from a single named customer each, not an aggregated study, and neither isolates the agent layer from the broader platform migration each company was already making. Treat them as directional case evidence, not a benchmark.
 
-## The Same Pattern as the Commerce Side of Salesforce
+## How Does This Compare to Agentforce Commerce?
 
 **Salesforce** ran a near-identical playbook on the commerce side of the business just five weeks later: [Agentforce Commerce](https://www.salesforce.com/news/stories/agentforce-commerce-announcement/) reached general availability on July 6, syncing catalog, pricing, and inventory data directly from Business Manager so ChatGPT and Gemini shoppers see live stock rather than stale listings. In both cases, the agent is the headline and the structured data layer underneath it is what actually makes the agent trustworthy: Commerce needed a clean, real-time product catalog to sync into ChatGPT and Gemini without quoting sold-out stock or stale prices, and Marketing needs a clean, typed content model to feed Content Agent without generating off-brand or duplicated assets. **The two announcements are the same lesson told twice**: Salesforce's agent strategy is only as good as the data architecture it sits on, and Salesforce has been willing to acquire that architecture (Contentful for content, and prior deals for commerce and service data) rather than assume customers will build it themselves.
 
@@ -3197,6 +3208,10 @@ Availability is staggered. Piper (SDR agent) and Hunter (prospecting agent) are 
 **What results are Salesforce's customers reporting?**
 Rawlings reports 75% faster campaign creation using Agentforce Marketing, and Indeed reports a 40% martech stack consolidation after implementing Marketing Cloud Next. Both are single named-customer results, not an aggregated study.
 `,
+        reverifyTriggers: [
+            "Contentful acquisition closes (expected Salesforce fiscal Q3 2027) — update integration status and dateModified",
+            "Agentforce Content Agent or Marketing Goals Agent reaches general availability — update pilot status and dateModified"
+        ],
         faqs: [
             {
                 question: "What is Agentforce Marketing?",

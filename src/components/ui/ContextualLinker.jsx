@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 // ── Category keyword → landing page mapping ─────────────────────────────────
 const CATEGORY_LINKS = [
@@ -100,7 +101,7 @@ export const ContextualLinker = ({ content, currentCategoryPage, className }) =>
     };
 
     return (
-        <ReactMarkdown components={components}>
+        <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
             {content}
         </ReactMarkdown>
     );

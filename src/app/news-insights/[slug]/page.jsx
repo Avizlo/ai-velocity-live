@@ -260,9 +260,20 @@ export default async function ArticlePage({ params }) {
                                 </time>
                             </div>
 
+                            {article.dateModified && article.dateModified !== article.date && (
+                                <div>
+                                    <span className="block text-white/70 mb-2">Updated</span>
+                                    <time dateTime={article.dateModified} className="text-electric-mint">
+                                        {new Date(article.dateModified).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                                    </time>
+                                </div>
+                            )}
+
                             <div>
                                 <span className="block text-white/70 mb-2">Author</span>
-                                <span className="text-white/80">{article.author}</span>
+                                <Link href="/research-desk" className="text-white/80 hover:text-electric-mint transition-colors duration-200 hover:underline">
+                                    {article.author}
+                                </Link>
                             </div>
 
                             <div>
@@ -309,6 +320,11 @@ export default async function ArticlePage({ params }) {
                             [&_strong]:text-white [&_strong]:font-medium
                             [&_a]:text-electric-mint [&_a]:underline [&_a:hover]:text-white
                             [&>blockquote]:border-l-2 [&>blockquote]:border-electric-mint/50 [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-white/80 [&>blockquote]:my-8
+                            [&>table]:w-full [&>table]:my-10 [&>table]:border-collapse [&>table]:text-base md:[&>table]:text-lg
+                            [&_thead]:border-b [&_thead]:border-electric-mint/40
+                            [&_th]:text-left [&_th]:font-mono [&_th]:text-[10px] md:[&_th]:text-xs [&_th]:uppercase [&_th]:tracking-widest [&_th]:text-electric-mint [&_th]:font-normal [&_th]:pb-3 [&_th]:pr-6
+                            [&_td]:py-4 [&_td]:pr-6 [&_td]:border-b [&_td]:border-white/10 [&_td]:text-white/70 [&_td]:align-top
+                            [&_tbody_tr:last-child_td]:border-b-0
                         ">
                             <ContextualLinker content={article.content} currentCategoryPage={article.categoryPage} />
                         </article>
