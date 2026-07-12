@@ -3438,4 +3438,111 @@ The practical lesson for any organisation evaluating an agent payment product, w
             }
         ]
     },
+    {
+        id: "32",
+        slug: "visa-agent-score-agentic-directory",
+        title: "Visa Adds an Agent Trust Score and Directory to Its Payments Forum Announcements",
+        seoTitle: "Visa Agent Score and Agentic Directory: June 2026 Payments Forum Update",
+        category: "Agentic Payments",
+        categoryPage: "/agentic-payments",
+        relatedSlugs: ["stripe-mpp-machine-payments-protocol-agentic-commerce", "ucp-google-tech-council-governance-layer-agentic-commerce", "x402-protocol-how-machine-to-machine-payments-work"],
+        date: "2026-07-12T09:00:00Z",
+        dateModified: "2026-07-12T09:00:00Z",
+        author: "AIV Research Desk",
+        readTime: "7 min read",
+        image: "/images/insights/visa-agent-score-agentic-directory.webp",
+        imageAlt: "Secure digital payment infrastructure with verification layers representing trusted agent authentication",
+        excerpt: "Visa introduced Agent Score and Agentic Directory at its June 2026 Payments Forum, adding merchant-readiness assessment and participant verification to its agentic commerce infrastructure.",
+        content: `
+Visa [introduced Agent Score and Agentic Directory](https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22491.html) on June 10, 2026, at its annual Payments Forum, adding merchant website readiness assessment and two-way participant verification to its agentic commerce infrastructure. Agent Score, developed with New Generation, evaluates whether AI agents can navigate, understand, and complete transactions on a merchant's website. The Agentic Directory serves as a Visa-verified registry of legitimate agents and merchants, addressing the trust gap on both sides of the transaction. These tools mark Visa's shift from protocol-layer infrastructure to merchant onboarding and ecosystem trust, a necessary step as agentic commerce moves from pilot to production.
+
+## What Visa Announced at the June 2026 Payments Forum
+
+Visa's June 10 announcements centered on its **Intelligent Commerce platform**, a suite of AI, stablecoin, and token capabilities designed to support autonomous transactions. The two agentic commerce additions, [Agent Score and Agentic Directory](https://corporate.visa.com/en/sites/visa-perspectives/company-news/visa-payments-forum-showcases-intelligent-programmable-commerce.html), join Visa's existing Trusted Agent Protocol (TAP) and Agentic Ready sandbox program to form a layered infrastructure stack.
+
+Visa also announced a strategic collaboration with OpenAI to enable secure payment processing within agentic commerce experiences, leveraging Visa's network, credentialing capabilities, and security infrastructure across OpenAI's ecosystem. The collaboration was described as a partnership to "facilitate secure payment processing," though specific integration details and timelines were not disclosed.
+
+Beyond agentic commerce, Visa introduced a **Large Transaction Model**, an AI system trained on billions of transactions to enhance fraud detection while improving authorization rates and reducing false declines. Visa also disclosed that its stablecoin settlement activity had reached [an annualized run rate of approximately $7 billion as of March 2026](https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22491.html), with more than 160 stablecoin-linked card programs live or in development globally.
+
+## How Does Agent Score Evaluate Merchant Readiness?
+
+Agent Score addresses a structural bottleneck: most merchant websites were built for human shoppers, not autonomous agents. A site that functions perfectly for a human navigating visually, reading natural language copy, and tolerating ambiguous labeling can be opaque to an agent trying to parse product attributes, confirm stock availability, or locate checkout fields programmatically.
+
+Developed with **New Generation** (a partner Visa named but did not further describe), Agent Score evaluates whether AI agents can successfully navigate, understand, and complete transactions on a merchant's website. The tool is merchant-facing, positioning it as a diagnostic and preparation step before going live with agent-initiated payments. Visa has not disclosed the specific criteria Agent Score uses to assess readiness, whether it runs as an automated scan or a manual audit, or how merchants access the tool.
+
+Agent Score is a readiness diagnostic, distinct from Visa's Trusted Agent Protocol (TAP), which provides cryptographic identity verification for agents at the protocol level. TAP answers "is this agent who it claims to be?" Agent Score answers "can an agent actually complete a transaction on this site if it tries?" The first verifies identity. The second assesses infrastructure compatibility.
+
+For merchants evaluating whether to participate in agentic commerce, Agent Score offers a concrete starting point. Rather than guessing at technical requirements or waiting for failed transactions to surface gaps, merchants can run an assessment and identify specific structural issues (navigation, product data schema, checkout flow clarity) before opening their sites to agent traffic.
+
+## What Is the Agentic Directory?
+
+The Agentic Directory is a registry of agents and merchants that Visa has verified as legitimate participants in agentic commerce. The directory serves both sides of the transaction: merchants can identify which agents are trustworthy enough to transact on their sites, and agents can confirm they are interacting with legitimate merchants rather than spoofed or fraudulent endpoints.
+
+The directory operates at the participant-registry level, pre-verifying that both agents and merchants meet Visa's legitimacy criteria before they enter the ecosystem. TAP, by contrast, handles cryptographic identity at the transaction level. The Agentic Directory is the whitelist of who is allowed to participate; TAP is the real-time proof-of-identity at the point of payment.
+
+Visa has not disclosed the criteria it uses to verify participants for inclusion in the directory, the onboarding process for agents or merchants, or whether inclusion is free or carries a fee. The directory's scope (global vs regional, open vs invite-only) also remains unspecified.
+
+The bidirectional trust model is significant. Earlier agent payment frameworks focused primarily on merchant-side verification: ensuring the merchant could trust the agent. The Agentic Directory explicitly addresses the reverse: agents need to trust that the endpoint they are paying is a legitimate merchant, not a phishing site or man-in-the-middle attack. As agents transact autonomously without human confirmation at each step, the cost of a spoofed merchant endpoint is higher than in traditional commerce, where a human would likely recognize a fraudulent site before entering payment details.
+
+## How This Fits Into Visa's Broader Agentic Commerce Stack
+
+Visa's agentic commerce infrastructure now comprises four distinct layers, each addressing a different part of the transaction and trust stack:
+
+| Component | What It Does | Status |
+|-----------|--------------|--------|
+| **Trusted Agent Protocol (TAP)** | Cryptographic agent identity verification at the protocol level | [100+ partners enrolled, 30+ in sandbox, 20+ in production](https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21961.html) (Q1 2026) |
+| **Agentic Directory** | Registry of verified agents and merchants | Announced June 2026, rollout timeline not specified |
+| **Agent Score** | Merchant website readiness assessment | Announced June 2026, developed with New Generation |
+| **Agentic Ready Program** | Sandbox for testing agent-initiated payment flows | [Live UK/Europe with 20+ partners](https://investor.visa.com/news/news-details/2026/Visa-Announces-Global-Expansion-of-Agentic-Ready-Program/default.aspx), expanding to Asia Pacific/Latin America with 85+ partners targeted (April 2026) |
+| **Stablecoin Settlement** | Agent-initiated stablecoin payments on VisaNet | [$7B annualized run rate](https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22491.html) (March 2026), 160+ card programs |
+
+TAP launched in October 2025 with [12 merchant and processor partners](https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21961.html), including Adyen, Stripe, Fiserv, Shopify, and Worldpay. By Q1 2026, over 100 partners had enrolled, with more than 30 actively building in the sandbox and over 20 integrating TAP directly into production environments. Fiserv became the first major payments processor to adopt TAP at scale in January 2026, embedding TAP into its tokenization, authentication, and fraud-prevention pipelines so that any merchant on Fiserv processing inherits TAP-compliant agent payments without separate integration.
+
+The Agentic Ready Program, which allows participants to test agent-initiated payments in controlled, real-world environments using live cards and real merchants, [expanded globally on April 29, 2026](https://investor.visa.com/news/news-details/2026/Visa-Announces-Global-Expansion-of-Agentic-Ready-Program/default.aspx). The program was already live with more than 20 partners in the UK and Europe and targeted 85+ partners across Asia Pacific and Latin America for rapid rollout.
+
+Visa's stablecoin settlement layer underpins the payment side. As of March 2026, Visa had [moved billions of dollars in stablecoins across VisaNet](https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22491.html), with an annualized run rate of approximately $7 billion. More than 160 stablecoin-linked card programs were live or in development globally, and Visa expanded its supported blockchains to nine networks in April 2026, adding Arc, Base, Canton, Polygon, and Tempo to its existing settlement infrastructure.
+
+## Why a Readiness Score and Directory Matter Now
+
+Visa's June 2026 announcements signal a phase shift from building protocol infrastructure to enabling merchant adoption. TAP and the stablecoin settlement layer were infrastructure plays, solving the identity and payment-rail problems at the transaction level. Agent Score and the Agentic Directory address the onboarding and trust barriers that prevent merchants from actually going live.
+
+The merchant question is no longer "can agentic commerce work technically?" It is "is my site ready, and which agents should I allow?" Agent Score answers the first. The Agentic Directory answers the second. Without those two pieces, merchants face an uncertain adoption path: they can implement TAP and open their checkout to agents, but they have no systematic way to assess whether their site will actually function correctly or which agents to trust.
+
+The directory also addresses a trust asymmetry that the protocol layer alone cannot solve. TAP verifies an agent's cryptographic identity, but it does not tell a merchant whether that agent behaves responsibly, respects rate limits, or operates within acceptable commercial norms. A verified identity is not the same as a trustworthy participant. The Agentic Directory, by pre-vetting participants on both sides, creates a curated ecosystem rather than an open one, trading openness for lower fraud and operational risk.
+
+**For Visa, the directory positions the company as the coordinator of the agentic commerce ecosystem, not just the rails.** That is a strategic shift. Payment networks have historically been agnostic infrastructure: they process transactions but do not curate participants beyond basic compliance and fraud thresholds. A participant registry that Visa actively maintains and verifies moves the company into an ecosystem governance role, closer to how platforms like Shopify or Stripe operate than how traditional card networks have. Visa is no longer just providing the toll road. It is acting as the referee, deciding who is allowed to play.
+
+The timing is consistent with where the broader agentic commerce stack is in 2026. Multiple protocols ([OpenAI and Stripe's Agentic Commerce Protocol](https://stripe.com/docs/agents), [Google's Universal Commerce Protocol](https://developers.google.com/universal-commerce), [Coinbase and Cloudflare's x402](https://x402.org/)) are live or in production pilots. The infrastructure exists. The adoption bottleneck is no longer technical possibility but merchant readiness and trust. Agent Score and the Agentic Directory are Visa's answer to that bottleneck, delivered at the moment when merchants are asking "how do we actually do this?" rather than "is this possible?"
+`,
+        faqs: [
+            {
+                question: "What is Visa's Agent Score?",
+                answer: "Agent Score is a tool created by Visa and New Generation that evaluates whether a merchant's website is ready for AI agents to navigate, understand, and complete transactions. It assesses agentic commerce readiness before going live."
+            },
+            {
+                question: "What is the Agentic Directory?",
+                answer: "The Agentic Directory is a Visa-operated registry of verified agents and merchants. It allows merchants to identify trustworthy agents and agents to confirm they are interacting with legitimate merchants, reducing fraud and trust barriers."
+            },
+            {
+                question: "When did Visa announce Agent Score and Agentic Directory?",
+                answer: "Visa announced both tools on June 10, 2026, at its annual Payments Forum as part of its Intelligent Commerce platform updates."
+            },
+            {
+                question: "How does Agent Score differ from Visa's Trusted Agent Protocol (TAP)?",
+                answer: "TAP provides cryptographic identity verification for agents at the protocol level. Agent Score assesses whether a merchant's website structure allows agents to complete tasks successfully, which is a readiness diagnostic, not an identity layer."
+            },
+            {
+                question: "Who can access the Agentic Directory?",
+                answer: "The directory is open to agents and merchants that Visa has verified as legitimate participants in agentic commerce. Visa has not yet disclosed the verification criteria or onboarding process."
+            },
+            {
+                question: "How many partners are involved in Visa's agentic commerce initiatives?",
+                answer: "As of Q1 2026, over 100 partners were enrolled in TAP, with 30+ in sandbox testing and 20+ integrating in production. The Agentic Ready Program is live with 20+ partners in the UK and Europe, with 85+ partners targeted for Asia Pacific and Latin America expansion announced April 2026."
+            },
+            {
+                question: "What role does New Generation play in Agent Score?",
+                answer: "New Generation collaborated with Visa to develop Agent Score. The partnership focuses on merchant website readiness assessment for agentic commerce."
+            }
+        ]
+    },
 ];
