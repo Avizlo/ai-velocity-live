@@ -25,7 +25,7 @@ Every article in the `insightsData` array must include these fields:
     author: "AIV Research Desk",      // Standing byline (see Section 1a) — do not use a named/invented person
     seoTitle: "...",                  // OPTIONAL. Title tag override — must contain the searchable entity
                                        // name(s) even if the editorial H1 (`title`) differs. See Section 1b.
-    readTime: "8 min read",           // Calculate: wordCount / 250
+    readTime: "8 min read",           // Calculate: wordCount / 230 (updated 2026-07-12 per SEO review finding)
     image: "/images/insights/your-slug.webp",  // Local WebP in public/images/insights/ (see Image Requirements)
     imageAlt: "Descriptive alt text", // What the hero image shows; falls back to title if omitted
     excerpt: "...",                   // 150-160 characters, compelling summary
@@ -276,7 +276,7 @@ Every Insight article must link to a minimum of **3 primary sources** (protocol 
 - [ ] `author` is `"AIV Research Desk"` (Section 1a — do not vary this per-article)
 - [ ] `seoTitle` is set if the editorial `title` doesn't already contain the searchable entity name(s) (Section 1b)
 - [ ] `reverifyTriggers` is set for any News-pegged/event-driven article with an unresolved outcome (Section 1c)
-- [ ] `readTime` is calculated correctly (wordCount ÷ 250)
+- [ ] `readTime` is calculated correctly (wordCount ÷ 230)
 - [ ] `image` field uses local path `/images/insights/slug.webp` (NOT an external URL)
 
 ### Content Quality

@@ -3357,11 +3357,11 @@ The practical shift for publishers: audit content coverage across the plausible 
         readTime: "7 min read",
         image: "/images/insights/cross-river-stripe-bank-plumbing.webp",
         imageAlt: "Dark blue circuit board with gold traces and components representing banking infrastructure",
-        excerpt: "Cross River Bank and Stripe expanded their issuing partnership July 1, delivering the regulated bank infrastructure beneath Stripe's agent wallet: BIN sponsorship, KYC/AML compliance, and card-network membership that makes agent payments legally possible.",
+        excerpt: "Cross River Bank and Stripe expanded their issuing partnership July 1, 2026, delivering the regulated bank infrastructure beneath Stripe's agent wallet: BIN sponsorship, KYC/AML compliance, and card-network membership that makes agent payments legally possible.",
         content: `
 Cross River Bank and Stripe expanded their issuing partnership on July 1, 2026, delivering the bank-grade, regulated infrastructure beneath Stripe's agent wallet product. [Cross River now supplies](https://www.crossriver.com/newsroom/cross-river-expands-stripe-issuing-partnership-to-help-power-agentic-commerce) the banking license, KYC/AML compliance engine, BIN sponsorship, and card-network membership that makes it legally possible for an AI agent to hold and spend a restricted payment credential. This is not the same announcement as [Stripe's Link agent wallet](https://stripe.com/blog/everything-we-announced-at-sessions-2026), which launched April 29, 2026, at Sessions 2026. That was the product layer. This is the regulated plumbing underneath it.
 
-## The Product Layer Was Announced in April, This Is the Bank Plumbing Underneath It
+## How the July Announcement Differs from Stripe's April Agent Wallet
 
 Stripe announced Link's agent wallet on April 29, 2026, at Sessions 2026: [over 250 million users](https://techcrunch.com/2026/04/30/stripe-link-digital-wallet-ai-agents-shopping/), one-time-use virtual cards, Shared Payment Tokens, and user-approved spend requests. That was the merchant and consumer-facing product. Cross River's expanded partnership, announced July 1, 2026, is the bank infrastructure that makes the product legally possible: the BIN sponsorship, the compliance engine, the card-network relationships.
 
@@ -3371,17 +3371,15 @@ A fintech without a bank partner cannot issue cards. The bank layer is the gate.
 
 ## What Cross River Actually Does in This Partnership
 
-Cross River's role in this partnership is structural, not cosmetic. The bank provides:
+Cross River's role in this partnership is structural, not cosmetic. The bank provides five essential functions:
 
-**BIN Sponsorship.** Cross River sponsors the BIN, the bank identifier the card network recognises as valid. Without BIN sponsorship, the card is not a valid payment instrument.
-
-**KYC/AML Compliance.** Every agent-initiated transaction must meet Know Your Customer and Anti-Money Laundering requirements. Cross River ensures the end user (the human or corporate entity holding the wallet) is verified, and that each transaction can be traced back to that verified identity even when an agent executes the spend. KYC applies to the wallet holder, not the software agent itself, but the compliance layer must link every agent transaction to a KYC'd identity.
-
-**Card Network Relationships.** Cross River maintains direct relationships with Visa, Mastercard, and American Express. These relationships are not open-access. They are governed by network operating rules, and the bank bears responsibility for ensuring every transaction meets those rules.
-
-**Fund Holding and Settlement.** Cross River holds or extends funds and settles transactions. When an agent spends a virtual card, the money moves through Cross River's banking core.
-
-**Regulatory and Fraud Oversight.** Cross River provides real-time fraud monitoring, PCI DSS compliance, AML reporting, and regulatory oversight. The bank answers to regulators when something goes wrong.
+| Role | What It Covers | Why It Matters |
+|------|---------------|----------------|
+| **BIN Sponsorship** | Sponsors the BIN (Bank Identification Number), the identifier the card network recognises as valid | Without BIN sponsorship, the card is not a valid payment instrument. Only a licensed bank can sponsor a BIN. |
+| **KYC/AML Compliance** | Ensures the end user (the human or corporate entity holding the wallet) is verified, and that each transaction traces back to that verified identity even when an agent executes the spend | KYC applies to the wallet holder, not the software agent itself. Every agent-initiated transaction must meet Know Your Customer and Anti-Money Laundering requirements. |
+| **Card Network Relationships** | Maintains direct relationships with Visa, Mastercard, and American Express, governed by network operating rules | These relationships are not open-access. The bank bears responsibility for ensuring every transaction meets card network operating rules. |
+| **Fund Holding and Settlement** | Holds or extends funds and settles transactions through Cross River's banking core | When an agent spends a virtual card, the money moves through the bank's infrastructure, not the fintech layer. |
+| **Regulatory and Fraud Oversight** | Provides real-time fraud monitoring, PCI DSS compliance, AML reporting, and regulatory oversight | The bank is the entity that answers to regulators when something goes wrong. |
 
 ## The Scoped Virtual Card Mechanics
 
