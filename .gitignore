@@ -33,3 +33,4 @@ AI_Velocity_V3_backup_2026-03-07/
 # Local credentials — never commit
 scripts/client_secret.json
 scripts/gsc_token.json
+.vercel
