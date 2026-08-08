@@ -3263,7 +3263,7 @@ The protocol war is not over. The governance layer is settled. For merchants, th
         ]
     },
     {
-        id: "31",
+        id: "42",
         slug: "salesforce-agentic-marketing-buys-contentful",
         title: "Salesforce Gives Marketers AI Agents, Then Buys Contentful",
         seoTitle: "Agentforce Marketing: Why Salesforce's Contentful Buy Matters More",
@@ -3489,7 +3489,7 @@ The practical shift for publishers: audit content coverage across the plausible 
         ]
     },
     {
-        id: "31",
+        id: "43",
         slug: "cross-river-stripe-bank-plumbing-agent-payments",
         title: "Cross River and Stripe Build the Bank Plumbing Under Agent Payments",
         category: "Agentic Payments",
@@ -3583,7 +3583,7 @@ The practical lesson for any organisation evaluating an agent payment product, w
         ]
     },
     {
-        id: "32",
+        id: "44",
         slug: "visa-agent-score-agentic-directory",
         title: "Visa Adds an Agent Trust Score and Directory to Its Payments Forum Announcements",
         seoTitle: "Visa Agent Score and Agentic Directory: June 2026 Payments Forum Update",
@@ -3690,7 +3690,7 @@ The timing is consistent with where the broader agentic commerce stack is in 202
         ]
     },
     {
-        id: "31",
+        id: "45",
         slug: "cloudflare-monetization-gateway-lets-sites-charge-ai-agents",
         title: "Cloudflare's Monetization Gateway Lets Any Site Charge AI Agents to Crawl It",
         seoTitle: "Cloudflare Monetization Gateway: Charge AI Agents Via x402 Protocol",
@@ -3834,7 +3834,7 @@ The broader pattern is clear regardless of Cloudflare's specific terms. The inte
         ]
     },
     {
-        id: "32",
+        id: "46",
         slug: "google-business-agent-for-leads-search-ads-ai-conversations",
         title: "Google's Business Agent for Leads Turns Search Ads Into AI Conversations",
         category: "Agentic Marketing",
@@ -3981,7 +3981,7 @@ Marketers who want to prepare should focus on three areas:
         ]
     },
     {
-        id: "32",
+        id: "47",
         slug: "fox-advertising-agentic-platform-linear-tv",
         title: "FOX Advertising Launches Industry's First End-to-End Agentic Advertising Platform",
         seoTitle: "FOX Advertising Launches Industry's First End-to-End Agentic Advertising Platform in 2026",
