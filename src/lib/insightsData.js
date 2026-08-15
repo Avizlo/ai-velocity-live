@@ -1,5 +1,264 @@
 export const insightsData = [
     {
+        id: "48",
+        slug: "what-is-agentic-commerce",
+        title: "What Is Agentic Commerce? The 2026 Definition and Stack",
+        category: "Agentic Commerce",
+        categoryPage: "/agentic-commerce",
+        relatedSlugs: ["what-agentic-payments-are-why-every-commerce-platform-building-one", "ucp-google-tech-council-governance-layer-agentic-commerce", "what-agentic-marketing-is-and-what-it-replaces"],
+        date: "2026-08-08T09:00:00Z",
+        dateModified: "2026-08-08T09:00:00Z",
+        author: "AIV Research Desk",
+        seoTitle: "What Is Agentic Commerce? Definition, Protocols and Data (2026)",
+        readTime: "9 min read",
+        image: "/images/insights/what-is-agentic-commerce.webp",
+        imageAlt: "Network patch panel and cabling lit in green inside a dark server rack, representing the infrastructure layer beneath agentic commerce",
+        excerpt: "Agentic commerce is commerce where an AI agent, not a person, buys. The working definition, the five competing protocols, and the numbers actually measured.",
+        reverifyTriggers: [
+            "Any of the five protocols (ACP, AP2, UCP, MPP, x402) merges, is deprecated, or changes governance body",
+            "Adobe publishes a newer quarterly AI Traffic Report superseding the Q2 2026 figures",
+            "A major retailer or marketplace publicly reports agent-completed transaction volume as a share of total sales"
+        ],
+        content: `**Agentic commerce is commerce in which an AI agent, acting for a buyer, completes the transaction itself.** Not a chatbot that recommends a product and hands you to a checkout page. An agent that selects, authorises payment, and buys, while the human sets the intent and the limits. That single shift, from software that advises to software that transacts, is what separates agentic commerce from twenty years of ecommerce personalisation, and it is why every payment network and commerce platform spent 2026 shipping protocols for it.
+
+    The term is used loosely, and most definitions on the web are written to sell something. This piece sets out a working definition, the five protocols competing to become the plumbing, and the honest state of the evidence, including which widely-quoted numbers are worth nothing.
+
+    ## What Makes Commerce "Agentic"
+
+    Three conditions have to hold. Remove any one and you have ordinary automation.
+
+    **The agent acts with delegated authority.** The buyer grants scope in advance, such as a budget, a merchant set, or a category, and the agent operates inside it without asking again per purchase. This is the legal and practical core: someone must be able to say what the agent was permitted to do.
+
+    **The agent transacts machine-to-machine.** No human fills a form. The agent reads product data, negotiates or accepts terms, and presents payment credentials through an interface built for software, not for eyes.
+
+    **The merchant can tell it is an agent, and treats it accordingly.** This is the condition most commentary skips. A site that cannot distinguish an authorised buying agent from a scraper will either block legitimate revenue or accept fraud. Agent identity is not a nice-to-have layer on top; it is a precondition for the other two.
+
+    **Agentic commerce is therefore best understood as an identity and authorisation problem wearing a shopping-cart costume.** The retail experience is the visible part. The hard part is proving who the agent is, what it was allowed to do, and who is liable when it does something else.
+
+    ## The Five Protocols, and Who Controls Each
+
+    Five specifications now claim some part of the stack. They are not straightforwardly competitors: some cover discovery and checkout, others cover payment authorisation, and one covers machine-to-machine settlement at the HTTP layer. Governance matters as much as the specification, because a protocol controlled by one company is a dependency, and a protocol under a neutral foundation is infrastructure.
+
+    | Protocol | Origin | Layer it covers | Governance as of August 2026 |
+    |---|---|---|---|
+    | **ACP** (Agentic Commerce Protocol) | OpenAI and Stripe | Product discovery and agent checkout | Company-led, published as an open spec |
+    | **AP2** (Agent Payments Protocol) | Google | Payment authorisation via signed mandates | Google-led, multi-partner |
+    | **UCP** (Universal Commerce Protocol) | Google and partners | End-to-end journey: discovery, purchase, post-purchase | Open standard with a technical council |
+    | **MPP** (Machine Payments Protocol) | Stripe | Machine-to-machine payment for API and compute usage | Stripe-led |
+    | **x402** | Originally Coinbase | HTTP-native payments using the dormant 402 status code | **Linux Foundation**, transferred July 2026 |
+
+    The x402 transfer is the one structural change worth watching. On 14 July 2026 the [Linux Foundation announced the operational launch of the x402 Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-operational-launch-of-x402-foundation-to-standardize-internet-native-payments-for-ai-agents-and-applications), with Coinbase formally handing over the protocol and forty organisations joining as members. The premier roster includes Visa, Mastercard, American Express, Stripe, Adyen, Fiserv, Google, Amazon Web Services, Cloudflare, Circle, Ripple and Shopify. When every major card network and processor sits inside the same neutral body, that body is no longer an experiment.
+
+    **AP2 is worth understanding in detail** because it addresses the authority problem directly. [Announced by Google in September 2025 with more than sixty launch partners](https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol) including Mastercard, PayPal, Coinbase and American Express, it carries three signed mandates as W3C Verifiable Credentials: an Intent mandate, in which the user authorises the agent to shop; a Cart mandate, in which the agent confirms exactly what it is buying; and a Payment mandate presented at settlement.
+
+    That design answers the liability question more directly than most coverage acknowledges. Each mandate is cryptographically signed and passed between parties as a verifiable object, which produces a non-repudiable audit trail for every transaction. If an agent buys the wrong thing, the dispute is settled by reading the chain of mandates to establish whether the agent exceeded its granted scope, rather than by argument between merchant, issuer and customer. **Whether that record is legally sufficient in any given jurisdiction is untested, and merchants should not assume a signed mandate transfers liability to the buyer.** The protocol makes the evidence available; it does not settle who is responsible.
+
+    UCP is the broadest of the five. Google describes it in its [January 2026 commerce announcement](https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/) as an open standard covering the entire shopping journey, from discovery and buying through to post-purchase support, and compatible with the existing A2A and MCP agent protocols.
+
+    ## The Numbers Worth Quoting, and the Ones That Are Not
+
+    Search "agentic commerce market size" and you will find forecasts. Treat almost all of them as noise. For 2026 alone, published estimates include $7.7 billion (Grand View Research), $60.43 billion (Mordor Intelligence), and a trajectory starting at $547 million (SANBI). These are not refinements of one another. They disagree by two orders of magnitude for the same calendar year, which means they are measuring different things under the same label, and none of them is measuring transactions completed by agents.
+
+    **A forecast that spans two orders of magnitude is not a forecast. It is a definition dispute with a dollar sign attached.** Any article, vendor deck or strategy memo that leads with one of these figures and does not name the definition behind it is telling you nothing.
+
+    The numbers that are worth something come from platforms measuring their own traffic, because they are counting observed events rather than projecting a category.
+
+    Adobe Analytics, drawing on its own platform data from US retailers, reported in its Q2 2026 AI Traffic Report that AI-referred traffic to US retail sites grew **393% year over year in the first quarter of 2026**, and that by March 2026 this traffic converted **42% better** than non-AI sources, having converted worse than non-AI traffic a year earlier ([analysis via Search Engine Journal](https://www.searchenginejournal.com/lessons-learned-from-adobes-2026-q2-ai-traffic-report/574176/)). Adobe also reports revenue per visit 37% higher, time on site up 48%, and pages per visit up 13%.
+
+    **Two caveats belong with those figures.** They are Adobe's own platform data, covering retailers running on Adobe, not an independent census. And Adobe published the report alongside a product it sells to fix the visibility problem the report describes. The numbers are the best available on this question and the direction is almost certainly right; the vendor interest is real and should be stated rather than laundered.
+
+    Note what that data does and does not say. It measures humans arriving at retail sites *from* AI assistants. It does not measure agents completing purchases autonomously. The honest position in August 2026 is that **assisted discovery is measurable and growing fast, while fully autonomous agent purchasing remains largely pre-revenue**. Anyone claiming otherwise should be asked for their instrument.
+
+    ## What Merchants Actually Have To Change
+
+    The infrastructure question is not "which protocol do we adopt". Most merchants will end up supporting several, through their platform, without writing protocol code. The question is whether the store is legible to software at all.
+
+    **Product data becomes the constraint.** An agent comparing three products cannot infer from a photograph. It needs accurate stock counts, current pricing, materials, dimensions, delivery windows and return terms as structured data. Catalogues that were merely adequate for human browsing, where the size chart is an image and the fabric composition sits in a PDF, are invisible to an agent. Adobe's own framing of its Q1 data was that retail sites are lagging precisely because they are not machine-readable.
+
+    **Agent identity has to be handled deliberately.** Blocking all non-human traffic is now a revenue decision, not a security default. Visa's Agent Score and agentic directory work, and the Know Your Agent frameworks emerging alongside, exist because merchants need a way to distinguish an authorised buying agent from a hostile bot.
+
+    **Checkout has to survive without a human.** Every step that assumes eyes on a screen, such as an interstitial upsell, a cookie banner blocking the flow, or a CAPTCHA, is a point where an agent transaction fails silently.
+
+    ## Agentic Commerce Versus Adjacent Terms
+
+    The vocabulary is muddled, and precision here is genuinely useful.
+
+    - **Agentic commerce** is the transaction layer: an agent buys.
+    - **Agentic payments** is the settlement layer beneath it: how value moves and who is liable when an agent authorises a charge.
+    - **Conversational commerce** is the previous generation: a human buys through a chat interface. The human is still the buyer.
+    - **Agentic marketing** is the demand side: agents planning and running campaigns rather than executing purchases.
+
+    The distinction between the first two matters commercially, because they are being solved by different companies with different incentives. Commerce platforms are building discovery and checkout. Card networks, processors and banks are building authorisation and settlement. **These two groups are not collaborating toward one stack; they are each trying to own the layer that sets the rules.** A merchant needs both halves, they are unlikely to arrive from the same vendor, and the integration gap between them is where the cost lands. Plan for fragmentation rather than for a winner.
+
+    ## Where This Goes Next
+
+    The protocol layer will consolidate, and the x402 transfer to the Linux Foundation is the template for how. Standards that stay under single-company control become dependencies that competitors route around; standards that move to neutral governance attract the whole industry, as the forty-member roster shows.
+
+    The measurement layer is further behind than the protocol layer. There is currently no widely accepted public metric for "transactions completed by an agent", which is why the market-size forecasts diverge so wildly. Expect that to be the next thing the industry builds, and expect the first credible number to be considerably smaller than the forecasts imply.
+
+    For merchants, none of this argues for waiting. The work that pays off regardless of which protocol wins, namely structured product data, a deliberate agent-identity policy, and a checkout that does not assume a human, is the same work in every scenario.`,
+        faqs: [
+            {
+                question: "What is agentic commerce in simple terms?",
+                answer: "Agentic commerce is when an AI agent completes a purchase on a person's behalf, rather than just recommending products. The buyer sets the intent and the limits, such as a budget or approved merchants, and the agent selects, authorises and pays inside those limits."
+            },
+            {
+                question: "How is agentic commerce different from conversational commerce?",
+                answer: "In conversational commerce a human still makes the purchase, using a chat interface instead of a web form. In agentic commerce the software performs the transaction itself under delegated authority. The difference is who executes the buy, not what the interface looks like."
+            },
+            {
+                question: "What protocols are used for agentic commerce?",
+                answer: "Five specifications cover different layers as of August 2026: ACP from OpenAI and Stripe for discovery and checkout, Google's AP2 for payment authorisation via signed mandates, UCP for the end-to-end journey, Stripe's MPP for machine-to-machine payments, and x402 for HTTP-native payments. x402 moved to Linux Foundation governance in July 2026."
+            },
+            {
+                question: "Is agentic commerce actually happening yet, or is it hype?",
+                answer: "Assisted discovery is real and measurable. Adobe Analytics reported AI-sourced traffic to US retail sites grew 393% year over year in Q1 2026, converting 42% better than non-AI traffic. Fully autonomous agent purchasing is much earlier, and there is no widely accepted public metric for transactions completed by agents, which is why market forecasts for 2026 range from $547 million to over $60 billion."
+            },
+            {
+                question: "What do merchants need to do to support agentic commerce?",
+                answer: "Three things matter more than protocol choice. Publish accurate structured product data including stock, price, materials and delivery terms, because agents cannot infer from photographs. Decide deliberately how to identify and admit legitimate buying agents rather than blocking all non-human traffic. Remove checkout steps that assume a human is watching the screen."
+            },
+            {
+                question: "What is the difference between agentic commerce and agentic payments?",
+                answer: "Agentic commerce is the transaction layer, covering how an agent discovers products and completes a purchase. Agentic payments is the settlement layer beneath it, covering how value moves, how the agent proves it was authorised, and who is liable for a disputed charge. Commerce platforms are building the first; card networks, processors and banks are building the second."
+            },
+            {
+                question: "Why do agentic commerce market size estimates vary so much?",
+                answer: "Because they measure different things under the same name. Published 2026 estimates include $7.7 billion from Grand View Research, $60.43 billion from Mordor Intelligence, and a trajectory beginning at $547 million from SANBI. None of them counts transactions actually completed by agents, so treat any strategy that rests on one of these figures with caution."
+            }
+        ]
+    },
+    {
+        id: "49",
+        slug: "what-is-answer-engine-optimization",
+        title: "What Is Answer Engine Optimization? The Evidence in 2026",
+        category: "Agentic AEO",
+        categoryPage: "/agentic-aeo",
+        relatedSlugs: ["google-ai-overviews-citations-fell-76-to-38-percent", "schema-markup-is-not-optional-the-aeo-technical-checklist", "what-is-agentic-commerce"],
+        date: "2026-08-08T11:00:00Z",
+        dateModified: "2026-08-08T11:00:00Z",
+        author: "AIV Research Desk",
+        seoTitle: "What Is Answer Engine Optimization (AEO)? Definition and Evidence",
+        readTime: "8 min read",
+        image: "/images/insights/what-is-answer-engine-optimization.webp",
+        imageAlt: "A darkened library interior with tall shelves of books running toward a bright glazed wall, representing retrieval of source material",
+        excerpt: "Answer engine optimization means structuring content so AI assistants cite it. Most AEO advice is untested. Here are the tactics with measured evidence.",
+        reverifyTriggers: [
+            "A larger-sample replication or rebuttal of the Princeton GEO study is published",
+            "Similarweb publishes updated ChatGPT citation-rate data superseding the May 2026 figures",
+            "Google, OpenAI or Anthropic publishes official guidance on how content is selected for citation"
+        ],
+        content: `**Answer engine optimization, or AEO, is the practice of structuring content so that AI assistants cite it when answering a question.** The target is not a ranking position. It is being the source an answer engine quotes, links, or names when someone asks ChatGPT, Gemini, Perplexity or Google's AI Mode about your subject. The discipline exists because a growing share of queries now end in a generated answer rather than a list of blue links, and a page that is never cited in that answer is invisible regardless of where it ranks.
+
+    That is the definition, and it is the easy part. The harder question is which AEO tactics actually work, where the honest answer is uncomfortable: **most published AEO advice has never been tested against anything.** This piece separates the small body of measured evidence from the much larger body of confident assertion, and names one widely-sold tactic whose justification Google switched off in May 2026.
+
+    ## AEO, GEO, LLMO: The Same Thing With Different Labels
+
+    The vocabulary proliferated faster than the practice.
+
+    - **AEO** (answer engine optimization) is the most common term in commercial use.
+    - **GEO** (generative engine optimization) is the term used in the academic literature, originating with the paper that produced most of what we actually know.
+    - **LLMO** and "AI SEO" are marketing coinages for the same activity.
+
+    There is no meaningful methodological difference between them. Anyone selling GEO as a distinct discipline from AEO is selling a label. This piece uses AEO throughout and cites the GEO literature, because that is where the measurement happened.
+
+    ## What Is Actually Measured
+
+    Four sources carry nearly all of the reliable evidence. Everything else in circulation is inference from these, or assertion with nothing behind it.
+
+    | Finding | Figure | Source | What it establishes |
+    |---|---|---|---|
+    | Adding statistics and authoritative quotations lifts citation rate | Up to 40% relative improvement | [Princeton and IIT Delhi GEO study](https://arxiv.org/abs/2311.09735), ACM SIGKDD 2024, 10,000 queries across 8 domains | The only controlled experiment on citation tactics |
+    | ChatGPT now cites sources far more often than a year ago | US citation rate rose from ~1.6% (June 2025) to ~6.8% (May 2026) | [Similarweb](https://www.similarweb.com/blog/marketing/geo/gen-ai-stats/), from its own traffic panel | The citation surface is expanding, not closing |
+    | Citation rates vary enormously by sector | Travel and hospitality ~23%; professional services under 4% | Similarweb, from its own traffic panel | Sector, not tactics, may dominate outcomes |
+    | Citations mostly pay off without a click | AI recommendations make users ~2.5x more likely to reach a brand via branded search | Similarweb, from its own traffic panel | The payoff is largely invisible to referral analytics |
+    | AI-sourced traffic converts better than other channels | 42% better than non-AI traffic by March 2026, reversed from 38% worse a year earlier | [Adobe Analytics Q2 2026 AI Traffic Report](https://business.adobe.com/blog/ai-traffic-surge-retail-sites-not-machine-readable), over one trillion US retail visits | Citations are commercially worth pursuing |
+
+    **The Princeton study is the load-bearing item and deserves care.** Aggarwal and colleagues tested content modifications across 10,000 queries and found that the strategies producing the largest measured lift were adding relevant statistics and adding quotations from authoritative sources. The headline "40%" is a maximum on a position-adjusted word count metric, not an average, and not a promise. It remains the strongest evidence in the field, which says as much about the field as it does about the study.
+
+    ## The Tactic Google Killed, That the Industry Still Sells
+
+    The clearest illustration of how much AEO advice runs on folklore is FAQ schema.
+
+    For years, adding FAQPage structured data was standard advice, justified by the expandable FAQ rich results it produced in Google's search listings. **Those rich results stopped appearing on 7 May 2026.** Google removed the FAQ search appearance and rich result report, dropped support from the Rich Results Test in June 2026, and removed Search Console API support in August 2026, [adding a line to its own documentation](https://developers.google.com/search/blog/2023/08/howto-faq-changes) stating that FAQ rich results no longer appear in Search. No blog post, no explanation.
+
+    The advice did not change. A great deal of AEO guidance published since May 2026 still recommends FAQ schema, and still justifies it by the rich results that no longer exist.
+
+    **Here is the nuance that matters, because the conclusion is not "stop writing FAQs".** The evidence points to the content shape doing the work, not the markup. Answer engines extract clean, self-contained question-and-answer pairs whether or not schema wraps them. So FAQ sections remain worth writing, for a completely different reason than the one everyone was given. Keep the FAQPage markup if you have it, since it is a valid Schema.org type and Google confirms unused structured data causes no harm. Just stop justifying the work with a lever that was switched off.
+
+    **The general rule this illustrates: if you cannot name the mechanism by which a tactic works, you are following folklore.** Applied honestly, that test removes a large fraction of published AEO checklists.
+
+    ## What The Evidence Supports Doing
+
+    Five practices survive the test. Each has either measured evidence or a mechanism you can state plainly.
+
+    **Put the answer first, in the first paragraph.** An answer engine extracting a passage needs one that stands alone. A paragraph that begins with scene-setting gives it nothing liftable. This follows directly from how retrieval works: content is chunked and embedded, and a chunk that depends on the paragraph above it loses its meaning when returned by itself.
+
+    **Include statistics with named sources.** This is the single strongest finding in the Princeton study, and it is cheap to do. An unattributed number is weaker than an attributed one, and an invented one is a liability.
+
+    **Quote authoritative sources directly.** The second strongest finding. Quotation gives the answer engine something to carry verbatim with attribution already attached.
+
+    **Write definitions in "X is Y" form.** Explicit definitional sentences get extracted as answers because they map exactly onto the question shape. "Answer engine optimization is the practice of structuring content so that AI assistants cite it" is retrievable; "in today's evolving search landscape, brands must consider..." is not.
+
+    **Make each section self-contained.** Re-state the entity rather than relying on a pronoun that refers back three paragraphs. This is the same answer-first discipline applied at section level rather than only at the top of the page, and it is the most commonly skipped step.
+
+    **Before any of that, check the engines can read the page at all.** Extraction depends on ingestion, and this is the step most AEO checklists assume rather than verify. If robots.txt blocks GPTBot, Google-Extended, ClaudeBot or PerplexityBot, none of the tactics above can help, because the content is never retrieved. The same applies to content that only appears after client-side JavaScript execution, which some crawlers will not wait for. **Bot access is not an AEO tactic, it is the precondition for every AEO tactic**, and it takes two minutes to check.
+
+    ## What The Evidence Does Not Support
+
+    **Schema volume.** There is no measured evidence that adding more structured data types increases citation. Accuracy matters; quantity is unevidenced.
+
+    **Keyword density in any form.** Retrieval operates on embeddings, not term frequency. The mechanism that made keyword density matter for classic search does not exist here.
+
+    **"Optimising for each engine separately."** The engines draw on overlapping corpora and similar retrieval architectures. There is no published evidence of engine-specific tactics that outperform writing well-structured, well-sourced content once.
+
+    **Any promised citation rate.** Note the Similarweb sector spread: travel and hospitality at roughly 23%, professional services under 4%. If sector variance is that wide, an agency quoting you a target citation rate without knowing your sector is guessing.
+
+    ## The Uncomfortable Structural Point
+
+    AEO has a measurement problem that SEO does not. In search, rank is observable: you can look it up. In AEO, whether you were cited depends on the prompt, the engine, the day, and the user's context, and none of that is in your logs. Answer engines send comparatively little referral traffic, so analytics understate the effect badly.
+
+    Similarweb's finding that AI recommendations make users roughly 2.5 times more likely to reach a brand through branded search, rather than through a referral link, is the crux. **The mechanism by which AEO pays off is largely invisible to the tools most organisations use to measure it.** A brand can be cited constantly and see almost nothing in its referral reports. The realistic outcome of good AEO is not a traffic spike; it is being present in the answer, and then being searched for by name later. You are optimising for mindshare inside the chat interface, and accepting that most of it will never produce a click you can attribute.
+
+    The practical consequence is that measurement has to be built rather than read off a dashboard. What it requires: a fixed set of prompts representing how buyers actually ask about your category, run against each engine on a repeating schedule, with the generated answers parsed for brand mentions and cited URLs, stored as a time series. The engines are non-deterministic, so a single check tells you almost nothing; the denominator is days sampled, not answers. Without that, you cannot distinguish work that is succeeding invisibly from work that is not succeeding at all, and you will be tempted to judge AEO by the one number it was never going to move.
+
+    ## Where To Start
+
+    Audit one page you want cited. Check three things in order. Does the first paragraph answer the question by itself, without the heading? Does each section stand alone if extracted? Does every factual claim carry a named source at the point it is made?
+
+    That sequence covers the tactics with actual evidence behind them, and it takes an afternoon. It is a better use of the time than another pass over structured data.`,
+        faqs: [
+            {
+                question: "What is answer engine optimization (AEO)?",
+                answer: "Answer engine optimization is the practice of structuring content so AI assistants such as ChatGPT, Gemini, Perplexity and Google's AI Mode cite it when answering questions. The goal is being named or quoted in the generated answer, rather than ranking in a list of links."
+            },
+            {
+                question: "What is the difference between AEO, GEO and LLMO?",
+                answer: "There is no meaningful methodological difference. AEO is the common commercial term, GEO (generative engine optimization) is the term used in academic research, and LLMO and 'AI SEO' are marketing coinages for the same activity. Anyone selling them as distinct disciplines is selling a label."
+            },
+            {
+                question: "Does AEO actually work, and is there evidence?",
+                answer: "There is limited but real evidence. The Princeton and IIT Delhi GEO study tested content changes across 10,000 queries and found that adding statistics and authoritative quotations produced the largest citation lift, up to 40% relative improvement on its metric. Most other published AEO advice has never been tested."
+            },
+            {
+                question: "Is FAQ schema still worth adding for AEO?",
+                answer: "Write the FAQ section, but not for the reason usually given. Google stopped showing FAQ rich results on 7 May 2026 and removed Search Console API support in August 2026, so the rich-snippet justification no longer exists. The extractable question-and-answer content shape still helps answer engines; the markup itself is harmless to keep but is not the active ingredient."
+            },
+            {
+                question: "How is AEO different from SEO?",
+                answer: "SEO optimises for position in a ranked list of pages, which is directly observable. AEO optimises for being cited inside a generated answer, which depends on the prompt, the engine and the user's context, and largely does not appear in referral analytics. The tactics overlap, but the measurement problem is fundamentally different."
+            },
+            {
+                question: "How do you measure AEO results?",
+                answer: "Not with standard analytics. Answer engines send comparatively little referral traffic, and Similarweb found AI recommendations make users about 2.5 times more likely to arrive through branded search rather than a referral link. Measuring AEO requires a tool that tracks citations directly across engines over time, sampled repeatedly rather than as a one-off snapshot."
+            },
+            {
+                question: "What should I do first to improve AEO on a page?",
+                answer: "Check three things in order. Does the opening paragraph answer the question standing alone, without the heading? Does each section still make sense if extracted by itself, with entities named rather than referred to by pronoun? Does every factual claim carry a named source at the point of the claim? Those three cover the tactics with measured evidence behind them."
+            }
+        ]
+    },
+    {
         id: "31",
         slug: "what-agentic-payments-are-why-every-commerce-platform-building-one",
         title: "What Agentic Payments Are and Why Every Commerce Platform Is Building One",
