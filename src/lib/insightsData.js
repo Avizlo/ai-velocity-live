@@ -4737,4 +4737,149 @@ The third is the one worth planting a flag on. x402 becomes infrastructure rathe
         }
     ]
 },
+{
+    id: "50",
+    slug: "anthropic-open-sources-claude-commerce-agents",
+    title: "Anthropic Open-Sourced the Commerce Agent, Not the Checkout",
+    seoTitle: "Claude Commerce Agents: Anthropic's Open-Source Shopping and Merchant Agent Blueprint",
+    category: "Agentic Commerce",
+    categoryPage: "/agentic-commerce",
+    relatedSlugs: [
+        "ucp-google-tech-council-governance-layer-agentic-commerce",
+        "the-settlement-layer-is-live",
+        "x402-foundation-linux-foundation-coinbase-transfer"
+    ],
+    date: "2026-09-02T17:00:00Z",
+    dateModified: "2026-09-02T17:00:00Z",
+    author: "AIV Research Desk",
+    readTime: "8 min read",
+    image: "/images/insights/anthropic-open-sources-claude-commerce-agents.webp",
+    imageAlt: "Claude AI wordmark on a pale background surrounded by line-drawn network nodes and hands",
+    excerpt: "Anthropic released working shopping and merchant agents under Apache 2.0. It shipped the guardrails and refused to ship checkout, and that refusal is the story.",
+    content: `Anthropic gave away the commerce agent and kept its hands off the checkout. **Claude Commerce Agents**, published on 2 September 2026 under Apache 2.0 at [github.com/anthropics/commerce-agents](https://github.com/anthropics/commerce-agents), ships two complete reference agents, four runnable vertical implementations and a documented enforcement layer. It ships no payment path at all: nothing in the repository places an order, charges a card, or changes a live listing. Every agentic commerce standard of the past eighteen months has fought over how money moves between an agent and a merchant. Anthropic skipped that fight and released the parts nobody had open-sourced, which are the agent standing in front of the catalogue and the agent standing behind it.
+
+## What Anthropic Actually Released
+
+The repository is a reference blueprint, not a product. It contains two agents, each with five skill flows, and four vertical implementations built against a fictional "ACME" backend.
+
+The **shopping agent** is customer-facing. It searches and compares products, assembles multi-item requests, builds carts, remembers customer preferences, and answers order, returns and policy questions. Anthropic's [announcement](https://claude.com/blog/claude-for-commerce-agents) states its guardrails constrain suggestions to actual catalogue data and rule out manipulative upsell tactics.
+
+The **merchant agent** is staff-facing. It explains performance, maintains product listings, responds to inventory and order alerts, recommends pricing and promotions, and drafts marketing campaigns. Every write it produces is staged for human approval rather than applied.
+
+| Element | What ships | Notes |
+|---|---|---|
+| Shopping agent | 5 skill flows | Search, comparison, purchase planning, cart, order and policy Q&A |
+| Merchant agent | 5 skill flows | Performance, listings, inventory alerts, pricing and promotions, campaign drafting |
+| Retail (ACME) | Runnable demo | Standard ecommerce catalogue |
+| Travel (ACME Travel) | Runnable demo | Date-bound inventory |
+| Telecom (ACME Mobile) | Runnable demo | Plan matrices, regulated fees |
+| Entertainment (ACME Tickets) | Runnable demo | Timed holds, waitlists, venue maps |
+| Checkout | Not included | No order placement, no card charge, no live listing change |
+
+Three build paths are supported: the Messages API as the reference implementation, the Agent SDK where the SDK manages the loop, and Claude Managed Agents in beta calling a merchant's own MCP server. The code is Python 3.11 and Node 22, and it deploys on the Claude API, Amazon Bedrock, Microsoft Foundry and Google Cloud Vertex AI. Anthropic names Shopify, Priceline, Accenture, Mastercard and Visa as collaborators on implementation and merchant enablement.
+
+The repository states plainly that it is a reference implementation, is not maintained, and does not accept contributions. That framing matters to anyone planning to depend on it.
+
+## Why Stopping Short of Checkout Is the Deliberate Part
+
+Checkout is the most contested square metre in agentic commerce, and the contest has already produced one public retreat. OpenAI launched Instant Checkout inside ChatGPT with Stripe in late 2025, then [retired it in March 2026](https://www.digitalcommerce360.com/2026/03/06/openai-shifts-checkout-plans-agentic-commerce-strategy/), roughly six months later, repositioning ChatGPT toward discovery and handing the purchase step back to the merchant's own environment. The underlying **Agentic Commerce Protocol**, co-developed with Stripe and released under Apache 2.0, survived as a discovery-and-feed standard rather than a checkout rail.
+
+The checkout question has fragmented further since. Google's **Universal Commerce Protocol** took the coalition governance route, Perplexity shipped Instant Buy, and the settlement layer beneath all of it has been assembling separately through Visa, Mastercard, Stripe and the x402 Foundation.
+
+Against that background, an open-source blueprint that carries a cart to the edge of checkout and then stops is not an incomplete product. It is a bet that the transaction rail will be somebody else's standard, and that the durable engineering work sits on either side of it. A merchant who adopts this blueprint keeps the freedom to bolt on whichever checkout protocol wins, because the blueprint never assumed one.
+
+## The Interesting File Is SAFETY.md
+
+Most coverage of this release will lead with the shopping agent. The reusable asset is the layer underneath it.
+
+The repository documents five enforcement mechanisms: **fencing**, **provenance gates**, **caps**, **memory validation**, and the **merchant approval gate**. Grounding rules constrain what the agent may assert, and analysis budgets cap merchant-side computation.
+
+The architectural detail worth copying is where those checks live. They run inside the tool call, not in the system prompt, and they hold identically across all three build paths. In practice that means the constraint is ordinary code inside the Python tool function, executed before the backend is touched, rather than an instruction the model is asked to respect. Backend methods call the merchant's service server-side using a credential the host holds, so the model reads only the result and never sees the secret. A prompt-level rule has to be restated on every path and can be argued with; a check compiled into the tool call cannot.
+
+That distinction answers the question merchant engineering teams actually ask, which is not "can an agent recommend a jacket" but "what stops it inventing a product, quoting a price we do not honour, or writing to a live listing at 2am."
+
+The contrarian read is that the ACME demo is the disposable part of this release and the safety module is the part worth reading even by teams that never run the code. A commerce agent built on a different model entirely can lift the enforcement pattern, the staged-write approval gate and the provenance discipline, and discard the rest. Anthropic has effectively published a list of the failure modes it has already hit in production, dressed as a demo.
+
+Two limitations are stated in the repository and belong in any evaluation: the examples ship with no authentication, and the MCP servers bind to loopback. This is scaffolding for a build, not a deployable storefront.
+
+## How Far Is This From Production?
+
+Anthropic frames the blueprint as getting a commerce agent running in days. The repository's own stated gaps put a more honest unit on the work.
+
+Adoption means implementing two backend interfaces against real systems. \`StorefrontBackend\` covers catalogue, cart, order and policy services. \`MerchantBackend\` covers analytics, catalogue, inventory, pricing and campaign services. The realistic scope of a deployment is therefore the count of interface methods a merchant cannot currently implement, because each one is either an integration or a data problem that predates the agent. On top of that sit authentication, which the examples omit entirely, and hosting for MCP servers that currently bind to loopback.
+
+The argument for starting here rather than from a generic agent framework is the vertical examples. Date-bound inventory, regulated fee disclosure, timed holds and waitlists are the edge cases that break naive commerce agents, and they are already modelled. A team building from scratch discovers that list by shipping bugs.
+
+## Where This Sits in the Stack
+
+| Layer | Who is standardising it | Status, September 2026 |
+|---|---|---|
+| Discovery and feeds | OpenAI and Stripe, via ACP | Open source, discovery-first after the March 2026 checkout retreat |
+| Checkout and cart | Google UCP, Perplexity Instant Buy | Contested, no single winner |
+| Settlement and trust | Visa, Mastercard, Stripe, x402 Foundation | Consolidating around neutral governance |
+| Agent harness and guardrails | Anthropic, via Claude Commerce Agents | First open reference implementation |
+
+The harness row was the empty one until this week. That is the significance of the release. Not that Anthropic built a shopping agent, but that the merchant-side implementation pattern is now a public artefact rather than a competitive secret held inside a handful of retail engineering teams.
+
+## What the Performance Numbers Do and Do Not Say
+
+Anthropic's announcement claims retailers running shopping agents on Claude have seen "carts up to 35% larger and shoppers 60% more likely to complete a purchase." Angela Jiang, Anthropic's head of product for the Claude platform, gave [Reuters](https://www.thestar.com.my/tech/tech-news/2026/09/03/anthropic-launches-ai-agent-blueprints-for-retailers-ahead-of-holiday-shopping-season-) a narrower version on the same day: "cart size up about 30-35% for one partner, and customers [are] about 60% more likely to complete a purchase."
+
+Read the two together and the claim shrinks. It is vendor-reported, anchored to a single unnamed partner, with no stated baseline, no timeframe and no control group. "Up to 35%" and "about 30-35% for one partner" are not the same sentence, and the second is the honest one.
+
+Independent measurement of the surrounding phenomenon exists and is more useful. Adobe Digital Insights reported that AI-referred traffic to US retail sites [grew 393% year on year in Q1 2026](https://techcrunch.com/2026/04/16/ai-traffic-to-us-retailers-rose-393-in-q1-and-its-boosting-their-revenue-too/), and that by March 2026 that traffic converted 42% better than non-AI sources, with revenue per visit 37% higher. A year earlier, in March 2025, the same traffic converted 38% worse. Adobe also measured a 693% year-on-year rise in AI traffic across the November to December 2025 holiday period.
+
+The direction of travel is corroborated across sources. The specific uplift a given merchant should expect from a given blueprint is not, and no business case should rest on the vendor figure. The two series also measure different things at different grains: Adobe counts sessions arriving at a retail site from an AI surface, while Anthropic's figures describe behaviour inside an agent-mediated session. They do not add together.
+
+## The Ten Weeks Before Peak Trading
+
+The release timing is not subtle. Reuters framed it against the holiday shopping season, and a merchant reading this in early September has roughly ten weeks.
+
+The first thing to audit is not the agent. It is whether the catalogue can survive being read by one. The failure in agentic readiness assessments is almost never the model and almost always the data underneath: stale stock counts, prices that disagree between the feed and the page, returns policies that exist as PDF copy rather than structured fields, and product attributes a human shopper infers from a photograph that a machine cannot infer at all. An agent grounded on a catalogue like that will either refuse to answer or answer confidently and wrongly, and the guardrails in this blueprint are built to force the first outcome.
+
+The most viable adoption path is narrow. Run the retail demo and read SAFETY.md before writing any code, because it costs an afternoon and names the failure modes the deploying team will own. Map the existing catalogue, cart, order and policy systems against the \`StorefrontBackend\` interface, and treat every method that cannot be implemented today as the real backlog. Deploy the merchant agent first: it is staff-facing, every write is staged behind human approval, and a bad suggestion costs a conversation rather than a customer.
+
+Deciding on checkout can wait. The blueprint's own architecture says so.`,
+    reverifyTriggers: [
+        "Claude Managed Agents leaves beta",
+        "Anthropic adds a checkout or payment path to the commerce-agents repo",
+        "Shopify, Priceline, Mastercard or Visa announce a production deployment built on the blueprint",
+        "Anthropic or a named partner publishes audited cart-size or conversion figures replacing the current vendor-reported range",
+        "A competing open-source merchant-agent blueprint ships from OpenAI, Google or Shopify"
+    ],
+    faqs: [
+        {
+            question: "What are Claude Commerce Agents?",
+            answer: "Claude Commerce Agents are an open-source blueprint released by Anthropic on 2 September 2026 for building shopping and merchant agents on Claude. The repository contains two working reference agents with five skill flows each, and four runnable vertical examples covering retail, travel, telecom and ticketing, published under the Apache 2.0 licence."
+        },
+        {
+            question: "Can Claude Commerce Agents complete a purchase?",
+            answer: "No. The repository explicitly states that nothing in it places an order, charges a card, or changes a live listing. The shopping agent builds a cart and integrates with checkout, but the checkout step itself is left to the merchant's own systems and whichever payment protocol they adopt."
+        },
+        {
+            question: "What is the difference between the shopping agent and the merchant agent?",
+            answer: "The shopping agent is customer-facing and handles product search, comparison, cart building, and order and policy questions. The merchant agent is staff-facing and handles performance analysis, listing maintenance, inventory alerts, pricing and promotions, and campaign drafting, with every write staged for human approval before it goes live."
+        },
+        {
+            question: "Where can Claude Commerce Agents be deployed?",
+            answer: "The code deploys on the Claude API, Amazon Bedrock, Microsoft Foundry and Google Cloud Vertex AI. Three build paths are supported: the Messages API as the reference implementation, the Agent SDK, and Claude Managed Agents in beta calling the merchant's own MCP server."
+        },
+        {
+            question: "How are the guardrails enforced?",
+            answer: "Fencing, provenance gates, caps, memory validation and the merchant approval gate run inside the tool call rather than in the system prompt, so they hold identically across all three build paths. Backend methods call the merchant's service server-side with a credential the host holds, meaning the model reads only the result and never sees the credential."
+        },
+        {
+            question: "How reliable are Anthropic's cart-size and conversion figures?",
+            answer: "Treat them as vendor-reported and directional. Anthropic's announcement cites carts up to 35% larger and shoppers 60% more likely to complete a purchase, while Angela Jiang's quote to Reuters attributes the 30-35% cart figure to a single unnamed partner. No baseline, timeframe or control group is published. Adobe Digital Insights offers an independent comparison point, measuring AI-referred retail traffic converting 42% better than non-AI sources as of March 2026."
+        },
+        {
+            question: "Is the Claude Commerce Agents repository production-ready?",
+            answer: "No. Anthropic states it is a reference implementation that is not maintained and does not accept contributions. The examples ship with no authentication and the MCP servers bind to loopback, so authentication, hosting and hardening are the deploying team's responsibility."
+        },
+        {
+            question: "How does this relate to ACP, UCP and x402?",
+            answer: "Those are transaction-layer standards covering discovery, checkout and settlement between agents and merchants. Claude Commerce Agents sits above them at the agent harness layer, defining how the agent itself is built, grounded and constrained. The blueprint is protocol-agnostic by omission, since it stops before checkout and makes no assumption about which payment standard a merchant adopts."
+        }
+    ]
+},
 ];
