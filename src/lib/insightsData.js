@@ -4882,4 +4882,278 @@ Deciding on checkout can wait. The blueprint's own architecture says so.`,
         }
     ]
 },
+{
+    id: "51",
+    slug: "know-your-agent-kya-framework-visa-mastercard-ant",
+    title: "Visa, Mastercard and Ant Agree an AI Agent Should Register Once",
+    seoTitle: "Know Your Agent (KYA): Visa, Mastercard and Ant's Agent Identity Framework",
+    category: "Agentic Payments",
+    categoryPage: "/agentic-payments",
+    relatedSlugs: [
+        "visa-agent-score-agentic-directory",
+        "what-agentic-payments-are-why-every-commerce-platform-building-one",
+        "agentic-checkout-trust-gap-visa-trust-index"
+    ],
+    date: "2026-09-26T09:00:00Z",
+    dateModified: "2026-09-26T09:00:00Z",
+    author: "AIV Research Desk",
+    readTime: "7 min read",
+    image: "/images/insights/know-your-agent-kya-framework-visa-mastercard-ant.webp",
+    imageAlt: "Glowing fingerprint on a dark circular biometric scanner under blue light",
+    excerpt: "Visa, Mastercard and Ant International will make agent identity portable across networks. No spec, governance body or timeline exists yet. Here is what does.",
+    content: `On 9 September 2026, [Ant International, Visa and Mastercard announced](https://www.pymnts.com/cybersecurity/2026/visa-mastercard-team-with-ant-know-your-agent-framework) a shared **Know Your Agent (KYA) interoperability framework** so that an AI agent verified by one of them does not have to be verified again by the other two. Know Your Agent is the practice of identifying an AI agent, tying it to an accountable operator, and monitoring it before and while it spends money. It is the first time the two largest card networks have agreed a common approach to agent identity. It is also, for now, an agreement in principle: no technical specification, governing body or rollout date has been published.
+
+## What Is the Know Your Agent Framework?
+
+The framework is a commitment to make agent identity portable across payment networks. Today each network runs its own agent verification protocol, and an agent platform that wants to transact across all of them has to onboard separately with each. The three companies say the new framework will streamline agent onboarding and identification across card networks, digital wallets, agent platforms and marketplaces.
+
+It rests on three pillars, as described in the announcement and [reported by Yahoo Finance](https://finance.yahoo.com/technology/ai/articles/visa-mastercard-ant-international-build-111358124.html):
+
+| Pillar | What it is meant to do |
+|---|---|
+| Cross-network operator traceability | Link every agent to a validated operator, cardholder or business |
+| Shared certification requirements | Assess an agent's security and behavioural compliance against one common bar |
+| Continuous transaction monitoring | Use identity and transaction signals to keep oversight after onboarding |
+
+**Jiang-Ming Yang**, Chief Innovation Officer at Ant International, put the practical promise plainly, [as quoted by Forkast](https://forkast.news/ant-international-visa-and-mastercard-agree-on-agent-identity-standard-now-comes-the-hard-part/): "If an agent registers with Ant, they don't need to register again with Visa, Mastercard."
+
+## Which Protocols Does KYA Bridge?
+
+KYA does not replace anything. Ant's inclusion matters because it brings the mobile-wallet side of payments, which neither card network runs. The framework sits above three identity protocols that each company shipped separately over the past year.
+
+| Protocol | Owner | Launched | What it does |
+|---|---|---|---|
+| Trusted Agent Protocol (TAP) | Visa, co-developed with Cloudflare | October 2025 | Cryptographic check that an agent is who it claims to be, before payment |
+| Verifiable Intent | Mastercard, co-developed with Google | March 2026 | Tamper-resistant record linking the user's identity, their instruction, and the agent's action |
+| Agentic Mobile Protocol (AMP) | Ant International | April 2026 | Open-sourced protocol for agent payments through mobile wallets |
+
+The three answer different questions. TAP asks whether the agent is genuine. [Verifiable Intent](https://thepaypers.com/payments/news/mastercard-introduces-verifiable-intent-co-developed-with-google) asks whether the human actually authorised this purchase; it is open source, aligned with Google's AP2 and Universal Commerce Protocol, and draws on FIDO Alliance, EMVCo, IETF and W3C standards. [Ant's AMP](https://www.businesswire.com/news/home/20260427209524/en/Ant-International-Launches-Open-Sourced-Agentic-Mobile-Protocol-to-Drive-AI-Commerce) carries agent payments into the wallet economy rather than the card rails. KYA's job is to let an identity established under any one of them be recognised by the others.
+
+## How Is Know Your Agent Different From Know Your Customer?
+
+**Know Your Customer** verifies a person or business before a financial institution serves them. **Know Your Agent** verifies software acting for that person or business, and it has to answer a harder set of questions.
+
+| | Know Your Customer (KYC) | Know Your Agent (KYA) |
+|---|---|---|
+| Who is verified | A person or legal entity | An AI agent and the operator accountable for it |
+| When | At onboarding, with periodic review | At onboarding and continuously, on every transaction |
+| Core question | Is this customer who they claim to be? | Is this agent genuine, who stands behind it, and is it acting within what it was authorised to do? |
+| Basis | Regulatory obligation | Industry framework, as announced |
+
+The difference that matters most is continuity. A verified human customer stays the same person. A verified agent can be updated, re-prompted or compromised between one transaction and the next, which is why the framework's third pillar is continuous monitoring rather than a one-time check. KYA as announced is an agreement between companies, not a regulatory requirement, and that shapes how quickly and how uniformly it can be enforced.
+
+## Why Agent Identity Became the Bottleneck
+
+Each network built its own agent verification protocol precisely because agents cannot be trusted by default. The problem KYA addresses is that those protocols do not recognise one another.
+
+Card fraud controls were built for humans. They read device fingerprints, typing cadence, IP history and purchase patterns, and an AI agent looks anomalous on almost every one of those signals. A network that cannot tell a legitimate agent from a scripted bot has two options: decline more agent transactions, which kills adoption, or approve more, which invites fraud. Each network built its own way out. The result was a fragmented identity layer in which a single agent platform could hold a verified status on Visa and be a stranger on Mastercard.
+
+The executives framed it in the same terms. **Rubail Birwadker**, SVP at Visa, said: "Without trusted identity and explicit permissioning, AI agents cannot participate in commerce at scale." **Pablo Fourez**, Mastercard's Chief Digital Officer, said: "Interoperability across Know-Your-Agent frameworks is essential to making agentic commerce work at scale." Both quotes are from the [Forkast report](https://forkast.news/ant-international-visa-and-mastercard-agree-on-agent-identity-standard-now-comes-the-hard-part/).
+
+Demand is the other half of the problem. The companies cite projections that AI agents will orchestrate US$3 trillion to US$5 trillion of global consumer commerce by 2030, a range that originates in [McKinsey's October 2025 agentic commerce research](https://www.digitalcommerce360.com/2025/10/20/mckinsey-forecast-5-trillion-agentic-commerce-sales-2030/). It is a forecast rather than a measurement, and the announcing companies have an obvious interest in its upper end, but it explains why all three want the identity question settled early. And consumers are not yet convinced: [Visa's own Trust Index](https://investor.visa.com/news/news-details/2026/New-Visa-Research-Finds-Consumer-Trust-is-Accelerating-the-Path-to-Agentic-Commerce/default.aspx), released the same day, found only 23% of US consumers trust generative AI to handle payments on their behalf. Identity that follows an agent across networks is the precondition for moving that number.
+
+## What Has Not Been Decided
+
+The announcement is notable for what it leaves out, and those omissions define how much weight it can bear today.
+
+* **No specification.** There is no published document describing how a verified status on one network is expressed, transmitted or checked by another.
+* **No governing body.** Nobody has been named to set the shared certification bar, audit against it, or revoke an agent's status.
+* **No timeline, pilot or volume.** No launch date, participating merchants or transaction counts have been disclosed.
+* **No liability model.** The announcement does not say whether a merchant that accepts a KYA-verified agent is protected if that agent turns out to be fraudulent.
+* **No bridge between rails.** Visa and Mastercard verify agents on card networks; Ant's protocol was built for mobile wallets. How one identity is honoured across two different payment architectures has not been described.
+
+The PYMNTS report describes the work as exploratory. Forkast's headline puts it more directly: the parties have agreed, and now comes the hard part.
+
+Revocation is the least discussed of these gaps. A portable identity is only safe if its withdrawal is portable too: an agent struck off by one network for fraudulent behaviour has to lose its standing on the others at the same moment, or the framework simply lets a bad actor choose the most lenient door. The announcement describes how agents join; it does not yet describe how they are removed.
+
+The governance gap is the one to watch. A shared certification bar is only as strong as whoever enforces it, and three competitors with proprietary protocols have commercial reasons to keep their own onboarding as the preferred route. The x402 protocol resolved the same tension by [moving into a neutral foundation](/news-insights/x402-foundation-linux-foundation-coinbase-transfer). KYA has not yet said how it will resolve it.
+
+## Is This the Card Networks Closing Ranks?
+
+The contrarian reading is that KYA is less about interoperability than about jurisdiction. Agent identity is the gate every agent payment must pass through, and whoever defines "verified" decides which agents can transact. By agreeing a common standard among themselves, Visa, Mastercard and Ant position the card networks and the largest wallet operator as the natural issuers of agent identity, ahead of the AI platforms that build the agents and the crypto rails that route around cards.
+
+That reading does not make the framework bad for merchants. A single verification that works across networks is strictly better than three separate ones, and it lowers the cost for a smaller agent platform to reach every network. But it does mean that the trust layer of agentic commerce is settling inside the existing payments incumbents, not beside them. The absence of Google, OpenAI, Stripe or Coinbase from the announcement is worth noting, even though Google co-developed Verifiable Intent.
+
+## What Merchants and Agent Builders Should Do Now
+
+Nothing in the framework requires action this quarter, because nothing in it is yet implementable. The sequence that follows from the three pillars is still clear.
+
+The first step is to map which of the three underlying protocols your payment stack already touches. A merchant on a processor that supports TAP or Verifiable Intent is already inside the perimeter KYA is meant to widen; one that supports neither will need their processor to move first.
+
+The second is operator traceability, the pillar most likely to create work. If agents must be linked to a validated operator, merchants and agent platforms should expect to hold and pass through a record of which operator stands behind each agent session. Logging that relationship now costs little and turns a future certification requirement into a configuration change rather than a rebuild.
+
+The third is to keep checkout decisions reversible, and to treat KYA as preparation rather than a commercial benefit until liability is defined. A verification that does not shift fraud liability away from the merchant changes little about the merchant's risk. Until a specification exists, betting a checkout integration on any one network's agent identity scheme is a bet on the scheme, not the standard.`,
+    reverifyTriggers: [
+        "Technical specification for the KYA framework is published",
+        "A governance body or certification authority for KYA is named",
+        "First pilot, participating merchants or live transaction volumes are disclosed",
+        "Another network or wallet (American Express, PayPal, Alipay+ partners, UPI) joins the framework",
+        "Visa TAP, Mastercard Verifiable Intent or Ant AMP changes to implement shared certification"
+    ],
+    faqs: [
+        {
+            question: "What is Know Your Agent (KYA)?",
+            answer: "Know Your Agent is the practice of identifying an AI agent, linking it to an accountable operator, and monitoring its behaviour before and after it is allowed to make payments. It applies the logic of Know Your Customer rules to software agents acting on a person's or business's behalf."
+        },
+        {
+            question: "What did Visa, Mastercard and Ant International announce?",
+            answer: "On 9 September 2026 the three companies announced a collaboration on a Know Your Agent interoperability framework. Its aim is that an agent verified by one participating network does not need to be separately verified by the others, built on three pillars: cross-network operator traceability, shared certification requirements, and continuous transaction monitoring."
+        },
+        {
+            question: "Does the KYA framework replace Visa TAP or Mastercard Verifiable Intent?",
+            answer: "No. KYA sits above the existing protocols rather than replacing them. It is intended to let an agent identity established under Visa's Trusted Agent Protocol, Mastercard's Verifiable Intent or Ant International's Agentic Mobile Protocol be recognised across all three."
+        },
+        {
+            question: "When will the Know Your Agent framework launch?",
+            answer: "No launch date has been announced. As of the 9 September 2026 announcement, no technical specification, governing body, pilot programme or rollout timeline had been published, and reports describe the work as exploratory."
+        },
+        {
+            question: "Why does agent identity matter for agentic payments?",
+            answer: "Card fraud controls rely on human behavioural signals that AI agents do not produce, so networks cannot easily tell a legitimate agent from a malicious bot. Without portable, verifiable agent identity, networks either decline agent transactions or accept more fraud risk, and both slow adoption."
+        },
+        {
+            question: "How large is the market KYA is meant to support?",
+            answer: "The companies cite a projection that AI agents will orchestrate US$3 trillion to US$5 trillion of global consumer commerce by 2030. That range comes from McKinsey research published in October 2025."
+        },
+        {
+            question: "What should merchants do about KYA now?",
+            answer: "Merchants should check which agent identity protocols their payment processor already supports and begin logging which operator stands behind each agent session. No KYA-specific integration is possible until a specification is published."
+        }
+    ]
+},
+{
+    id: "52",
+    slug: "agentic-checkout-trust-gap-visa-trust-index",
+    title: "Shoppers Let AI Find the Product. They Still Won't Let It Pay",
+    seoTitle: "Agentic Checkout Trust Gap: Only 23% Trust AI to Pay, Visa Finds",
+    category: "Agentic Commerce",
+    categoryPage: "/agentic-commerce",
+    relatedSlugs: [
+        "anthropic-open-sources-claude-commerce-agents",
+        "zero-click-checkout-how-autonomous-agents-bypass-your-sales-funnel",
+        "know-your-agent-kya-framework-visa-mastercard-ant"
+    ],
+    date: "2026-09-26T10:00:00Z",
+    dateModified: "2026-09-26T10:00:00Z",
+    author: "AIV Research Desk",
+    readTime: "7 min read",
+    image: "/images/insights/agentic-checkout-trust-gap-visa-trust-index.webp",
+    imageAlt: "Empty shopping trolley standing on a dark wet floor with its reflection below",
+    excerpt: "Visa's new Trust Index finds 23% of Americans trust AI to pay for them. That gap explains why every big agent platform has stepped back from owning checkout.",
+    content: `AI has won the shopping half of commerce and lost, for now, the paying half. [Visa's Trust Index for agentic commerce](https://investor.visa.com/news/news-details/2026/New-Visa-Research-Finds-Consumer-Trust-is-Accelerating-the-Path-to-Agentic-Commerce/default.aspx), released on 9 September 2026, found that 72% of US consumers have used an AI assistant but only 23% trust generative AI to handle payment transactions on their behalf. The day before, Visa CEO Ryan McInerney [named the barrier in one word](https://www.pymnts.com/visa/2026/visa-ceo-says-ai-shopping-has-arrived-but-agentic-payments-havent/): trust. **Agentic checkout**, where an AI agent completes the purchase rather than handing the shopper back to the merchant, is the step consumers are least willing to delegate, and the industry's product decisions this year show the platforms have already accepted that.
+
+## What Did Visa's Trust Index Find?
+
+The Visa Trust Index is a Harris Poll survey of 2,065 US adults, fielded from 26 to 28 May 2026 and weighted to the US Census adult population. Its headline findings are measured at the person level, and they describe attitudes, not behaviour.
+
+| Finding | Figure |
+|---|---|
+| US consumers who have used an AI assistant | 72% |
+| US consumers who trust generative AI to handle payments on their behalf | 23% |
+| Respondents who would trust Visa to handle agentic transactions | 61% |
+| Visa trust among consumers aged 18 to 34 | 68% |
+| Visa trust among frequent AI users | 71% |
+
+The gap between 72% and 23% is the whole story. Nearly three in four Americans are already comfortable asking an AI for help, and fewer than one in four will let it spend. **Oliver Jenkyn**, Group President at Visa, framed the finding in the release: "Trust will be foundational to driving agentic commerce adoption."
+
+## Why Do Consumers Trust AI to Shop but Not to Pay?
+
+Independent research points the same way. [PYMNTS Intelligence](https://www.pymnts.com/news/artificial-intelligence/2026/ai-takes-the-first-step-in-shopping-while-consumers-keep-the-buy-button/), in its report on consumers moving from assistive to agentic AI, found that 56% of consumers would allow an AI agent to search and compare products, but only 37% would allow one to authorise payments and 35% would give one access to saved payment methods.
+
+The drop sits exactly where the consequence changes. A bad recommendation costs a second search. A bad payment costs money, a dispute, and a chargeback process nobody has yet explained for a purchase a machine made. McInerney described the pattern at the [Goldman Sachs Communacopia + Technology Conference](https://www.pymnts.com/visa/2026/visa-ceo-says-ai-shopping-has-arrived-but-agentic-payments-havent/) on 8 September: "We are seeing adoption for shopping, but not yet for autonomous payments." Consumers use large language models to compare products, then move to the seller's website to complete the transaction.
+
+That behaviour already shows up in traffic data. [Adobe Digital Insights reported](https://techcrunch.com/2026/04/16/ai-traffic-to-us-retailers-rose-393-in-q1-and-its-boosting-their-revenue-too/) that AI-referred visits to US retail sites grew 393% year on year in Q1 2026 and, by March 2026, converted 42% better than other traffic at the session level. Those are shoppers who used AI to decide and then bought on the merchant's own site. The conversion is happening; it is happening after the agent hands over.
+
+## How Should the 61% Figure Be Read?
+
+The survey's most quoted number deserves the most caution. Visa commissioned a survey that found consumers trust Visa more than any other brand to handle agentic payments. That does not make the figure wrong, but it does make it self-interested, and the release does not publish the scores of the other brands tested, so the size of Visa's lead cannot be checked.
+
+There is also a question-wording effect worth naming. "Do you trust generative AI to handle payments" and "would you trust Visa to handle agentic transactions" are different questions. The first asks about an unfamiliar actor; the second attaches a familiar, regulated payment brand to the same act. The jump from 23% to 61% is best read as evidence that a known intermediary with fraud protection changes consumer comfort, not as a measure of Visa's specific advantage. The finding that holds up regardless of sponsor is the gap itself: people will delegate the search and hesitate at the payment.
+
+## Why the Leading AI Assistants Have Stepped Back From Checkout
+
+The trust data explains a pattern in product decisions that otherwise looks like retreat.
+
+| Company | Decision | When |
+|---|---|---|
+| OpenAI | [Retired Instant Checkout in ChatGPT](https://www.digitalcommerce360.com/2026/03/06/openai-shifts-checkout-plans-agentic-commerce-strategy/), about six months after launch, returning the purchase step to merchants' own sites | March 2026 |
+| Anthropic | Released open-source [commerce agents](/news-insights/anthropic-open-sources-claude-commerce-agents) that build the cart but never place an order or charge a card | September 2026 |
+| Visa, Mastercard, Ant International | Announced a shared [Know Your Agent framework](/news-insights/know-your-agent-kya-framework-visa-mastercard-ant) to verify agents before they pay | September 2026 |
+
+Each decision answers the same consumer signal. OpenAI kept discovery and gave up the transaction. Anthropic built the agent up to the edge of payment and stopped. The networks are working on the precondition for agent payment, which is proving who the agent is and who stands behind it. None of the three is betting that consumers will hand over the payment step soon without that proof in place.
+
+The pattern applies most clearly to standalone AI assistants. Assistants built into a phone or a platform that already holds a trusted, biometrically secured wallet start from a different position. The Visa finding that trust jumps when a familiar payment brand is attached suggests their gap is smaller, although no survey cited here measures it directly.
+
+## What Would Close the Trust Gap?
+
+The survey measures an attitude, but the attitude breaks down into three questions a shopper needs answered before handing an agent the payment step. Each maps to infrastructure at a different stage of readiness.
+
+| Shopper question | Infrastructure answer | Status, September 2026 |
+|---|---|---|
+| Is this agent who it says it is, and who is behind it? | Agent identity: Visa Trusted Agent Protocol, Ant's Agentic Mobile Protocol, and the new Know Your Agent framework linking them | Protocols live; cross-network framework announced without a specification |
+| Did I actually authorise this purchase? | Verifiable authorisation: [Mastercard's Verifiable Intent](https://thepaypers.com/payments/news/mastercard-introduces-verifiable-intent-co-developed-with-google), co-developed with Google, which records the user's instruction and the agent's action in one tamper-resistant log | Open-sourced March 2026 |
+| What happens if the agent gets it wrong? | Dispute rules for purchases where the disagreement is about what the agent was told to do | Not addressed in any of the announcements reviewed for this article |
+
+The first two questions now have technical answers, even if they are not yet joined up. The third is only partly covered. Card dispute rules exist, but they were written for purchases a person made, and none of the announcements reviewed here say how a dispute is settled when the argument is about what the shopper instructed the agent to buy. That question has no public answer yet, and it is the one a consumer is most likely to ask. The 61% of respondents who said they would trust Visa with agentic transactions are, in effect, pointing at the answer they already know: a payment brand with established fraud protection and chargeback rights. Until agent purchases carry equally clear recourse, the gap between shopping and paying is unlikely to close on technology alone.
+
+## Where the Data Is Thin
+
+Three limits on the evidence should shape how far any merchant leans on it.
+
+* **Attitudes, not behaviour.** Both the Visa and PYMNTS figures record what people say they would allow. No independent source cited here measures how many purchases agents actually complete today, only how much traffic AI sends to merchant sites.
+* **United States only, fielded in May.** The Visa survey covers US adults and was fielded four months before release. Attitudes in markets with high mobile-wallet use, where Ant International operates, may differ.
+* **Different grains.** The Visa and PYMNTS figures are measured per person. Adobe's conversion figures are measured per session. They support the same direction, but they cannot be combined into a single rate.
+
+## What This Means for Merchants
+
+The contrarian conclusion is that agentic checkout is not the near-term priority for most merchants, and the investment should go one step earlier.
+
+There is a merchant-side reason to be unhurried as well. A purchase completed inside an assistant skips the merchant's own pages, and with them the cross-sell, the bundle and the account sign-up that happen there. Consumer hesitation and merchant incentive currently point the same way.
+
+If consumers use agents to decide and then buy on the merchant's site, the commercial contest this holiday season is about being the product the agent recommends and then converting the shopper who arrives already decided. Two practical consequences follow.
+
+The first is that product data an agent can read is worth more than a checkout an agent can complete. Accurate stock, prices that match across feed and page, and returns and delivery terms held as structured fields decide whether an agent recommends a product at all. None of that depends on the consumer trusting an agent with a card.
+
+The second is that the handoff page matters more than it used to. A shopper arriving from an AI assistant has already compared options. The page they land on should confirm what the agent told them, product, price and availability, and get out of the way. Any mismatch between what the agent said and what the page shows is the fastest way to lose a pre-decided buyer.
+
+The third is measurement. AI-referred shoppers behave differently from search or social visitors, so they should be reported as their own segment. Most analytics platforms record the referring domain of assistants such as ChatGPT, Perplexity and Gemini, which is enough to build a separate channel grouping and compare conversion, basket size and returns at the session level. Without that split, the effect this article describes is averaged into general organic traffic and becomes invisible to the people deciding where to invest.
+
+Agent-completed checkout will come, and the identity work now under way between the networks is the path to it. The data says to prepare the catalogue and the landing experience first, and to treat agentic checkout as the step that follows trust rather than the one that creates it.`,
+    reverifyTriggers: [
+        "Visa publishes a second Trust Index wave or the full per-brand results",
+        "OpenAI, Google or Anthropic reintroduce agent-completed checkout inside their assistants",
+        "Know Your Agent framework publishes a specification or pilot",
+        "Adobe or another independent panel publishes agent-completed (not AI-referred) conversion data"
+    ],
+    faqs: [
+        {
+            question: "What is agentic checkout?",
+            answer: "Agentic checkout is the step where an AI agent completes a purchase on a shopper's behalf, including authorising payment, rather than handing the shopper back to the merchant's website to pay. It is the final and most sensitive stage of agentic commerce."
+        },
+        {
+            question: "How many consumers trust AI to make payments?",
+            answer: "Only 23% of US consumers trust generative AI to handle payment transactions on their behalf, according to Visa's Trust Index for agentic commerce, a Harris Poll survey of 2,065 US adults fielded in May 2026 and released on 9 September 2026."
+        },
+        {
+            question: "Why won't consumers let AI agents pay for them?",
+            answer: "The risk changes at the payment step. A poor recommendation costs a second search, while a wrong payment costs money and raises unresolved questions about disputes and chargebacks. PYMNTS Intelligence found 56% of consumers would let an agent search and compare products but only 37% would let one authorise payments."
+        },
+        {
+            question: "What did Visa's CEO say about AI shopping?",
+            answer: "Visa CEO Ryan McInerney said at the Goldman Sachs Communacopia + Technology Conference on 8 September 2026 that Visa is \"seeing adoption for shopping, but not yet for autonomous payments,\" and named trust as the barrier."
+        },
+        {
+            question: "Did OpenAI stop ChatGPT Instant Checkout?",
+            answer: "Yes. OpenAI retired Instant Checkout in March 2026, around six months after launch, and repositioned ChatGPT toward product discovery, with purchases completed on merchants' own sites."
+        },
+        {
+            question: "Should merchants build for agentic checkout now?",
+            answer: "Most merchants will see more return from making product data agent-readable and from optimising the landing page AI-referred shoppers arrive on. Consumer trust in agent-completed payment is low, and the agent identity standards meant to raise it have no published specification yet."
+        },
+        {
+            question: "Is the Visa Trust Index independent research?",
+            answer: "It was commissioned by Visa and conducted by Harris Poll. The overall trust figures are useful, but the finding that consumers trust Visa most should be read with the sponsor in mind, since the release does not publish the other brands' scores."
+        }
+    ]
+},
 ];
