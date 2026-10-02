@@ -215,7 +215,7 @@ const StatCard2 = ({ pct, dashPct, heading, body, link }) => (
         </div>
         <div className="mt-6 space-y-3">
             <h3 className="font-sans font-bold text-charcoal text-xl leading-tight">{heading}</h3>
-            <p className="font-sans text-charcoal/60 text-sm leading-relaxed">{body}</p>
+            <p className="font-sans text-charcoal/70 text-sm leading-relaxed">{body}</p>
             <span className="inline-block font-sans text-charcoal text-sm border-b border-charcoal/40 cursor-pointer hover:border-charcoal transition-colors duration-200">
                 {link}
             </span>
@@ -378,37 +378,7 @@ export default function Marketing() {
                 "description": "Autonomous AI agent infrastructure for campaign orchestration, content generation, and performance marketing execution. Replaces legacy agency models with goal-driven digital labor.",
                 "serviceType": "Autonomous Marketing Infrastructure",
                 "areaServed": "Worldwide",
-                "provider": { "@id": "https://aivelocity.dev/#organization" },
-                "hasOfferCatalog": {
-                    "@type": "OfferCatalog",
-                    "name": "Agentic Marketing Services",
-                    "itemListElement": [
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Autonomous Campaign Orchestration",
-                                "description": "AI agents that monitor live engagement signals, reallocate budgets in milliseconds, and execute cross-channel campaigns without human oversight."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "AI Content Generation",
-                                "description": "Generative AI systems that produce brand-aligned visual and text assets at machine speed, eliminating manual creative supply chains."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "AI Agentic Influencers",
-                                "description": "Synthetic brand ambassadors and AI-generated influencers that represent your brand 24/7 across 60+ languages."
-                            }
-                        }
-                    ]
-                }
+                "provider": { "@id": "https://aivelocity.dev/#organization" }
             },
             {
                 "@type": "FAQPage",
@@ -484,31 +454,31 @@ export default function Marketing() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <Link href="/agentic-commerce" className="group rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1">
                                 <div>
-                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 block mb-3">Commerce</span>
+                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 block mb-3">Commerce</span>
                                     <h3 className="font-serif italic text-charcoal text-2xl leading-tight tracking-tight">Agentic Commerce</h3>
-                                    <p className="font-sans text-charcoal/60 text-sm leading-relaxed mt-2">Autonomous procurement and settlement for machine-to-machine trade.</p>
+                                    <p className="font-sans text-charcoal/70 text-sm leading-relaxed mt-2">Autonomous procurement and settlement for machine-to-machine trade.</p>
                                 </div>
-                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/50 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
+                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/70 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
                                     Explore →
                                 </span>
                             </Link>
                             <Link href="/agentic-aeo" className="group rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1">
                                 <div>
-                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 block mb-3">Discovery</span>
+                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 block mb-3">Discovery</span>
                                     <h3 className="font-serif italic text-charcoal text-2xl leading-tight tracking-tight">Agentic AEO</h3>
-                                    <p className="font-sans text-charcoal/60 text-sm leading-relaxed mt-2">Make your brand the canonical answer for autonomous search agents.</p>
+                                    <p className="font-sans text-charcoal/70 text-sm leading-relaxed mt-2">Make your brand the canonical answer for autonomous search agents.</p>
                                 </div>
-                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/50 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
+                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/70 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
                                     Explore →
                                 </span>
                             </Link>
                             <Link href="/agentic-payments" className="group rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1">
                                 <div>
-                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 block mb-3">Settlement</span>
+                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 block mb-3">Settlement</span>
                                     <h3 className="font-serif italic text-charcoal text-2xl leading-tight tracking-tight">Agentic Payments</h3>
-                                    <p className="font-sans text-charcoal/60 text-sm leading-relaxed mt-2">Machine-to-machine settlement infrastructure for autonomous procurement.</p>
+                                    <p className="font-sans text-charcoal/70 text-sm leading-relaxed mt-2">Machine-to-machine settlement infrastructure for autonomous procurement.</p>
                                 </div>
-                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/50 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
+                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/70 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
                                     Explore →
                                 </span>
                             </Link>

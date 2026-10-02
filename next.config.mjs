@@ -13,6 +13,12 @@ const nextConfig = {
     async redirects() {
         return [
             {
+                // Browsers request /favicon.ico by default; the site icon lives at /icon.png
+                source: '/favicon.ico',
+                destination: '/icon.png',
+                permanent: true,
+            },
+            {
                 // Article corrected 2026-06-10: "v402" was an erroneous protocol name; canonical article is x402
                 source: '/news-insights/v402-handshake-how-machine-to-machine-negotiation-works',
                 destination: '/news-insights/x402-protocol-how-machine-to-machine-payments-work',

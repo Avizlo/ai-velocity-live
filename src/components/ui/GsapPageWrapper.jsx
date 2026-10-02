@@ -13,6 +13,7 @@ export const GsapPageWrapper = ({ children, className }) => {
     const container = useRef(null);
 
     useGSAP(() => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         const sections = gsap.utils.toArray(container.current.children);
 
         sections.forEach((sec) => {

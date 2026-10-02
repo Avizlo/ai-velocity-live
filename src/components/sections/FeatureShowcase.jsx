@@ -93,7 +93,7 @@ export const FeatureShowcase = () => {
                         <h3 className="font-sans font-bold text-charcoal text-3xl leading-tight tracking-tight">
                             Agentic Commerce
                         </h3>
-                        <p className="font-sans text-charcoal/60 text-sm leading-relaxed">
+                        <p className="font-sans text-charcoal/70 text-sm leading-relaxed">
                             The future of brand growth.
                         </p>
                     </div>

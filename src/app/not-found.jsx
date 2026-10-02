@@ -45,7 +45,7 @@ export default function NotFound() {
             {/* Service Quick Links */}
             <section className="pb-20">
                 <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
-                    <span className="block font-mono text-[10px] tracking-[0.25em] uppercase mb-8 text-white/30">
+                    <span className="block font-mono text-[10px] tracking-[0.25em] uppercase mb-8 text-white/60">
                         Explore Our Services
                     </span>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -55,7 +55,7 @@ export default function NotFound() {
                                 href={service.href}
                                 className="group rounded-2xl border border-white/10 p-6 md:p-8 hover:border-electric-mint/30 hover:bg-white/[0.02] transition-all duration-300"
                             >
-                                <span className="block font-mono text-[10px] tracking-[0.25em] uppercase text-white/30 mb-3">
+                                <span className="block font-mono text-[10px] tracking-[0.25em] uppercase text-white/60 mb-3">
                                     {service.label}
                                 </span>
                                 <h3 className="font-serif text-white text-xl md:text-2xl tracking-tight group-hover:text-electric-mint transition-colors duration-300">
@@ -75,7 +75,7 @@ export default function NotFound() {
                 <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                         <div>
-                            <span className="block font-mono text-[10px] tracking-[0.25em] uppercase mb-3 text-white/30">
+                            <span className="block font-mono text-[10px] tracking-[0.25em] uppercase mb-3 text-white/60">
                                 Intelligence
                             </span>
                             <h2 className="text-4xl md:text-5xl font-serif text-white tracking-tight">

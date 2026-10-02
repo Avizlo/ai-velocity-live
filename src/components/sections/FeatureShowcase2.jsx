@@ -58,7 +58,7 @@ export const FeatureShowcase2 = () => {
                         <h3 className="font-sans font-bold text-charcoal text-3xl leading-tight tracking-tight">
                             Always On
                         </h3>
-                        <p className="font-sans text-charcoal/60 text-sm leading-relaxed">
+                        <p className="font-sans text-charcoal/70 text-sm leading-relaxed">
                             24/7 autonomous execution.
                         </p>
                     </div>

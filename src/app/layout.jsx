@@ -43,9 +43,11 @@ export default function RootLayout({ children }) {
                 <link rel="alternate" type="application/rss+xml" title="AI Velocity — Agentic Commerce &amp; AI Economy News" href="https://aivelocity.dev/feed.xml" />
             </head>
             <body className="font-sans antialiased bg-cloud-dancer" suppressHydrationWarning>
+                <a href="#main-content" className="skip-link">Skip to content</a>
                 <NavVisibilityProvider>
                     <div className="relative w-full min-h-screen bg-cloud-dancer text-[#1A1A1A] z-10">
                         <Navbar />
+                        <div id="main-content" tabIndex={-1} className="outline-none" />
                         {children}
                     </div>
                     <Footer />

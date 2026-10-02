@@ -199,7 +199,7 @@ const SplitFeature = ({
                     <div className={`flex flex-col justify-between h-full gap-16 ${reverse ? 'md:order-first' : ''}`}>
                         <div>
                             {label && (
-                                <span className={`split-anim block font-mono text-[10px] tracking-[0.25em] uppercase mb-4 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/60' : 'text-charcoal/40'}`}>
+                                <span className={`split-anim block font-mono text-[10px] tracking-[0.25em] uppercase mb-4 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/60' : 'text-charcoal/70'}`}>
                                     {label}
                                 </span>
                             )}
@@ -356,15 +356,15 @@ const AeoDiscoveryGrid = () => {
                             Entity
                         </span>
                         <div className="space-y-4 relative z-10">
-                            <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 block">Entity Anchoring</span>
+                            <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 block">Entity Anchoring</span>
                             <h3 className="font-serif italic text-charcoal text-2xl leading-tight tracking-tight">
                                 Embed your brand into the knowledge graph.
                             </h3>
-                            <p className="font-sans text-charcoal/50 text-sm leading-relaxed">
+                            <p className="font-sans text-charcoal/70 text-sm leading-relaxed">
                                 Structured schema, semantic metadata, and verifiable provenance that make your entity the canonical answer.
                             </p>
                         </div>
-                        <a href="#contact" className="relative z-10 self-start inline-block border-b border-charcoal/30 pb-1 text-charcoal transition-colors duration-300 font-sans tracking-widest text-xs uppercase hover:text-charcoal/60">
+                        <a href="#contact" className="relative z-10 self-start inline-block border-b border-charcoal/30 pb-1 text-charcoal transition-colors duration-300 font-sans tracking-widest text-xs uppercase hover:text-charcoal/70">
                             Start Optimization →
                         </a>
                     </div>
@@ -471,37 +471,7 @@ export default function AgenticAEO() {
                 "description": "Answer Engine Optimization infrastructure that makes your brand the canonical citation for autonomous AI agents like ChatGPT, Perplexity, and Gemini.",
                 "serviceType": "Answer Engine Optimization",
                 "areaServed": "Worldwide",
-                "provider": { "@id": "https://aivelocity.dev/#organization" },
-                "hasOfferCatalog": {
-                    "@type": "OfferCatalog",
-                    "name": "Agentic AEO Services",
-                    "itemListElement": [
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Entity Anchoring & Knowledge Graphs",
-                                "description": "Structured schema, semantic metadata, and verifiable provenance that embed your brand as the canonical entity in AI knowledge bases."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Information Gain Optimization",
-                                "description": "Unique, verifiable data that answer engines prioritize over commodity content, ensuring your brand is cited as the primary authority."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Machine-Readable Architecture",
-                                "description": "Headless infrastructure with JSON-LD, semantic HTML, and API-first backends optimised for autonomous agent discovery and citation."
-                            }
-                        }
-                    ]
-                }
+                "provider": { "@id": "https://aivelocity.dev/#organization" }
             },
             {
                 "@type": "FAQPage",
@@ -578,31 +548,31 @@ export default function AgenticAEO() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <Link href="/agentic-commerce" className="group rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1">
                                 <div>
-                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 block mb-3">Commerce</span>
+                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 block mb-3">Commerce</span>
                                     <h3 className="font-serif italic text-charcoal text-2xl leading-tight tracking-tight">Agentic Commerce</h3>
-                                    <p className="font-sans text-charcoal/60 text-sm leading-relaxed mt-2">Autonomous procurement and settlement for machine-to-machine trade.</p>
+                                    <p className="font-sans text-charcoal/70 text-sm leading-relaxed mt-2">Autonomous procurement and settlement for machine-to-machine trade.</p>
                                 </div>
-                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/50 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
+                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/70 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
                                     Explore →
                                 </span>
                             </Link>
                             <Link href="/agentic-marketing" className="group rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1">
                                 <div>
-                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 block mb-3">Acquisition</span>
+                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 block mb-3">Acquisition</span>
                                     <h3 className="font-serif italic text-charcoal text-2xl leading-tight tracking-tight">Agentic Marketing</h3>
-                                    <p className="font-sans text-charcoal/60 text-sm leading-relaxed mt-2">Autonomous campaign orchestration and AI-generated content at machine speed.</p>
+                                    <p className="font-sans text-charcoal/70 text-sm leading-relaxed mt-2">Autonomous campaign orchestration and AI-generated content at machine speed.</p>
                                 </div>
-                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/50 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
+                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/70 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
                                     Explore →
                                 </span>
                             </Link>
                             <Link href="/agentic-payments" className="group rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1">
                                 <div>
-                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 block mb-3">Settlement</span>
+                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 block mb-3">Settlement</span>
                                     <h3 className="font-serif italic text-charcoal text-2xl leading-tight tracking-tight">Agentic Payments</h3>
-                                    <p className="font-sans text-charcoal/60 text-sm leading-relaxed mt-2">Machine-to-machine settlement infrastructure for autonomous procurement.</p>
+                                    <p className="font-sans text-charcoal/70 text-sm leading-relaxed mt-2">Machine-to-machine settlement infrastructure for autonomous procurement.</p>
                                 </div>
-                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/50 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
+                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/70 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
                                     Explore →
                                 </span>
                             </Link>

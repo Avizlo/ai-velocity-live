@@ -197,7 +197,7 @@ const SplitFeature = ({
                     <div className={`flex flex-col justify-between h-full gap-16 ${reverse ? 'md:order-first' : ''}`}>
                         <div>
                             {label && (
-                                <span className={`split-anim block font-mono text-[10px] tracking-[0.25em] uppercase mb-4 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/60' : 'text-charcoal/40'}`}>
+                                <span className={`split-anim block font-mono text-[10px] tracking-[0.25em] uppercase mb-4 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/60' : 'text-charcoal/70'}`}>
                                     {label}
                                 </span>
                             )}
@@ -390,7 +390,7 @@ const PaymentsSettlementGrid = () => {
                             <h3 className="font-serif italic text-charcoal text-2xl leading-tight tracking-tight">
                                 Autonomous Payment Settlement: What CFOs Need to Know in 2026
                             </h3>
-                            <p className="font-sans text-charcoal/50 text-sm leading-relaxed">
+                            <p className="font-sans text-charcoal/70 text-sm leading-relaxed">
                                 Agent-initiated transactions now represent 8% of B2B settlement volume. Your payment infrastructure was not built for this.
                             </p>
                         </div>
@@ -461,37 +461,7 @@ export default function AgenticPayments() {
                 "description": "Autonomous AI agent infrastructure for machine-to-machine settlement, sovereign financial rails, and cryptographically verified transactions at global scale.",
                 "serviceType": "Autonomous Settlement Infrastructure",
                 "areaServed": "Worldwide",
-                "provider": { "@id": "https://aivelocity.dev/#organization" },
-                "hasOfferCatalog": {
-                    "@type": "OfferCatalog",
-                    "name": "Agentic Payment Services",
-                    "itemListElement": [
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "x402 Settlement Integration",
-                                "description": "Integration of the x402 payment protocol for instant, cryptographically signed stablecoin settlement between autonomous agents."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Sovereign Treasury Management",
-                                "description": "Non-custodial wallet infrastructure with pre-defined spending limits and cryptographic signing for autonomous agent transactions."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Cross-Border Settlement",
-                                "description": "Real-time international settlement with automated duty, tax, and compliance calculations across multiple jurisdictions."
-                            }
-                        }
-                    ]
-                }
+                "provider": { "@id": "https://aivelocity.dev/#organization" }
             },
             {
                 "@type": "FAQPage",
@@ -567,31 +537,31 @@ export default function AgenticPayments() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <Link href="/agentic-commerce" className="group rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1">
                                 <div>
-                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 block mb-3">Commerce</span>
+                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 block mb-3">Commerce</span>
                                     <h3 className="font-serif italic text-charcoal text-2xl leading-tight tracking-tight">Agentic Commerce</h3>
-                                    <p className="font-sans text-charcoal/60 text-sm leading-relaxed mt-2">Autonomous procurement and negotiation for machine-to-machine trade.</p>
+                                    <p className="font-sans text-charcoal/70 text-sm leading-relaxed mt-2">Autonomous procurement and negotiation for machine-to-machine trade.</p>
                                 </div>
-                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/50 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
+                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/70 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
                                     Explore →
                                 </span>
                             </Link>
                             <Link href="/agentic-aeo" className="group rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1">
                                 <div>
-                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 block mb-3">Discovery</span>
+                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 block mb-3">Discovery</span>
                                     <h3 className="font-serif italic text-charcoal text-2xl leading-tight tracking-tight">Agentic AEO</h3>
-                                    <p className="font-sans text-charcoal/60 text-sm leading-relaxed mt-2">Make your brand the canonical answer for autonomous search agents.</p>
+                                    <p className="font-sans text-charcoal/70 text-sm leading-relaxed mt-2">Make your brand the canonical answer for autonomous search agents.</p>
                                 </div>
-                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/50 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
+                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/70 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
                                     Explore →
                                 </span>
                             </Link>
                             <Link href="/agentic-marketing" className="group rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1">
                                 <div>
-                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 block mb-3">Acquisition</span>
+                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 block mb-3">Acquisition</span>
                                     <h3 className="font-serif italic text-charcoal text-2xl leading-tight tracking-tight">Agentic Marketing</h3>
-                                    <p className="font-sans text-charcoal/60 text-sm leading-relaxed mt-2">Autonomous campaign orchestration and AI-generated content at machine speed.</p>
+                                    <p className="font-sans text-charcoal/70 text-sm leading-relaxed mt-2">Autonomous campaign orchestration and AI-generated content at machine speed.</p>
                                 </div>
-                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/50 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
+                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/70 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
                                     Explore →
                                 </span>
                             </Link>

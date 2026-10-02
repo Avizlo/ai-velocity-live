@@ -53,19 +53,19 @@ export const Footer = () => {
                     {/* Bottom Bar - Minimal Row */}
                     <div className="w-full max-w-screen-2xl mx-auto px-6 md:px-12 border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-mono text-white/60 tracking-widest relative z-10">
                         <div className="flex flex-wrap gap-6 md:gap-8 justify-center">
-                            <Link href="/" className="hover:text-white transition-colors uppercase">Home</Link>
-                            <Link href="/agentic-commerce" className="hover:text-white transition-colors uppercase">Commerce</Link>
-                            <Link href="/agentic-marketing" className="hover:text-white transition-colors uppercase">Marketing</Link>
-                            <Link href="/agentic-payments" className="hover:text-white transition-colors uppercase">Payments</Link>
-                            <Link href="/agentic-aeo" className="hover:text-white transition-colors uppercase">AEO</Link>
-                            <Link href="/agentic-strategy" className="hover:text-white transition-colors uppercase">Strategy</Link>
-                            <Link href="/news-insights" className="hover:text-white transition-colors uppercase">News & Insights</Link>
-                            <Link href="/about" className="hover:text-white transition-colors uppercase">About</Link>
-                            <Link href="/contact" className="hover:text-white transition-colors uppercase">Contact</Link>
+                            <Link href="/" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors uppercase">Home</Link>
+                            <Link href="/agentic-commerce" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors uppercase">Commerce</Link>
+                            <Link href="/agentic-marketing" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors uppercase">Marketing</Link>
+                            <Link href="/agentic-payments" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors uppercase">Payments</Link>
+                            <Link href="/agentic-aeo" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors uppercase">AEO</Link>
+                            <Link href="/agentic-strategy" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors uppercase">Strategy</Link>
+                            <Link href="/news-insights" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors uppercase">News & Insights</Link>
+                            <Link href="/about" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors uppercase">About</Link>
+                            <Link href="/contact" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors uppercase">Contact</Link>
                         </div>
                         <div className="flex gap-6 justify-center">
                             <span>©2026 AI VELOCITY</span>
-                            <Link href="/privacy" className="hover:text-white transition-colors uppercase">Privacy Policy</Link>
+                            <Link href="/privacy" className="inline-flex items-center min-h-[44px] hover:text-white transition-colors uppercase">Privacy Policy</Link>
                         </div>
                     </div>
 

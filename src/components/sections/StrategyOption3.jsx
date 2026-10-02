@@ -68,19 +68,19 @@ export const StrategyOption3 = () => {
             >
                 {panels.map((panel) => (
                     <div key={panel.id} className="min-w-[100vw] md:w-screen h-full flex flex-col justify-center px-8 md:px-24 border-r border-charcoal/10 snap-center shrink-0">
-                        <span className="font-mono text-xs uppercase tracking-widest text-charcoal/50 mb-4 md:mb-6">Step 0{panel.id}</span>
+                        <span className="font-mono text-xs uppercase tracking-widest text-charcoal/70 mb-4 md:mb-6">Step 0{panel.id}</span>
                         <h2 className="text-5xl md:text-8xl font-serif tracking-tight mb-6 md:mb-8 md:w-3/4 leading-none">{panel.title}</h2>
                         <p className="text-lg md:text-2xl font-sans md:w-1/2 text-charcoal/70 leading-relaxed mb-6">{panel.text}</p>
                         <div className="flex items-center gap-2">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-charcoal/40 shrink-0"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" /><path d="M12 8v4l3 3" /></svg>
-                            <span className="font-mono text-charcoal/50 text-xs uppercase tracking-wider">{panel.stat}</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-charcoal/70 shrink-0"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" /><path d="M12 8v4l3 3" /></svg>
+                            <span className="font-mono text-charcoal/70 text-xs uppercase tracking-wider">{panel.stat}</span>
                         </div>
                     </div>
                 ))}
             </div>
 
             {/* Mobile swipe hint overlay */}
-            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 text-charcoal/40 text-xs uppercase tracking-widest font-mono md:hidden pointer-events-none animate-pulse flex items-center gap-2">
+            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 text-charcoal/70 text-xs uppercase tracking-widest font-mono md:hidden pointer-events-none animate-pulse flex items-center gap-2">
                 <span>Swipe</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </div>

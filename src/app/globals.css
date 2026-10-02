@@ -1,13 +1,14 @@
 /* AgenticTimes is loaded via next/font/local in layout.jsx */
 
-/* Hero fade-in: opacity only, no translate to prevent CLS bounce */
+/* Hero entrance: transform only. Content is visible from first paint so the
+   browser can measure the largest paint (opacity-0 starts left the home page
+   with no measurable LCP, PSI 2026-10-02). Transforms do not cause CLS. */
 @keyframes heroFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { transform: translateY(12px); }
+  to { transform: translateY(0); }
 }
 .hero-fade {
-  animation: heroFadeIn 1.6s ease-out forwards;
-  opacity: 0;
+  animation: heroFadeIn 1.2s ease-out both;
 }
 .hero-fade:nth-child(1) { animation-delay: 0s; }
 .hero-fade:nth-child(2) { animation-delay: 0.2s; }
@@ -43,4 +44,50 @@
   z-index: 9999;
   opacity: 0.04;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Keyboard focus: one visible ring site-wide (WCAG 2.4.7). */
+:focus-visible {
+  outline: 2px solid #c0e9cb;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.bg-cloud-dancer :focus-visible,
+.bg-white :focus-visible,
+.bg-dew-mint :focus-visible,
+.bg-electric-mint :focus-visible {
+  outline-color: #1A1A1A;
+}
+
+/* Skip link: hidden until focused. */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 10000;
+  background: #c0e9cb;
+  color: #1A1A1A;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 6px;
+}
+.skip-link:focus { top: 1rem; }
+
+/* Wide tables in articles scroll inside their own box, not the page. */
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Respect the user's reduced-motion setting (WCAG 2.3.3). */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-fade { animation: none !important; transform: none !important; }
 }
