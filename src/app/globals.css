@@ -46,17 +46,13 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Keyboard focus: one visible ring site-wide (WCAG 2.4.7). */
+/* Keyboard focus: one two-tone ring site-wide (WCAG 2.4.7). Mint shows on
+   dark sections, the charcoal halo shows on light ones. */
 :focus-visible {
   outline: 2px solid #c0e9cb;
-  outline-offset: 3px;
+  outline-offset: 0;
+  box-shadow: 0 0 0 4px #1A1A1A;
   border-radius: 2px;
-}
-.bg-cloud-dancer :focus-visible,
-.bg-white :focus-visible,
-.bg-dew-mint :focus-visible,
-.bg-electric-mint :focus-visible {
-  outline-color: #1A1A1A;
 }
 
 /* Skip link: hidden until focused. */
