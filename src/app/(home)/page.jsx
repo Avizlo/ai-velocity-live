@@ -90,10 +90,10 @@ const services = [
 ];
 
 const stats = [
-    { value: "$30T", label: "Autonomous commerce market by 2030" },
-    { value: "24/7", label: "Agent availability across 60+ languages" },
-    { value: "61%", label: "Enterprise decisions influenced by LLM answers" },
-    { value: "77%", label: "Competitors invisible to AI agents" },
+    { value: "+62%", label: "AI-referred traffic to US retail, year on year (Adobe, Jul 2026)" },
+    { value: "60%", label: "Higher conversion from AI referrals than other traffic (Adobe, Jul 2026)" },
+    { value: "<1 in 5", label: "UK firms say their full product list is ready for AI (PayPal, Mar 2026)" },
+    { value: "US only", label: "Where Google's agent checkout is rolling out today (Oct 2026)" },
 ];
 
 // Get the 3 most recent articles
@@ -156,7 +156,7 @@ export default function Home() {
                 {/* 3. Service Ecosystem */}
                 <section id="services" className="py-20 bg-cloud-dancer">
                     <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
-                        <span className="block font-mono text-[10px] tracking-[0.25em] uppercase mb-3 text-charcoal/40">
+                        <span className="block font-mono text-[10px] tracking-[0.25em] uppercase mb-3 text-charcoal/70">
                             Infrastructure
                         </span>
                         <h2 className="text-4xl md:text-5xl font-serif text-charcoal tracking-tight mb-12">
@@ -226,7 +226,7 @@ export default function Home() {
                 {/* 5. Manifesto: The Architecture of Agentic Intelligence */}
                 <section className="py-24 bg-cloud-dancer" data-nav-theme="light">
                     <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
-                        <span className="block font-mono text-[10px] tracking-[0.25em] uppercase mb-4 text-charcoal/40">
+                        <span className="block font-mono text-[10px] tracking-[0.25em] uppercase mb-4 text-charcoal/70">
                             The Architecture
                         </span>
                         <h2 className="text-4xl md:text-5xl font-serif text-charcoal tracking-tight mb-16 max-w-3xl">
@@ -235,19 +235,19 @@ export default function Home() {
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
                             <div>
-                                <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/30 block mb-4">01 / Infrastructure</span>
+                                <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 block mb-4">01 / Infrastructure</span>
                                 <p className="font-sans text-charcoal/70 text-[15px] leading-[1.8]">
                                     The way people buy things is changing. AI assistants will soon find, compare, and purchase products on behalf of consumers without ever opening a browser. For this to work, your product data needs to be structured so that machines can read it as easily as humans can. This is the foundation, making your business visible to AI.
                                 </p>
                             </div>
                             <div>
-                                <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/30 block mb-4">02 / Execution</span>
+                                <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 block mb-4">02 / Execution</span>
                                 <p className="font-sans text-charcoal/70 text-[15px] leading-[1.8]">
                                     Once your data is machine-readable, AI agents need real-time access to it. That means live pricing, live inventory, and live product details available through secure connections. When an AI assistant asks &quot;is this in stock and what does it cost?&quot;, your systems need to answer instantly and accurately.
                                 </p>
                             </div>
                             <div>
-                                <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/30 block mb-4">03 / Settlement</span>
+                                <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 block mb-4">03 / Settlement</span>
                                 <p className="font-sans text-charcoal/70 text-[15px] leading-[1.8]">
                                     The final piece is payment. AI agents need to complete purchases securely without a human typing in card details. New payment protocols allow machines to verify, authorise, and settle transactions instantly, across borders, in any currency, with full transparency and zero friction.
                                 </p>
@@ -261,7 +261,7 @@ export default function Home() {
                     <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
                         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                             <div>
-                                <span className="block font-mono text-[10px] tracking-[0.25em] uppercase mb-3 text-charcoal/40">
+                                <span className="block font-mono text-[10px] tracking-[0.25em] uppercase mb-3 text-charcoal/70">
                                     Intelligence
                                 </span>
                                 <h2 className="text-4xl md:text-5xl font-serif text-charcoal tracking-tight">
@@ -270,7 +270,7 @@ export default function Home() {
                             </div>
                             <Link
                                 href="/news-insights"
-                                className="inline-block border-b border-charcoal/20 pb-1 text-charcoal/50 font-sans tracking-widest text-xs uppercase hover:text-[#111] hover:border-[#111] transition-colors duration-200"
+                                className="inline-block border-b border-charcoal/20 pb-1 text-charcoal/70 font-sans tracking-widest text-xs uppercase hover:text-[#111] hover:border-[#111] transition-colors duration-200"
                             >
                                 View All Insights →
                             </Link>

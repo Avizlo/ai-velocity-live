@@ -78,8 +78,8 @@ const storyAngles = [
         description: 'How AI agents will eliminate the shopping cart entirely by executing purchases through programmatic negotiation, bypassing human-facing interfaces.',
     },
     {
-        headline: 'The $30T Shift',
-        description: 'Agentic commerce is set to influence $30 trillion in global trade by 2030, making it the largest market transition since mobile. Who wins and who disappears.',
+        headline: 'Discovery Before Checkout',
+        description: 'AI assistants already send shoppers to retailers, and those visitors convert better than average, while buying inside the assistant stays rare. Why being found by AI is the first battleground.',
     },
     {
         headline: "Visa's Quiet Bet",
@@ -120,8 +120,8 @@ const factSheetData = [
     { stat: '85', label: 'Crypto partners onboarded by Mastercard' },
     { stat: '$200B+', label: 'Stablecoin market capitalisation and growing' },
     { stat: '<0.1%', label: 'Stablecoin settlement cost vs 6-8% traditional' },
-    { stat: '$30T', label: 'Agentic commerce set to influence in global trade by 2030' },
-    { stat: '61%', label: 'Enterprise decisions influenced by LLM answers' },
+    { stat: '+62%', label: 'AI-referred traffic to US retail, year on year (Adobe, Jul 2026)' },
+    { stat: '<1 in 5', label: 'UK firms say their full product list is ready for AI (PayPal, Mar 2026)' },
     { stat: '3', label: 'Payment giants building agent-native rails simultaneously' },
 ];
 
@@ -130,8 +130,8 @@ const tickerItems = [
     'Stablecoin market: $200B+ and growing',
     'Traditional cross-border costs: 6-8% vs stablecoin: <0.1%',
     'Stripe, Visa, Mastercard building agent-native rails simultaneously',
-    'Agentic commerce set to influence $30T in global trade by 2030',
-    '61% of enterprise decisions influenced by LLM answers',
+    'AI-referred traffic to US retail up 62% year on year (Adobe, Jul 2026)',
+    'Fewer than 1 in 5 UK firms say their product list is AI-ready (PayPal, Mar 2026)',
 ];
 
 // ============================================================================
@@ -548,10 +548,10 @@ export default function MediaKitPage() {
                         <div className="rounded-xl ring-1 ring-white/10 bg-charcoal p-[24px] mb-[80px]">
                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
                                 <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-electric-mint">100-Word Deep Dive</span>
-                                <CopyButton text="AI Velocity is the research and intelligence platform tracking the most consequential infrastructure shift since mobile: the transition from human-managed to agent-managed commerce. We publish original analysis on agentic payments, autonomous settlement layers, machine-to-machine negotiation protocols, and the structural collapse of the legacy agency model. Our research covers how stablecoins are becoming the foundational payment primitive for AI agents, why Stripe, Visa, and Mastercard are simultaneously building agent-native rails, and what the $30 trillion autonomous commerce projection means for every business that touches a transaction. AI Velocity exists for operators, strategists, and technologists building at the frontier of the agentic economy." />
+                                <CopyButton text="AI Velocity is the research and intelligence platform tracking the most consequential infrastructure shift since mobile: the transition from human-managed to agent-managed commerce. We publish original analysis on agentic payments, autonomous settlement layers, machine-to-machine negotiation protocols, and the structural collapse of the legacy agency model. Our research covers how stablecoins are becoming the foundational payment primitive for AI agents, why Stripe, Visa, and Mastercard are simultaneously building agent-native rails, and what each shipped, delayed or withdrawn protocol means for the businesses that sell online. AI Velocity exists for operators, strategists, and technologists building at the frontier of the agentic economy." />
                             </div>
                             <p className="font-sans text-white/70 leading-[1.8]" style={{ fontSize: 'clamp(0.875rem, 0.8rem + 0.25vw, 0.9375rem)' }}>
-                                AI Velocity is the research and intelligence platform tracking the most consequential infrastructure shift since mobile: the transition from human-managed to agent-managed commerce. We publish original analysis on agentic payments, autonomous settlement layers, machine-to-machine negotiation protocols, and the structural collapse of the legacy agency model. Our research covers how stablecoins are becoming the foundational payment primitive for AI agents, why Stripe, Visa, and Mastercard are simultaneously building agent-native rails, and what the $30 trillion autonomous commerce projection means for every business that touches a transaction. AI Velocity exists for operators, strategists, and technologists building at the frontier of the agentic economy.
+                                AI Velocity is the research and intelligence platform tracking the most consequential infrastructure shift since mobile: the transition from human-managed to agent-managed commerce. We publish original analysis on agentic payments, autonomous settlement layers, machine-to-machine negotiation protocols, and the structural collapse of the legacy agency model. Our research covers how stablecoins are becoming the foundational payment primitive for AI agents, why Stripe, Visa, and Mastercard are simultaneously building agent-native rails, and what each shipped, delayed or withdrawn protocol means for the businesses that sell online. AI Velocity exists for operators, strategists, and technologists building at the frontier of the agentic economy.
                             </p>
                         </div>
 

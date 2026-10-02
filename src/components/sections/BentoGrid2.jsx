@@ -18,7 +18,7 @@ const StatCard2 = ({ pct, dashPct, heading, body, link }) => (
         </div>
         <div className="mt-6 space-y-3">
             <h3 className="font-sans font-bold text-charcoal text-xl leading-tight">{heading}</h3>
-            <p className="font-sans text-charcoal/60 text-sm leading-relaxed">{body}</p>
+            <p className="font-sans text-charcoal/70 text-sm leading-relaxed">{body}</p>
             <span className="inline-block font-sans text-charcoal text-sm border-b border-charcoal/40 cursor-pointer hover:border-charcoal transition-colors duration-200">
                 {link}
             </span>

@@ -25,7 +25,12 @@ function isRateLimited(ip) {
 
 // ── Turnstile verification ──
 async function verifyTurnstile(token) {
-    const secret = process.env.TURNSTILE_SECRET_KEY || '1x0000000000000000000000000000000AA';
+    const secret = process.env.TURNSTILE_SECRET_KEY;
+    // Fail closed: without the real secret, no message is accepted.
+    if (!secret) {
+        console.error('TURNSTILE_SECRET_KEY is not set; rejecting contact submission');
+        return false;
+    }
 
     const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
         method: 'POST',

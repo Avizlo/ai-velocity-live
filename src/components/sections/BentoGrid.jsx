@@ -59,7 +59,7 @@ export const BentoGrid = () => {
 
                     {/* ── [col3, row1] Mint quote card ── */}
                     <div className="md:col-start-3 md:row-start-1 rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[200px]">
-                        <span className="inline-block self-start font-sans text-xs text-charcoal/60 border border-charcoal/20 rounded-full px-3 py-1">
+                        <span className="inline-block self-start font-sans text-xs text-charcoal/70 border border-charcoal/20 rounded-full px-3 py-1">
                             Clients
                         </span>
                         <p className="font-sans text-charcoal text-lg font-medium leading-snug mt-4">
@@ -92,7 +92,7 @@ export const BentoGrid = () => {
 
                     {/* ── [col2, row3] Dew-mint capabilities card ── */}
                     <div className="md:col-start-1 md:row-start-3 rounded-2xl bg-dew-mint p-8 min-h-[220px]">
-                        <span className="inline-block font-sans text-xs text-charcoal/60 border border-charcoal/20 rounded-full px-3 py-1 mb-5">
+                        <span className="inline-block font-sans text-xs text-charcoal/70 border border-charcoal/20 rounded-full px-3 py-1 mb-5">
                             Capabilities
                         </span>
                         <h3 className="font-sans font-semibold text-charcoal text-xl mb-6">
@@ -105,7 +105,7 @@ export const BentoGrid = () => {
                                 { label: 'Real-time optimisation signals', pct: 79 },
                             ].map(({ label, pct }) => (
                                 <div key={label}>
-                                    <p className="font-sans text-xs text-charcoal/60 mb-1">{label}</p>
+                                    <p className="font-sans text-xs text-charcoal/70 mb-1">{label}</p>
                                     <div className="w-full h-1.5 bg-charcoal/10 rounded-full overflow-hidden">
                                         <div className="h-full bg-charcoal rounded-full" style={{ width: `${pct}%` }} />
                                     </div>

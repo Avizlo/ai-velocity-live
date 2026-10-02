@@ -37,7 +37,7 @@ const commerceBentoData = {
         pct: "24/7",
         dashPct: 0.99,
         heading: "These models work for you.",
-        body: "Every model in this grid is AI-generated. Agentic influencers sell your products around the clock, fluent in 60+ languages, with zero downtime. By 2030, autonomous commerce is forecast to influence $30 trillion in global transactions."
+        body: "Every model in this grid is AI-generated. Agentic influencers sell your products around the clock, fluent in 60+ languages, with zero downtime."
     },
     images: {
         center: "/images/ai-model-1.webp",
@@ -127,7 +127,7 @@ const manifestoTitle = "Agentic Commerce";
 
 const manifestoLeadIn = [
     "Agentic commerce is the replacement of human-driven online shopping with autonomous AI agents that find, evaluate, negotiate, and complete transactions without human intervention. Where traditional e-commerce requires a person to browse, click, compare, and check out, agentic commerce delegates the entire purchase cycle to software agents operating at machine speed.",
-    "The global autonomous commerce market is forecast to reach $30 trillion by 2030. Brands that fail to restructure their commercial infrastructure for machine-readable logic will be invisible to the agents making purchasing decisions on behalf of billions of consumers."
+     "Brands that fail to restructure their commercial infrastructure for machine-readable logic will be invisible to the agents making purchasing decisions on behalf of billions of consumers."
 ];
 
 const manifestoSections = [
@@ -158,7 +158,7 @@ const manifestoSections = [
         content: [
             "Traditional e-commerce was engineered for human psychology. Product pages are designed to capture attention, create desire, and reduce friction in the human decision-making process. Cart abandonment rates, checkout optimization, and conversion rate enhancement are the metrics that define success in the legacy model.",
             "Agentic commerce operates on fundamentally different logic. An AI agent is not susceptible to urgency triggers, scarcity messaging, or visual merchandising. It evaluates product attributes against consumer parameters and executes the optimal transaction. The entire psychological architecture of traditional retail becomes irrelevant.",
-            "This creates a structural advantage for brands that make the transition early. When 77% of competitors remain invisible to AI agents — because their product data is locked inside visual interfaces that machines cannot parse — the brands with machine-readable infrastructure capture transactions before a human ever opens a browser.",
+            "This creates a structural advantage for brands that make the transition early. When most competitors remain hard for AI agents to read — because their product data is locked inside visual interfaces that machines cannot parse — the brands with machine-readable infrastructure capture transactions before a human ever opens a browser.",
             "The implications extend beyond individual transactions. As AI assistants become the primary interface through which consumers interact with commerce, the brands cited by those assistants as authoritative sources become default choices. Answer engine optimization (AEO) — structuring content so that AI systems cite your brand as the canonical answer to purchase intent queries — is the parallel discipline that ensures agentic commerce infrastructure translates into actual discovery."
         ]
     },
@@ -233,7 +233,7 @@ const manifestoSections = [
         title: "Why Agentic Commerce Is Happening Now",
         content: [
             "Three converging forces are driving the transition at accelerating speed.",
-            "AI assistant adoption has reached the consumer mainstream. Adobe Analytics measured AI-referred traffic to US retail sites growing 393% year on year in the first quarter of 2026, converting better than organic search for the first time. As AI assistants move from novelty to infrastructure, their role in purchase decision-making scales proportionally.",
+            "AI assistant adoption has reached the consumer mainstream. Adobe Analytics measured AI-referred traffic to US retail sites growing 393% year on year in the first quarter of 2026 and still 62% in July, with those visitors converting 60% better than other traffic. As AI assistants move from novelty to infrastructure, their role in purchase decision-making scales proportionally.",
             "Payment protocol standardisation has provided the settlement layer that autonomous commerce requires. With UCP generally available to Shopify merchants, AP2 under FIDO Alliance governance, and stablecoin settlement live through x402 and MPP, the financial infrastructure for autonomous transactions now exists at scale.",
             "Structural pressure on legacy retail is accelerating the transition. E-commerce conversion rates, customer acquisition costs, and cart abandonment rates have been deteriorating for years as human attention becomes more fragmented. Brands that route their commerce through agent networks escape the economics of attention-based retail entirely."
         ]
@@ -336,7 +336,7 @@ const SplitFeature = ({
                     <div className={`flex flex-col justify-between h-full gap-16 ${reverse ? 'md:order-first' : ''}`}>
                         <div>
                             {label && (
-                                <span className={`split-anim block font-mono text-[10px] tracking-[0.25em] uppercase mb-4 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/60' : 'text-charcoal/40'}`}>
+                                <span className={`split-anim block font-mono text-[10px] tracking-[0.25em] uppercase mb-4 opacity-0 translate-y-4 ${theme === 'dark' ? 'text-white/60' : 'text-charcoal/70'}`}>
                                     {label}
                                 </span>
                             )}
@@ -418,7 +418,7 @@ const StatCard2 = ({ label, pct, dashPct, heading, body, link }) => {
         `}</style>
             <div>
                 {label && (
-                    <span className="block font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 mb-4">
+                    <span className="block font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 mb-4">
                         {label}
                     </span>
                 )}
@@ -442,9 +442,9 @@ const StatCard2 = ({ label, pct, dashPct, heading, body, link }) => {
             </div>
             <div className="mt-6 space-y-3">
                 <h3 className="font-serif italic text-charcoal text-2xl leading-tight tracking-tight">{heading}</h3>
-                <p className="font-sans text-charcoal/60 text-sm leading-relaxed">{body}</p>
+                <p className="font-sans text-charcoal/70 text-sm leading-relaxed">{body}</p>
                 {link && (
-                    <span className="inline-block font-sans text-charcoal text-xs tracking-widest uppercase border-b border-charcoal/30 pb-1 cursor-pointer hover:text-charcoal/60 transition-colors duration-200">
+                    <span className="inline-block font-sans text-charcoal text-xs tracking-widest uppercase border-b border-charcoal/30 pb-1 cursor-pointer hover:text-charcoal/70 transition-colors duration-200">
                         {link} →
                     </span>
                 )}
@@ -497,7 +497,7 @@ const BentoGrid2 = ({ data }) => {
             <div className="max-w-screen-2xl mx-auto px-6 md:px-12 relative z-10">
                 {/* Section Header */}
                 <div className="mb-12">
-                    <span className="block font-mono text-[10px] tracking-[0.25em] uppercase mb-3 text-charcoal/40">
+                    <span className="block font-mono text-[10px] tracking-[0.25em] uppercase mb-3 text-charcoal/70">
                         Performance Data
                     </span>
                     <h2 className="text-4xl md:text-5xl font-serif text-charcoal tracking-tight">
@@ -604,13 +604,13 @@ const NewsInsight = ({ title, description, posts }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
                     <div className="flex flex-col justify-between h-full gap-16">
                         <div className="space-y-4">
-                            <span className="news-anim block font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 opacity-0 translate-y-4">
+                            <span className="news-anim block font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 opacity-0 translate-y-4">
                                 Latest Insights
                             </span>
                             <h2 className="news-anim font-serif text-charcoal text-4xl md:text-5xl tracking-tight opacity-0 translate-y-4">
                                 {title}
                             </h2>
-                            <p className="news-anim font-sans text-charcoal/50 text-sm leading-relaxed max-w-xs opacity-0 translate-y-4">
+                            <p className="news-anim font-sans text-charcoal/70 text-sm leading-relaxed max-w-xs opacity-0 translate-y-4">
                                 {description}
                             </p>
                         </div>
@@ -636,7 +636,7 @@ const NewsInsight = ({ title, description, posts }) => {
                                     />
                                 </div>
                                 <div className="space-y-2 pt-1">
-                                    <p className="font-sans text-xs text-charcoal/40 tracking-wide">{post.date}</p>
+                                    <p className="font-sans text-xs text-charcoal/70 tracking-wide">{post.date}</p>
                                     <p className="font-sans text-charcoal text-base font-medium leading-snug group-hover:text-steel transition-colors duration-200">
                                         {post.title}
                                     </p>
@@ -706,37 +706,7 @@ export default function AgenticCommerce() {
                 "description": "Autonomous AI agent infrastructure for machine-to-machine procurement, negotiation, and settlement. Replaces manual storefronts with headless architecture optimised for agent-to-agent trade.",
                 "serviceType": "Autonomous Commerce Infrastructure",
                 "areaServed": "Worldwide",
-                "provider": { "@id": "https://aivelocity.dev/#organization" },
-                "hasOfferCatalog": {
-                    "@type": "OfferCatalog",
-                    "name": "Agentic Commerce Services",
-                    "itemListElement": [
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "AI-Generated Brand Ambassadors",
-                                "description": "Synthetic influencers fluent in 60+ languages that represent your brand 24/7 with zero downtime."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Autonomous Settlement Infrastructure",
-                                "description": "Machine-to-machine payment rails using the x402 payment protocol for instant, cryptographically signed stablecoin settlement."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Headless Commerce Architecture",
-                                "description": "API-first commerce backends optimised for autonomous agent discovery, negotiation, and procurement."
-                            }
-                        }
-                    ]
-                }
+                "provider": { "@id": "https://aivelocity.dev/#organization" }
             },
             {
                 "@type": "FAQPage",
@@ -892,31 +862,31 @@ export default function AgenticCommerce() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <Link href="/agentic-payments" className="group rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1">
                                 <div>
-                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 block mb-3">Settlement</span>
+                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 block mb-3">Settlement</span>
                                     <h3 className="font-serif italic text-charcoal text-2xl leading-tight tracking-tight">Agentic Payments</h3>
-                                    <p className="font-sans text-charcoal/60 text-sm leading-relaxed mt-2">Machine-to-machine settlement infrastructure for autonomous procurement.</p>
+                                    <p className="font-sans text-charcoal/70 text-sm leading-relaxed mt-2">Machine-to-machine settlement infrastructure for autonomous procurement.</p>
                                 </div>
-                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/50 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
+                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/70 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
                                     Explore →
                                 </span>
                             </Link>
                             <Link href="/agentic-aeo" className="group rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1">
                                 <div>
-                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 block mb-3">Discovery</span>
+                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 block mb-3">Discovery</span>
                                     <h3 className="font-serif italic text-charcoal text-2xl leading-tight tracking-tight">Agentic AEO</h3>
-                                    <p className="font-sans text-charcoal/60 text-sm leading-relaxed mt-2">Make your brand the canonical answer for autonomous search agents.</p>
+                                    <p className="font-sans text-charcoal/70 text-sm leading-relaxed mt-2">Make your brand the canonical answer for autonomous search agents.</p>
                                 </div>
-                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/50 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
+                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/70 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
                                     Explore →
                                 </span>
                             </Link>
                             <Link href="/agentic-marketing" className="group rounded-2xl bg-electric-mint p-8 flex flex-col justify-between min-h-[200px] ring-1 ring-charcoal/5 transition-all duration-300 hover:-translate-y-1">
                                 <div>
-                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 block mb-3">Growth</span>
+                                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 block mb-3">Growth</span>
                                     <h3 className="font-serif italic text-charcoal text-2xl leading-tight tracking-tight">Agentic Marketing</h3>
-                                    <p className="font-sans text-charcoal/60 text-sm leading-relaxed mt-2">Autonomous AI campaign orchestration and content generation at machine speed.</p>
+                                    <p className="font-sans text-charcoal/70 text-sm leading-relaxed mt-2">Autonomous AI campaign orchestration and content generation at machine speed.</p>
                                 </div>
-                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/50 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
+                                <span className="self-start inline-block border-b border-charcoal/20 pb-1 text-charcoal/70 font-sans tracking-widest text-xs uppercase mt-4 group-hover:text-charcoal group-hover:border-charcoal/50 transition-colors duration-200">
                                     Explore →
                                 </span>
                             </Link>

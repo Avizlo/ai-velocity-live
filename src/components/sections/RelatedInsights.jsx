@@ -62,20 +62,20 @@ export const RelatedInsights = ({
                     {/* Left — Title, description, CTA */}
                     <div className="flex flex-col justify-between h-full gap-16">
                         <div className="space-y-4">
-                            <span className="ri-anim block font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/40 opacity-0">
+                            <span className="ri-anim block font-mono text-[10px] tracking-[0.25em] uppercase text-charcoal/70 opacity-0">
                                 Latest Insights
                             </span>
                             <h2 className="ri-anim font-serif text-charcoal text-4xl md:text-5xl tracking-tight opacity-0">
                                 {title}
                             </h2>
-                            <p className="ri-anim font-sans text-charcoal/50 text-sm leading-relaxed max-w-xs opacity-0">
+                            <p className="ri-anim font-sans text-charcoal/70 text-sm leading-relaxed max-w-xs opacity-0">
                                 {description}
                             </p>
                         </div>
                         <div className="ri-anim opacity-0">
                             <Link
                                 href={category ? `/news-insights/${category.toLowerCase().replace(/\s+/g, '-')}` : '/news-insights'}
-                                className="inline-block border-b border-charcoal/30 pb-1 text-charcoal transition-colors duration-300 font-sans tracking-widest text-xs uppercase hover:text-charcoal/60 hover:border-charcoal/60"
+                                className="inline-block border-b border-charcoal/30 pb-1 text-charcoal transition-colors duration-300 font-sans tracking-widest text-xs uppercase hover:text-charcoal/70 hover:border-charcoal/60"
                             >
                                 {category ? `More ${category} Articles` : 'More Articles'} →
                             </Link>
@@ -98,12 +98,12 @@ export const RelatedInsights = ({
                                     </div>
                                     <div className="flex-1 space-y-2 pt-1">
                                         <div className="flex items-center gap-3">
-                                            <p className="font-sans text-xs text-charcoal/40 tracking-wide">{formatDate(post.date)}</p>
+                                            <p className="font-sans text-xs text-charcoal/70 tracking-wide">{formatDate(post.date)}</p>
                                         </div>
                                         <p className="font-sans text-charcoal text-base font-medium leading-snug group-hover:text-steel transition-colors duration-200">
                                             {post.title}
                                         </p>
-                                        <span className="inline-flex items-center gap-1.5 font-sans text-xs text-charcoal/40 tracking-wide pt-1 group-hover:text-charcoal transition-colors duration-200">
+                                        <span className="inline-flex items-center gap-1.5 font-sans text-xs text-charcoal/70 tracking-wide pt-1 group-hover:text-charcoal transition-colors duration-200">
                                             Read Article <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
                                         </span>
                                     </div>

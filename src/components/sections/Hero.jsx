@@ -14,21 +14,22 @@ export const Hero = () => {
     const subRef = useRef(null);
 
     useEffect(() => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         const ctx = gsap.context(() => {
             const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
             tl.fromTo(outlineRef.current,
-                { y: 80, opacity: 0 },
-                { y: 0, opacity: 1, duration: 1.4 }
+                { y: 40 },
+                { y: 0, duration: 1.4 }
             )
                 .fromTo(solidRef.current,
-                    { y: 80, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 1.4 },
+                    { y: 40 },
+                    { y: 0, duration: 1.4 },
                     "-=1.1"
                 )
                 .fromTo(subRef.current,
-                    { y: 30, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 1.2 },
+                    { y: 20 },
+                    { y: 0, duration: 1.2 },
                     "-=0.8"
                 );
         }, containerRef);
@@ -65,7 +66,7 @@ export const Hero = () => {
 
                 {/* Subtitle - Clean with accent dots */}
                 <div ref={subRef} className="max-w-xl">
-                    <p className="text-sm md:text-base text-white/50 font-mono leading-relaxed tracking-wide">
+                    <p className="text-sm md:text-base text-white/70 font-mono leading-relaxed tracking-wide">
                         Agentic Commerce. Marketing. Payments. Discovery. Autonomous systems for the AI economy.
                     </p>
                 </div>

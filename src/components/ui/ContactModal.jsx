@@ -166,7 +166,7 @@ export const ContactModal = ({ isOpen, onClose }) => {
                                     placeholder="Name"
                                     value={formData.name}
                                     onChange={handleChange}
-                                    className="w-full bg-transparent border-b border-white/15 pb-3 text-sm text-white placeholder-white/30 font-sans tracking-wide focus:outline-none focus:border-electric-mint/50 transition-colors duration-300"
+                                    className="w-full bg-transparent border-b border-white/40 pb-3 text-sm text-white placeholder-white/60 font-sans tracking-wide focus:outline-none focus:border-electric-mint/50 transition-colors duration-300"
                                     required
                                 />
                             </div>
@@ -180,7 +180,7 @@ export const ContactModal = ({ isOpen, onClose }) => {
                                     placeholder="Email"
                                     value={formData.email}
                                     onChange={handleChange}
-                                    className="w-full bg-transparent border-b border-white/15 pb-3 text-sm text-white placeholder-white/30 font-sans tracking-wide focus:outline-none focus:border-electric-mint/50 transition-colors duration-300"
+                                    className="w-full bg-transparent border-b border-white/40 pb-3 text-sm text-white placeholder-white/60 font-sans tracking-wide focus:outline-none focus:border-electric-mint/50 transition-colors duration-300"
                                     required
                                 />
                             </div>
@@ -194,14 +194,14 @@ export const ContactModal = ({ isOpen, onClose }) => {
                                     rows={4}
                                     value={formData.message}
                                     onChange={handleChange}
-                                    className="w-full bg-transparent border-b border-white/15 pb-3 text-sm text-white placeholder-white/30 font-sans tracking-wide focus:outline-none focus:border-electric-mint/50 transition-colors duration-300 resize-none"
+                                    className="w-full bg-transparent border-b border-white/40 pb-3 text-sm text-white placeholder-white/60 font-sans tracking-wide focus:outline-none focus:border-electric-mint/50 transition-colors duration-300 resize-none"
                                     required
                                 />
                             </div>
 
                             {/* Error message */}
                             {status === 'error' && errorMessage && (
-                                <p className="font-mono text-xs text-red-400/80 tracking-wide">{errorMessage}</p>
+                                <p className="font-mono text-xs text-red-400 tracking-wide">{errorMessage}</p>
                             )}
 
                             {/* Cloudflare Turnstile — invisible mode */}

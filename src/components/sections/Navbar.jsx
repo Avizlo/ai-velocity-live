@@ -153,7 +153,7 @@ export const Navbar = () => {
 
                         <button
                             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-                            className={`lg:hidden transition-colors ${isScrolled || isMobileMenuOpen || activeDropdown
+                            className={`lg:hidden min-w-[44px] min-h-[44px] -mr-2 flex items-center justify-center transition-colors ${isScrolled || isMobileMenuOpen || activeDropdown
                                 ? (isMobileMenuOpen || navTheme === 'dark')
                                     ? 'text-white/80 hover:text-white'
                                     : 'text-charcoal/80 hover:text-charcoal'
@@ -207,7 +207,7 @@ export const Navbar = () => {
                                 <div>
                                     <h4 className="text-charcoal font-sans font-medium mb-3 text-lg">Studio</h4>
                                     <div className="flex flex-col gap-3 font-mono text-xs opacity-90">
-                                        <Link href="/agentic-marketing" className="text-dew-mint font-bold hover:text-dew-mint-hover transition-colors duration-300">Agentic Marketing</Link>
+                                        <Link href="/agentic-marketing" className="text-charcoal font-bold underline underline-offset-4 hover:text-charcoal/70 transition-colors duration-300">Agentic Marketing</Link>
                                         <span className="opacity-60 cursor-default">Digital Lookbooks</span>
                                         <span className="opacity-60 cursor-default">AI Studio Production</span>
                                     </div>

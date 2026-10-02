@@ -8,7 +8,7 @@ export const StatementText = ({
                 <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-24 items-start">
 
                     {/* Left: small label */}
-                    <p className="font-sans text-sm text-charcoal/50 tracking-wide pt-2">
+                    <p className="font-sans text-sm text-charcoal/70 tracking-wide pt-2">
                         {label}
                     </p>
 

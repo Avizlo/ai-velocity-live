@@ -80,7 +80,7 @@ export default function AboutPage() {
                         </div>
                     ))}
                 </dl>
-                <p className="font-mono text-[10px] text-white/40 uppercase tracking-widest mt-6 max-w-4xl">
+                <p className="font-mono text-[10px] text-white/60 uppercase tracking-widest mt-6 max-w-4xl">
                     No client case studies appear on this site. When they do, they will be named, measured and verifiable.
                 </p>
             </section>

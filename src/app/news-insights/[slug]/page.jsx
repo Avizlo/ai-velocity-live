@@ -320,7 +320,7 @@ export default async function ArticlePage({ params }) {
                             [&_strong]:text-white [&_strong]:font-medium
                             [&_a]:text-electric-mint [&_a]:underline [&_a:hover]:text-white
                             [&>blockquote]:border-l-2 [&>blockquote]:border-electric-mint/50 [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-white/80 [&>blockquote]:my-8
-                            [&>table]:w-full [&>table]:my-10 [&>table]:border-collapse [&>table]:text-base md:[&>table]:text-lg
+                            [&>table]:block [&>table]:max-w-full [&>table]:overflow-x-auto md:[&>table]:table [&>table]:w-full [&>table]:my-10 [&>table]:border-collapse [&>table]:text-base md:[&>table]:text-lg
                             [&_thead]:border-b [&_thead]:border-electric-mint/40
                             [&_th]:text-left [&_th]:font-mono [&_th]:text-[10px] md:[&_th]:text-xs [&_th]:uppercase [&_th]:tracking-widest [&_th]:text-electric-mint [&_th]:font-normal [&_th]:pb-3 [&_th]:pr-6
                             [&_td]:py-4 [&_td]:pr-6 [&_td]:border-b [&_td]:border-white/10 [&_td]:text-white/70 [&_td]:align-top
