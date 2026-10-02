@@ -328,20 +328,20 @@ const AeoDiscoveryGrid = () => {
                             <span className="font-serif italic text-2xl text-electric-mint block mb-6">The Future of Search</span>
                             <div className="space-y-4">
                                 <div className="border-b border-white/[0.10] pb-3">
-                                    <p className="font-serif italic text-3xl text-white tracking-tight">61%</p>
-                                    <p className="font-sans font-normal text-white/70 text-sm mt-1">Enterprise Purchase Decisions Influenced by LLM Answers</p>
+                                    <p className="font-serif italic text-3xl text-white tracking-tight">+62%</p>
+                                    <p className="font-sans font-normal text-white/70 text-sm mt-1">AI-referred traffic to US retail, year on year (Adobe, Jul 2026)</p>
                                 </div>
                                 <div className="border-b border-white/[0.10] pb-3">
-                                    <p className="font-serif italic text-3xl text-white tracking-tight">40%</p>
-                                    <p className="font-sans font-normal text-white/70 text-sm mt-1">Product Discovery via AI Agents by 2027</p>
+                                    <p className="font-serif italic text-3xl text-white tracking-tight">+53%</p>
+                                    <p className="font-sans font-normal text-white/70 text-sm mt-1">More revenue per visit from AI referrals (Adobe, Jul 2026)</p>
                                 </div>
                                 <div className="border-b border-white/[0.10] pb-3">
-                                    <p className="font-serif italic text-3xl text-white tracking-tight">77%</p>
-                                    <p className="font-sans font-normal text-white/70 text-sm mt-1">Competitors Structurally Invisible to Agents</p>
+                                    <p className="font-serif italic text-3xl text-white tracking-tight">&lt;1 in 5</p>
+                                    <p className="font-sans font-normal text-white/70 text-sm mt-1">UK firms say their full product list is ready for AI (PayPal, Mar 2026)</p>
                                 </div>
                                 <div>
-                                    <p className="font-serif italic text-3xl text-white tracking-tight">34%</p>
-                                    <p className="font-sans font-normal text-white/70 text-sm mt-1">Correlation Between SEO Rankings and AI Citations</p>
+                                    <p className="font-serif italic text-3xl text-white tracking-tight">Dated</p>
+                                    <p className="font-sans font-normal text-white/70 text-sm mt-1">Every figure here carries its source and month</p>
                                 </div>
                             </div>
                         </div>

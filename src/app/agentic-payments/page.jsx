@@ -328,20 +328,20 @@ const PaymentsSettlementGrid = () => {
                             <span className="font-serif italic text-2xl text-electric-mint block mb-6">Why Autonomous Payments</span>
                             <div className="space-y-4">
                                 <div className="border-b border-white/[0.10] pb-3">
-                                    <p className="font-serif italic text-3xl text-white tracking-tight">90%</p>
-                                    <p className="font-sans font-normal text-white/70 text-sm mt-1">Faster Reconciliation vs Traditional Rails</p>
+                                    <p className="font-serif italic text-3xl text-white tracking-tight">HTTP 402</p>
+                                    <p className="font-sans font-normal text-white/70 text-sm mt-1">x402: machine payments over the web, now a Linux Foundation project</p>
                                 </div>
                                 <div className="border-b border-white/[0.10] pb-3">
-                                    <p className="font-serif italic text-3xl text-white tracking-tight">130+</p>
-                                    <p className="font-sans font-normal text-white/70 text-sm mt-1">Markets With Instant Settlement</p>
+                                    <p className="font-serif italic text-3xl text-white tracking-tight">FIDO</p>
+                                    <p className="font-sans font-normal text-white/70 text-sm mt-1">AP2, Google's agent payments protocol, handed to the FIDO Alliance (Apr 2026)</p>
                                 </div>
                                 <div className="border-b border-white/[0.10] pb-3">
                                     <p className="font-serif italic text-3xl text-white tracking-tight">Zero‑trust</p>
                                     <p className="font-sans font-normal text-white/70 text-sm mt-1">Non-custodial Architecture</p>
                                 </div>
                                 <div>
-                                    <p className="font-serif italic text-3xl text-white tracking-tight">99%</p>
-                                    <p className="font-sans font-normal text-white/70 text-sm mt-1">Lower Fees vs Traditional Payment Rails</p>
+                                    <p className="font-serif italic text-3xl text-white tracking-tight">US first</p>
+                                    <p className="font-sans font-normal text-white/70 text-sm mt-1">Stripe's Agentic Commerce Suite launched for US businesses (Apr 2026)</p>
                                 </div>
                             </div>
                         </div>
@@ -391,7 +391,7 @@ const PaymentsSettlementGrid = () => {
                                 Autonomous Payment Settlement: What CFOs Need to Know in 2026
                             </h3>
                             <p className="font-sans text-charcoal/70 text-sm leading-relaxed">
-                                Agent-initiated transactions now represent 8% of B2B settlement volume. Your payment infrastructure was not built for this.
+                                Agent payments are live on some rails and missing on others. What a finance team needs to check before switching anything on.
                             </p>
                         </div>
                         <span className="relative z-10 self-start inline-block border-b border-charcoal/30 pb-1 text-charcoal transition-colors duration-300 font-sans tracking-widest text-xs uppercase">

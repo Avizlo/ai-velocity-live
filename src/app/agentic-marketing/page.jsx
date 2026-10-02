@@ -33,10 +33,10 @@ const statementSection = {
 
 const commerceBentoData = {
     statLine: {
-        pct: "87%",
-        dashPct: 0.87,
-        heading: "Campaign Performance Rate",
-        body: "Agentic content consistently outperforms traditional creative in both engagement and conversion metrics.",
+        pct: "53%",
+        dashPct: 0.53,
+        heading: "More Revenue per AI-Referred Visit",
+        body: "Adobe Analytics, US retail, July 2026: shoppers arriving from AI assistants generated 53% more revenue per visit than other traffic.",
         link: "View Research"
     },
     images: {

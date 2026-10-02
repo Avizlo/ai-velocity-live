@@ -7,6 +7,7 @@ export const StrategyOption1 = () => {
     const sectionRef = useRef(null);
 
     useEffect(() => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         gsap.registerPlugin(ScrollTrigger);
         const ctx = gsap.context(() => {
             gsap.fromTo(sectionRef.current.querySelectorAll('.phase-anim'),
@@ -20,47 +21,41 @@ export const StrategyOption1 = () => {
         return () => ctx.revert();
     }, []);
 
+    // Reviewed 2026-10-02. Every stat is dated and sourced; forward entries are questions, not forecasts.
     const phases = [
         {
-            period: "Q4 2025",
-            title: "The Protocol Layer Arrives",
-            desc: "Stripe launches the Agentic Commerce Suite and co-develops the Agentic Commerce Protocol (ACP) with OpenAI. Google and Apple announce agent integration strategies. The foundational standards for machine-to-machine commerce are set.",
-            stat: "Dec 2025: Stripe ACP goes live",
+            period: "Sep 2025 – Jan 2026",
+            title: "The Protocols Are Published",
+            desc: "OpenAI and Stripe open-source the Agentic Commerce Protocol (ACP). Google announces the Universal Commerce Protocol (UCP) at NRF with Shopify, Etsy, Wayfair, Target and Walmart. The standards for agent checkout exist on paper.",
+            stat: "UCP announced 11 Jan 2026 (Google, NRF)",
             isCurrent: false
         },
         {
-            period: "Q1 2026",
-            title: "The Payment Rails Go Live",
-            desc: "Visa Intelligent Commerce, Mastercard Agent Pay, and Shared Payment Tokens create a three-layer trust stack for autonomous transactions. The settlement infrastructure for agentic commerce becomes operational across all major card networks.",
-            stat: "$1.9T processed through Stripe in 2025",
+            period: "Mar – Apr 2026",
+            title: "First Contact With Reality",
+            desc: "OpenAI scales back in-chat Instant Checkout and routes buyers to merchant sites instead. Shopify switches on Agentic Storefronts for US merchants. Google hands the AP2 payments protocol to the FIDO Alliance.",
+            stat: "Instant Checkout scaled back, 10 Mar 2026 (Retail Gazette)",
+            isCurrent: false
+        },
+        {
+            period: "Q3 2026",
+            title: "Discovery Moves Faster Than Checkout",
+            desc: "AI assistants send more shoppers to retail sites, and those visitors convert better than average. Buying inside the assistant stays rare. Being found, read and cited by AI matters now; agent checkout mostly does not yet.",
+            stat: "AI referrals to US retail +62% YoY, converting 60% better (Adobe, Jul 2026)",
+            isCurrent: false
+        },
+        {
+            period: "Q4 2026",
+            title: "Checkout Is Still US-First",
+            desc: "Google's UCP checkout is rolling out to US merchants only, with Australia and Canada next and no UK date. Adobe Commerce has committed to UCP and ACP but not shipped them natively. For a UK merchant, the work that pays today is product data, AI visibility and measurement.",
+            stat: "UCP checkout: US now, AU and CA next year (Google Merchant Center, Oct 2026)",
             isCurrent: true
         },
         {
-            period: "Q2–Q3 2026",
-            title: "Enterprise Adoption Wave",
-            desc: "Major retailers activate agent commerce through platform-level integrations. Squarespace, Wix, WooCommerce, and BigCommerce bring millions of merchants online for agent discovery. First measurable revenue from agent-originated transactions is reported.",
-            stat: "81% of consumers open to agentic commerce",
-            isCurrent: false
-        },
-        {
             period: "2027",
-            title: "Autonomous Procurement at Scale",
-            desc: "Agent-to-agent B2B transactions become standard operating procedure. Stablecoin settlement overtakes card rails for cross-border agent commerce. Level 3 agentic commerce, where agents purchase within delegated parameters, reaches mainstream adoption.",
-            stat: "Stablecoin market cap exceeds $230B",
-            isCurrent: false
-        },
-        {
-            period: "2028–2029",
-            title: "The Agent Economy Matures",
-            desc: "Full-stack agentic commerce ecosystems manage entire procurement lifecycles. Traditional e-commerce becomes legacy architecture. Brands without agent-readable infrastructure experience measurable revenue decline as autonomous purchasing agents systematically exclude them.",
-            stat: "$1T US agentic commerce (McKinsey projection)",
-            isCurrent: false
-        },
-        {
-            period: "2030",
-            title: "$30 Trillion: The New Baseline",
-            desc: "Agentic intelligence influences approximately 30% of global commerce. Autonomous agents handle discovery, negotiation, payment, and fulfilment across every major vertical. The commercial internet has been fundamentally restructured around machine-to-machine protocols.",
-            stat: "$30T global commerce influenced by AI agents",
+            title: "The Questions That Decide It",
+            desc: "Does agent checkout reach the UK, and on whose rails? Do platforms below Shopify ship native support? Do assistants keep sending traffic to merchants, or keep the purchase for themselves? We track the evidence here as it lands, not the forecasts.",
+            stat: "Open: we update this timeline as the evidence changes",
             isCurrent: false
         }
     ];
@@ -68,8 +63,8 @@ export const StrategyOption1 = () => {
     return (
         <section ref={sectionRef} className="py-24 bg-charcoal min-h-screen text-white relative flex flex-col items-center overflow-hidden">
             <h1 className="text-4xl md:text-5xl font-serif tracking-tight mb-4 text-center mt-12 md:mt-20 px-6">The Adaptation Timeline</h1>
-            <p className="text-white/50 font-sans text-sm md:text-base max-w-xl text-center mb-16 md:mb-20 px-6">
-                The infrastructure for autonomous commerce is being built now. This is the timeline that will define the next era of global trade.
+            <p className="text-white/70 font-sans text-sm md:text-base max-w-xl text-center mb-16 md:mb-20 px-6">
+                What has actually shipped in agentic commerce, what has not, and where a merchant stands today. Every milestone is dated and sourced. Last reviewed 2 October 2026.
             </p>
 
             <div className="relative w-full max-w-4xl mx-auto pb-16 px-6 md:px-0">
@@ -88,7 +83,7 @@ export const StrategyOption1 = () => {
                             )}
                             <span className="font-mono text-electric-mint text-xs uppercase tracking-widest">{phase.period}</span>
                             <h3 className="text-xl md:text-2xl font-serif mt-2 mb-3">{phase.title}</h3>
-                            <p className="text-white/60 font-sans text-sm mb-4">{phase.desc}</p>
+                            <p className="text-white/70 font-sans text-sm mb-4">{phase.desc}</p>
                             {/* Stat callout */}
                             <div className={`flex items-center gap-2 pt-3 border-t ${phase.isCurrent ? 'border-electric-mint/20' : 'border-white/10'}`}>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-electric-mint shrink-0"><path d="M22 12h-4l-3 9L9 3l-3 9H2" /></svg>

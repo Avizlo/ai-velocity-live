@@ -90,10 +90,10 @@ const services = [
 ];
 
 const stats = [
-    { value: "$30T", label: "Autonomous commerce market by 2030" },
-    { value: "24/7", label: "Agent availability across 60+ languages" },
-    { value: "61%", label: "Enterprise decisions influenced by LLM answers" },
-    { value: "77%", label: "Competitors invisible to AI agents" },
+    { value: "+62%", label: "AI-referred traffic to US retail, year on year (Adobe, Jul 2026)" },
+    { value: "60%", label: "Higher conversion from AI referrals than other traffic (Adobe, Jul 2026)" },
+    { value: "<1 in 5", label: "UK firms say their full product list is ready for AI (PayPal, Mar 2026)" },
+    { value: "US only", label: "Where Google's agent checkout is rolling out today (Oct 2026)" },
 ];
 
 // Get the 3 most recent articles

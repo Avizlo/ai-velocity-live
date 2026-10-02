@@ -36,19 +36,19 @@ export const StrategyOption3 = () => {
         {
             id: 1,
             title: "Make Your Brand Machine-Readable",
-            text: "Implement JSON-LD schemas, structured product data, and clean API endpoints. AI agents cannot browse visual storefronts. They require structured data to discover, compare, and transact with your catalogue.",
+            text: "Complete product data, JSON-LD schema and a clean feed. AI assistants and shopping agents read structured data far more reliably than they read a designed page, so gaps in titles, attributes and identifiers are where you disappear.",
             stat: "Brands without structured data are invisible to agents"
         },
         {
             id: 2,
-            title: "Activate the Agent Payment Stack",
-            text: "Connect to Stripe's Agentic Commerce Suite or equivalent agent-ready payment infrastructure. Enable Shared Payment Tokens, Visa Intelligent Commerce verification, and Mastercard Agent Pay to accept autonomous transactions securely.",
+            title: "Measure What AI Already Sends You",
+            text: "Separate AI-referred visits in your analytics, and test on a fixed date each month whether the main assistants name you for the questions your buyers ask. A dated baseline turns AI visibility from a belief into a number you can improve.",
             stat: "One integration makes you visible to every major AI agent"
         },
         {
             id: 3,
-            title: "Build for the Agent-First Future",
-            text: "Audit your fraud detection rules to accept authenticated agent transactions. Monitor agent-originated revenue as a new KPI. Prepare your procurement and supply chain systems for autonomous B2B purchasing at scale.",
+            title: "Prepare Checkout, Don't Rush It",
+            text: "Know which agent protocols your platform supports and in which countries. Most agent checkout is US-only today. Review fraud and bot rules so verified agents are not blocked, and switch on agent payments when they reach your market and your payment provider.",
             stat: "The window to establish first-mover advantage is closing"
         }
     ];

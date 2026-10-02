@@ -37,7 +37,7 @@ const commerceBentoData = {
         pct: "24/7",
         dashPct: 0.99,
         heading: "These models work for you.",
-        body: "Every model in this grid is AI-generated. Agentic influencers sell your products around the clock, fluent in 60+ languages, with zero downtime. By 2030, autonomous commerce is forecast to influence $30 trillion in global transactions."
+        body: "Every model in this grid is AI-generated. Agentic influencers sell your products around the clock, fluent in 60+ languages, with zero downtime."
     },
     images: {
         center: "/images/ai-model-1.webp",
@@ -127,7 +127,7 @@ const manifestoTitle = "Agentic Commerce";
 
 const manifestoLeadIn = [
     "Agentic commerce is the replacement of human-driven online shopping with autonomous AI agents that find, evaluate, negotiate, and complete transactions without human intervention. Where traditional e-commerce requires a person to browse, click, compare, and check out, agentic commerce delegates the entire purchase cycle to software agents operating at machine speed.",
-    "The global autonomous commerce market is forecast to reach $30 trillion by 2030. Brands that fail to restructure their commercial infrastructure for machine-readable logic will be invisible to the agents making purchasing decisions on behalf of billions of consumers."
+     "Brands that fail to restructure their commercial infrastructure for machine-readable logic will be invisible to the agents making purchasing decisions on behalf of billions of consumers."
 ];
 
 const manifestoSections = [
@@ -158,7 +158,7 @@ const manifestoSections = [
         content: [
             "Traditional e-commerce was engineered for human psychology. Product pages are designed to capture attention, create desire, and reduce friction in the human decision-making process. Cart abandonment rates, checkout optimization, and conversion rate enhancement are the metrics that define success in the legacy model.",
             "Agentic commerce operates on fundamentally different logic. An AI agent is not susceptible to urgency triggers, scarcity messaging, or visual merchandising. It evaluates product attributes against consumer parameters and executes the optimal transaction. The entire psychological architecture of traditional retail becomes irrelevant.",
-            "This creates a structural advantage for brands that make the transition early. When 77% of competitors remain invisible to AI agents — because their product data is locked inside visual interfaces that machines cannot parse — the brands with machine-readable infrastructure capture transactions before a human ever opens a browser.",
+            "This creates a structural advantage for brands that make the transition early. When most competitors remain hard for AI agents to read — because their product data is locked inside visual interfaces that machines cannot parse — the brands with machine-readable infrastructure capture transactions before a human ever opens a browser.",
             "The implications extend beyond individual transactions. As AI assistants become the primary interface through which consumers interact with commerce, the brands cited by those assistants as authoritative sources become default choices. Answer engine optimization (AEO) — structuring content so that AI systems cite your brand as the canonical answer to purchase intent queries — is the parallel discipline that ensures agentic commerce infrastructure translates into actual discovery."
         ]
     },
@@ -233,7 +233,7 @@ const manifestoSections = [
         title: "Why Agentic Commerce Is Happening Now",
         content: [
             "Three converging forces are driving the transition at accelerating speed.",
-            "AI assistant adoption has reached the consumer mainstream. Adobe Analytics measured AI-referred traffic to US retail sites growing 393% year on year in the first quarter of 2026, converting better than organic search for the first time. As AI assistants move from novelty to infrastructure, their role in purchase decision-making scales proportionally.",
+            "AI assistant adoption has reached the consumer mainstream. Adobe Analytics measured AI-referred traffic to US retail sites growing 393% year on year in the first quarter of 2026 and still 62% in July, with those visitors converting 60% better than other traffic. As AI assistants move from novelty to infrastructure, their role in purchase decision-making scales proportionally.",
             "Payment protocol standardisation has provided the settlement layer that autonomous commerce requires. With UCP generally available to Shopify merchants, AP2 under FIDO Alliance governance, and stablecoin settlement live through x402 and MPP, the financial infrastructure for autonomous transactions now exists at scale.",
             "Structural pressure on legacy retail is accelerating the transition. E-commerce conversion rates, customer acquisition costs, and cart abandonment rates have been deteriorating for years as human attention becomes more fragmented. Brands that route their commerce through agent networks escape the economics of attention-based retail entirely."
         ]
