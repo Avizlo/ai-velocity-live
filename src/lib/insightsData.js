@@ -5310,4 +5310,137 @@ Shopify has given browser agents a declared path through checkout instead of a p
         }
     ]
 },
+{
+    id: "54",
+    slug: "what-is-an-agentic-browser",
+    title: "What Is an Agentic Browser? Chrome, Comet and the Atlas Exit",
+    category: "Agentic Commerce",
+    categoryPage: "/agentic-commerce",
+    relatedSlugs: [
+        "what-is-agentic-commerce",
+        "agentic-checkout-trust-gap-visa-trust-index",
+        "know-your-agent-kya-framework-visa-mastercard-ant"
+    ],
+    date: "2026-10-07T12:21:00Z",
+    dateModified: "2026-10-06T08:00:00Z",
+    author: "AIV Research Desk",
+    readTime: "9 min read",
+    image: "/images/insights/what-is-an-agentic-browser.webp",
+    imageAlt: "Close-up of a laptop keyboard lit blue by its half-open screen in a dark room",
+    excerpt: "An agentic browser has an AI agent that clicks, types and checks out for you. Here is who makes them, what a US appeals court ruled, and what merchants face.",
+    reverifyTriggers: [
+        "Amazon v. Perplexity (N.D. Cal. 3:25-cv-09514, 9th Cir. 26-1444): rehearing, Supreme Court petition, or a ruling on remand",
+        "Chrome auto browse leaves the US-only or AI Pro/Ultra-only rollout",
+        "OpenAI ships a new standalone browser or changes where ChatGPT's browser agent runs",
+        "Google or Perplexity publishes a material change to agent purchase confirmation or prompt-injection defences"
+    ],
+    content: `An **agentic browser** is a web browser with a built-in AI agent that can click, scroll, type and fill in forms on the user's behalf, rather than only summarising the page in front of them. As of October 2026 the most prominent examples are Google Chrome with Gemini's **auto browse** and Perplexity's **Comet**, while OpenAI's standalone **ChatGPT Atlas** browser stopped working on 9 August 2026 after OpenAI moved its agent features into ChatGPT. For merchants the most important recent development is legal, not technical: on 4 August 2026 a US federal appeals court ruled that when a shopper directs Comet's agent on Amazon, it is the shopper, not Perplexity, who accesses Amazon's site.
+
+That ruling, the security record of the category and the way these browsers hand control back at checkout all shape what an agentic browser means for a store. This explainer covers each in turn, using the vendors' own documentation and the court's opinion as sources.
+
+## What Is an Agentic Browser, Exactly?
+
+An agentic browser combines two things: an ordinary browser that renders websites, and a model that can operate that browser through the same buttons and fields a person uses. Google describes Chrome's version as "a powerful agentic experience that handles multi-step chores on your behalf" in its [Gemini 3 in Chrome announcement](https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/). OpenAI described Atlas as "a new web browser built with ChatGPT at its core" whose agent mode could open tabs and click through sites to complete a task, such as adding a recipe's ingredients to a grocery cart, in its [October 2025 launch post](https://openai.com/index/introducing-chatgpt-atlas/).
+
+The mechanics are visible in court records. The Ninth Circuit's [opinion in Amazon v. Perplexity](https://cdn.ca9.uscourts.gov/datastore/opinions/2026/08/04/26-1444.pdf) describes Comet's Assistant at work: it "takes screenshots of the browser view, sends those screenshots from the user's computer to Perplexity's servers, and receives instructions from Perplexity's servers on how to navigate Amazon.com." The browser runs locally; the reasoning runs in the vendor's cloud, which means images of whatever the user's browser shows, including signed-in account pages, leave the device while the agent works.
+
+Three distinctions keep the term precise:
+
+* **Agentic browser vs AI browser.** A browser with a chat sidebar that answers questions about the page is an AI browser. It becomes agentic when the assistant can take actions, such as filling a form or placing an item in a cart.
+* **Agentic browser vs shopping agent.** A shopping agent can work through an API or protocol without ever loading a web page. An agentic browser works through the same pages a human sees, which is why it can operate on almost any site without that site's cooperation.
+* **Agentic browser vs crawler.** A crawler fetches pages in bulk for an index or a training set. An agentic browser acts for one user, inside that user's session, often while the user is signed in.
+
+## Which Agentic Browsers Exist in 2026?
+
+The category has split into agents added to an existing browser and browsers built around an agent. The table below is limited to what each vendor's own pages state.
+
+| Product | Maker | Agent feature | Availability (per vendor) | Status, October 2026 |
+|---|---|---|---|---|
+| Chrome with Gemini | Google | Auto browse | Google AI Pro and Ultra subscribers in the US on Windows, macOS and Chromebook Plus; added for AI Pro and Ultra on US Android on 18 August 2026 | Live |
+| Comet | Perplexity | Comet Assistant | Limited release 9 July 2025; free to download worldwide from 2 October 2025 | Live |
+| ChatGPT Atlas | OpenAI | Agent mode (preview for Plus, Pro and Business at launch) | Launched on macOS 21 October 2025 | Stopped working 9 August 2026; agent features moved into ChatGPT and Codex |
+
+Sources: [Google, Gemini in Chrome on desktop](https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/); [Google, Gemini in Chrome on Android](https://blog.google/products-and-platforms/products/chrome/gemini-in-chrome-android-auto-browse/); [Perplexity, "The internet is better on Comet"](https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide); [OpenAI Help Center, Atlas deprecation](https://help.openai.com/en/articles/20001371-evolving-atlas-into-chatgpt-for-browser-based-agentic-work).
+
+## What Happened to ChatGPT Atlas?
+
+OpenAI shut Atlas down less than ten months after launch. Its [help centre article](https://help.openai.com/en/articles/20001371-evolving-atlas-into-chatgpt-for-browser-based-agentic-work) says OpenAI is "deprecating Atlas and moving browser-based agentic capabilities into ChatGPT and Codex", with Atlas "scheduled to stop working on August 9, 2026" after a wind-down of about 30 days from a planned 9 July announcement. OpenAI now points users to the ChatGPT desktop app for "deeper agentic browser work" and to a ChatGPT extension or sidebar for Chrome.
+
+The standalone browser did not survive; the agent did. OpenAI's stated aim is "a more capable browser experience in ChatGPT", and its article points browser agent work to the ChatGPT desktop app and a ChatGPT extension or sidebar for Chrome, where users already are, rather than in a separate browser people had to switch to. Google took that route from the start by putting auto browse inside Chrome. For a merchant, the likely consequence is that more agent sessions will arrive through mainstream browsers and assistants than through a separate, easily spotted agent browser.
+
+## How Does an Agentic Browser Buy Something?
+
+Google and OpenAI both designed their agents to stop short of paying unsupervised. Chrome's auto browse "is designed to pause and explicitly ask for your confirmation or prompt you to complete some tasks like making a purchase or posting on social media", according to [Google's announcement](https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/). Google's [security architecture post](https://blog.google/security/architecting-security-for-agentic/) of 8 December 2025 lists the moments Chrome asks the user first: before visiting sensitive sites such as banking or medical sites, before signing in through Google Password Manager, and before consequential actions such as "purchases or payments". OpenAI's Atlas agent, at launch, would "pause to ensure you're watching it take actions on specific sensitive sites such as financial institutions" and could not download files or install extensions ([OpenAI](https://openai.com/index/introducing-chatgpt-atlas/)).
+
+So in practice a screen-driving agentic browser does the browsing, comparing and form-filling, then hands the final step back to the person, on the merchant's own checkout page.
+
+There is a second route running alongside the screen-driving one. Google's Chrome announcement says Chrome will support the **Universal Commerce Protocol (UCP)**, "a new open standard for agentic commerce co-developed with industry leaders including Shopify, Etsy, Wayfair and Target". UCP lets an agent complete a structured checkout instead of clicking through the merchant's pages, so on that route the confirmation step is defined by the protocol and the agent, not by the merchant's checkout page (see our [explainer on agentic commerce](/news-insights/what-is-agentic-commerce) for how the protocols fit together).
+
+| | Screen-driving agent | Protocol checkout (e.g. UCP) |
+|---|---|---|
+| How the agent sees the store | Screenshots and page content | Structured data the merchant exposes |
+| Merchant cooperation needed | None | Yes, the merchant implements the protocol |
+| Works on | Almost any website | Merchants that support the protocol |
+| Who confirms the purchase | The user, at the vendor's confirmation step | Set by the protocol and the agent's own rules |
+
+## Is It Legal for an Agentic Browser to Shop on a Store That Objects?
+
+Amazon tested that question against Perplexity and, so far, lost. Amazon filed its complaint in November 2025 under the federal Computer Fraud and Abuse Act and California's computer data access law, and after a hearing in March 2026 the district court granted Amazon a preliminary injunction. On 4 August 2026 a Ninth Circuit panel [vacated that injunction](https://cdn.ca9.uscourts.gov/datastore/opinions/2026/08/04/26-1444.pdf) and sent the case back to the district court.
+
+The court's reasoning turns on who does the accessing. "However advanced the Assistant currently is, it is a tool, not a person for statutory purposes," the opinion says, and "it is the user who 'accesses' Amazon's computers, with the help of the Assistant." The opinion also records what the dispute was really about: Perplexity's decision not to use a **user-agent string** that would tell Amazon an AI agent had been activated, which would have let Amazon block it.
+
+Two limits matter. The panel states that it does "not establish a new legal regime governing agentic AI" and does not address other theories, such as tort claims. And the case continues on remand. What the ruling does signal, at the preliminary stage and within the Ninth Circuit, is that a store is unlikely to be able to rely on computer-hacking law to stop a customer's own browser agent from using its site.
+
+## Why Is Prompt Injection the Category's Hardest Problem?
+
+**Indirect prompt injection** is an attack in which instructions hidden in a web page, email or image are read by the agent and followed as if the user had given them. Google calls it "the primary new threat facing all agentic browsers" ([Google](https://blog.google/security/architecting-security-for-agentic/)).
+
+Brave's security team demonstrated the risk against Comet in August 2025. Its [write-up](https://brave.com/blog/comet-prompt-injection/) found that when asked to summarise a page, Comet fed the page to its model "without distinguishing between the user's instructions and untrusted content from the webpage." In Brave's proof of concept, an instruction hidden behind a spoiler tag in a Reddit comment led the agent to read a one-time password from the user's Gmail and post it back to Reddit. A postscript to the post says that on further testing "Perplexity still hasn't fully mitigated the kind of attack described here." Brave's conclusion was that "traditional Web security assumptions don't hold for agentic AI."
+
+Vendors are responding with architecture rather than single fixes. Google's Chrome design adds a **User Alignment Critic**, a separate model that checks each proposed action and is isolated from untrusted web content, and **Agent Origin Sets**, which limit the agent to sites relevant to the task. Google also offers up to $20,000 through its Vulnerability Rewards Program for breaches of these boundaries. OpenAI's Atlas launch post acknowledged that agents "are susceptible to hidden malicious instructions" that "could lead to stealing data from sites you're logged into."
+
+For merchants this cuts both ways. A product page, review or listing can carry injected text that redirects an agent, so user-generated content on a store is now part of its security surface.
+
+## What Should Merchants Do About Agentic Browsers?
+
+Agentic browsers are not a channel a merchant opts into. They arrive whether the store prepares or not, so the work is recognising them and making sure they can finish the job correctly.
+
+* **Learn to recognise declared agents.** Visa's Trusted Agent Protocol and Mastercard's Agent Pay both use **Web Bot Auth**, a cryptographic signature on agent requests, so that a merchant can "identify a registered agent and distinguish whether a particular interaction is intended to browse or to pay", according to [Cloudflare](https://blog.cloudflare.com/secure-agentic-commerce/), whose network verifies that traffic. Cloudflare's [bot documentation](https://developers.cloudflare.com/bots/concepts/bot/signed-agents/) now labels agents that many end users operate as "Intermediary" verified bots, as of 1 July 2026. In the Amazon case the court records that Perplexity did not use a user-agent string identifying its agent, so recognition cannot depend on every agent declaring itself.
+* **Do not build a strategy on blocking.** After the Ninth Circuit ruling, a blanket block on customer-directed agents has weaker legal backing in that circuit, and blocking also turns away a customer who chose to shop that way.
+* **Make the hand-back step clean.** Chrome and Atlas both return control to the person at payment or sign-in. A checkout that keeps the agent-built cart and entered details intact when the person takes over converts the agent's work; one that times out or forces the customer to start again does not. That human step is where agent-assisted sales are won or lost; our analysis of [the agentic checkout trust gap](/news-insights/agentic-checkout-trust-gap-visa-trust-index) looks at how far shoppers trust agents to pay.
+* **Moderate content as agent input.** Accurate product data helps an agent compare correctly, and moderated reviews and listings reduce the room for injected instructions.
+* **Watch the protocol route.** With Chrome committed to UCP, the structured-checkout path and the screen-driving path are converging in the same browser. Identity schemes such as [Know Your Agent](/news-insights/know-your-agent-kya-framework-visa-mastercard-ant) are the other half of that picture.
+
+The agentic browser is less a new product category than a new kind of visitor. The browsers will keep changing names and owners, as Atlas showed; the visitor will not go away.`,
+    faqs: [
+        {
+            question: "What is an agentic browser?",
+            answer: "An agentic browser is a web browser with a built-in AI agent that can click, scroll, type and fill in forms for the user, not just summarise pages. Examples in 2026 include Google Chrome with Gemini auto browse and Perplexity's Comet."
+        },
+        {
+            question: "What is the difference between an AI browser and an agentic browser?",
+            answer: "An AI browser adds an assistant that answers questions about the page you are on. An agentic browser goes further: its agent takes actions on websites, such as filling forms or adding items to a cart, usually pausing for the user to confirm purchases."
+        },
+        {
+            question: "Is ChatGPT Atlas still available?",
+            answer: "No. OpenAI deprecated ChatGPT Atlas and scheduled it to stop working on 9 August 2026, moving its browser-based agent features into ChatGPT and Codex. OpenAI now points users to the ChatGPT desktop app and a ChatGPT extension or sidebar for Chrome."
+        },
+        {
+            question: "Can an agentic browser buy things without my approval?",
+            answer: "The major agentic browsers are designed to pause before a purchase. Google says Chrome auto browse asks for explicit confirmation before actions such as making a purchase, and its security design requires user confirmation before payments and Password Manager sign-ins."
+        },
+        {
+            question: "Is it legal for an agentic browser to shop on Amazon?",
+            answer: "On 4 August 2026 the Ninth Circuit vacated a preliminary injunction that had barred Perplexity's Comet agent from Amazon, finding that the user, not Perplexity, accessed Amazon's site. The court said its ruling is limited to the record before it, and the case continues in the district court."
+        },
+        {
+            question: "Are agentic browsers safe to use?",
+            answer: "Agentic browsers carry a specific risk called indirect prompt injection, where hidden instructions on a web page hijack the agent. Google calls it the primary new threat facing all agentic browsers, and Brave demonstrated it against Comet in 2025, so vendors now add confirmation steps and isolated checking models."
+        },
+        {
+            question: "How should online stores prepare for agentic browsers?",
+            answer: "Online stores should learn to recognise signed agent traffic through schemes such as Web Bot Auth, keep product data accurate, and make the checkout step clear for the human who confirms the purchase. Blocking customer-directed agents has weaker legal backing in the Ninth Circuit after the Amazon v. Perplexity ruling."
+        }
+    ]
+},
 ];
