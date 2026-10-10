@@ -5443,4 +5443,133 @@ The agentic browser is less a new product category than a new kind of visitor. T
         }
     ]
 },
+{
+        id: "55",
+        slug: "what-are-ai-shopping-agents",
+        title: "What AI Shopping Agents Are, and What They Need From Merchants",
+        seoTitle: "AI Shopping Agents: What They Are and What Merchants Must Expose",
+        category: "Agentic Commerce",
+        categoryPage: "/agentic-commerce",
+        relatedSlugs: [
+            "what-is-agentic-commerce",
+            "anthropic-open-sources-claude-commerce-agents",
+            "what-agentic-payments-are-why-every-commerce-platform-building-one"
+        ],
+        date: "2026-10-10T09:38:00Z",
+        dateModified: "2026-10-10T09:38:00Z",
+        author: "AIV Research Desk",
+        readTime: "8 min read",
+        image: "/images/insights/what-are-ai-shopping-agents.webp",
+        imageAlt: "Narrow automated warehouse aisle between tall blue steel racks stacked with shrink-wrapped pallets",
+        excerpt: "AI shopping agents search, compare and sometimes buy for shoppers. ChatGPT, Google, Amazon and Anthropic's agent all start from one input: your product data.",
+        reverifyTriggers: [
+            "OpenAI reinstates in-chat checkout or changes the ACP feed spec's required fields",
+            "Google UCP checkout reaches the UK or adds new required Merchant Center attributes",
+            "Amazon opens the direct (non-intermediary) Shop Direct feed or changes Buy for Me eligibility"
+        ],
+        content: `**AI shopping agents** are AI systems that search, compare and, in some cases, buy products on a shopper's behalf, working from a merchant's structured data rather than from its web pages. In 2026 the four best-documented examples, OpenAI's ChatGPT shopping, Google's AI Mode and Gemini, Amazon's Buy for Me, and Anthropic's open-source reference agent, all ask merchants for the same core thing first: a machine-readable catalogue with current price and availability. Checkout is where they differ, and the trend this year has been toward handing the purchase back to the merchant.
+
+## What Is an AI Shopping Agent?
+
+An AI shopping agent is software that takes a shopping goal in natural language ("waterproof trail shoes under £120 that arrive by Friday"), queries one or more merchants' product data, and returns a shortlist, a cart, or a completed order. It differs from a search engine in that it acts across steps, and from a chatbot on a retailer's own site in that it usually works across many merchants at once.
+
+Three working categories cover the agents live or documented today:
+
+* **Discovery agents** find and compare products, then hand the shopper to the merchant's own site to pay. ChatGPT shopping has worked this way since March 2026.
+* **Purchasing agents** complete the order themselves after the shopper confirms. Amazon's Buy for Me and Google's checkout in AI Mode sit here.
+* **Merchant-side agents** run on a retailer's own storefront and act for that retailer's customers. Anthropic's commerce-agents repository is a reference build of this type.
+
+The term overlaps with **agentic commerce**, which is the wider system of protocols, payments and trust layers these agents run on. Our [agentic commerce explainer](/news-insights/what-is-agentic-commerce) covers that stack; this piece covers the agents themselves and what they read.
+
+## Which AI Shopping Agents Exist in 2026?
+
+**OpenAI** runs shopping inside ChatGPT on the [Agentic Commerce Protocol (ACP)](https://developers.openai.com/commerce/guides/key-concepts), which it [co-developed with Stripe](https://stripe.com/newsroom/news/stripe-openai-instant-checkout). OpenAI's developer documentation describes three flows a merchant implements: a product feed, an agentic checkout specification, and a delegated payment specification. The same page states that "OpenAI is not the merchant of record" and that merchants bring their own payment service provider. The pages we checked do not say whether the checkout and payment specifications have been retired since the March change described next. In March 2026 OpenAI stepped back from completing purchases inside ChatGPT. It told [Digital Commerce 360](https://www.digitalcommerce360.com/2026/03/24/openai-agentic-commerce-updates-chatgpt-walmart/) that "the initial version of Instant Checkout did not offer the level of flexibility that we aspire to provide, so we're allowing merchants to use their own checkout experiences while we focus our efforts on product discovery." The same report names Target, Sephora, Nordstrom, Lowe's, Best Buy, The Home Depot and Wayfair as retailers integrated with ACP for discovery.
+
+**Google** announced the [Universal Commerce Protocol (UCP)](https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/) on 11 January 2026, co-developed with Shopify, Etsy, Wayfair, Target and Walmart. It powers shopping in AI Mode in Search and the Gemini app, where shoppers at eligible US retailers can check out with Google Pay or PayPal. The [UCP specification](https://ucp.dev/), published under Apache 2.0, defines catalogue search and lookup, cart building, identity linking, checkout and order management, plus booking and food ordering. At Google I/O on 19 May 2026, Google announced a [Universal Cart](https://blog.google/products-and-platforms/products/shopping/google-shopping-cart/) across Search and Gemini, named Nike, Sephora, Target, Ulta Beauty, Walmart and Wayfair among checkout partners, and said UCP checkout would expand to Canada and Australia, and later the UK.
+
+**Amazon** expanded Buy for Me to third-party merchant sites on 11 March 2026, according to [TechCrunch](https://techcrunch.com/2026/03/11/amazon-expands-a-program-that-lets-customers-shop-from-other-retailers-sites/). The agent handles the purchase on the merchant's site and the shopper only confirms the order. TechCrunch does not describe the technical mechanism, and the sources checked document no merchant-side cart or checkout interface for it. Its sibling programme, Shop Direct, now accepts merchant product feeds through Feedonomics, Salsify and CedCommerce, so Amazon search and its Rufus assistant can send shoppers to the merchant's own site. A direct feed option without an intermediary was described as coming soon.
+
+**Anthropic** published [commerce-agents](https://github.com/anthropics/commerce-agents), an Apache 2.0 reference implementation of a customer-facing shopping agent and a back-office merchant agent. It is a blueprint, not a consumer product; our [earlier analysis](/news-insights/anthropic-open-sources-claude-commerce-agents) covers what it does and does not ship.
+
+## What Do AI Shopping Agents Need From Merchants?
+
+Reading the four sets of documentation side by side shows the same merchant surface requested in slightly different shapes. The table below is our comparison of the published specifications and announcements, checked on 29 September 2026.
+
+| Merchant surface | ChatGPT (ACP) | Google AI Mode and Gemini (UCP) | Amazon Buy for Me and Shop Direct | Anthropic reference agent |
+|---|---|---|---|---|
+| Product catalogue | Product feed, 9 required fields | Merchant Center feeds, plus new conversational attributes | Product feed via Feedonomics, Salsify or CedCommerce | \`search_products\`, \`get_product_details\` |
+| Cart | Not documented in the pages checked | Cart building capability | Not documented for merchants | \`get_cart\`, \`add_to_cart\`, \`update_cart_item\`, \`remove_from_cart\` |
+| Who completes checkout | Merchant's own checkout since March 2026 | Checkout in AI Mode or Gemini with Google Pay or PayPal for eligible retailers; merchant stays merchant of record | Amazon's agent, on the merchant's site | The host application; no method places an order |
+| Orders and tracking | Not documented in the pages checked | Order management capability | Tracked by the shopper in Amazon's "Buy for Me Orders" | \`get_orders\`, \`get_order\` |
+| Policies and help content | Optional feed fields: \`return_policy\`, \`accepts_returns\`, \`return_deadline_in_days\` | Not documented in the pages checked | Not documented in the pages checked | \`search_policies\` |
+| Delivery options | Optional feed fields: \`shipping_price\`, \`shipping\` | Not documented in the pages checked | Not documented in the pages checked | \`get_fulfillment_options\` |
+
+Two rows matter most. The catalogue row is filled in every column: no agent in the table works without structured product data. The checkout row is the one that changes most often, and it has been moving back toward the merchant.
+
+### The Product Feed Is the Price of Entry
+
+The **product feed** is a structured file of every product a merchant sells, with identifiers, prices and stock status, submitted to the agent platform on a schedule. OpenAI's [feed specification](https://developers.openai.com/commerce/specs/feed) lists nine required fields: \`item_id\`, \`title\`, \`description\`, \`url\`, \`brand\`, \`seller_name\`, \`image_url\`, \`availability\` and \`price\`. It accepts JSONL or Google-compatible tab or comma-delimited files. It sets no fixed refresh interval; it tells merchants to keep price and availability current and to update the feed when a sale starts or ends.
+
+Google asks for Merchant Center feeds with new attributes for product questions, compatible accessories and substitutes, according to its [January announcement](https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/). Those attributes exist so an agent can answer the follow-up question a shopper asks, not only the first search.
+
+### Policies and Delivery Are Part of the Product
+
+Anthropic's reference agent makes explicit what the platform specifications leave implied. Its \`StorefrontBackend\` interface has fourteen methods, and three of them cover policies, delivery options and customer preferences rather than products. An agent comparing two merchants on the same item can only weigh delivery date or return window if those are exposed as data. A policy that lives only in a PDF linked from a footer is a policy the agent cannot compare.
+
+The vocabulary for publishing this as data already exists. Schema.org's [MerchantReturnPolicy](https://schema.org/MerchantReturnPolicy) type carries fields such as \`merchantReturnDays\`, \`returnFees\` and \`applicableCountry\`, and attaches to a product or offer through \`hasMerchantReturnPolicy\`. Its [OfferShippingDetails](https://schema.org/OfferShippingDetails) type carries \`deliveryTime\`, \`shippingRate\` and \`shippingDestination\` through an offer's \`shippingDetails\` property. None of the four agent platforms above documents whether it reads this markup, so treat it as the portable baseline, alongside whatever policy fields each platform's own feed asks for.
+
+## Why Checkout Is the Wrong Place to Start
+
+The common framing of AI shopping agents centres on the agent pressing "buy". The 2026 record points the other way. OpenAI moved checkout back to merchants in March. Anthropic's reference agent was built so that "no method places an order or moves money", in the words of its own source code. Google's checkout keeps the retailer as merchant of record, as its [UCP developer guide](https://developers.google.com/merchant/ucp) states: "You remain the Merchant of Record."
+
+The part of the journey every agent does own is selection: which products appear in the shortlist, and in what order. That decision is made from feed data before any checkout protocol is called. A merchant with a clean, current, attribute-rich feed is eligible across all four agents in the table. A merchant with a perfect checkout integration and a thin feed is eligible for none of the shortlists that lead to it.
+
+This is also why consumer trust data matters here. Our [analysis of Visa's Trust Index](/news-insights/agentic-checkout-trust-gap-visa-trust-index) found shoppers far more willing to let AI find a product than pay for it. The agents' own product decisions this year match that.
+
+## Where AI Shopping Agents Are Still Unproven
+
+Several things the market would like to know are not yet public:
+
+* **Merchant of record outside Google and OpenAI.** Google and OpenAI state that the merchant keeps that role. The sources checked for Amazon's Buy for Me and Anthropic's reference agent do not state it either way.
+* **Conversion and volume.** None of the four sources above publishes how many purchases their agents complete or influence. Any figure claiming a share of retail sales made by AI shopping agents should be traced to its method before it is repeated.
+* **Ranking logic.** No platform documents how its agent orders a shortlist. The feed fields are published; the weighting is not.
+* **UK availability.** Google has said UCP checkout will reach the UK after Canada and Australia, without giving a date. The OpenAI and Amazon sources above do not set out UK availability for their merchant programmes.
+
+## What Should a Merchant Do First?
+
+On the evidence of the published specifications, the order of work is:
+
+1. **Audit the catalogue feed** against the strictest required-field list you face. OpenAI's nine fields are a practical baseline.
+2. **Make price and stock current.** OpenAI's specification tells merchants to update the feed when a sale starts or ends, and Amazon's Shop Direct is built on the same inventory and pricing feed data.
+3. **Turn policies into data.** Delivery options, returns windows and substitutes should exist as structured fields, such as schema.org return-policy and shipping-details markup plus each platform's feed attributes, not only as page copy.
+4. **Choose checkout integrations last,** once the feed is winning shortlists, and expect the checkout terms to keep changing.
+
+The agents differ on who presses "buy". They agree on what they read first, and that part is in the merchant's control today.`,
+        faqs: [
+            {
+                question: "What are AI shopping agents?",
+                answer: "AI shopping agents are AI systems that search, compare and sometimes buy products for a shopper, working from merchants' structured product data. Examples in 2026 include ChatGPT shopping, Google's AI Mode and Gemini, Amazon's Buy for Me, and Anthropic's open-source commerce-agents reference build."
+            },
+            {
+                question: "Do AI shopping agents complete the purchase themselves?",
+                answer: "Some do and some do not. Amazon's Buy for Me completes the purchase after the shopper confirms, and Google offers checkout for eligible US retailers in AI Mode. OpenAI moved ChatGPT back to merchants' own checkout in March 2026."
+            },
+            {
+                question: "What data do AI shopping agents need from a merchant?",
+                answer: "Every major AI shopping agent needs a structured product feed with current price and availability. OpenAI's feed specification requires nine fields, including item_id, title, description, url, brand, seller_name, image_url, availability and price. Google adds conversational attributes such as compatible accessories and substitutes."
+            },
+            {
+                question: "Is the merchant still the merchant of record when an AI agent shops?",
+                answer: "Yes, under both OpenAI's and Google's published terms. OpenAI's documentation states it is not the merchant of record in the Agentic Commerce Protocol, and Google's UCP guide tells merchants they remain the merchant of record."
+            },
+            {
+                question: "What is the difference between ACP and UCP for AI shopping agents?",
+                answer: "ACP is the Agentic Commerce Protocol from OpenAI and Stripe, used by ChatGPT; UCP is the Universal Commerce Protocol from Google and retail partners, used by AI Mode and Gemini. Both start from a product feed, but UCP also defines cart, identity linking, checkout and order management capabilities."
+            },
+            {
+                question: "Are AI shopping agents available in the UK?",
+                answer: "Not fully confirmed. Google has said UCP checkout will expand to Canada and Australia and later the UK, without giving a date. OpenAI and Amazon have not set out UK availability for the merchant programmes described here in the sources checked."
+            }
+        ]
+    },
 ];
