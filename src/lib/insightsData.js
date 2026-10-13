@@ -5572,4 +5572,133 @@ The agents differ on who presses "buy". They agree on what they read first, and 
             }
         ]
     },
+    {
+        id: "56",
+        slug: "what-is-agentic-search",
+        title: "What Is Agentic Search? Two Meanings, and What Each Changes",
+        category: "Agentic AEO",
+        categoryPage: "/agentic-aeo",
+        relatedSlugs: [
+            "what-is-answer-engine-optimization",
+            "google-ai-overviews-citations-fell-76-to-38-percent",
+            "what-is-an-agentic-browser"
+        ],
+        date: "2026-10-13T07:19:50Z",
+        dateModified: "2026-10-13T07:19:50Z",
+        author: "AIV Research Desk",
+        readTime: "7 min read",
+        image: "/images/insights/what-is-agentic-search.webp",
+        imageAlt: "Long-exposure light trails streaking under a concrete highway overpass at night, lit blue",
+        excerpt: "Agentic search means an AI that runs many searches itself, then often acts on the result. Here is how Google, OpenAI and Anthropic use it, and what sites need.",
+        reverifyTriggers: [
+            "Google ships flight or hotel booking completed inside AI Mode (announced as a future feature on 17 November 2025)",
+            "Google changes the 'no additional requirements' line on its AI features and your website page",
+            "OpenAI changes how OAI-SearchBot or ChatGPT-User treat robots.txt"
+        ],
+        content: `**Agentic search** is search in which an AI system, rather than the person, decides what to look up: it breaks a request into sub-questions, runs many searches, reads what comes back, and keeps going until it can answer or act. The term is used for two related things. In consumer products such as Google's AI Mode it means a search engine that does legwork on your behalf, up to finding a table or buying an item. In AI engineering it means an agent that retrieves information step by step with tools, instead of relying on a single lookup in a pre-built index.
+
+Both meanings describe the same shift: the searcher is increasingly software. This explainer separates the two, shows where each is live as of October 2026 using the vendors' own documentation, and sets out what that means for merchants and publishers whose pages the agents read.
+
+## What Does Agentic Search Mean?
+
+Traditional search takes one query and returns a ranked list. The person reads, refines and clicks. Agentic search moves those steps to the machine. The system plans the sub-queries, judges the results, and either writes a synthesised answer or carries on to an action such as checking availability.
+
+The two meanings differ mainly in who the search is for and what happens at the end.
+
+| | Agentic search in consumer products | Agentic search in AI engineering |
+|---|---|---|
+| Who uses it | Shoppers, diners, researchers | Developers building agents |
+| What it searches | The open web, merchant and booking partners | Files, databases, the web, internal tools |
+| How it searches | Many related queries planned by the system | The agent calls search tools in a loop, choosing the next query from the last result |
+| What it ends with | An answer, a shortlist, a booking link or a purchase | Context the agent uses to finish its task |
+| Examples | Google AI Mode, OpenAI deep research | Claude Code navigating a codebase |
+
+## How Google Uses Agentic Search in AI Mode
+
+**Query fan-out** is the clearest documented mechanism. Google's own guidance for site owners, [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features), says both AI Overviews and AI Mode "may use a 'query fan-out' technique", issuing "multiple related searches across subtopics and data sources" to develop a response. One question from a user becomes many queries issued by Google's system.
+
+Google then added actions on top of the searching. On 21 August 2025 Google [announced agentic capabilities in AI Mode](https://blog.google/products-and-platforms/products/search/ai-mode-agentic-personalized/): a user could ask for a dinner reservation with constraints such as party size, date, time, location and cuisine, and AI Mode would "find real-time availability for restaurants that meet your specific needs." It launched for Google AI Ultra subscribers in the US through a Labs experiment, with partners including OpenTable, Resy, Tock, Ticketmaster, StubHub, SeatGeek and Booksy.
+
+The rollout since then, from Google's own posts:
+
+| Date | Capability | Availability | Source |
+|---|---|---|---|
+| 21 Aug 2025 | Restaurant reservations found across booking platforms | US, AI Ultra, Labs | [Google](https://blog.google/products-and-platforms/products/search/ai-mode-agentic-personalized/) |
+| 13 Nov 2025 | Agentic checkout: Google buys a tracked item on the merchant's site with Google Pay, after confirmation | US, eligible merchants | [Google](https://blog.google/products-and-platforms/products/shopping/agentic-checkout-holiday-ai-shopping/) |
+| 13 Nov 2025 | "Let Google Call": Google calls nearby stores about stock, price and promotions | US, toys, health and beauty, electronics | [Google](https://blog.google/products-and-platforms/products/shopping/agentic-checkout-holiday-ai-shopping/) |
+| 17 Nov 2025 | Restaurant booking without Labs opt-in; event tickets and local appointments for Labs users | US | [Google](https://blog.google/products-and-platforms/products/search/agentic-plans-booking-travel-canvas-ai-mode/) |
+| 10 Apr 2026 | Restaurant booking with eight UK partners | UK | [Google](https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/ai-mode-restaurants-uk/) |
+
+Two details matter for businesses. First, in most of these flows the person still takes the last step. Google's August post says AI Mode "links you directly to the booking page, so you can easily take the last step," and the UK post says users "finalise your booking through partners." Second, where Google does complete the transaction itself, it asks first. For agentic checkout Google says it will "always ask for your permission first, and only buy after you've confirmed the purchase and shipping details." The merchants named at launch were Wayfair, Chewy, Quince and select Shopify merchants.
+
+Flights and hotels are not there yet. Google's 17 November 2025 post says that "in the future" users will be able to finish booking flights and hotels in AI Mode, naming partners such as Booking.com, Expedia, Marriott International and IHG Hotels & Resorts.
+
+## How OpenAI Uses Agentic Search: Deep Research
+
+**Deep research** is OpenAI's research-style version. OpenAI's [launch post of 2 February 2025](https://openai.com/index/introducing-deep-research/) calls it "a new agentic capability that conducts multi-step research on the internet for complex tasks," and says it can "search, interpret, and analyze massive amounts of text, images, and PDFs on the internet, pivoting as needed in reaction to information it encounters." OpenAI says it does in "tens of minutes" what would take a person many hours.
+
+The same post records how the feature has moved since launch. A 17 July 2025 update gave it a visual browser as part of ChatGPT agent. A 10 February 2026 update lets users connect it to MCP servers and apps and restrict its web searches to trusted sites. That last change is worth noting for publishers: a researcher can now tell the agent which sites it may use, which makes being on a user's trusted list a form of visibility.
+
+## How Agentic Search Works Inside AI Agents
+
+In engineering, agentic search describes how an agent finds the context it needs. The older pattern is retrieval-augmented generation with embeddings: documents are indexed in advance, and the closest matches are fetched once before the model answers. The agentic pattern lets the model search for itself, as many times as it needs.
+
+Anthropic described the shift in its [September 2025 engineering post on context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents). It notes that "many AI-native applications employ some form of embedding-based pre-inference time retrieval," and that "as the field transitions to more agentic approaches, we increasingly see teams augmenting these retrieval systems with 'just in time' context strategies." Such agents "maintain lightweight identifiers (file paths, stored queries, web links, etc.) and use these references to dynamically load data into context at runtime using tools." Claude Code is the worked example: "primitives like glob and grep allow it to navigate its environment and retrieve files just-in-time."
+
+The engineering meaning explains the consumer one. A system that chooses its next query from its last result can keep searching and reading until it judges it has enough, rather than stopping after one list of links. That is the behaviour sites now meet from the other side.
+
+## Is Agentic Search the Same as AI Search or AEO?
+
+No. **AI search** is the broader label for any search experience that answers with generated text, such as an AI Overview. Agentic search is the subset where the system plans and runs its own searches, and sometimes acts. **Answer engine optimisation (AEO)** is the practice on the other side: making a site's content easy for these systems to find, trust and quote. Our [AEO explainer](/news-insights/what-is-answer-engine-optimization) covers that practice in detail.
+
+## What Should Merchants and Publishers Do About Agentic Search?
+
+The contrarian answer is: less that is new than the market suggests. Google states plainly on its [AI features page](https://developers.google.com/search/docs/appearance/ai-features) that "There are no additional requirements to appear in AI Overviews or AI Mode, nor other special optimizations necessary." Indexing, crawl access, helpful content and readable text remain the entry ticket. Any vendor selling a separate "agentic search optimisation" layer for Google should be asked which Google document supports it.
+
+What does change is who is reading, and the controls that apply to each reader. This is the checklist we work through when auditing a site for agentic search:
+
+* **Separate search bots from user-triggered agents in your logs.** OpenAI's [crawler documentation](https://developers.openai.com/api/docs/bots) distinguishes **OAI-SearchBot**, used "to surface websites in search results in ChatGPT's search features," from **ChatGPT-User**, which may visit a page when a user asks ChatGPT a question. OpenAI says sites opted out of OAI-SearchBot "will not be shown in ChatGPT search answers, though can still appear as navigational links."
+* **Do not assume robots.txt stops every agent.** For ChatGPT-User, OpenAI says "Because these actions are initiated by a user, robots.txt rules may not apply." Blocking the search crawler and blocking a user's agent are different decisions with different tools.
+* **Use the right Google control for the right goal.** Google lists nosnippet, data-nosnippet, max-snippet and noindex among the ways to limit how content appears in its AI search features. It points to Google-Extended only "to limit AI training and grounding in some of Google's other systems."
+* **Keep live facts current.** Google's restaurant features work from real-time availability, and its agentic checkout tracks a product's price against the shopper's budget. Stale prices or availability on a page or feed cost a booking or a sale, not just a snippet.
+* **Expect a hand-off mid-task.** Most agentic flows documented so far send the person to the merchant or partner to finish. The page an agent links to must work for someone arriving with the item or slot already chosen.
+
+Google's page also says that clicks from results pages with AI Overviews "are higher quality (meaning, users are more likely to spend more time on the site)." That is Google's own claim, and the page does not publish the underlying data, so treat it as a vendor statement rather than a measured benchmark for any one site.
+
+## Where Agentic Search Goes Next
+
+The direction in the primary sources is consistent. Google is extending AI Mode from finding things to completing them, with flights and hotels announced as a future step. OpenAI has given deep research a browser and the ability to work inside connected tools. Anthropic describes agents that search their own environments as a growing design pattern. Each moves more of the search journey from a person typing queries to software deciding which pages to read.
+
+For a site, the practical question is no longer only "where do we rank for this keyword?" It is also "when an agent runs many searches to answer one person, do our pages give it facts it can trust and act on?"`,
+        faqs: [
+            {
+                question: "What is agentic search?",
+                answer: "Agentic search is search in which an AI system plans and runs its own queries, reads the results, and keeps searching until it can answer or act. In consumer products it means search engines such as Google's AI Mode doing tasks like finding restaurant availability; in AI engineering it means agents that retrieve information with tools in a loop rather than a single index lookup."
+            },
+            {
+                question: "How is agentic search different from traditional search?",
+                answer: "Traditional search returns a ranked list for one query and leaves the reading and refining to the person. Agentic search hands those steps to the AI: Google says AI Mode may issue multiple related searches across subtopics and data sources, a technique it calls query fan-out, to build one response."
+            },
+            {
+                question: "Is Google AI Mode an example of agentic search?",
+                answer: "Yes. Google AI Mode uses query fan-out to run many searches per question, and since August 2025 Google has added agentic features such as finding restaurant reservations, event tickets and local appointments, plus agentic checkout for eligible US merchants. In most of these flows the user finishes the booking on the partner's site."
+            },
+            {
+                question: "What is the difference between agentic search and RAG?",
+                answer: "Classic retrieval-augmented generation (RAG) fetches the closest matches from a pre-built embedding index once, before the model answers. Agentic search lets the model call search tools repeatedly and choose each next query from what it has found; Anthropic calls this a 'just in time' context strategy and cites Claude Code using glob and grep as an example."
+            },
+            {
+                question: "Do I need special markup to appear in agentic search?",
+                answer: "Not for Google. Google states there are no additional requirements to appear in AI Overviews or AI Mode and no other special optimizations necessary; standard indexing, crawl access and helpful content apply. What changes is the need for accurate, current facts such as price and availability that an agent can act on."
+            },
+            {
+                question: "Can robots.txt block AI agents that search my site?",
+                answer: "Partly. OpenAI says sites that block OAI-SearchBot will not be shown in ChatGPT search answers, but for ChatGPT-User, which visits pages on a user's request, robots.txt rules may not apply. Blocking a search crawler and blocking a user-directed agent are separate decisions."
+            },
+            {
+                question: "Is agentic search the same as answer engine optimisation?",
+                answer: "No. Agentic search is what AI systems do when they plan and run searches for a user. Answer engine optimisation (AEO) is the work a site does so those systems can find, trust and quote its content."
+            }
+        ]
+    },
 ];
