@@ -5701,4 +5701,145 @@ For a site, the practical question is no longer only "where do we rank for this 
             }
         ]
     },
+    {
+        id: "57",
+        slug: "google-universal-cart-launch-what-merchants-need",
+        title: "Google's Universal Cart Is Live. What It Asks of Merchants",
+        category: "Agentic Commerce",
+        categoryPage: "/agentic-commerce",
+        relatedSlugs: [
+            "ucp-google-tech-council-governance-layer-agentic-commerce",
+            "what-are-ai-shopping-agents",
+            "what-is-agentic-search"
+        ],
+        date: "2026-10-16T06:15:59Z",
+        dateModified: "2026-10-16T06:15:59Z",
+        author: "AIV Research Desk",
+        readTime: "7 min read",
+        image: "/images/insights/google-universal-cart-launch-what-merchants-need.webp",
+        imageAlt: "Empty shopping cart on a concrete floor beside a corrugated metal wall, lit in cold blue light",
+        excerpt: "Google's Universal Cart went live in the US on 15 October across Search and Gemini. Merchants choose cart transfer or checkout on Google, by Google's selection.",
+        reverifyTriggers: [
+            "Universal Cart reaches YouTube or Gmail, or Google confirms those surfaces are dropped",
+            "UCP integration hub or UCP checkout opens in Canada, Australia or the UK",
+            "Identity linking leaves 'coming soon' in the UCP Merchant Center guide",
+            "Google opens UCP onboarding without the interest form and selection step",
+            "AP2 agent payments ship inside Universal Cart or Gemini Spark",
+            "Shopify changes the default for direct checkout in Google AI Mode and Gemini, or adds analytics support to it"
+        ],
+    content: `Google's **Universal Cart** went live in the United States on 15 October 2026, across Google Search and the Gemini app. [Google's launch post](https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/) describes one cart that holds products from many retailers, watches their prices and stock, and checks out either with Google Pay inside the cart or by transferring the items to the merchant's own cart. For merchants, the practical question is which of those two checkout routes to support, because Google's developer documentation treats them as separate capabilities, and access to both still runs through a selection process.
+
+## What Did Google Launch on 15 October?
+
+Universal Cart is a shopping cart that lives on Google rather than on any one store. Google's launch post, by Suresh Ganapathy, Senior Director of Product Management for Consumer Shopping, lists four things it does:
+
+* **Saves products from multiple retailers** wherever the shopper is on Google, so an item saved in AI Mode in Search is still there later in the Gemini app.
+* **Tracks price and stock.** Google says the cart "is built on the 60+ billion continually refreshed product listings in Google's Shopping Graph" and sends notifications about price drops and items coming back in stock.
+* **Surfaces card perks and promo codes.** The cart "is built on Google Wallet so it understands your card perks", and it shows relevant promo codes.
+* **Checks out two ways.** Shoppers can pay with Google Pay "in just a few taps" at many stores inside the cart, or "transfer your items directly to the merchant's cart to finish buying on their site."
+
+Google names Nike, Sephora, Target, Ulta Beauty, Walmart, Wayfair "and many Shopify merchants" as stores where the checkout features work. Either way, Google says shoppers get confirmations and customer support from the merchant, which "will remain the seller of record." The post opens by saying checkout is "powered by the Universal Commerce Protocol (UCP)", the open standard Google [launched on 11 January 2026](https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/), co-developed with Shopify, Etsy, Wayfair, Target and Walmart.
+
+## What Was Promised at I/O, and What Shipped?
+
+Google first showed Universal Cart at I/O on 19 May 2026. Setting the [I/O announcement by Vidhya Srinivasan](https://blog.google/products-and-platforms/products/shopping/google-shopping-cart/) beside the October launch post shows what made the first release and what did not.
+
+| Feature or claim | I/O post, 19 May 2026 | Launch post, 15 Oct 2026 |
+|---|---|---|
+| Surfaces | Search and the Gemini app, "with YouTube and Gmail to follow" | Search and the Gemini app; YouTube and Gmail not mentioned |
+| Timing | "rolling out ... in the U.S. this summer" | Rolling out in the US "today" |
+| Price tracking | Price drops, back-in-stock alerts and "insights on price history" | Price drops and back-in-stock alerts; price history not mentioned |
+| Product compatibility | Cart will "proactively flag any product incompatibilities and suggest alternatives" | Not mentioned |
+| Payment perks | Built on Google Wallet: perks, loyalty information and merchant offers | Built on Google Wallet: card perks and promo codes |
+| Checkout | Google Pay on Google, or transfer to the merchant's site | Same two routes |
+| Agent payments (AP2) | Coming to Google products "in the coming months, starting with Gemini Spark" | Not mentioned |
+
+Absence from a launch post is not proof a feature is cancelled. Google has not said whether YouTube, Gmail, price history or the compatibility checks are delayed, dropped or simply left out of the announcement. What the record does show is that the first release is a cart and a checkout, not the agent that buys on a shopper's behalf, since AP2 does not appear in the launch post at all.
+
+### Why the Missing AP2 Piece Matters
+
+The **Agent Payments Protocol (AP2)** is the part of Google's plan that would let an agent pay without the shopper tapping a button. The I/O post describes it this way: a shopper tells the agent "the specific brands and products you want and how much it can spend, and the agent only makes the purchase when your criteria are met." Google says AP2 uses "tamper-proof digital mandates" so that, in a return, "you and the merchant are looking at the same record."
+
+None of that is in the cart that shipped. Every purchase the launch post describes is still completed by a person, either with Google Pay or on the merchant's own site. For merchants, that lowers the stakes of the first release: the checkout changes, but the buyer is still a human making the final click. The harder questions about agent-initiated orders, such as disputes and liability, arrive when AP2 does, and Google's only stated timing for that is "the coming months, starting with Gemini Spark."
+
+## Which Checkout Route Should a Merchant Support?
+
+Google's [UCP integration guide for Merchant Center](https://developers.google.com/merchant/ucp/guides/tools/merchant-center/integration), updated on launch day, lists three capabilities a merchant can select:
+
+| Capability | What Google's guide says it does | What the merchant builds |
+|---|---|---|
+| **Transfer to merchant cart** | Shoppers "add products to cart on Google, then check out directly from your online store's cart" | The UCP Cart API |
+| **Native checkout on Google** | Shoppers "buy directly on Google without transferring to your online store" | Checkout session endpoints |
+| **Identity linking** (marked "coming soon") | Loyalty benefits and authenticated checkouts on native checkout | OAuth 2.0 |
+
+**Cart transfer** is the lighter build. Google's [Cart API page](https://developers.google.com/merchant/ucp/guides/overview/cart-overview) says the capability, named \`dev.ucp.shopping.cart\`, needs UCP version \`2026-04-08\` and a UCP profile published at \`/.well-known/ucp\` that declares it. The initial release covers "cart creation and transfer using the \`CreateCart\` method." The shopper finishes on the merchant's own checkout.
+
+**Native checkout** keeps the whole purchase on Google. Google's [native checkout guide](https://developers.google.com/merchant/ucp/guides/checkout/native) documents endpoints to create, read, update, complete and cancel a checkout session, and says Google sends an \`Authorization: Bearer\` token with each request.
+
+The trade-off is control against friction. Native checkout removes a step for the shopper. Cart transfer keeps the order, the checkout page and the merchant's own measurement on the merchant's site. Merchants who rely on their checkout for upsells, analytics or payment options they choose themselves give some of that up with native checkout.
+
+## Why Shopify Merchants May Already Be Opted In
+
+Shopify merchants should check their settings before deciding anything. [Shopify's Help Center](https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts/google) says direct checkout in Google AI Mode and Gemini, the same surfaces Universal Cart launched on, is "activated by default for eligible stores." The page does not mention Universal Cart by name, and Google has not said whether the cart's in-Google checkout and Shopify's direct checkout are one and the same, so treat the link as likely rather than confirmed. The setting needs checking either way, because it controls direct checkout in AI Mode and Gemini whatever Google calls the feature.
+
+Three details on that Shopify page matter for any merchant leaving the default on:
+
+* **Analytics:** "Google Analytics and custom pixels won't fire in Google AI Mode and Gemini's direct checkout."
+* **Product types:** product bundles, subscriptions, customizable products and B2B-only products are not supported in that checkout.
+* **Geography:** the store must be based in the US and sell to US customers, and the direct checkout is "displayed only to customers based in the United States."
+
+Merchants who want shoppers to finish on their own store can switch direct checkout off under Sales channels, then Agentic, in Shopify admin. Shopify says products stay discoverable in AI Mode and Gemini, and buyers are sent to the online store to pay.
+
+The analytics point is the one most likely to cause confusion. If orders arrive through a checkout where Google Analytics does not fire, reported conversion rates for Google traffic can fall even while sales hold steady. That is a measurement gap, not a demand drop, and it is worth flagging to whoever reads the dashboards before the holiday peak.
+
+## Who Can Get In, and When?
+
+Access is not open. Google's [Merchant Center help page on UCP checkout](https://support.google.com/merchants/answer/16837055?hl=en) describes an early access program: merchants meet the requirements, submit an interest form and complete the technical work. Google's [UCP integration hub overview](https://developers.google.com/merchant/ucp/guides/tools/merchant-center/overview) adds that "the checkout feature enabled by UCP is available for select merchants." The same help page says only listings carrying the \`native_commerce(checkout_eligibility)\` product attribute show the "Buy" button.
+
+The timeline outside the US has moved. In May, Google said it was expanding UCP-powered checkout "to Canada and Australia in the coming months and later to the U.K." The Merchant Center integration guide, as updated on 15 October, says the hub is "gradually rolling out in the United States, with Australia and Canada to follow early next year." The UK has no date in either document.
+
+## What Merchants Should Do Now
+
+The checklist we work through for a merchant considering Universal Cart follows the order in which things break:
+
+1. **Check what is already switched on.** Shopify stores should confirm their direct checkout setting before anything else; other platforms should check Merchant Center for the UCP integration section.
+2. **Decide the route.** Cart transfer for merchants who need their own checkout, measurement and payment mix; native checkout for those who value fewer steps more.
+3. **Publish and test the UCP profile.** The profile at \`/.well-known/ucp\` must "exactly match" the capabilities selected in Merchant Center, and Google's guide has merchants test in a sandbox before validating in production.
+4. **Fix measurement first.** If native or direct checkout is on, agree how those orders will be attributed before they start to show up as missing conversions.
+5. **Mark eligible products.** Only listings with the checkout eligibility attribute get the Buy button, so exclude products the checkout cannot handle.
+
+One question neither Google post answers is how Universal Cart interacts with Shopping ads. Neither the I/O post nor the launch post mentions ads at all, so paid media teams should treat attribution for cart-driven orders as unknown until Google documents it.
+
+Universal Cart is the first time UCP has a consumer product that ordinary shoppers will see. The protocol was the plumbing; the cart is the tap. Most merchants cannot simply switch it on, because native checkout and cart transfer both sit behind Google's selection step. What every merchant can do before the holiday peak is narrower: check which defaults are already on, submit the interest form if the cart matters to them, and settle how orders that bypass their own analytics will be counted.`,
+        faqs: [
+            {
+                question: "What is Google's Universal Cart?",
+                answer: "Universal Cart is a shopping cart on Google that holds products from multiple retailers in one place. It launched in the US on 15 October 2026 across Google Search and the Gemini app, tracks price drops and restocks, and checks out through Google Pay or by transferring items to the merchant's own cart."
+            },
+            {
+                question: "When did Universal Cart launch, and where is it available?",
+                answer: "Google launched Universal Cart in the United States on 15 October 2026, on Google Search and in the Gemini app. Google first announced it at I/O on 19 May 2026 for a US summer rollout, with YouTube and Gmail to follow, but the launch post does not mention those two surfaces."
+            },
+            {
+                question: "Does a merchant stay the seller of record with Universal Cart?",
+                answer: "Yes. Google says merchants remain the seller of record whichever checkout route the shopper uses, and shoppers receive order confirmations and customer support directly from the merchant."
+            },
+            {
+                question: "What is the difference between cart transfer and native checkout on Google?",
+                answer: "Cart transfer lets shoppers fill a cart on Google and then finish buying on the merchant's own site, using the UCP Cart API. Native checkout on Google completes the whole purchase on Google, using checkout session endpoints the merchant builds. Google's Merchant Center guide lists them as separate capabilities."
+            },
+            {
+                question: "How does a merchant get products into Universal Cart checkout?",
+                answer: "A merchant implements UCP, publishes a UCP profile at /.well-known/ucp, and submits Google's interest form for the early access program, which is open to select merchants. Only product listings with the native_commerce checkout eligibility attribute show the Buy button."
+            },
+            {
+                question: "Are Shopify stores automatically included in Google's AI checkout?",
+                answer: "Shopify's Help Center says direct checkout in Google AI Mode and Gemini is on by default for eligible US stores, and merchants can switch it off in the Agentic sales channel settings. Google Analytics and custom pixels do not fire in that checkout."
+            },
+            {
+                question: "Is Universal Cart available outside the United States?",
+                answer: "Not yet. Google's Merchant Center integration guide, updated on 15 October 2026, says the UCP integration hub is rolling out in the US first, with Australia and Canada to follow early next year. Google has given no date for the UK."
+            }
+        ]
+    },
 ];
