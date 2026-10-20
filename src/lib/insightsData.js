@@ -5842,4 +5842,181 @@ Universal Cart is the first time UCP has a consumer product that ordinary shoppe
             }
         ]
     },
+    {
+        id: "58",
+        slug: "what-is-an-agent-card",
+        title: "What Is an Agent Card? The A2A Discovery File Explained",
+        category: "Agentic Commerce",
+        categoryPage: "/agentic-commerce",
+        relatedSlugs: [
+            "what-are-ai-shopping-agents",
+            "know-your-agent-kya-framework-visa-mastercard-ant",
+            "shopify-webmcp-checkout-browser-agents"
+        ],
+        date: "2026-10-20T06:15:04Z",
+        dateModified: "2026-10-20T06:15:04Z",
+        author: "AIV Research Desk",
+        readTime: "8 min read",
+        image: "/images/insights/what-is-an-agent-card.webp",
+        imageAlt: "Thick dark blue network cables fanning out from a patch panel against a near-black background",
+        excerpt: "An Agent Card is the JSON file an A2A agent publishes to say who it is, what it can do and how to reach it. What goes in one, where it lives, and who uses them.",
+        reverifyTriggers: [
+            "A2A publishes a specification version after 1.0.0 that changes AgentCard fields or the well-known path",
+            "draft-aevum-agentcard is revised past -00 or adopted by an IETF working group",
+            "A major retailer, marketplace or payment network starts serving /.well-known/agent-card.json at its main domain"
+        ],
+        content: `An **Agent Card** is a JSON document that an AI agent publishes to describe itself to other agents: its name, what it can do, the address to reach it at, and how callers must authenticate. The term comes from the **Agent2Agent (A2A) protocol**, whose [specification](https://a2a-protocol.org/latest/specification/) defines it as "a JSON metadata document published by an A2A Server, describing its identity, capabilities, skills, service endpoint, and authentication requirements." Every A2A server must publish one, and the recommended place is \`/.well-known/agent-card.json\` on the agent's domain.
+
+Search for "agent card" today and Google returns three different things: the A2A file, a separate IETF draft with a similar name, and payment cards issued to AI agents. This explainer covers the A2A meaning in detail, separates it from the other two, and reports what we found when we checked 20 large commerce and AI company domains for a published card on 20 October 2026.
+
+## What Is an Agent Card in the A2A Protocol?
+
+**A2A** is an open protocol for agents built by different vendors to find each other and hand work across. The specification is clear that the card is not optional: "A2A Servers **MUST** make an Agent Card available," and clients "use this information for discovering suitable agents and configuring interactions" ([A2A specification, section 8.1](https://a2a-protocol.org/latest/specification/)).
+
+In practice the card plays the role a business card plays between people, with machine-readable detail. A client agent reads it before sending any task, checks that the remote agent offers the skill it needs, picks a transport it supports, and learns which credentials it will have to present.
+
+The [Agentic AI Foundation](https://aaif.io/blog/a2a-joins-aaif) describes the same mechanism in plain terms: an agent publishes "an agent card containing a structured description of what it can do" and how to reach it, and other agents read it to discover capabilities and delegate tasks. The same post separates A2A, which covers agent-to-agent communication, from **MCP**, which it lists as agent-to-tool connectivity. An Agent Card is an A2A artefact; MCP does not use it.
+
+## What Goes Inside an Agent Card?
+
+The specification's own sample card, a fictional route-planning agent, shows the shape. The table below lists the fields it uses and what each one tells a calling agent.
+
+| Field | What it tells a calling agent |
+|---|---|
+| \`name\`, \`description\`, \`version\` | Who the agent is and which revision of the card this is |
+| \`supportedInterfaces\` | An ordered list of endpoints, each with a URL, a protocol binding (JSON-RPC, gRPC or HTTP+JSON) and a protocol version; the first entry is the preferred one |
+| \`provider\` | The organisation behind the agent and its website |
+| \`capabilities\` | Flags for streaming, push notifications and whether an extended card exists |
+| \`securitySchemes\`, \`securityRequirements\` | How a caller must authenticate, for example OpenID Connect |
+| \`defaultInputModes\`, \`defaultOutputModes\` | The media types the agent accepts and returns by default |
+| \`skills\` | Each task the agent can do, with an id, description, tags and example requests |
+| \`signatures\` | Optional JSON Web Signatures that prove the card has not been altered |
+
+A trimmed version of the specification's sample card looks like this:
+
+\`\`\`json
+{
+  "name": "GeoSpatial Route Planner Agent",
+  "description": "Provides advanced route planning, traffic analysis, and custom map generation services.",
+  "supportedInterfaces": [
+    {"url": "https://georoute-agent.example.com/a2a/v1", "protocolBinding": "JSONRPC", "protocolVersion": "1.0"}
+  ],
+  "provider": {"organization": "Example Geo Services Inc.", "url": "https://www.examplegeoservices.com"},
+  "version": "1.2.0",
+  "capabilities": {"streaming": true, "pushNotifications": true, "extendedAgentCard": true},
+  "defaultInputModes": ["application/json", "text/plain"],
+  "defaultOutputModes": ["application/json", "image/png"],
+  "skills": [
+    {
+      "id": "route-optimizer-traffic",
+      "name": "Traffic-Aware Route Optimizer",
+      "description": "Calculates the optimal driving route between two or more locations.",
+      "tags": ["maps", "routing", "navigation"]
+    }
+  ]
+}
+\`\`\`
+
+Teams do not have to write this by hand. The Linux Foundation says the A2A SDK ecosystem now covers "five production-ready languages, including JavaScript, Java, Go, and .NET."
+
+Two details matter for anyone reading older tutorials. First, the field layout changed at version 1.0. The [version 0.3.0 specification](https://a2a-protocol.org/v0.3.0/specification/) used a single \`url\` with \`preferredTransport\` and \`additionalInterfaces\`; the [1.0.0 specification](https://a2a-protocol.org/v1.0.0/specification/) replaces those with the \`supportedInterfaces\` list, and its migration appendix flags the move of the extended-card flag into \`capabilities\` as a breaking change. Second, the specification's own sample card is the reference to build against; tutorials written for version 0.3 or earlier describe the older layout.
+
+## Where Does an Agent Card Live?
+
+The specification lists three ways a client can find a card ([section 8.2](https://a2a-protocol.org/latest/specification/)):
+
+* **Well-known URI:** \`https://{server_domain}/.well-known/agent-card.json\`
+* **Registries or catalogues:** querying curated lists of agents
+* **Direct configuration:** the client is given the card's URL or contents in advance
+
+The well-known path is formally registered. The [IANA Well-Known URIs registry](https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml) lists \`agent-card.json\` with status "permanent", a registration dated 1 August 2025 and an update on 19 March 2026, pointing to the A2A specification. That puts it in the same registry as long-standing entries such as \`openid-configuration\`.
+
+The path itself has changed once. The [version 0.2.6 specification](https://a2a-protocol.org/v0.2.6/specification/) used \`/.well-known/agent.json\`; version 0.3.0 moved to \`agent-card.json\`, which is the path in 1.0.0. A server that still answers only on the old path will be missed by clients that follow the current specification.
+
+## Are Agent Cards Signed or Verified?
+
+They can be, and version 1.0 made this a headline feature. The Linux Foundation's [April 2026 announcement](https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year) describing version 1.0 as A2A's "first stable specification" lists "Signed Agent Cards for cryptographic identity verification" among its features.
+
+The mechanics are in [section 8.4 of the specification](https://a2a-protocol.org/latest/specification/). A card **may** carry one or more JSON Web Signatures (RFC 7515). Before signing, the card is canonicalised with the JSON Canonicalization Scheme (RFC 8785) so that every implementation produces the same bytes. Clients **should** verify at least one signature before trusting a card, should fetch public keys over HTTPS, and must not use expired or revoked keys. Multiple signatures are allowed so that keys can be rotated.
+
+An unsigned card is still valid A2A; in that case the only assurance a caller has is HTTPS, which the specification's IANA template says implementations should support.
+
+### Public card versus extended card
+
+Not everything has to go in the public file. If an agent sets \`capabilities.extendedAgentCard\` to true, an authenticated client can request a fuller version. The specification says that request **must** require authentication, may return extra skills or detail such as rate limits and quotas, and may differ by caller. It also says extended cards "SHOULD NOT include sensitive information that could be exploited if leaked," naming internal service URLs and unmasked credentials as examples. The public card should carry no credentials at all.
+
+## Who Publishes Agent Cards Today?
+
+A2A has broad backing on paper. The Linux Foundation said in April 2026 that more than 150 organisations support the standard, that Microsoft has integrated it into Azure AI Foundry and Copilot Studio, and that AWS supports it through Amazon Bedrock AgentCore Runtime. A2A has since become a hosted project of the [Agentic AI Foundation](https://aaif.io/blog/a2a-joins-aaif), alongside MCP and AGENTS.md.
+
+A common assumption is that an Agent Card is something a company adds to its main website, the way it adds robots.txt or llms.txt. To test that, the AIV Research Desk requested \`/.well-known/agent-card.json\` from the main domains of 20 retailers, marketplaces, payment companies and AI vendors on 20 October 2026.
+
+| Result | Domains |
+|---|---|
+| 404 or error page, no card | amazon.com, walmart.com, target.com, ebay.com, etsy.com, shopify.com, google.com, microsoft.com, openai.com, anthropic.com, salesforce.com, sap.com, stripe.com, paypal.com, visa.com, americanexpress.com, sierra.ai |
+| Redirect that did not resolve to a card | bestbuy.com, servicenow.com |
+| Request blocked (403), result unknown | mastercard.com |
+| Valid Agent Card served | none |
+
+No valid card in 20 requests, including five companies that back A2A, is the point. The specification places the card at the **A2A server's** domain, not the company's marketing domain. Google, Microsoft, Salesforce, SAP and ServiceNow all back A2A, yet none served a card at its homepage domain, most likely because their agents run on product and platform hosts rather than marketing sites. An Agent Card describes one agent endpoint. It is not a site-wide file like robots.txt or llms.txt, and adding one to a storefront that runs no A2A agent would advertise a service that does not exist.
+
+Our check covered only the root path of 20 main domains on one day. It says nothing about agent subdomains, private registries or cards configured directly between partners, which the specification allows.
+
+## What Else Is Called an Agent Card?
+
+Two other things share the name, which explains the mixed search results.
+
+| Term | What it is | Where it lives | Status |
+|---|---|---|---|
+| **A2A Agent Card** | JSON description of an A2A agent's identity, skills, endpoints and auth | \`/.well-known/agent-card.json\` | Part of A2A 1.0.0; path registered permanent with IANA |
+| **IETF "AgentCard" draft** | A separate, framework-neutral identity and capability format with ULID-based agent IDs and a pricing field | \`/.well-known/agentcard\` | Individual Internet-Draft, published 23 April 2026, expires 25 October 2026 |
+| **Payment cards for agents** | Virtual cards an AI agent uses to pay, with spend controls | Issued by a payments provider | Commercial products, for example AgentCard |
+
+The [IETF draft, draft-aevum-agentcard-00](https://www.ietf.org/archive/id/draft-aevum-agentcard-00.html), is an individual submission by one author at Aevum Network. It is not an IETF working-group document, does not reference the A2A Agent Card, and uses a different path. Unless it is revised before its 25 October 2026 expiry, it lapses.
+
+Payment cards are a different category altogether. [AgentCard](https://agentcard.ai), for example, describes itself as "Secure Payments for AI Agents" and offers a one-time-use card for each purchase with spend limits. That is about how an agent pays, not how it is discovered. For how merchants check which agent is paying, see our explainer on [Know Your Agent](/news-insights/know-your-agent-kya-framework-visa-mastercard-ant).
+
+## What Should a Business Check Before Publishing an Agent Card?
+
+The order that saves the most rework is to confirm there is an agent to describe, then build the card from the current specification, then decide what stays private.
+
+1. **Confirm you run an A2A server.** A card describes a live endpoint that accepts A2A requests. No endpoint, no card.
+2. **Build against version 1.0.0.** Use \`supportedInterfaces\`, not the 0.3.0 \`url\` and \`preferredTransport\` fields, and serve the file at \`agent-card.json\`, not the old \`agent.json\`.
+3. **Write skills for a machine reader.** Each skill's description, tags and examples are what a calling agent matches against, so make them literal and specific.
+4. **Keep the public card public.** Put customer-specific skills, quotas and limits in an extended card behind authentication, and keep internal URLs and credentials out of both.
+5. **Sign it.** Clients are told to verify a signature before trusting a card, so signing removes a reason for a careful caller to refuse yours.
+6. **Set caching headers.** The specification says card endpoints should send \`Cache-Control\` with a \`max-age\` and an \`ETag\` derived from the card's version or content hash, and clients should use conditional requests.
+
+The broader point for commerce teams is that the Agent Card is the discovery layer of agent-to-agent work, not the checkout layer. Protocols covered elsewhere on this site, such as [Shopify's WebMCP checkout for browser agents](/news-insights/shopify-webmcp-checkout-browser-agents), deal with what happens once an agent is on your site. The Agent Card decides whether another agent can find and call yours in the first place.`,
+        faqs: [
+            {
+                question: "What is an agent card?",
+                answer: "An agent card is a JSON document an AI agent publishes to describe its identity, skills, service endpoint and authentication requirements. The term comes from the Agent2Agent (A2A) protocol, which requires every A2A server to publish one so other agents can discover and call it."
+            },
+            {
+                question: "Where is an A2A agent card located?",
+                answer: "The recommended location is https://{server_domain}/.well-known/agent-card.json on the domain of the A2A server. The path is registered with IANA as a permanent well-known URI. Clients can also find agent cards through registries or be given the card directly."
+            },
+            {
+                question: "What is the difference between agent.json and agent-card.json?",
+                answer: "agent.json is the old path. A2A version 0.2.6 used /.well-known/agent.json, and version 0.3.0 moved to /.well-known/agent-card.json, which is the path in the current 1.0.0 specification."
+            },
+            {
+                question: "Do agent cards need to be signed?",
+                answer: "No, signing is optional, but A2A 1.0 supports signed agent cards using JSON Web Signatures over a canonicalised card. The specification says clients should verify at least one signature before trusting a card."
+            },
+            {
+                question: "What is an extended agent card?",
+                answer: "An extended agent card is a fuller version of an agent card returned only to authenticated clients. It can include extra skills, rate limits or caller-specific detail, and the A2A specification says requesting it must require authentication."
+            },
+            {
+                question: "Is an agent card the same as a payment card for AI agents?",
+                answer: "No. An A2A agent card describes how to discover and call an agent, while payment cards for agents are virtual cards that let an agent pay for things with spend controls. The two share a name but solve different problems."
+            },
+            {
+                question: "Does every website need an agent card?",
+                answer: "No. An agent card describes a specific A2A agent endpoint, so it only makes sense if you run an agent that accepts A2A requests. It is not a site-wide file like robots.txt, and none of 20 major commerce and AI domains checked on 20 October 2026 served one at their main domain."
+            }
+        ]
+    },
 ];
