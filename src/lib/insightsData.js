@@ -6288,4 +6288,189 @@ None of these gaps means the answer is unfavourable. They are the questions to p
         }
     ]
 },
+{
+    id: "61",
+    slug: "what-are-mcp-apps",
+    title: "What Are MCP Apps? The Open Standard for UI Inside AI Chats",
+    category: "Agentic Commerce",
+    categoryPage: "/agentic-commerce",
+    relatedSlugs: [
+        "shopify-webmcp-checkout-browser-agents",
+        "what-is-an-agent-card",
+        "what-is-agentic-search"
+    ],
+    date: "2026-11-03T07:20:58Z",
+    dateModified: "2026-11-03T07:20:58Z",
+    author: "AIV Research Desk",
+    readTime: "9 min read",
+    image: "/images/insights/what-are-mcp-apps.webp",
+    imageAlt: "Macro photograph of a screen's pixel grid, a diagonal edge of blue and teal light against dark pixels",
+    excerpt: "MCP Apps let an AI agent show a real interface, such as a product card or a form, inside Claude, ChatGPT or Copilot. How the standard works and what it changes.",
+    reverifyTriggers: [
+        "The MCP Apps specification publishes a new dated version after 2026-01-26",
+        "OpenAI moves the ChatGPT embedded payment sheet (window.openai.requestCheckout) out of private beta or widens it beyond physical goods",
+        "Google's Connected Apps Platform leaves preview, or Gemini is added to the MCP Apps host list on modelcontextprotocol.io"
+    ],
+    content: `**MCP Apps** is an official extension to the Model Context Protocol that lets a tool return an interactive interface, such as a chart, a form or a product card, which the AI host renders directly inside the conversation. The UI is plain HTML running in a sandboxed iframe, and it talks to the host, not straight to the merchant's server, using the JSON-RPC message format MCP already uses. Claude, ChatGPT, Microsoft 365 Copilot and VS Code all support it, and Google has begun opening Gemini to it, so one interface now works across the main AI assistants instead of being rebuilt for each.
+
+For merchants, that changes where a shopping interface can live. Until this year an agent could only describe a product in text, or hand the shopper a link. MCP Apps make the chat window itself a place where a branded, clickable product view can appear, while the core decisions about payment still sit with the host.
+
+## What Are MCP Apps?
+
+The [MCP Apps announcement](https://blog.modelcontextprotocol.io/posts/2026-01-26-mcp-apps/), published by the MCP Core Maintainers on 26 January 2026, describes the extension as live and lists Claude, Goose, Visual Studio Code Insiders and ChatGPT as the first hosts. The [specification](https://github.com/modelcontextprotocol/ext-apps/blob/main/specification/2026-01-26/apps.mdx) carries the status "Stable (2026-01-26)" and the identifier \`io.modelcontextprotocol/ui\`.
+
+The extension started as a proposal, **SEP-1865**, announced on [21 November 2025](https://blog.modelcontextprotocol.io/posts/2025-11-21-mcp-apps/). That post says it was authored by MCP Core Maintainers at OpenAI and Anthropic together with the creators of **MCP-UI**, a community project that the post says had been adopted by Postman, Shopify, Hugging Face, Goose and ElevenLabs. The stated problem was fragmentation: MCP servers could only exchange text and structured data, and each host had begun solving the interface problem its own way.
+
+MCP-UI now describes itself as [standardized into MCP Apps](https://mcpui.dev/), with its packages implementing the spec. OpenAI's Apps SDK went the same way. OpenAI's developer documentation now says plainly that [ChatGPT implements the open MCP Apps standard](https://developers.openai.com/apps-sdk/mcp-apps-in-chatgpt) for UI returned by an MCP server. ChatGPT's older \`window.openai\` interface now works as a set of compatibility aliases plus ChatGPT-only extensions, which OpenAI says to use only for capabilities the shared specification does not cover.
+
+## How Do MCP Apps Work?
+
+An MCP App combines two things the protocol already had: a **tool** and a **resource**. The tool's description carries a field, \`_meta.ui.resourceUri\`, that points to a resource with a \`ui://\` address. That resource is an HTML page, usually bundled with its own JavaScript and CSS, served with the media type \`text/html;profile=mcp-app\`.
+
+The [specification's own example](https://github.com/modelcontextprotocol/ext-apps/blob/main/specification/2026-01-26/apps.mdx) shows how small the link is. This tool declaration, trimmed from it, names its interface:
+
+\`\`\`json
+{
+  "name": "get_weather",
+  "description": "Get current weather for a location",
+  "_meta": {
+    "ui": {
+      "resourceUri": "ui://weather-server/dashboard-template",
+      "visibility": ["model", "app"]
+    }
+  }
+}
+\`\`\`
+
+The [official MCP Apps overview](https://modelcontextprotocol.io/extensions/apps/overview) breaks the sequence into four steps:
+
+1. **UI preloading.** Because the tool description names its UI in advance, the host can fetch the interface before the tool is even called.
+2. **Resource fetch.** The host reads the HTML resource from the MCP server. External scripts or images can only load from origins the resource declares in \`_meta.ui.csp\`.
+3. **Sandboxed rendering.** Web hosts render the page inside a sandboxed iframe in the conversation, cut off from the host page's DOM, cookies and storage.
+4. **Two-way messaging.** The app and host exchange JSON-RPC messages over \`postMessage\`. The app can request tool calls, send a message into the chat, and update what the model knows about the user's actions. Those tool calls go through the host, which forwards them to the MCP server and can restrict which tools an app may call. The January announcement adds that hosts can require explicit approval for tool calls started from the interface.
+
+That last step is what separates an MCP App from an embedded web page. The app can push context back to the model (the spec's \`ui/update-model-context\` message), so when a shopper picks a size or removes an item, the agent can know about it without the shopper typing it out.
+
+### How Is an MCP App Different From a Normal MCP Tool?
+
+| | Standard MCP tool | MCP App |
+|---|---|---|
+| What the tool returns | Text, images, resources or structured data | The same, plus a linked interactive HTML interface |
+| Where output appears | In the chat, formatted by the host | In a sandboxed iframe inside the chat |
+| Who can trigger actions | The model | The model, and the user clicking inside the app |
+| Hosts without UI support | Work as normal | Fall back to the text result |
+| Security boundary | Host decides which tools run | Host also enforces the iframe sandbox and declared domains |
+
+Sources: [MCP Apps overview](https://modelcontextprotocol.io/extensions/apps/overview) and the [2026-01-26 specification](https://github.com/modelcontextprotocol/ext-apps/blob/main/specification/2026-01-26/apps.mdx).
+
+## Which AI Hosts Support MCP Apps?
+
+The MCP documentation lists the current hosts; OpenAI and Google document their own support separately. Support is opt-in on both sides: an MCP App only renders when the client and the server both declare the \`io.modelcontextprotocol/ui\` extension.
+
+| Host | Status | Source |
+|---|---|---|
+| Claude (web), Claude Desktop, Claude for iOS and Android | Supported | [MCP Apps overview](https://modelcontextprotocol.io/extensions/apps/overview), [Claude Help Center](https://support.claude.com/en/articles/13454812-use-interactive-connectors-in-claude) |
+| ChatGPT | Implements the standard, plus ChatGPT-only extensions | [OpenAI Apps SDK docs](https://developers.openai.com/apps-sdk/mcp-apps-in-chatgpt) |
+| Microsoft 365 Copilot | Supported | [MCP Apps overview](https://modelcontextprotocol.io/extensions/apps/overview) |
+| VS Code GitHub Copilot | Supported | [MCP Apps overview](https://modelcontextprotocol.io/extensions/apps/overview) |
+| Goose, Postman, MCPJam, Archestra.AI | Supported | [MCP Apps overview](https://modelcontextprotocol.io/extensions/apps/overview) |
+| Gemini Enterprise | Renders MCP Apps; imported tools start disabled | [Google Cloud guide, 20 Oct 2026](https://cloud.google.com/blog/topics/developers-practitioners/devs-guide-to-mcp-apps-in-gemini) |
+| Gemini app and Search | Developer preview via the Connected Apps Platform, apply for access | [Google, 28 Oct 2026](https://blog.google/innovation-and-ai/technology/developers-tools/connected-apps-one-place/), [Google for Developers](https://developers.google.com/connected-apps) |
+
+Gemini is not yet on the MCP documentation's host list, but Google has started to move. A [Google Cloud developer guide](https://cloud.google.com/blog/topics/developers-practitioners/devs-guide-to-mcp-apps-in-gemini) dated 20 October 2026 says an MCP App's interface renders directly in the chat flow of **Gemini Enterprise**, inside a sandboxed iframe, and that Gemini Enterprise imports a server's tools as actions with each one disabled by default. On 28 October Google opened a [preview of its Connected Apps Platform](https://blog.google/innovation-and-ai/technology/developers-tools/connected-apps-one-place/), which lets developers bring their services into the Gemini app and Search through a cloud-hosted MCP server, with access opening in phases. Google's [developer page](https://developers.google.com/connected-apps) for the platform says developers can design interactive interfaces with MCP Apps. Developers apply for the preview, and Google has not given a date for wider access.
+
+Mobile is uneven in the documentation. Anthropic's [help centre](https://support.claude.com/en/articles/13454812-use-interactive-connectors-in-claude) says interactive connectors, which it describes as powered by MCP Apps, are available in Claude for iOS and Android. OpenAI's MCP Apps page does not state how the interfaces behave in the ChatGPT mobile apps.
+
+## How Fast Is MCP Apps Adoption Growing?
+
+The npm registry gives a rough, public measure of developer uptake. The AIV Research Desk pulled monthly download counts for the official MCP Apps package, \`@modelcontextprotocol/ext-apps\`, and the core MCP SDK, \`@modelcontextprotocol/sdk\`, from the [npm downloads API](https://api.npmjs.org/downloads/point/2026-10-01:2026-10-31/@modelcontextprotocol/ext-apps) on 3 November 2026.
+
+| Month (2026) | MCP Apps package | Core MCP SDK | MCP Apps as share of SDK |
+|---|---|---|---|
+| February | 1.68 million | 71.7 million | 2.3% |
+| April | 4.86 million | 140.1 million | 3.5% |
+| June | 7.81 million | 171.2 million | 4.6% |
+| August | 13.85 million | 217.3 million | 6.4% |
+| September | 16.65 million | 231.9 million | 7.2% |
+| October | 22.46 million | 266.9 million | 8.4% |
+
+The MCP Apps package grew roughly thirteenfold between February and October, while the core SDK grew a little under fourfold. Version 1.0.0 was published to npm on 26 January 2026, the day of the announcement, and the latest version on 3 November was 2.0.4, published on 27 October.
+
+Read these numbers as direction, not headcount. npm counts every install, including automated builds and packages that pull MCP Apps in as a dependency, so a download is not an app or a user. What the trend does show is that the interface layer is gaining ground faster than MCP itself.
+
+## What Do MCP Apps Mean for Merchants?
+
+Shopify was among the named adopters of MCP-UI before it became a standard. Product browsing also fits the uses the MCP overview names for an app: exploring complex data, configuring many options and working through multi-step workflows where text falls short.
+
+### The UI Is Optional, and the Text Path Still Matters
+
+OpenAI's guidance opens with "Custom UI is optional," and tells developers to keep their tools useful without a component. The specification makes the same point from the other side: if a host does not support MCP Apps, the tool behaves as a standard, text-only tool. A merchant's product data and tool descriptions have to work for an agent that never renders the card. The interface is a layer on top of that, not a replacement for it.
+
+### Checkout Stays With the Host, and Mostly Off-Chat
+
+A practical question for any AI shopping interface is whether the shopper can pay inside it. OpenAI's documentation gives a precise answer for ChatGPT:
+
+| ChatGPT checkout path | Status per OpenAI docs |
+|---|---|
+| External checkout on the merchant's own site | "Recommended and generally available" |
+| Embedded payment sheet via \`window.openai.requestCheckout\` | Private beta "for select marketplaces," not available to all developers or users |
+| Categories covered | Approval "limited to plugins for physical-goods purchases" |
+| Payment credentials | The flow can show eligible saved methods but "cannot collect new payment credentials" |
+
+Source: [OpenAI, MCP Apps in ChatGPT](https://developers.openai.com/apps-sdk/mcp-apps-in-chatgpt), checked 3 November 2026.
+
+The embedded payment sheet is a ChatGPT-only extension, not part of the MCP Apps standard. An app built only on the shared spec can show products, carts and confirmation steps in any supported host, but the payment step itself depends on each host's own rules. Merchants planning for "checkout inside ChatGPT" should plan for an external hand-off as the default.
+
+### Some Tools Can Be Hidden From the Model
+
+The specification lets a server mark a tool's visibility. A tool marked \`["app"]\` is left out of the model's tool list and can only be called from inside the interface, while the host must reject app calls to tools that do not include \`"app"\`. For a store, that separation is useful: actions a shopper should confirm by clicking can be kept away from the model's own tool calls, and the host can still require approval for any call the interface makes.
+
+## What MCP Apps Do Not Change
+
+MCP Apps standardise how an interface is delivered and sandboxed. They do not settle how an agent finds a merchant in the first place, how it proves who it is, or how payment is authorised. Those questions sit in other layers, from [agent discovery files](/news-insights/what-is-an-agent-card) to browser-side tools such as [Shopify's WebMCP checkout](/news-insights/shopify-webmcp-checkout-browser-agents).
+
+The security model also moves trust to the host rather than removing it. The overview describes a sandbox designed to stop an app reaching the host or user data, and the January announcement still advises users to vet MCP servers before connecting them. For a merchant, a branded app inside a chat is only as good as the host's willingness to list it and the shopper's willingness to connect it.
+
+## Questions to Settle Before Building an MCP App
+
+The practical order of work follows from the spec rather than from the interface:
+
+1. **Make the text path complete first.** Every tool should return a result an agent can act on with no UI at all, because some hosts will never render it.
+2. **Decide which actions belong to the shopper.** Use visibility to keep confirm-style actions callable only from the interface.
+3. **Declare every external origin, including analytics.** Images and scripts load only from domains listed in \`_meta.ui.csp\`, and the specification requires hosts to block connections to undeclared domains. A product image CDN, a reviews widget or a tracking script that is not declared will simply not load inside the chat.
+4. **Treat checkout as host-specific.** Build the external checkout hand-off first; treat any embedded payment step as an extra for the hosts that offer it.
+5. **Test in the native mobile apps, not only the web.** Host documentation is thinnest on mobile, and the text fallback is what a shopper sees if an interface fails to render.
+
+MCP Apps turn the AI chat window into a surface a merchant can design for. The standard is stable, the main assistants support it, Google is opening Gemini to it, and developer uptake is climbing fast. What it does not do is move the payment decision away from the platforms that own the chat.`,
+    faqs: [
+        {
+            question: "What are MCP Apps?",
+            answer: "MCP Apps are an official Model Context Protocol extension that lets a tool return an interactive HTML interface, rendered by the AI host inside the conversation. The interface runs in a sandboxed iframe and communicates with the host over JSON-RPC messages."
+        },
+        {
+            question: "Which AI assistants support MCP Apps?",
+            answer: "MCP Apps are supported by Claude on web, desktop and mobile, ChatGPT, Microsoft 365 Copilot, VS Code GitHub Copilot, Goose, Postman, MCPJam and Archestra.AI. Google says MCP Apps render in Gemini Enterprise, and its Connected Apps Platform preview, opened on 28 October 2026, brings MCP servers into the Gemini app and Search, with MCP Apps named as the way to build interactive interfaces."
+        },
+        {
+            question: "When did MCP Apps become an official standard?",
+            answer: "MCP Apps became an official MCP extension on 26 January 2026, when the MCP Core Maintainers announced it as live. It began as proposal SEP-1865 on 21 November 2025, authored by maintainers at OpenAI and Anthropic with the creators of MCP-UI."
+        },
+        {
+            question: "What is the difference between MCP Apps and the OpenAI Apps SDK?",
+            answer: "MCP Apps is the shared, open standard, and ChatGPT implements it. The OpenAI Apps SDK adds ChatGPT-only extensions on top through window.openai, such as the embedded payment sheet, and OpenAI advises using those only where the shared specification does not cover a capability."
+        },
+        {
+            question: "Can shoppers pay inside an MCP App in ChatGPT?",
+            answer: "Usually not yet. OpenAI says external checkout on the merchant's site is the recommended, generally available path, while its embedded payment sheet is in private beta for select marketplaces and limited to physical goods. That payment sheet is a ChatGPT extension, not part of the MCP Apps standard."
+        },
+        {
+            question: "Do MCP Apps work if the AI host cannot show the interface?",
+            answer: "Yes. The MCP Apps specification says that if a host does not support the extension, the tool behaves as a standard text-only tool. That is why tools should return results an agent can use without any interface."
+        },
+        {
+            question: "Are MCP Apps secure?",
+            answer: "MCP Apps run in a sandboxed iframe that cannot read the host page, its cookies or its storage, and they can load content only from domains they declare. Hosts can also require user approval before an app triggers a tool call, but users are still advised to vet MCP servers before connecting them."
+        }
+    ]
+},
 ];
