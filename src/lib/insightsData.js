@@ -6473,4 +6473,174 @@ MCP Apps turn the AI chat window into a surface a merchant can design for. The s
         }
     ]
 },
+{
+    id: "62",
+    slug: "visa-agentic-commerce-benchmark-ai-shopping-agents",
+    title: "AI Shoppers Failed 42.8% of Visa's Test, and Often Still Bought",
+    seoTitle: "Visa Agentic Commerce Benchmark: 22 AI Models Tested as Shoppers",
+    category: "Agentic Commerce",
+    categoryPage: "/agentic-commerce",
+    relatedSlugs: [
+        "agentic-checkout-trust-gap-visa-trust-index",
+        "what-are-ai-shopping-agents",
+        "visa-agent-score-agentic-directory"
+    ],
+    date: "2026-11-06T07:20:59Z",
+    dateModified: "2026-11-06T07:20:59Z",
+    author: "AIV Research Desk",
+    readTime: "8 min read",
+    image: "/images/insights/visa-agentic-commerce-benchmark-ai-shopping-agents.webp",
+    imageAlt: "Long-exposure streaks of blue and cyan light curving across a dark background",
+    excerpt: "Visa tested 22 AI models as shopping assistants. Runs failed 42.8% of the time, and over half of failed runs still ended in a purchase. What the data shows.",
+    reverifyTriggers: [
+        "Visa publishes a benchmark snapshot newer than the October 2026 results (new models, episodes or product categories)",
+        "Visa publishes results for the planned checkout stage (payment and order placement)",
+        "A model provider publicly disputes its Visa benchmark result or Visa revises a model's figures"
+    ],
+    content: `The **Visa Agentic Commerce Benchmark**, released on 5 November 2026, tested 22 AI models from 12 labs as shopping assistants, and their runs failed 42.8% of the time. In 54% of the failed runs, the shopper still ended up buying something that missed a requirement. The failures happen early, in discovery: the models often do not ask the question that would reveal what the shopper actually needs.
+
+[Visa's announcement](https://investor.visa.com/news/news-details/2026/Visa-Releases-First-of-Its-Kind-Industry-Benchmark-for-AI-Shopping-Almost-Half-of-Test-Runs-Fail/default.aspx) gives the headline numbers. The model-by-model results sit on Visa's [benchmark site](https://www.visapaymentsfrontier.io/articles/agentic-commerce-benchmark/agentic-commerce-benchmark.html), labelled an "October 2026 snapshot". This analysis draws on both, including the published results file behind the site's charts.
+
+## What Is the Visa Agentic Commerce Benchmark?
+
+The Visa Agentic Commerce Benchmark is a Visa Research test of whether an AI shopping assistant can work out what a shopper needs, search a market and recommend the right product. Each test, which Visa calls an **episode**, is a conversation between two AI models: one plays the shopper, the other is the shopping assistant being tested.
+
+The shopper starts with a few stated preferences and holds the rest back. A hidden fact comes out only when the assistant asks a relevant question or takes an action that reveals it. The assistant searches a simulated market that is identical for every model, and each run is scored against an answer key no model sees.
+
+Visa publishes one episode in full. A shopper called Sam needs a 65-inch TV with at least 30-day returns. Questioning reveals a budget of up to $1,200 all in, and checking with the family adds Dolby Vision, HDR10+ and native 120 Hz for an Xbox Series X. Sam's market holds 265 TVs; each requirement found narrows it, down to 20. Visa has made this episode playable as an early demo, so readers can question Sam and pick a TV themselves. The other 14 episodes stay private. According to the release, the tasks cover TVs, laptops and personal care appliances.
+
+### What counts as a pass?
+
+A run passes only if the decision is right and the assistant earned it. In Visa's words, a purchase passes "when the product meets every requirement in the answer key and each requirement was established during the run." Declining to buy passes only when nothing on the market fits. A lucky fit does not pass, and a run that hits the tool-call limit or returns a reply in the wrong format counts as a failure.
+
+Every model ran each of the 15 episodes three times, giving 990 runs in total.
+
+## What Did Visa's AI Shopping Benchmark Find?
+
+| Finding | Figure |
+|---|---|
+| Runs that passed | 57.2% |
+| Runs ending in a purchase that did not pass | 23.1% |
+| Other outcomes (no purchase though a fit existed, or no decision) | 19.7% |
+| Failed runs that still ended in a purchase | 54% |
+| Episodes where all three runs passed | 34.2% |
+| Best and worst model pass rates | 82.2% and 28.9% |
+| Five models that uncovered the most hidden factors vs the five that uncovered the fewest | 70.2% vs 44.4% |
+| Five most expensive models per run vs the five cheapest | 67.1% vs 50.2% |
+
+Source: [Visa release](https://investor.visa.com/news/news-details/2026/Visa-Releases-First-of-Its-Kind-Industry-Benchmark-for-AI-Shopping-Almost-Half-of-Test-Runs-Fail/default.aspx) and [benchmark site](https://www.visapaymentsfrontier.io/articles/agentic-commerce-benchmark/agentic-commerce-benchmark.html), 5 November 2026.
+
+Two numbers matter most. The **discovery gap** (70.2% vs 44.4%) shows that asking better questions is what separates the stronger models. The **consistency gap** (57.2% per run, 34.2% for all three runs) shows that one good run proves little. Visa's site adds that no model passed all three runs on more than 67% of the episodes.
+
+## Which AI Model Is Best at Shopping?
+
+On pass rate, **Gemini 4 Argon** from Google and **Muse Wonder** from Meta tied at the top with 82.2%, 37 of 45 runs each. Visa itself cautions against reading this as a clear winner: "No model clearly leads." Each rate carries a wide 95% confidence interval, and Visa says the intervals of the next eleven models overlap the leaders'.
+
+| Model (lab), as labelled by Visa | Pass rate | Runs passed | Avg cost per run |
+|---|---|---|---|
+| Gemini 4 Argon (Google) | 82.2% | 37/45 | $0.54 |
+| Muse Wonder (Meta) | 82.2% | 37/45 | $1.55 |
+| Claude Fable 5.1 (Anthropic) | 75.6% | 34/45 | $1.82 |
+| GLM-5.3 (Z.ai) | 66.7% | 30/45 | $0.48 |
+| Claude Sonnet 5.5 (Anthropic) | 64.4% | 29/45 | $0.39 |
+| GPT-6 Astra (OpenAI) | 64.4% | 29/45 | $0.76 |
+| Muse Spark 1.3 (Meta) | 64.4% | 29/45 | $0.90 |
+| Claude Opus 5.5 (Anthropic) | 62.2% | 28/45 | $0.59 |
+| GPT-6.1 Sol (OpenAI) | 62.2% | 28/45 | $0.38 |
+| Grok 4.7 (xAI) | 60.0% | 27/45 | $0.94 |
+| Qwen 3.8 Max (Alibaba) | 60.0% | 27/45 | $0.57 |
+| DeepSeek V4.1 Flash (DeepSeek) | 57.8% | 26/45 | $0.08 |
+| Beam 1.0 (Reflection) | 55.6% | 25/45 | $0.09 |
+| GPT-6 Luna (OpenAI) | 53.3% | 24/45 | $0.02 |
+| Gemini 3.8 Flash (Google) | 53.3% | 24/45 | $0.35 |
+| Kimi K3.1 Pro (Moonshot) | 53.3% | 24/45 | $1.19 |
+| GPT-6.1 Terra (OpenAI) | 51.1% | 23/45 | $0.09 |
+| MiniMax M3 (MiniMax) | 48.9% | 22/45 | $0.18 |
+| DeepSeek V4 Pro (DeepSeek) | 42.2% | 19/45 | $0.11 |
+| Gemini 3.1 Pro (Google) | 35.6% | 16/45 | $0.31 |
+| MiniMax M3.1 Flash (MiniMax) | 33.3% | 15/45 | $0.07 |
+| Inkling (Thinking Machines) | 28.9% | 13/45 | $0.35 |
+
+Source: Visa benchmark results file, October 2026 snapshot (cost is what the tested model spent per run, as its provider reported it).
+
+### Same score, three times the cost
+
+The tie at the top hides a cost gap. Gemini 4 Argon averaged $0.54 per run and Muse Wonder $1.55, so Visa's cost-per-pass figure is about $0.66 for Argon against $1.88 for Wonder. At the other end, GPT-6 Luna passed 53.3% of runs for about $0.02 each. For a merchant or platform choosing a model to run shopping conversations at volume, cost per correct outcome is the number to compare, and the leaderboard alone does not show it.
+
+### Brand is not a proxy for performance
+
+Results vary widely inside a single lab. Google's models span 82.2% (Gemini 4 Argon) to 35.6% (Gemini 3.1 Pro). Anthropic's Claude Sonnet 5.5 scored 64.4% at $0.39 a run, slightly ahead of Claude Opus 5.5 at 62.2%. "We tested Gemini" or "we use Claude" says little about shopping quality until the exact model is named.
+
+## How Do AI Shopping Agents Fail?
+
+Visa found that models fail in different ways, and the way a model fails matters as much as how often.
+
+* **Declining when a fit existed.** OpenAI's models end the most runs with no purchase although a suitable product was on the market: GPT-6.1 Terra in 38% of runs, GPT-6.1 Sol in 33% and GPT-6 Astra in 29%. Visa says no model from another lab exceeds 16%.
+* **Buying the wrong thing.** Gemini 3.1 Pro made a purchase that did not pass in 51% of its runs.
+* **Running out of road.** MiniMax M3.1 Flash hit the tool-call limit in 38% of runs, and Inkling's reply was not in the accepted format in 36%.
+
+### Cautious agents lose sales; eager agents create returns
+
+The split between declining and buying wrong is the most practical finding in the data, because the two failures cost a merchant in different ways. Visa's results file shows the contrast clearly. All 11 of Claude Fable 5.1's failed runs were purchases that missed a requirement; it never declined a suitable product or ran out of tool calls. GPT-6.1 Sol failed the other way: 15 of its 17 failed runs ended with no purchase although a fit existed, and only 2 were wrong purchases.
+
+An eager agent that buys the wrong product turns into a return, a refund or a complaint. A cautious agent that wrongly says nothing fits turns into a sale that never happens, and the shopper may never know a suitable product was available. Pass rate alone treats both as the same failure. The benchmark also leaves open who bears the cost when an agent's wrong purchase becomes a dispute, because its current stage stops before payment.
+
+### Why one good run proves little
+
+Visa measures reliability with **pass^k**, a method it credits to the τ-bench research benchmark: the chance that k runs drawn at random from the same episode all pass, averaged over the 15 episodes. Across the 22 models, a single run passed 57% of the time, two runs of the same episode both passed 42% of the time, and all three 34%. Visa's whitepaper, as summarised on its site, counts a capability as demonstrated only when it holds up across runs. For anyone deploying a shopping agent, that is the right standard: shoppers experience every run, not the average.
+
+Visa Research's diagnosis is precise: capable models "seldom misinterpret a fact once it's in their context." The failures come earlier. Visa lists five patterns the episodes are built to catch:
+
+1. Meeting every stated requirement while never asking about unstated ones.
+2. Treating a value missing from a product listing as acceptable.
+3. Saying no suitable product exists while one sits unexamined in an earlier search result.
+4. Talking the shopper out of a correct choice over a concern no requirement supports.
+5. Agreeing on a bundle in conversation, then finalising a selection without it.
+
+## What Does This Mean for Merchants?
+
+The common reading of agentic commerce puts the risk at checkout: will the payment go through, is the agent authorised? Visa's data points somewhere else. The weak step in this benchmark is discovery, before any payment happens, and 54% of failures still ended in a sale. For a merchant, that means a share of agent-driven orders could arrive for products that do not fit the buyer, with the returns and service cost that follow. This is an inference from a simulated market, not measured merchant data.
+
+Failure pattern 2 is the one merchants can act on. If an agent treats a missing attribute as acceptable, a listing without a stated return window, HDR format or refresh rate can be bought on a false assumption or passed over in favour of a competitor's complete listing. Complete, explicit product attributes are the part of this problem a merchant controls. Visa's benchmark measures model behaviour, not listing quality, so this is a reading of its failure patterns rather than a tested result.
+
+Shopper trust is the other constraint. Visa's Trust Index, cited in the release, found that 72% of US consumers had used an AI assistant but only 23% trusted AI to handle payments on their behalf; that survey is covered in [the agentic checkout trust gap](/news-insights/agentic-checkout-trust-gap-visa-trust-index).
+
+## What Has Visa Not Tested Yet?
+
+The October 2026 snapshot covers discovery and intent only. Visa says it will extend testing to "checkout, payment, and order placement" and add more scenarios and product categories, with post-checkout listed as a later stage on its site. Three limits apply to the current results:
+
+* Fourteen of the fifteen episodes are private, so outsiders can inspect only Sam's TV.
+* The market is simulated and the shopper is an AI model, not a person.
+* Visa runs a card network with its own agentic commerce products. Its release says the benchmark is not directly part of Visa Intelligent Commerce, and that it has been shared with leading model providers for feedback.
+
+Rubail Birwadker, Visa's Global Head of Growth, framed the release around trust: "AI agents have the potential to power the next era of commerce, but trust is key to making it work." He was blunter with [Fortune](https://fortune.com/2026/11/05/ai-agents-shopping-ranking-best-agent/): "We're not there yet from a trust or technology perspective."
+
+Most agentic commerce debate so far has been about whether an agent is allowed to spend. Visa's data shifts the question to whether it knows what to buy. On the October 2026 snapshot, the best models get that right about four times in five, and none does so reliably across repeated runs.`,
+    faqs: [
+        {
+            question: "What is the Visa Agentic Commerce Benchmark?",
+            answer: "The Visa Agentic Commerce Benchmark is a Visa Research test, released on 5 November 2026, of whether AI models can act as shopping assistants. An AI shopper holds hidden requirements, and the model being tested must uncover them, search a simulated market and make the correct purchase or no-purchase decision."
+        },
+        {
+            question: "How many AI models did Visa test, and how did they do?",
+            answer: "Visa tested 22 AI models from 12 labs on 15 shopping episodes, three runs each, for 990 runs in total. Runs passed 57.2% of the time and failed 42.8%, and 54% of failed runs still ended in a purchase."
+        },
+        {
+            question: "Which AI model did best in Visa's shopping benchmark?",
+            answer: "Gemini 4 Argon from Google and Muse Wonder from Meta tied for the highest pass rate in Visa's benchmark, at 82.2%. Visa says no model clearly leads, because the confidence intervals of the next eleven models overlap theirs, and Gemini 4 Argon cost about a third as much per run."
+        },
+        {
+            question: "Why do AI shopping agents fail?",
+            answer: "AI shopping agents in Visa's benchmark fail mainly because they do not ask the questions that reveal a shopper's unstated requirements. Visa found capable models seldom misread a fact once they have it; they fail by missing it, by treating a missing listing value as acceptable, or by overlooking a suitable product."
+        },
+        {
+            question: "Does Visa's benchmark test AI agent payments?",
+            answer: "No. The October 2026 snapshot of the Visa Agentic Commerce Benchmark covers discovery and intent only. Visa says it plans to extend testing to checkout, payment and order placement."
+        },
+        {
+            question: "Can I try the Visa Agentic Commerce Benchmark myself?",
+            answer: "Yes. Visa publishes the benchmark on its Visa Payments Frontier site, where anyone can explore the results, watch replays and play an early demo of the public TV episode. Fourteen of the fifteen episodes remain private."
+        }
+    ]
+},
 ];
