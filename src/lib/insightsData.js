@@ -6643,4 +6643,160 @@ Most agentic commerce debate so far has been about whether an agent is allowed t
         }
     ]
 },
+{
+    id: "63",
+    slug: "what-is-network-tokenization",
+    title: "What Is Network Tokenization? The Card Layer AI Agents Pay With",
+    category: "Agentic Payments",
+    categoryPage: "/agentic-payments",
+    relatedSlugs: [
+        "what-agentic-payments-are-why-every-commerce-platform-building-one",
+        "know-your-agent-kya-framework-visa-mastercard-ant",
+        "what-are-ai-shopping-agents"
+    ],
+    date: "2026-11-10T09:32:30Z",
+    dateModified: "2026-11-10T09:32:30Z",
+    author: "AIV Research Desk",
+    readTime: "9 min read",
+    image: "/images/insights/what-is-network-tokenization.webp",
+    imageAlt: "Close-up of a circuit board's grid of small silver solder balls around a dark central square, in blue-black tones",
+    excerpt: "Network tokenization replaces a card number with a token the card network issues. How it works, how widely it is used, and how AI agents now pay with it.",
+    reverifyTriggers: [
+        "EMVCo publishes the EMV Agentic Payments Framework as a final specification, or adds an Agentic Transaction Indicator or Know Your Agent capability to the tokenisation framework",
+        "Visa or Mastercard publishes dispute rules or reason codes specific to agent-initiated transactions",
+        "Visa or Mastercard reports a new token share figure, or Mastercard changes its 2030 target of 100% e-commerce tokenization",
+        "Mastercard sets a date to stop accepting single-use virtual cards in agent payment flows"
+    ],
+    content: `**Network tokenization** is the card networks' system for replacing a card number with a token that the network itself issues, so a merchant or wallet stores and charges the token instead of the real card details. **Agentic network tokens** apply the same system to AI agents: a token scoped to the customer's instruction, which an agent presents at checkout without ever holding the card number. Visa and Mastercard now both route agent payments through their token platforms, and Mastercard has said single-use virtual cards are only a bridge it will not support long term.
+
+The rest of this explainer covers how network tokens work, how far they have spread, what changes when an agent is the one paying, and what still is not settled.
+
+## What Is Network Tokenization?
+
+A network token is a stand-in credential issued by a card network such as Visa, Mastercard or American Express. Visa describes network tokens as replacing "sensitive card data with an alternate credential known as a token" that carries [restrictions regarding their use](https://www.visaacceptance.com/en-us/blog/article/2026/tokens-replace-sensitive-card-data.html) and contains no personal information. The common standard behind them is EMVCo's Payment Tokenisation Specification; EMVCo's [Q3 2026 newsletter](https://www.emvco.com/news-publications/emvco-newsletter-q3-2026/) lists version 2.4 of the technical framework.
+
+Adyen's documentation sets out the mechanics plainly. A network token is an [alternative to the card number](https://docs.adyen.com/online-payments/network-tokenization) that is unique to each combination of shopper and merchant, and every transaction is protected by a single-use cryptogram. Because the network maintains the token, it stays valid when the card is replaced after loss or expiry.
+
+For merchants, the practical effect shows up in stored cards. When a cardholder gets a new card, Visa says stored network tokens update across all merchants automatically, which matters for subscriptions and saved cards. Proprietary tokens from a payment service provider (PSP) [cannot provide those updates](https://www.visaacceptance.com/en-us/blog/article/2026/tokens-replace-sensitive-card-data.html) without additional integrations.
+
+### Network Tokens vs PSP Tokens vs Card Numbers
+
+| | Raw card number (PAN) | PSP token | Network token |
+|---|---|---|---|
+| **Issued by** | Card issuer | The payment provider | The card network |
+| **Who maintains it** | Nobody; a new card means a new number | The provider, as a proprietary token (Visa) | The card network |
+| **Updates when the card is replaced** | Not by itself | Not without additional integrations (Visa) | Yes, automatically (Visa, Adyen) |
+| **Unique to shopper and merchant** | No | Depends on the provider | Yes (Adyen) |
+
+## How Widespread Is Network Tokenization in 2026?
+
+On Visa, network tokenization now covers most online card payments. Visa announced its [10 billionth token in June 2024](https://investor.visa.com/news/news-details/2024/Visa-Issues-10-Billionth-Token-Generating-40-Billion-in-Incremental-E-commerce-Globally/default.aspx), ten years after launching the technology in 2014. At that point, 29% of all transactions Visa processed used tokens. By its fiscal fourth-quarter call on 27 October 2026, CEO Ryan McInerney said [more than 60% of all e-commerce transactions](https://www.fool.com/earnings/call-transcripts/2026/10/28/visa-v-q4-2026-earnings-call-transcript/) on Visa are tokenized and over 50% of all available Visa credentials are tokenized, more than double the share five years earlier.
+
+Mastercard reports on a different base. Its 2026 proxy statement says it had tokenized [nearly 40% of all switched transactions](https://www.sec.gov/Archives/edgar/data/1141391/000114139126000021/ma-20260427.htm) as of December 2025, and it has set a target of 100% tokenization of e-commerce payments by 2030.
+
+| Network | Figure | Measure | As of | Source |
+|---|---|---|---|---|
+| Visa | 29% | All transactions Visa processed | April 2024 | Visa release, June 2024 |
+| Visa | More than 60% | E-commerce transactions | October 2026 | Visa Q4 FY2026 call |
+| Visa | Over 50% | Available credentials tokenized | October 2026 | Visa Q4 FY2026 call |
+| Mastercard | Nearly 40% | All switched transactions | December 2025 | Mastercard 2026 proxy |
+| Mastercard | 100% (target) | E-commerce payments | 2030 | Mastercard 2026 proxy |
+
+The table's figures are not comparable with each other. Visa's 60% counts e-commerce only, while Mastercard's 40% counts all switched transactions, including in-store payments. The direction is the same on both networks: tokenized credentials are becoming the default for card-not-present payments, which is the channel agents use.
+
+Visa also puts a commercial value on the shift. Its June 2024 release credits tokens with more than $40 billion in incremental e-commerce revenue for businesses globally and $650 million in fraud saved in a year, both measured on Visa's own 2023 data. Those are the network's figures, not an independent measurement, and approval-rate claims vary widely by source and method, so none is repeated here.
+
+## What Are Agentic Network Tokens?
+
+**Agentic network tokens** are network tokens issued for an AI agent to use on a customer's behalf, carrying the limits of what the customer asked for. Stripe, which processes them for both networks, describes them as [network-issued, secure digital credentials](https://stripe.com/blog/supporting-additional-payment-methods-for-agentic-commerce) that "allow authorized AI agents to initiate payments on a customer's behalf without exposing underlying card details."
+
+Stripe's 3 March 2026 description of the flow is the clearest public account. When a customer authorises an agent, Stripe provisions an agentic network token from Mastercard or Visa "scoped to the customer's intent" and shares it with the agent. The agent can use it with any seller accepting agentic payments. At authorisation, the network maps the token to the latest card number, as it does for card-on-file tokens, and adds information to the authorisation message so the issuer can make its decision and manage disputes and fraud.
+
+Both networks built their agent programmes on their existing token platforms rather than on a new rail:
+
+* **Visa Intelligent Commerce**, introduced on [30 April 2025](https://usa.visa.com/about-visa/newsroom/press-releases.release.21361.html), "replaces card details with tokenized digital credentials" and lets consumers set spending limits and conditions for agent purchases. Visa says only the consumer can instruct the agent on when to activate a payment credential.
+* **Mastercard Agent Pay**, announced on [29 April 2025](https://investor.mastercard.com/investor-news/investor-news-details/2025/Mastercard-Unveils-Agent-Pay-Pioneering-Agentic-Payments-Technology-to-Power-Commerce-in-the-Age-of-AI/default.aspx), introduced Mastercard Agentic Tokens, which build on the tokenization already used for contactless payments, card-on-file and subscriptions. The programme requires AI agents to be registered and verified before they can pay.
+
+### How an Agentic Network Token Payment Works, Step by Step
+
+Visa's developer documentation for [Visa Intelligent Commerce](https://developer.visa.com/capabilities/visa-intelligent-commerce) gives the order of operations for an agent provider:
+
+1. **Register as a token requestor** with the Visa Token Service. Visa calls this the foundational step before any card enrolment.
+2. **Enrol the card and provision a token** for that customer.
+3. **Set up a passkey** on the customer's device, with step-up verification where needed, so the customer can approve instructions.
+4. **Record the customer's purchase instruction**, which Visa's documentation calls a consumer-approved purchase instruction.
+5. **Retrieve a payment credential for that instruction.** Visa validates the agent's signature through its Agent Registry Service at this point.
+6. **Authorise the payment.** The network translates the token to the real card number for the issuer, as described in Stripe's account above.
+
+Visa says production access requires its approval at each stage, from sandbox through certification. For merchants, the important point is step six: the payment arrives as a normal card authorisation on a network token, with extra agent data attached.
+
+### Visa vs Mastercard: The Agent Token Programmes Compared
+
+| | Visa Intelligent Commerce | Mastercard Agent Pay |
+|---|---|---|
+| **Announced** | 30 April 2025 | 29 April 2025 |
+| **Token** | Tokenized credentials via Visa Token Service; "agentic tokens" (Q4 FY2026 call) | Mastercard Agentic Tokens, built on its existing tokenization |
+| **Agent check** | Trusted Agent Protocol and Agent Directory (Q4 FY2026 call) | Agents registered and verified before paying |
+| **Customer intent** | Consumer authenticated intent and consumer-approved purchase instructions | Verifiable Intent (Q3 2026 call) |
+| **Named in use** | Nearly 50 AI partners live, including Shopify's Shop Pay (October 2026) | Shop Pay; OpenAI partnership includes Agent Pay (October 2026) |
+
+Visa describes the volume as early. McInerney referred to "the albeit limited number of agentic transactions today" on Visa's [27 October call](https://www.fool.com/earnings/call-transcripts/2026/10/28/visa-v-q4-2026-earnings-call-transcript/), while saying the partner count was expected to double in the coming months.
+
+## Why the Card Networks Want Tokens, Not Virtual Cards
+
+The card networks are not neutral about how an agent pays. Some agent checkouts pay merchants with single-use virtual card numbers (VCNs), part of what an analyst on Mastercard's call called a "patchwork of checkout options ranging from single-use virtual cards to wallets." On Mastercard's [29 October 2026 call](https://www.fool.com/earnings/call-transcripts/2026/10/29/mastercard-ma-q3-2026-earnings-call-transcript/), CEO Michael Miebach said Mastercard is "not supporting solutions that take a one-time VCNs out there as you're fronting a transaction", arguing it "fundamentally breaks a transaction" from the consumer's choice, rewards and control perspectives.
+
+He drew a line between consumer choice and processor plumbing. A consumer may still put a card into whatever agent they like; what Mastercard objects to is a processor inserting a virtual card in between. In his words, "a VCN is a processor decision that is a bridge to get ready for a fully tokenized transaction", and Mastercard is "very clear that fully tokenized all the way through agentic pay or an equivalent is the way to go."
+
+The reasoning follows from what reaches the card issuer. With an agentic network token, the network maps the token to the cardholder's own card and adds agent data to the authorisation, as Stripe describes. With a virtual card fronting the purchase, the transaction runs on a different card number, so the consumer's chosen card, its rewards and its controls sit behind an intermediary, which is the break Miebach describes. For merchants, the practical consequence is that a payment provider relying on VCNs for agent traffic is on a path one of the two largest networks calls temporary.
+
+## What Network Tokens Do Not Solve: Intent and Disputes
+
+Network tokenization answers "whose card is this, and is it safe to charge?" It does not, by itself, answer "did the customer actually ask for this purchase?" That is the harder problem, and the standards for it are still drafts.
+
+EMVCo published a draft **EMV Agentic Payments Framework** (version 1.0, draft) in its [Q3 2026 newsletter](https://www.emvco.com/news-publications/emvco-newsletter-q3-2026/) dated 9 October 2026. It introduces **Intent Services**, a shared layer that lets payment participants "register, reference, retrieve and manage consumer-authorised intent before, during and after a transaction." EMVCo says it focused on scenarios where intent has to be managed over time, such as recurring purchases, cumulative budgets and post-transaction activity. It adds that it "may consider" Know Your Agent capabilities and **Agentic Transaction Indicators** to identify agent transactions consistently across the payments ecosystem.
+
+Read plainly, that wording means that as of October 2026 there is no finished EMV standard for flagging a transaction as agent-initiated. Visa and Mastercard each carry intent and agent data inside their own programmes, and McInerney said Visa wants "a clear path to resolution in the event of a problem", naming disputes, rules and processes as part of that work. Until a shared indicator and dispute treatment exist, how a contested agent purchase is resolved depends on which network's programme carried it.
+
+## What Merchants Need to Do About Network Tokenization
+
+Most merchants will reach agentic network tokens through their payment provider, not by integrating with Visa or Mastercard directly. Stripe says sellers [interact only with Shared Payment Tokens](https://stripe.com/blog/supporting-additional-payment-methods-for-agentic-commerce) while it provisions the network tokens behind the scenes, and that any seller already processing with Stripe automatically supports these payment methods. Miebach made the same point from the network side: PSPs, software vendors and processors are "absolutely critical", and Mastercard's aim is that a merchant does not need a different solution for every partner.
+
+That makes the work a short set of questions for the payment provider rather than a build project:
+
+1. **Are our stored cards already network-tokenized?** If the provider still uses its own vault tokens, the automatic card-update benefit is missing today, before agents enter the picture.
+2. **Do you accept agentic network tokens from both Visa and Mastercard?** Ask for the specific programmes, Visa Intelligent Commerce and Mastercard Agent Pay, not a general "agent ready" claim.
+3. **Do any agent payments reach us as single-use virtual cards?** If so, ask what the provider's plan is, given Mastercard's stated position.
+4. **What agent and intent data do we receive with an agent payment?** This decides what a merchant can show if a customer later disputes a purchase their agent made.`,
+    faqs: [
+        {
+            question: "What is network tokenization?",
+            answer: "Network tokenization is the card networks' system for replacing a card number with a token issued by the network itself, such as Visa or Mastercard. Merchants store and charge the token instead of the card number, each transaction carries a single-use cryptogram, and the network keeps the token valid when the card is replaced."
+        },
+        {
+            question: "What is the difference between a network token and a PSP token?",
+            answer: "A network token is issued and maintained by the card network, while a PSP token is a proprietary token created by one payment provider. Visa says network tokens update automatically when a cardholder gets a new card, which PSP tokens cannot do without additional integrations."
+        },
+        {
+            question: "What are agentic network tokens?",
+            answer: "Agentic network tokens are network tokens issued for an AI agent to pay on a customer's behalf, scoped to what the customer authorised. Stripe describes them as network-issued credentials from Visa and Mastercard that let authorised agents initiate payments without exposing card details, mapped by the network to the real card number at authorisation."
+        },
+        {
+            question: "How much of card e-commerce is tokenized in 2026?",
+            answer: "On Visa, more than 60% of all e-commerce transactions are tokenized, according to CEO Ryan McInerney on the company's 27 October 2026 earnings call. Mastercard reported nearly 40% of all switched transactions tokenized as of December 2025, a broader measure that includes in-store payments, and targets 100% e-commerce tokenization by 2030."
+        },
+        {
+            question: "Do merchants need to integrate with Visa or Mastercard to accept agent payments?",
+            answer: "Usually not directly. Most merchants receive agentic network tokens through their payment provider; Stripe, for example, says sellers interact only with its Shared Payment Tokens while it provisions the network tokens behind the scenes. The useful step is confirming that the provider accepts both Visa Intelligent Commerce and Mastercard Agent Pay tokens."
+        },
+        {
+            question: "Why does Mastercard oppose virtual cards for AI agent payments?",
+            answer: "Mastercard says single-use virtual card numbers inserted by a processor break the link between the consumer's chosen card, its rewards and its controls. CEO Michael Miebach said on the 29 October 2026 earnings call that such virtual cards are only a bridge and that fully tokenized agent payments are the way to go."
+        },
+        {
+            question: "Is there a standard for identifying AI agent transactions?",
+            answer: "Not a finished one. EMVCo published a draft EMV Agentic Payments Framework in October 2026 that introduces Intent Services for managing consumer-authorised intent, and said it may consider Agentic Transaction Indicators and Know Your Agent capabilities later. For now, Visa and Mastercard carry agent and intent data within their own programmes."
+        }
+    ]
+},
 ];
