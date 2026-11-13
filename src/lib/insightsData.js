@@ -6799,4 +6799,146 @@ That makes the work a short set of questions for the payment provider rather tha
         }
     ]
 },
+{
+    id: "64",
+    slug: "eu-digital-fairness-act-ai-shopping-agents",
+    title: "EU Digital Fairness Act: The New Rules for AI Shopping Agents",
+    category: "Agentic Commerce",
+    categoryPage: "/agentic-commerce",
+    relatedSlugs: [
+        "what-are-ai-shopping-agents",
+        "know-your-agent-kya-framework-visa-mastercard-ant",
+        "eu-ai-act-high-risk-deadline-deferred-2027"
+    ],
+    date: "2026-11-13T07:13:17Z",
+    dateModified: "2026-11-13T07:13:17Z",
+    author: "AIV Research Desk",
+    readTime: "8 min read",
+    image: "/images/insights/eu-digital-fairness-act-ai-shopping-agents.webp",
+    imageAlt: "Empty tiered debating chamber in Strasbourg with navy and grey seats, a blue EU flag behind the podium and white ceiling lights",
+    excerpt: "The EU's Digital Fairness Act proposal makes anyone offering an AI shopping agent ask shoppers how much freedom it gets. What Article 26 requires, and when.",
+    reverifyTriggers: [
+        "European Parliament committee report or Council general approach amends Article 26 (automated systems for contracting) or Article 27",
+        "The Digital Fairness Act is adopted and published in the Official Journal, fixing the application date now left as 12 months after entry into force",
+        "The revised Consumer Protection Cooperation Regulation is adopted, changing or confirming the Commission's 6% fining power",
+        "The European Business Wallets Regulation is adopted, making the wallet route in Article 26(5) and (6) usable"
+    ],
+    content: `**The Digital Fairness Act** is the European Commission's proposed regulation, published on 11 November 2026, that rewrites EU consumer protection law for online commerce, and it contains a rule written specifically for AI agents that buy on a shopper's behalf. Under its **Article 26**, any trader that offers consumers an AI agent able to conclude contracts must make the shopper choose, on first use, whether the agent needs approval for every purchase, only for purchases outside limits the shopper sets, or none at all. The proposal still has to pass the European Parliament and the Council, and it would apply 12 months after it enters into force.
+
+## What Did the Commission Propose on 11 November 2026?
+
+The Commission presented the [Digital Fairness Act proposal](https://commission.europa.eu/document/0575d59f-554f-4a9e-b54b-e6b717175809_en), reference COM(2026) 1100 final, as a regulation that repeals and replaces the 2005 Unfair Commercial Practices Directive. Because it is a regulation rather than a directive, it would apply directly in every member state instead of being transposed separately into each national law.
+
+Most of the package targets familiar problems. The [Commission's press release](https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2407) lists a ban on manipulative "dark patterns", clearer pricing for in-app virtual currencies and virtual queues, an option to switch off addictive design features, influencer disclosure, limits on personalised ads and prices aimed at minors, and subscriptions that are easier to cancel. The Commission says the measures together are expected to save EU consumers up to €13.7 billion a year.
+
+Inside that list is one line that matters to everyone building agentic commerce: consumers "will have clear rights when using an AI agent to buy products on their behalf," in the press release's words. The detail sits in Articles 26 and 27 of the proposal.
+
+## What Counts as an AI Agent Under the Digital Fairness Act?
+
+The proposal itself never uses the phrase "AI agent"; that wording appears only in the press release. It regulates **automated systems**, defined in Article 2(21) as "software that is capable of carrying out actions and taking decisions producing legal effects for its user, including concluding contracts, without the need for human intervention."
+
+That definition is deliberately technology neutral. Recital 77 says the rules cover automated systems "including through the deployment of artificial intelligence (AI) systems," and adds that a system does not stop being an automated system just because a human oversees it. A shopping agent that pauses for a thumbs-up before paying is still in scope.
+
+The scope is also wide on the merchant side. The Commission's [questions and answers on the package](https://ec.europa.eu/commission/presscorner/detail/en/qanda_26_2408) point out that the Digital Services Act applies only to online platforms, while the Digital Fairness Act "would apply to all companies engaging in business-to-consumer commercial practices."
+
+## What Does Article 26 Require of AI Shopping Agents?
+
+Article 26 is titled "Automated systems for contracting on behalf of a consumer with a trader." Its obligations fall on **traders making available to consumers automated systems** that can conclude and perform contracts for them, whether with that same trader or with other traders. The table below maps each paragraph to who carries it.
+
+| Article 26 paragraph | What it requires | Who carries it |
+|---|---|---|
+| 26(1) | Easy, understandable tools to set and change the agent's parameters at any time | Trader offering the agent |
+| 26(2) | On first use, the shopper must expressly choose: confirm all contracts, confirm only some based on their own criteria (including a maximum price and a time limit), or no confirmation | Trader offering the agent |
+| 26(3) | Confirmation of that choice sent on a durable medium | Trader offering the agent |
+| 26(4)(a) | Where the shopper confirms purchases, the agent shows key pre-contractual information first | Trader offering the agent |
+| 26(4)(b) | Any payment received for proposing a contract, or any conflict of interest, must be disclosed, and that purchase needs the shopper's confirmation whatever setting they chose | Trader offering the agent |
+| 26(5) and (6) | Traders and agent providers may identify themselves with a European Business Wallet or European Digital Identity Wallet | Optional for both sides |
+| 26(7) | The agent passes the shopper's contact details needed to fulfil the order to the seller | The agent, on the shopper's side |
+| 26(8) | After an agent-made purchase, the seller sends the shopper a contract confirmation on a durable medium | The selling merchant |
+| 26(9) | Merchants may not design their sites so shoppers must use an agent to buy | The selling merchant |
+| 26(10) | Financial services are excluded | Not applicable |
+
+### The Three-Mode Choice
+
+The core of Article 26 is the first-use choice. Recital 78 gives examples of the criteria a shopper might set in the middle option: excluding contracts above a money value set up front, limiting purchases to specific traders, or allowing only traders that offer a right of withdrawal or particular guarantees. The shopper can also put a time limit on that choice.
+
+Recital 78 is explicit that choosing full autonomy waives nothing. "The use of an automated system by the consumer does not imply any waiver of consumer rights," it says, "even in case the consumer decides not to pre-approve any contracts." Withdrawal rights under the Consumer Rights Directive survive the agent.
+
+### Sponsored Suggestions Always Need a Human Yes
+
+Article 26(4)(b) is the clause most likely to shape commercial models. If the trader offering the agent is paid for proposing a contract, or has a conflict of interest with the seller, the agent must disclose it and ask the shopper to confirm that purchase. Recital 78 names the cases: "a sponsored suggestion by the automated system" and "preferencing of that trader's products." On the proposal's text, an agent set to full autonomy still cannot complete a paid-placement purchase on its own. Commissions paid when a recommendation turns into a sale appear to fall under the same "payment received for proposing a contract" wording, so agent business models funded by placement fees or affiliate income would add a confirmation step to exactly the purchases that earn them money. That is our reading; the proposal does not mention affiliate programmes by name.
+
+## What Changes for Merchants Selling to AI Agents?
+
+For merchants on the receiving end of agent orders, the proposal adds two duties and removes some paperwork. The two duties are the post-purchase confirmation in Article 26(8) and the ban in Article 26(9) on forcing shoppers to use an agent. Recital 78 extends the second point: shoppers should not have to use an agent to reach a merchant's special offers or conditions either.
+
+The relief is in **Article 27**. Where a contract is concluded "solely through automated systems" on both the trader and the consumer side, the trader may give the required pre-contractual information "only in a commonly used machine-readable format" and is exempt from several of the Consumer Rights Directive's formal requirements for distance contracts. The Commission's Q&A presents this as lightening "mandatory pre-contractual information" for automated contracts.
+
+Consumer control over agents is the headline, but on our reading Article 27 matters as much to merchants: it explicitly recognises in law that agent-to-agent commerce, where a shopper's agent buys from a merchant's agent, is a distinct mode of contracting with its own disclosure format. Merchants that already publish structured product, price and returns data are better placed to meet a machine-readable standard than those whose terms sit only in page copy, though the proposal does not specify the format.
+
+## How Do Agent Identity Wallets Fit In?
+
+Article 26(5) lets traders and agent providers identify and authenticate themselves with a **European Business Wallet** or a European Digital Identity Wallet, and Article 26(6) says the business wallet can also identify the agent itself and establish on whose behalf it acts. Recital 79 frames the goal as both sides being able to rely on "trusted information on who is acting and on whose behalf."
+
+The language is permissive ("may"), not mandatory, and the European Business Wallets regulation it references is itself shown in the proposal as a bracketed, not-yet-adopted act. Payment networks are working on the same problem from the card side, as covered in our analysis of the [Know Your Agent framework](/news-insights/know-your-agent-kya-framework-visa-mastercard-ant). The proposal does not say whether network-issued agent credentials would satisfy the EU route.
+
+## What Does the Proposal Leave Open?
+
+Article 26 sets out control, disclosure and confirmation duties. It does not say who bears the loss when an agent buys the wrong item within the limits a shopper set. The proposal's answer, through recital 78, is that existing consumer rights continue to apply, so the right of withdrawal from distance contracts remains the shopper's main remedy. Disputes between agent provider, merchant and payment provider are left to existing law and contracts.
+
+Three other gaps stand out in the text:
+
+* **Financial services are excluded** by Article 26(10), so Article 26 does not cover agents contracting for financial services.
+* **The machine-readable format** for agent-to-agent contracts in Article 27 is described only as "commonly used"; no standard is named.
+* **Contact data handling** under Article 26(7) depends on GDPR consent: recital 80 says the agent passes the shopper's email and postal address to the seller "on the basis of consumer's consent" under Regulation (EU) 2016/679.
+
+The proposal also covers agents offered by a retailer for its own shop and agents that buy from "other traders", so a single brand assistant and a general-purpose agent appear to face the same Article 26 duties, as long as the provider is a trader dealing with consumers.
+
+## When Does It Apply, and What Are the Fines?
+
+Nothing applies yet. The press release's next step is that the proposals "will now be discussed by the European Parliament and Council." Article 40 of the proposal says the regulation enters into force 20 days after publication in the Official Journal and applies 12 months after entry into force. No calendar date can be set until the co-legislators agree a text, and Article 26 could change in negotiation.
+
+Enforcement runs on two tracks. Article 35 requires member states to set maximum fines of at least 4% of the trader's annual turnover in the member states concerned for coordinated cross-border cases, or at least €2 million where turnover data is unavailable. Separately, the [proposed revision of the Consumer Protection Cooperation Regulation](https://commission.europa.eu/document/9c63e001-7dae-4d07-90ff-3efb4961490b_en) would let the Commission fine up to 6% of worldwide annual turnover. The Q&A limits that direct power to non-SME companies in breaches likely to affect consumers in at least two-thirds of member states, representing at least two-thirds of the EU population.
+
+## What Should Agent Builders and Merchants Do Now?
+
+The text is a proposal, so the sensible response is preparation rather than rebuilding. Four points follow directly from the articles above:
+
+* **Agent builders selling into the EU** should check whether their onboarding can capture an express three-way choice, including a price cap and an expiry, and send a durable confirmation of it.
+* **Any agent with sponsored or preferenced results** should assume each such purchase will need a separate shopper confirmation, regardless of autonomy settings.
+* **Merchants** should confirm their order systems can send a contract confirmation when the buyer is an agent, and that no offer is gated behind agent-only access.
+* **Both sides** should watch the Parliament and Council amendments to Articles 26 and 27, which will set the final obligations.
+
+For background on how these agents work in practice, see our explainer on [what AI shopping agents are](/news-insights/what-are-ai-shopping-agents).`,
+    faqs: [
+        {
+            question: "What is the EU Digital Fairness Act?",
+            answer: "The Digital Fairness Act is a European Commission proposal, published on 11 November 2026 as COM(2026) 1100 final, for a regulation that replaces the Unfair Commercial Practices Directive and updates EU consumer law for online markets. It covers dark patterns, pricing transparency, addictive design, influencer marketing, subscriptions and AI agents that buy for consumers. It is not yet law."
+        },
+        {
+            question: "Does the Digital Fairness Act regulate AI shopping agents?",
+            answer: "Yes. Article 26 of the Digital Fairness Act proposal sets rules for automated systems that conclude contracts on a consumer's behalf, which includes AI shopping agents. Traders offering such agents must let shoppers set and change the agent's parameters and must make them choose, on first use, how much approval the agent needs."
+        },
+        {
+            question: "What choice must shoppers make before an AI agent buys for them?",
+            answer: "Under Article 26(2) of the Digital Fairness Act proposal, the shopper must expressly choose one of three options on first use: confirm every contract the agent proposes, confirm only contracts outside criteria they set such as a maximum price and a time limit, or require no confirmation. The trader must send a confirmation of that choice on a durable medium."
+        },
+        {
+            question: "Can an AI agent make sponsored purchases without asking under the Digital Fairness Act?",
+            answer: "No. Article 26(4)(b) of the Digital Fairness Act proposal requires an agent to disclose any payment received for proposing a contract, or any conflict of interest, and to get the shopper's confirmation for that purchase whatever autonomy setting they chose. Recital 78 names sponsored suggestions and self-preferencing as examples."
+        },
+        {
+            question: "When will the Digital Fairness Act apply?",
+            answer: "The Digital Fairness Act has no application date yet. The proposal must be agreed by the European Parliament and the Council; once published in the Official Journal it would enter into force after 20 days and apply 12 months later, according to Article 40 of the proposal."
+        },
+        {
+            question: "Does the Digital Fairness Act cover AI agents that only recommend products?",
+            answer: "Probably not, on the proposal's wording. Article 26 applies to automated systems that consumers can use to conclude and perform contracts, and Article 2(21) defines an automated system as software that can take decisions producing legal effects, including concluding contracts, without human intervention. An assistant that only suggests products and hands the shopper to a normal checkout does not appear to meet that definition, though the general rules on unfair practices still apply."
+        },
+        {
+            question: "What are the fines under the Digital Fairness Act?",
+            answer: "The Digital Fairness Act proposal requires member states to allow maximum fines of at least 4% of a trader's annual turnover in the member states concerned for coordinated cross-border infringements, or at least €2 million where turnover is unknown. A parallel revision of the Consumer Protection Cooperation Regulation would let the Commission fine companies that are not SMEs up to 6% of worldwide annual turnover in the widest cases."
+        }
+    ]
+},
 ];
