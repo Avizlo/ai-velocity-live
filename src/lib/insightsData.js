@@ -6941,4 +6941,147 @@ For background on how these agents work in practice, see our explainer on [what 
         }
     ]
 },
+{
+    id: "65",
+    slug: "chatgpt-wallet-ai-agent-payments-merchants",
+    title: "ChatGPT Wallet: What Merchants Need for AI Agent Payments",
+    category: "Agentic Payments",
+    categoryPage: "/agentic-payments",
+    relatedSlugs: [
+        "what-is-network-tokenization",
+        "shopify-webmcp-checkout-browser-agents",
+        "what-are-ai-shopping-agents"
+    ],
+    date: "2026-11-20T09:56:09Z",
+    dateModified: "2026-11-20T09:56:09Z",
+    author: "AIV Research Desk",
+    readTime: "8 min read",
+    image: "/images/insights/chatgpt-wallet-ai-agent-payments-merchants.webp",
+    imageAlt: "Black tool tip touching a dark square pad on a teal-green computer chip, surrounded by black and silver metal with soft white highlights",
+    excerpt: "ChatGPT Wallet lets OpenAI's dots agents pay at ordinary checkouts with network tokens. What merchants receive, who handles disputes, and what to configure.",
+    reverifyTriggers: [
+        "ChatGPT Wallet expands beyond ChatGPT Pro subscribers in the US, or beyond dots conversations",
+        "OpenAI launches delegated pre-approval (spending limits, categories or time periods) so agents can buy without a per-purchase biometric check",
+        "OpenAI completes the Forwarded header rollout or changes the parameter list in the Commerce Partner Playbook",
+        "OpenAI, a card network or an issuer publishes fees, merchant counts or dispute rules specific to ChatGPT Wallet transactions"
+    ],
+    content: `**ChatGPT Wallet** is OpenAI's payment wallet for AI agents, announced on 13 November 2026, that lets a user's dot pay at an ordinary online checkout with a network token instead of the real card number, after the user approves each purchase with Face ID or a fingerprint. Merchants need no Wallet-specific integration to accept it. The work that remains for them is making sure their bot defences and fraud systems do not block a legitimate agent at the door.
+
+## What Is ChatGPT Wallet?
+
+ChatGPT Wallet is a saved-card wallet that an OpenAI agent can spend from, one approved purchase at a time. [OpenAI's announcement](https://openai.com/index/introducing-chatgpt-wallet/) says it was built with the card networks American Express, Mastercard and Visa, and calls it the first wallet that lets agents pay without access to users' actual card details while requiring a security check for every purchase. That "first" is OpenAI's own claim.
+
+Availability is narrow at launch. The wallet works inside **dots**, the always-on agents OpenAI [introduced on 29 September 2026](https://openai.com/index/introducing-dots/), which have their own cloud computer and browser. OpenAI's [help article](https://help.openai.com/en/articles/20001654-making-purchases-with-chatgpt-wallet) says Wallet is rolling out gradually to eligible ChatGPT Pro users in the United States, works only in conversations with a dot, and is not available in Chat, Work or standalone Codex threads. Users must be 18 or older, live in the US, and hold an eligible US-issued American Express, Mastercard or Visa card with a US billing address. Chase cards need an extra approval step in the Chase app, and only the primary cardholder can add one.
+
+The scale behind it is the reason merchants should pay attention early. OpenAI's announcement says 1.2 billion people use ChatGPT each week, and that many already use it to research and compare products. Wallet is the step that turns that research into a completed order on the merchant's own site.
+
+## How Does a ChatGPT Wallet Purchase Work?
+
+A ChatGPT Wallet purchase runs through the merchant's existing checkout, with the agent filling it in and the card network supplying a substitute credential. The sequence, assembled from OpenAI's announcement, help article and [Wallet terms](https://openai.com/policies/chatgpt-wallet-terms/), runs as follows.
+
+| Step | Who acts | What happens |
+|---|---|---|
+| 1. Add a card | User | Card details go into a secure form, never the chat; the issuer may ask for verification (Chase cards are approved in the Chase app) |
+| 2. Shop | Dot | The agent finds the product and fills in the merchant's checkout through its browser |
+| 3. Review | User | Wallet shows the merchant, items, total or maximum price, selected card, and any recurring charge or hold |
+| 4. Approve | User | A biometric check such as Face ID or Touch ID on a supported device creates a record of the authorised purchase |
+| 5. Pay | Network and dot | The payment network provides a token with its own card number, security code and expiry; the dot completes checkout with it |
+| 6. Fulfil | Merchant | The issuer decides whether to authorise; the merchant decides whether to accept and ship |
+
+No special payment form is involved. OpenAI's announcement says the token comes with its own card number, security code and expiry date, and the help article says the dot enters that virtual card number at checkout, which is why an ordinary card form can accept it.
+
+Two details in the help article matter for support teams. "Ready to check out" means the user's approval is done, not that the merchant has placed the order. And the card number entered at checkout may differ from the number on the shopper's physical card, so a customer looking for their usual last four digits on a receipt may not find them.
+
+### What changes if a detail changes mid-checkout?
+
+The Wallet terms say that if a material detail changes before submission, Wallet asks the user to approve the updated purchase. The approval is limited to the merchant, items, amount, card, recipient and delivery details shown. On our reading, a price that moves between the agent's review and the final submit should trigger a fresh approval rather than a silent overcharge. The terms say the review screen shows known taxes, fees and shipping, so merchants that add charges late in checkout should make the final total visible before the payment step, where the agent can see it.
+
+## What Does the Merchant Receive?
+
+The merchant receives a **network token**, not the cardholder's real card number. OpenAI's [payments guide for businesses](https://developers.openai.com/commerce/guides/accept-payments) says merchants can use the **Payment Account Reference (PAR)** to link that token to the underlying payment account, which is how a returning customer can still be recognised across tokens. For the mechanics of tokens and PAR, see our explainer on [network tokenization](/news-insights/what-is-network-tokenization).
+
+The commercial relationship stays where it was. The Wallet terms state that the merchant is the seller and merchant of record, and that OpenAI is not a bank, card issuer, payment network, lender or merchant for Wallet purchases and does not hold purchase funds. OpenAI's announcement adds that businesses keep their customer relationships and control over pricing, fulfilment, returns and customer service.
+
+Three rules in the payments guide shape how merchants should store and reuse the credential:
+
+* **One purchase, one consent.** The customer consents only to the specific transaction, so the credential should not be saved or reused for another purchase.
+* **Subscriptions are allowed** if the checkout supports recurring billing, with the customer's consent to recurring charges and the processor's rules for merchant-initiated transactions.
+* **Wallet sits beside card-on-file.** It is a separate payment option, so existing saved-card flows keep working.
+
+## Who Handles Refunds, Disputes and Chargebacks?
+
+The card issuer and the merchant handle disputes, not OpenAI. The Wallet terms say the cardholder agreement and network rules continue to apply, including dispute and unauthorised-transaction rights, and that OpenAI may provide Wallet records or other reasonable help but does not decide or fund merchant refunds or card chargebacks unless required by law or it separately promises otherwise. The help article routes order problems, returns and refunds to the merchant, and declined, disputed or unrecognised charges to the issuer.
+
+That split puts weight on the biometric approval record. Each approval, in OpenAI's words, creates a clear record of the purchase the user authorised the agent to make. OpenAI has not published how that record is used in a chargeback. Until it does, merchants should treat a "my agent bought the wrong thing" dispute as an ordinary card dispute until that changes.
+
+## Why Would a Legitimate Agent Purchase Fail?
+
+A legitimate agent purchase fails most often because the merchant's own defences mistake the agent for a bot, which it technically is. OpenAI's announcement says some sites may unintentionally block purchases through Wallet, and that risk systems may flag legitimate agent purchases, leading to declines or cancellations.
+
+Accepting Wallet still takes work, but the effort moves out of the checkout and into bot management and fraud tuning, which in many businesses sit with different teams.
+
+### How does ChatGPT's browser identify itself?
+
+ChatGPT's cloud browser signs its requests with **Web Bot Auth**, a scheme built on HTTP Message Signatures (RFC 9421). OpenAI's [agent access guide](https://developers.openai.com/commerce/agent-access) says signed requests carry \`Signature\`, \`Signature-Input\` and \`Signature-Agent\` headers, with \`Signature-Agent\` set to \`"https://chatgpt.com"\`, and that the public keys are published at chatgpt.com's \`/.well-known/http-message-signatures-directory\`. For how signed agent requests fit into checkout more broadly, see our [Shopify WebMCP checkout analysis](/news-insights/shopify-webmcp-checkout-browser-agents).
+
+Each bot-management vendor labels the agent differently, which is where configuration goes wrong:
+
+| Provider | Name for ChatGPT's browser | Setting OpenAI recommends |
+|---|---|---|
+| Akamai | ChatGPT Agent | Allow a custom bot category containing the Verified Bot entry |
+| Cloudflare | "dots, OpenAI" (bot tag chatgpt-agent, detection ID 129220581) | Allow in agent access policies, or a WAF rule allowing the detection ID |
+| HUMAN | ChatGPT Agent | Set the known-bot rule to on and allow |
+| Vercel | chatgpt-operator | Nothing extra unless custom rules block it |
+
+For any other provider, the guide says to verify the signature manually before allowlisting. It also notes that the exception applies site-wide, that page-level access controls should stay, and that it does not change the handling of OpenAI's crawlers such as OAI-SearchBot.
+
+### What signals reach the fraud system?
+
+OpenAI is rolling out user signals in the standard \`Forwarded\` HTTP header. The payments guide lists \`asn\`, \`for\`, \`ip-country\`, \`ip-prefix\`, \`locale\`, \`tz\` and \`user-agent\`, and says the signals may vary while support rolls out. Without them, every agent order comes from the dot's cloud computer rather than the shopper's own device, and OpenAI's guide warns that risk systems tuned to detect bots may flag ChatGPT's cloud browser by accident. OpenAI's announcement names fraud-prevention partners Forter, Riskified, Sardine and Signifyd, and payment providers Adyen, Checkout.com and Stripe, as working to help their systems recognise legitimate agent purchases.
+
+## What Should Merchants Check Now?
+
+Merchants can prepare in this order, because each step depends on the one before it:
+
+* **Bot management first.** Find how your CDN or WAF labels ChatGPT's browser (table above) and allow it, with signature verification on. A blocked agent never reaches the payment step, so nothing downstream matters until this works.
+* **Then the risk provider.** Ask whether it ingests the \`Forwarded\` header signals and recognises Wallet tokens. If you run your own fraud rules, start logging the header now so you have a baseline.
+* **Then the checkout path.** Have someone run a real purchase through a dot if they have Pro access, and watch for steps an agent may stall on: forced account creation, pop-ups over the payment form, one-time codes sent to a phone the agent cannot read, or a 3-D Secure challenge.
+* **Then customer service.** Brief the team that agent orders use a token number that may not match the card, that the user approved the specific basket, and that refunds stay with you.
+
+OpenAI's playbook also covers product feeds, plugins built on MCP and WebMCP tools, but its own guidance says browser access needs no plugin or feed. Those are improvements for later, not prerequisites.
+
+## What Is Still Unknown About ChatGPT Wallet?
+
+Several facts merchants will want have not been published. OpenAI's pages do not say whether the biometric approval gives merchants any shift in fraud liability, or how a 3-D Secure challenge at checkout is handled. OpenAI has not given a date for availability beyond Pro users in the US, a count of merchants where Wallet purchases have completed, or any fee. Its announcement says that over time users should be able to delegate purchases within spending limits, categories or time periods without approving each one, but gives no date. Until then, every Wallet order carries a fresh human approval tied to a specific basket and total.`,
+    faqs: [
+        {
+            question: "What is ChatGPT Wallet?",
+            answer: "ChatGPT Wallet is OpenAI's payment wallet for AI agents, announced on 13 November 2026. It lets a user's dot pay at an online checkout with a network token instead of the real card number, after the user approves each purchase with a biometric check such as Face ID."
+        },
+        {
+            question: "Who can use ChatGPT Wallet?",
+            answer: "ChatGPT Wallet is rolling out gradually to ChatGPT Pro subscribers in the United States who are 18 or older and hold an eligible US-issued American Express, Mastercard or Visa card. It works only in conversations with a dot, not in Chat, Work or standalone Codex threads, according to OpenAI's help article."
+        },
+        {
+            question: "Do merchants need to integrate ChatGPT Wallet?",
+            answer: "No. OpenAI says merchants need no Wallet-specific integration, because the agent completes the merchant's existing checkout with a network token. Merchants do need to make sure their CDN, firewall and fraud systems do not block ChatGPT's signed browser requests."
+        },
+        {
+            question: "Does the merchant see the customer's card number with ChatGPT Wallet?",
+            answer: "No. A ChatGPT Wallet merchant receives a network token with its own card number, security code and expiry, not the customer's real card number. OpenAI says merchants can use the Payment Account Reference (PAR) to link the token to the underlying payment account."
+        },
+        {
+            question: "Who handles refunds and chargebacks for ChatGPT Wallet purchases?",
+            answer: "The merchant and the card issuer do. OpenAI's Wallet terms make the merchant the seller and merchant of record, and say OpenAI does not decide or fund refunds or chargebacks unless required by law, though it may provide Wallet records."
+        },
+        {
+            question: "How does ChatGPT's agent identify itself to a website?",
+            answer: "ChatGPT's cloud browser signs requests with Web Bot Auth, based on HTTP Message Signatures (RFC 9421). The Signature-Agent header is set to https://chatgpt.com, and OpenAI publishes the verification keys in a well-known directory on chatgpt.com."
+        },
+        {
+            question: "Can ChatGPT Wallet buy things without asking the user?",
+            answer: "Not at launch. Every ChatGPT Wallet purchase needs the user's approval with a biometric check. OpenAI says it expects to let users pre-approve purchases within spending limits, categories or time periods later, but has given no date."
+        }
+    ]
+},
 ];
