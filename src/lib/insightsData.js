@@ -7084,4 +7084,166 @@ Several facts merchants will want have not been published. OpenAI's pages do not
         }
     ]
 },
+{
+    id: "66",
+    slug: "what-is-agentic-merchandising",
+    title: "What Is Agentic Merchandising? When AI Agents Price and Assort",
+    category: "Agentic Commerce",
+    categoryPage: "/agentic-commerce",
+    relatedSlugs: [
+        "what-are-ai-shopping-agents",
+        "what-is-agentic-commerce",
+        "what-is-agentic-search"
+    ],
+    date: "2026-11-24T09:08:22Z",
+    dateModified: "2026-11-24T09:08:22Z",
+    author: "AIV Research Desk",
+    readTime: "8 min read",
+    image: "/images/insights/what-is-agentic-merchandising.webp",
+    imageAlt: "Automated warehouse aisle between tall steel racks of storage bins, lit by a glowing blue floor light strip",
+    excerpt: "Agentic merchandising means AI agents that change prices, assortments and product rankings within limits merchants set. What it is and what the evidence says.",
+    reverifyTriggers: [
+        "Salesforce states a release status (beta or GA) for the Merchandising Agent, Conversational Catalog Search or Automated Product Categorization from the October 2026 B2C Commerce release",
+        "Google publishes the full list of conversational Merchant Center attributes or opens them beyond the initial small group of retailers",
+        "OpenAI changes the product feed spec, in particular if question-and-answer lists or ranking signals become part of the discovery contract",
+        "McKinsey publishes a new Global Merchant Survey or updates the 71 percent limited-effect figure"
+    ],
+    content: `**Agentic merchandising** is the use of AI agents that watch sales, inventory and customer signals and then act on merchandising decisions, such as prices, promotions, assortments and how products rank in onsite search and category pages, within limits set by human merchants. It differs from earlier merchandising software because the agent carries out the change rather than only recommending it. The term now has a second, newer meaning: preparing a catalogue so that outside AI shopping agents, such as ChatGPT and Google's AI Mode, can find and choose its products.
+
+## What Does Agentic Merchandising Mean?
+
+**McKinsey** describes agentic AI systems as "autonomous, goal-driven AI systems that can plan, act, and learn" and says that in merchandising, agents "can continuously tune assortments, adjust prices, refine promotions, and deliver rich, real-time insights" ([McKinsey, January 2026](https://www.mckinsey.com/industries/retail/our-insights/merchants-unleashed-how-agentic-ai-transforms-retail-merchandising)). Its point is that decisions no longer need to wait for a weekly or seasonal review cycle.
+
+**BCG** describes the same idea as a team of agents rather than a single system. In its April 2026 piece "Always-On Merchandising", it sets out specialised pricing, promotion, assortment and inventory agents, with an orchestration agent that resolves conflicts between them while humans set strategy and check outputs ([BCG, April 2026](https://www.bcg.com/publications/2026/how-agentic-ai-is-transforming-retail-merchandising)).
+
+**Ecommerce vendors** use a narrower meaning. Voyado, a retail software company, defines agentic merchandising as AI that decides how products appear across search, category pages and recommendations, adjusting rankings "based on real-time data, customer behavior, and inventory" ([Voyado](https://voyado.com/resources/blog/agentic-merchandising/)). That is the onsite version of the same shift: from rules a merchandiser writes to a system that adjusts within set parameters.
+
+### The Two Meanings Side by Side
+
+The industry now uses the phrase for two different jobs. They share a goal, putting the right product in front of the right buyer, but the agent doing the work belongs to a different party.
+
+| | Agents doing the merchandising | Merchandising for AI shopping agents |
+|---|---|---|
+| Whose agent acts | The retailer's own agents | A third party's agent (ChatGPT, Gemini, AI Mode) |
+| What changes | Prices, promotions, assortment, sort order, boost and bury rules | Product data: feed fields, attributes, availability, reviews |
+| Example | Salesforce Merchant Agent, Board Merchandiser Agent | Google Merchant Center conversational attributes, OpenAI product feed spec |
+| Where the merchant's control sits | Guardrails and approval thresholds | Accuracy and completeness of the data supplied |
+
+## How Is It Different From Rule-Based Merchandising?
+
+**Rule-based merchandising** relies on a merchandiser writing fixed instructions: pin these products, bury out-of-stock lines, discount this category by a set amount. Voyado frames the change as "fixed rules vs. adaptive decisions based on real-time data". The earlier generation of merchandising AI sat in between: it produced forecasts and recommendations, but a person still had to act on them.
+
+**Board**, a planning software vendor, shows what the extra step looks like in practice. Its Merchandiser Agent product sheet (June 2026) describes a five-stage loop: analyse what changed, explain why, simulate plan options, align trade-offs for commercial and financial sign-off, then act, executing "within governed thresholds once the merchandiser approves" ([Board](https://www.board.com/wp-content/uploads/2026/06/Board-Merchandiser-Agent-AI-Launch.pdf)).
+
+| Approach | Who decides | Who acts | Typical cadence |
+|---|---|---|---|
+| Rule-based | Merchandiser writes the rule | System applies the rule | Changed by hand |
+| AI recommendations | Model suggests, merchandiser decides | Merchandiser | Weekly or seasonal reviews |
+| Agentic merchandising | Agent decides within guardrails | Agent, with approval where thresholds require it | Continuous |
+
+## What Do Merchandising Agents Do Today?
+
+Shipping products are narrower than the consulting visions, and most are aimed at speeding up back-office catalogue work rather than replacing pricing teams.
+
+| Product | What the vendor says it does | Status as stated by the vendor |
+|---|---|---|
+| Salesforce Merchant Agent | Lets merchandisers organise catalogues, create boost and bury rules and adjust sort orders by describing what they want | Generally available ([Salesforce](https://www.salesforce.com/news/stories/agentforce-commerce-announcement/)) |
+| Salesforce Visual Merchandising Workspace | Single-screen product grid showing signals such as conversion lift, inventory health and brand-affinity scores | Generally available (same release) |
+| Salesforce Merchandising Agent, Conversational Catalog Search | Builds catalogue filter logic from a plain-English request | Announced in the 26 October 2026 release; beta or GA status not stated ([Salesforce](https://www.salesforce.com/blog/b2c-commerce-october-26-release/)) |
+| Salesforce Automated Product Categorization | Suggests category assignments for base products | Announced in the same release; status not stated |
+| Board Merchandiser Agent | Drafts opening financial plans, ranks open-to-buy lines, triages allocation exceptions | Product sheet, June 2026 |
+
+**Salesforce** says early Merchant Agent customers "are already cutting time to task by 88%". That is Salesforce's own figure; the release names no customers and gives no method. **Board** says its agent gets a merchandise financial plan "drafted in days, not weeks", again a vendor claim rather than a measured result.
+
+Measured against the definition at the top of this article, several of these products sit closer to the rule-based row than the agentic one. When a merchandiser describes a boost rule and the software writes it, the person still decides and the agent only translates. The label "agent" is being applied to plain-language interfaces as well as to systems that act on their own, so buyers should ask which of the two they are getting.
+
+## What Does the Evidence Say So Far?
+
+**The strongest independent data comes from McKinsey's Global Merchant Survey**, fielded 1 to 12 December 2025 with 114 merchants across regions. Its headline finding cuts against the vendor claims: 71 percent of merchants say AI merchandising tools "have had limited to no effect on their business so far" ([McKinsey](https://www.mckinsey.com/industries/retail/our-insights/merchants-unleashed-how-agentic-ai-transforms-retail-merchandising)).
+
+| McKinsey Global Merchant Survey finding (December 2025, n=114) | Share |
+|---|---|
+| AI merchandising tools have had limited to no effect so far | 71% |
+| Organisation is not at all or only slightly prepared to scale AI across merchandising | 61% |
+| Time still spent on low-value tasks and reconciling siloed data | 40% |
+| Organisation provides moderate-to-extensive AI upskilling | 24% |
+| Use AI to assist with more than half of merchandising decisions | Fewer than 10% |
+
+McKinsey's own reading is that "the challenge often lies less in the technology than in how it's integrated and used". Its forward-looking estimate is separate from the survey: merchants could reclaim up to 40 percent of their time by handing repetitive work to agents. BCG makes a similar claim about speed without survey figures, noting that annual line reviews "can take half a year from start to finish" and could shrink to weeks.
+
+### The Contrarian Reading: Policy Is the Bottleneck
+
+The common pitch for agentic merchandising is that better agents will fix slow decisions. The evidence above points elsewhere. If seven in ten merchants already see little effect from AI tools, and six in ten say their organisation is not ready to scale them, adding autonomy to a system that cannot yet use recommendations is unlikely to help on its own.
+
+McKinsey's list of pitfalls makes the same point in operational terms. "Autopilot without policy", activating agents before fairness, brand and price thresholds are written down, leads to inconsistent shelf pricing that shoppers notice. A "click-through mirage" happens when agents are set to chase engagement and promotional lift rather than category profitability. Both are failures of the brief given to the agent. The distance between vendor figures such as Salesforce's 88% and McKinsey's survey does not prove either wrong, since they measure different things, but it does show that buying an agent and getting value from one are separate steps.
+
+## Where Do Human Merchants Fit?
+
+**BCG** is direct on this: "AI will not eliminate the need for merchants, though it is set to change their role." It expects merchants to spend more time on vendor relationships, on brand stewardship, which it says "still needs to be done by a human", and on overseeing more categories each.
+
+**McKinsey** sketches the new roles in more detail. Merchandising operations leaders would set agent guardrails, such as maximum price increases, promotion rules and cross-category strategies. A new group of trust and policy stewards would check that agent actions meet fairness and compliance standards and reset agents that misbehave. The skills list for category managers adds agent orchestration and prompt discipline alongside traditional buying.
+
+## What Is Merchandising for AI Shopping Agents?
+
+**Merchandising for AI shopping agents** is the work of making a catalogue readable and choosable by agents that shop on a buyer's behalf. On a retailer's own site, merchandising means controlling layout and ranking. Inside ChatGPT or Google's AI Mode, the retailer does not control the page, so the merchandising decision moves upstream into the product data.
+
+**Google** announced on 11 January 2026 "dozens of new data attributes in Merchant Center designed for easy discovery in the conversational commerce era", with examples including answers to common product questions, compatible accessories and substitutes. Google said it would roll them out with a small group of retailers first ([Google](https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/)).
+
+**OpenAI's** product feed specification asks for nine required fields (item_id, title, description, url, brand, seller_name, image_url, availability and price) plus target_countries and store_country, with eligibility flags for search, checkout and ads. Optional fields cover attributes such as material, colour, size and dimensions, and reviews through review_count and star_rating. The spec also states that "question-and-answer lists are not part of this discovery contract" ([OpenAI](https://developers.openai.com/commerce/specs/file-upload/products)).
+
+| | Google Merchant Center (conversational attributes) | OpenAI product feed spec |
+|---|---|---|
+| Product Q&A | Answers to common product questions named as an example attribute | Q&A lists explicitly excluded |
+| Related products | Compatible accessories and substitutes named as examples | No related-product fields listed |
+| Reviews | Not described in the announcement | review_count and star_rating (optional) |
+| Availability of the new fields | Small group of retailers first, then wider | Published spec, page undated |
+
+The practical consequence is that one feed will not serve every agent equally. Product Q&A written for Google has no place in OpenAI's feed, and OpenAI's spec lists no dedicated fields for accessories or substitutes. Neither document describes a way for a merchant to boost or bury its own products inside the agent's answer; what the merchant controls is the completeness and accuracy of the data, plus OpenAI's separate ads flag.
+
+## How Do Retailers Start With Agentic Merchandising?
+
+**McKinsey** recommends a phased approach: once agents produce reliable outputs in a controlled environment, pilot the new structure in a small business unit before scaling. Read together, the sources suggest a different order of work for each meaning of the term.
+
+### Preparing Internal Merchandising Agents
+
+* **Write the guardrails first.** Price ceilings, promotion rules and brand thresholds need to exist as policy before any agent acts on them, which is McKinsey's "autopilot without policy" warning.
+* **Pick the objective with care.** Configure agents against category profitability, such as item-level margin, rather than click-through or promotional lift.
+* **Keep one system of record.** McKinsey's "system backsliding" pitfall describes teams drifting back to spreadsheets, which breaks the loop an agent depends on.
+### Preparing for External Shopping Agents
+
+* **Audit the catalogue against each agent surface.** Check the feed against OpenAI's required fields and against whichever Merchant Center attributes Google opens up, since the two ask for different things.
+* **Treat feed gaps as merchandising failures.** In an agent's answer there is no page layout to control, so missing attributes, stale availability or a thin description are the merchandising failures that matter.
+
+The first meaning of agentic merchandising, agents running prices and assortment, is still mostly in pilots and vendor launches. The second, merchandising for other people's agents, already applies to any retailer whose products appear in ChatGPT or Google's AI surfaces.`,
+    faqs: [
+        {
+            question: "What is agentic merchandising?",
+            answer: "Agentic merchandising is the use of AI agents that monitor sales, inventory and customer signals and act on merchandising decisions, such as prices, promotions, assortments and product rankings, within limits set by human merchants. Unlike earlier merchandising AI, the agent carries out the change rather than only recommending it."
+        },
+        {
+            question: "How is agentic merchandising different from AI merchandising tools?",
+            answer: "Earlier AI merchandising tools produced forecasts and recommendations that a merchandiser then acted on. Agentic merchandising adds the action step: the agent executes changes within guardrails, with human approval where thresholds require it. Board's Merchandiser Agent, for example, acts only within governed thresholds once the merchandiser approves."
+        },
+        {
+            question: "Does agentic merchandising work yet?",
+            answer: "The independent evidence is mixed. In McKinsey's December 2025 survey of 114 merchants, 71 percent said AI merchandising tools had limited to no effect on their business so far, and McKinsey attributes this mainly to integration and adoption rather than the technology. Vendor figures, such as Salesforce's claim that early Merchant Agent customers cut time to task by 88%, are not independently measured."
+        },
+        {
+            question: "Will AI agents replace merchandisers?",
+            answer: "Not according to the main consulting studies. BCG says AI will not eliminate the need for merchants but will change their role toward vendor relationships, brand stewardship and overseeing more categories. McKinsey expects new roles that set agent guardrails and check that agent actions meet fairness and compliance standards."
+        },
+        {
+            question: "What tasks can a merchandising agent do?",
+            answer: "Shipping merchandising agents mostly handle catalogue and planning work. Salesforce's Merchant Agent organises catalogues, creates boost and bury rules and adjusts sort orders from plain-language requests, while Board's Merchandiser Agent drafts financial plans, ranks open-to-buy lines and triages allocation exceptions. BCG and McKinsey also describe pricing, promotion and assortment agents as the direction of travel."
+        },
+        {
+            question: "What is merchandising for AI shopping agents?",
+            answer: "Merchandising for AI shopping agents means preparing product data so that agents such as ChatGPT and Google's AI Mode can find and choose a retailer's products. Because the retailer does not control the agent's page, the work moves into feeds: OpenAI's product feed spec requires nine fields including title, description, price and availability, and Google has announced conversational Merchant Center attributes such as product Q&A, compatible accessories and substitutes."
+        },
+        {
+            question: "Do Google and OpenAI want the same product data for agents?",
+            answer: "No. Google's conversational Merchant Center attributes include answers to common product questions, while OpenAI's product feed spec states that question-and-answer lists are not part of its discovery contract. Retailers selling through both should audit their catalogue against each surface separately."
+        }
+    ]
+},
 ];
