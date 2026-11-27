@@ -7246,4 +7246,135 @@ The first meaning of agentic merchandising, agents running prices and assortment
         }
     ]
 },
+{
+    id: "67",
+    slug: "walmart-agent-gateway-meta-muse-ai-shopping-agents",
+    title: "Walmart Lets Meta's Muse Shop Through Its Agent Gateway",
+    category: "Agentic Commerce",
+    categoryPage: "/agentic-commerce",
+    relatedSlugs: [
+        "what-are-ai-shopping-agents",
+        "what-are-mcp-apps",
+        "chatgpt-wallet-ai-agent-payments-merchants"
+    ],
+    date: "2026-11-27T07:17:01Z",
+    dateModified: "2026-11-27T07:17:01Z",
+    author: "AIV Research Desk",
+    readTime: "7 min read",
+    image: "/images/insights/walmart-agent-gateway-meta-muse-ai-shopping-agents.webp",
+    imageAlt: "Three steel turnstile gates with small screens and red indicator rings in a dark, empty station entrance",
+    excerpt: "Walmart now lets Meta's Muse agent shop its deals through the Walmart Agent Gateway, with spending limits set in the customer's Walmart account. What changed.",
+    reverifyTriggers: [
+        "Walmart opens the Agent Gateway to a second app or agent beyond Muse, or ends the developer beta",
+        "Sam's Club shopping goes live through the Agent Gateway",
+        "Amazon changes its position on Muse or other third-party shopping agents",
+        "Walmart publishes Agent Gateway developer documentation, commercial terms or agent order volumes"
+    ],
+    content: `**Walmart** opened its **Agent Gateway** to Meta's **Muse** agent on 24 November 2026, so Muse users can now shop Walmart's Black Friday deals inside the conversation and pay with a card saved in their Walmart account. Muse passes the shopping list to Walmart, Walmart picks the matching products, and the customer's spending limit lives in an **Agent Profile** inside their Walmart account, not in the agent. It puts into use the retailer-run agent channel Walmart announced in October, and it is the opposite of Amazon's decision to block Muse.
+
+## What Did Walmart Announce on 24 November?
+
+Walmart's [announcement](https://corporate.walmart.com/news/2026/11/black-friday-deals-with-meta-muse) says that "starting today" customers can shop its Black Friday deals directly through Muse, which can find items, build a basket and complete the purchase. The mechanics are short. "Muse connects to the Walmart Agent Gateway, where it passes your shopping list to Walmart," the release says. "Walmart then does the shopping, finding products that match your request."
+
+The setup runs through the customer's own Walmart login. Muse sends the shopper to Walmart to sign in and then back to Muse. The first time the shopper adds an item to the cart, they set up an Agent Profile in their Walmart account, including a spending limit. Purchases are completed in the conversation with a card saved in the Walmart account, at the same prices as Walmart.com, and Walmart's return policy still applies.
+
+Walmart presents Muse as the first of several. "Muse is just the beginning," the release says, adding that the Gateway "will make it possible to shop Walmart through more apps and agents." No second agent has been named.
+
+## What Is the Walmart Agent Gateway?
+
+The **Walmart Agent Gateway** is Walmart's dedicated connection point for AI agents, announced on 21 October 2026. Walmart's [October announcement](https://corporate.walmart.com/news/2026/10/Making-It-Possible-for-Agents-to-Shop-on-Behalf-of-Customers) describes it as a faster, more reliable way for agents to shop than browsing the website, built on MCP and starting with a beta for companies and developers. [TechCrunch](https://techcrunch.com/2026/10/21/while-amazon-blocks-ai-agents-walmart-rolls-out-the-welcome-mat/) reported that Walmart unveiled the plans at the Masters of Scale Summit in San Francisco and described the Gateway as Walmart's MCP server.
+
+**MCP (Model Context Protocol)** is, in the words of its [documentation](https://modelcontextprotocol.io/docs/getting-started/intro), "an open-source standard for connecting AI applications to external systems." In practice it means the agent calls Walmart's own tools for search, cart and checkout instead of reading and clicking through web pages. We covered the related MCP Apps extension in [What Are MCP Apps?](/news-insights/what-are-mcp-apps).
+
+Walmart's privacy line is that the Gateway helps agents "find relevant Walmart products without sharing customers' broader purchase history with others." The October release gives the example of a customer's usual sourdough bread or brand of milk: the agent can get the right product without seeing the shopping history behind it.
+
+## How Do Walmart Agent Profiles and Spending Limits Work?
+
+An **Agent Profile** is a dedicated space for one agent inside a customer's Walmart account, so the agent's purchases show separately from the customer's own. According to Walmart's October announcement:
+
+* Customers can require approval for every purchase, or let the agent buy within a spending limit. Walmart's examples are $50, $100 and $200.
+* The profile is created the first time the customer uses an agent to shop through the Gateway, and can be deleted at any time.
+* Walmart compares it to "adding someone as a cardholder on your credit card."
+
+Walmart also set out **Terms for AI Agents** in the same announcement; the release summarises them rather than linking a separate legal document. Customers approve agent purchases by default, and Walmart may ask for extra approvals even inside a spending limit. Agents must not act beyond the shopper's intent, do not receive payment card information, and cannot add or change payment methods. Agents may access only the information needed for the task and permitted by the customer. Agents that break the terms will be blocked from the site.
+
+On pricing, Walmart says agents see the same prices a person sees on Walmart.com. Its one-line summary: "We price products, not people."
+
+## How Is This Different From How Muse Shops Elsewhere?
+
+The difference is who holds the controls. Muse has shopped at retailers since it [launched on 8 September 2026](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/) as a personal AI agent in the US. Meta says Muse checks with the person before a purchase and can pay with Link by Stripe, whose agent wallet creates a one-time-use card. Meta's [Muse shopping page](https://ai.meta.com/muse/shopping/) says Muse "uses a browser to research and compare prices across retailers on the web." At [Connect on 24 September](https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/), Meta added Walmart to a list of new retail partners alongside Best Buy, Gap, Sephora, Wayfair and others, plus Shop Pay and PayPal for payments.
+
+Amazon took the opposite line. [TechCrunch reported on 21 September](https://techcrunch.com/2026/09/21/metas-ai-agent-has-been-blocked-from-using-amazon-com/) that Muse users trying to buy on Amazon.com received an error stating that "continued access by an unauthorized AI agent violates Amazon's Conditions of Use."
+
+| | Muse default checkout | Walmart via Agent Gateway | Amazon |
+|---|---|---|---|
+| Agent access | Muse uses a browser across retailer sites | Muse sends a list to Walmart's MCP Gateway | Muse purchases blocked |
+| Who picks products | Muse | Walmart matches products to the agent's list | n/a |
+| Payment | Link by Stripe one-time card, Shop Pay or PayPal | Card saved in the Walmart account; agent gets no card details | n/a |
+| Where the limits live | Muse asks before purchase | Agent Profile in the Walmart account: approval or spending limit | n/a |
+| Order history | Muse and the payment method | Separate agent history in the Walmart account | n/a |
+| Rules for the agent | Retailer site terms | Walmart Terms for AI Agents | Conditions of Use bar unauthorised agents |
+
+Sources: Meta's Muse launch, Connect 2026 and Muse shopping pages, Walmart's 21 October and 24 November announcements, TechCrunch 21 September 2026.
+
+## Why the Block-or-Allow Debate Misses Walmart's Model
+
+Amazon's block and Muse's browser checkout make the agent question look like a single choice: let agents in, or keep them out. Walmart's design adds a third option, and on our reading it matters more than the Black Friday timing. Walmart lets agents in, but only through a door it built, and it keeps three things that browser agents would otherwise take over.
+
+**Product selection.** In Walmart's words, the agent passes a list and "Walmart then does the shopping, finding products that match your request." The customer still approves the purchase or sets the limit, but the matching happens on Walmart's side of the connection, which keeps search and merchandising decisions with the retailer.
+
+**The customer account.** The shopper signs in to Walmart, pays with a card stored at Walmart, and the agent's orders sit in a profile Walmart controls. The agent never holds the payment method, under Walmart's own terms.
+
+**The rules.** Spending limits, the approval default, extra approvals and the right to block an agent are all set by the retailer. Compare a browser agent paying with a one-time card from its own wallet, where the limits sit with the agent and its payment provider.
+
+The trade-off is that each agent has to build a Walmart-specific connection, which a retailer needs real demand to justify. Meta's route to smaller merchants runs through platforms instead: it says Muse launched with access to the entire Shopify catalogue.
+
+## What Should Retailers Take From This?
+
+Most retailers will not build their own MCP gateway. Walmart's terms still work as a reference set for agent rules, whatever the technical route:
+
+* **Approval by default.** Walmart requires customer approval unless the customer sets a spending limit.
+* **Scope.** Agents may not act beyond the shopper's intent or access more data than the task needs.
+* **No payment data for agents.** Agents cannot see, add or change payment methods.
+* **Separate history.** Agent orders show apart from the customer's own, which makes a disputed order easier to trace.
+* **Price parity.** A public statement that agents see the same prices as people.
+* **Returns for agent errors.** Walmart's normal return process covers orders where the agent did not act as intended.
+* **Enforcement.** A stated consequence, blocking, for agents that break the rules.
+
+The question is not limited to the US. Meta [launched Muse in the UK](https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control/) on 23 November 2026, the day before the Walmart news, naming connector partners including Marks & Spencer, Currys, Ocado Retail, Argos, Sainsbury's and ASOS, with checkout through Onelink built by Stripe or Shop Pay. Meta's UK post does not say whether any of those retailers set agent spending limits on their side, as Walmart does. UK and European retailers now face the same three options: block agents, let browser agents shop the site, or offer a controlled channel with their own rules.
+
+Several things are still unknown. Walmart has not named any Gateway partner beyond Meta, published developer documentation in its announcements, or disclosed commercial terms with Meta. Neither company has described who renders the cart and checkout screen inside the Muse conversation. The 24 November release does not say whether Sam's Club is live through Muse, although the October release says the tools cover both Walmart and Sam's Club. Neither company has published order volumes for the integration.
+
+For the wider landscape of agents that can buy, see [What Are AI Shopping Agents?](/news-insights/what-are-ai-shopping-agents) and our analysis of [ChatGPT Wallet](/news-insights/chatgpt-wallet-ai-agent-payments-merchants), which takes the opposite approach: the agent carries a payment token to an ordinary checkout.`,
+    faqs: [
+        {
+            question: "Can Meta's Muse shop at Walmart?",
+            answer: "Yes. Since 24 November 2026, Muse users can shop Walmart's deals in the conversation through the Walmart Agent Gateway. Muse passes the shopping list to Walmart, Walmart finds matching products, and the purchase is paid with a card saved in the customer's Walmart account."
+        },
+        {
+            question: "What is the Walmart Agent Gateway?",
+            answer: "The Walmart Agent Gateway is Walmart's connection point for AI shopping agents, announced on 21 October 2026. It uses the Model Context Protocol (MCP), so agents call Walmart's tools directly instead of browsing the website, and it started with a beta for companies and developers."
+        },
+        {
+            question: "What is a Walmart Agent Profile?",
+            answer: "A Walmart Agent Profile is a dedicated space for one AI agent inside a customer's Walmart account. The agent's purchases show separately, and the customer chooses whether to approve every purchase or allow purchases within a spending limit; Walmart's examples are $50, $100 and $200."
+        },
+        {
+            question: "Does the AI agent see my card details when shopping at Walmart?",
+            answer: "No. Walmart's Terms for AI Agents say agents do not receive payment card information and cannot add or change payment methods. With Muse, the purchase is paid with a card already saved in the customer's Walmart account."
+        },
+        {
+            question: "Do AI agents get different prices at Walmart?",
+            answer: "No, according to Walmart. Its October 2026 announcement says agents see the same prices a person sees on Walmart.com, with applicable offers and fees shown before purchase, and sums it up as \"We price products, not people.\""
+        },
+        {
+            question: "Why did Amazon block Muse but Walmart let it in?",
+            answer: "Amazon has not explained its decision beyond the error message Muse users received, which said continued access by an unauthorized AI agent violates its Conditions of Use. Walmart built its own gateway so agents shop under Walmart's terms, with Walmart choosing the products and holding the customer's payment details."
+        },
+        {
+            question: "What happens if an AI agent buys the wrong thing at Walmart?",
+            answer: "Walmart's return policy applies. Its Terms for AI Agents say the normal returns process covers cases where an agent does not act as intended, and agents that break the terms can be blocked from the site."
+        }
+    ]
+},
 ];
